@@ -1,0 +1,23 @@
+{
+  "name": "tupelo",
+  "version": "0.0.1-alpha",
+  "description": "Tupelo JavaScript client",
+  "main": "lib/tupelo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuorumControl/tupelo.js.git"
+  },
+  "author": "Quorum Control",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuorumControl/tupelo.js/issues"
+  },
+  "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "~0.2.0",
+    "@grpc/proto-loader": "~0.3.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "includes": ["\\.js$"],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "brand": {
+          "title": "Tupelo.JS",
+          "description": "JavaScript RPC bindings to interact with Tupelo",
+          "repository": "https://github.com/quorumControl/tupelo.js",
+          "author": "Quorum Control"
+        }
+      }
+    }
+  ]
+}
