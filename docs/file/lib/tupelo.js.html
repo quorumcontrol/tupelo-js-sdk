@@ -1,9 +1,56 @@
-var net = require("net");
-var fs = require("fs");
-var protoLoader = require("@grpc/proto-loader");
-var grpc = require("@grpc/grpc-js");
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/tupelo.js | Tupelo.JS</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="JavaScript RPC bindings to interact with Tupelo"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Tupelo.JS"><meta property="twitter:description" content="JavaScript RPC bindings to interact with Tupelo"></head>
+<body class="layout-container" data-ice="rootContainer">
 
-var TUPELO_PROTO_FILE = __dirname + "/proto/tupelo_rpc.proto";
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/quorumControl/tupelo.js"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-createChainCallback">createChainCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-establishCoinCallback">establishCoinCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-generateKeyCallback">generateKeyCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-getTipCallback">getTipCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysCallback">listKeysCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysCallback">listKeysCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-mintCoinCallback">mintCoinCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setDataCallback">setDataCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setOwnerCallback">setOwnerCallback</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/tupelo.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var net = require(&quot;net&quot;);
+var fs = require(&quot;fs&quot;);
+var protoLoader = require(&quot;@grpc/proto-loader&quot;);
+var grpc = require(&quot;@grpc/grpc-js&quot;);
+
+var TUPELO_PROTO_FILE = __dirname + &quot;/proto/tupelo_rpc.proto&quot;;
 
 var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});
 var tupeloPackage = grpc
@@ -17,7 +64,7 @@ var tupeloPackage = grpc
 class TupeloClient {
   constructor(walletServer, walletCreds) {
     /**
-     * The URL ("host:port") of the RPC wallet server to connect to
+     * The URL (&quot;host:port&quot;) of the RPC wallet server to connect to
      *
      * @type {string}
      */
@@ -131,12 +178,12 @@ class TupeloClient {
 
 
   /**
-   * Store data on a chain tree with a transaction validated by the network's
+   * Store data on a chain tree with a transaction validated by the network&apos;s
    * notary group.
    *
    * @param {string} chainId - The ID of the chain tree to store the data on.
    * @param {string} keyAddr - Address of the key that owns the chain tree.
-   * @param {string} path - '/' delimited path into the chain tree to store the data
+   * @param {string} path - &apos;/&apos; delimited path into the chain tree to store the data
    * @param {string} value - The data to store.
    * @param {setDataCallback} clbk - Will be called with the results.
    */
@@ -245,7 +292,7 @@ class TupeloClient {
 /**
  * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.
  *
- * @param {string} walletServer - "host:port" string of the RPC wallet server
+ * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
  * @param {Object} walletCreds - Credentials for the connecting wallet
  * @param {string} walletCreds.walletName - Wallet name
  * @param {string} walletCreds.passPhrase - Wallet passphrase
@@ -258,3 +305,20 @@ function connect(walletServer, walletCreds) {
 
 exports.TupeloClient = TupeloClient;
 exports.connect = connect;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

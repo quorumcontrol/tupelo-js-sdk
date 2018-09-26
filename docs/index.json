@@ -1,0 +1,1765 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "lib/tupelo.js",
+    "content": "var net = require(\"net\");\nvar fs = require(\"fs\");\nvar protoLoader = require(\"@grpc/proto-loader\");\nvar grpc = require(\"@grpc/grpc-js\");\n\nvar TUPELO_PROTO_FILE = __dirname + \"/proto/tupelo_rpc.proto\";\n\nvar tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});\nvar tupeloPackage = grpc\n    .loadPackageDefinition(tupeloPackageDefinition)\n    .walletrpc;\n\n/**\n * Represents a connection to a specific Tupelo wallet managed by a remote\n * Tupelo RPC server\n */\nclass TupeloClient {\n  constructor(walletServer, walletCreds) {\n    /**\n     * The URL (\"host:port\") of the RPC wallet server to connect to\n     *\n     * @type {string}\n     */\n    this.walletServer = walletServer;\n\n    /**\n     * The name and passphrase of the wallet to connect to\n     *\n     * @type {Object}\n     * @property {string} walletCreds.walletName - Wallet name\n     * @property {string} walletCreds.passPhrase - Wallet passphrase\n     */\n    this.walletCreds = walletCreds;\n\n    /**\n     * Back end RPC service connection\n     *\n     * @type {WalletRPCService}\n     */\n    this.rpc = new tupeloPackage\n      .WalletRPCService(walletServer, grpc.credentials.createInsecure());\n\n  }\n\n  /**\n   * Generate a new chain tree ownership key pair.\n   *\n   * @param {generateKeyCallback} clbk - Will be called with the results.\n   */\n  generateKey(clbk) {\n    this.rpc.generateKey({ creds: this.walletCreds }, clbk);\n  }\n  /**\n   * @typedef {function} generateKeyCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.keyAddr - Public key address\n   */\n\n\n  /**\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @param {listKeysCallback} clbk - Will be called with the results.\n   */\n  listKeys(clbk) {\n    this.rpc.listKeys({ creds: this.walletCreds }, clbk);\n  }\n  /**\n   * @typedef {function} listKeysCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string[]} response.keyAddrs - Public key addresses associated with the connected wallet.\n   */\n\n\n  /**\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @param {createChainCallback} clbk - Will be called with the results.\n   */\n  createChain(keyAddr, clbk) {\n    this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);\n  }\n  /**\n   * @typedef {function} createChainCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.chainId - The ID of the new chain tree\n   */\n\n\n  /**\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @param {listChainIdsCallback} clbk - Will be called with the results.\n   */\n  listChainIds(clbk) {\n    this.rpc.listChainIds({ creds: this.walletCreds }, clbk);\n  }\n  /**\n   * @typedef {function} listKeysCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string[]} response.chainIds - Chain tree IDs associated with this wallet.\n   */\n\n\n  /**\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {getTipCallback} clbk - Will be called with the results.\n   */\n  getTip(chainId, clbk) {\n    this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);\n  }\n  /**\n   * @typedef {function} getTipCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.tip - The chain tree tip as known by the Tupelo signers\n   */\n\n\n  /**\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   * @param {setDataCallback} clbk - Will be called with the results.\n   */\n  setData(chainId, keyAddr, path, value, clbk) {\n    this.rpc.setData({\n      creds: this.walletCreds,\n      chainId: chainId,\n      keyAddr: keyAddr,\n      path: path,\n      value: value,\n    }, clbk);\n  }\n  /**\n   * @typedef {function} setDataCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.tip - The chain tree tip after the transaction.\n   */\n\n\n\n  /**\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   * @param {setOwnerCallback} clbk - Will be called with the results.\n   */\n  setOwner(chainId, keyAddr, newOwnerKeys, clbk) {\n    this.rpc.setOwner({\n      creds: this.walletCreds,\n      chainId: chainId,\n      keyAddr: key,\n      newOwnerKeys: newOwnerKeys,\n    }, clbk);\n  }\n  /**\n   * @typedef {function} setOwnerCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   * @param {establishCoinCallback} clbk - Will be called with the results.\n   */\n  establishCoin(chainId, keyAddr, coinName, maximum, clbk) {\n    this.rpc.establishCoin({\n      creds: this.walletCreds,\n      chainId: chainId,\n      keyAddr: key,\n      coinName: coinName,\n      maximum: maximum,\n    }, clbk);\n  }\n  /**\n   * @typedef {function} establishCoinCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   * @param {establishCoinCallback} clbk - Will be called with the results.\n   */\n  mintCoin(chainId, keyAddr, coinName, amount, clbk) {\n    this.rpc.mintCoin({\n      creds: this.walletCreds,\n      chainId: chainId,\n      keyAddr: keyAddr,\n      coinName: coinName,\n      amount: amount,\n    }, clbk);\n  }\n  /**\n   * @typedef {function} mintCoinCallback\n   * @param {?Object} error - gRPC error object (null for successful requests)\n   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @param {?Object} response - RPC server response (null for failed requests)\n   * @param {string} response.tip - The chain tree tip after the transaction.\n   */\n\n}\n\n/**\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n */\nfunction connect(walletServer, walletCreds) {\n  return new TupeloClient(walletServer, walletCreds);\n}\n\nexports.TupeloClient = TupeloClient;\nexports.connect = connect;\n",
+    "static": true,
+    "longname": "/home/zonotope/code/quorum/tupelo.js/lib/tupelo.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "TUPELO_PROTO_FILE",
+    "memberof": "lib/tupelo.js",
+    "static": true,
+    "longname": "lib/tupelo.js~TUPELO_PROTO_FILE",
+    "access": "public",
+    "export": false,
+    "importPath": "tupelo",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "tupeloPackageDefinition",
+    "memberof": "lib/tupelo.js",
+    "static": true,
+    "longname": "lib/tupelo.js~tupeloPackageDefinition",
+    "access": "public",
+    "export": false,
+    "importPath": "tupelo",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "tupeloPackage",
+    "memberof": "lib/tupelo.js",
+    "static": true,
+    "longname": "lib/tupelo.js~tupeloPackage",
+    "access": "public",
+    "export": false,
+    "importPath": "tupelo",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "class",
+    "name": "TupeloClient",
+    "memberof": "lib/tupelo.js",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient",
+    "access": "public",
+    "export": true,
+    "importPath": "tupelo",
+    "importStyle": "{TupeloClient}",
+    "description": "Represents a connection to a specific Tupelo wallet managed by a remote\nTupelo RPC server",
+    "lineNumber": 17,
+    "interface": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "walletServer",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#walletServer",
+    "access": "public",
+    "description": "The URL (\"host:port\") of the RPC wallet server to connect to",
+    "lineNumber": 24,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "walletCreds",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#walletCreds",
+    "access": "public",
+    "description": "The name and passphrase of the wallet to connect to",
+    "lineNumber": 33,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletCreds.walletName",
+        "description": "Wallet name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletCreds.passPhrase",
+        "description": "Wallet passphrase"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "rpc",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#rpc",
+    "access": "public",
+    "description": "Back end RPC service connection",
+    "lineNumber": 40,
+    "type": {
+      "nullable": null,
+      "types": [
+        "WalletRPCService"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "generateKey",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#generateKey",
+    "access": "public",
+    "description": "Generate a new chain tree ownership key pair.",
+    "lineNumber": 50,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "generateKeyCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "typedef",
+    "name": "generateKeyCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.generateKeyCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.keyAddr",
+        "description": "Public key address"
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "generateKeyCallback"
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "listKeys",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#listKeys",
+    "access": "public",
+    "description": "List the addresses of the keys associated with the connected wallet.",
+    "lineNumber": 67,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "listKeysCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 60,
+    "kind": "typedef",
+    "name": "listKeysCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.listKeysCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.keyAddrs",
+        "description": "Public key addresses associated with the connected wallet."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "listKeysCallback"
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "createChain",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#createChain",
+    "access": "public",
+    "description": "Create a new chain tree owned by the key at `keyAddr`.",
+    "lineNumber": 85,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyAddr",
+        "description": "Address of the key that owns the new chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "createChainCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 62,
+    "kind": "typedef",
+    "name": "createChainCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.createChainCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.chainId",
+        "description": "The ID of the new chain tree"
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "createChainCallback"
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "listChainIds",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#listChainIds",
+    "access": "public",
+    "description": "List the IDs of the chain trees associated with the connected wallet.",
+    "lineNumber": 102,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "listChainIdsCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "typedef",
+    "name": "listKeysCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.listKeysCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.chainIds",
+        "description": "Chain tree IDs associated with this wallet."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "listKeysCallback"
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "getTip",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#getTip",
+    "access": "public",
+    "description": "Get the latest tip (as known by the Tupelo network signers) of the chain\ntree with id `chainId`",
+    "lineNumber": 121,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chainId",
+        "description": "The ID of the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "getTipCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "typedef",
+    "name": "getTipCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.getTipCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.tip",
+        "description": "The chain tree tip as known by the Tupelo signers"
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "getTipCallback"
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "setData",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#setData",
+    "access": "public",
+    "description": "Store data on a chain tree with a transaction validated by the network's\nnotary group.",
+    "lineNumber": 143,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chainId",
+        "description": "The ID of the chain tree to store the data on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyAddr",
+        "description": "Address of the key that owns the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "'/' delimited path into the chain tree to store the data"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The data to store."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "setDataCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "typedef",
+    "name": "setDataCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.setDataCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.tip",
+        "description": "The chain tree tip after the transaction."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "setDataCallback"
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "setOwner",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#setOwner",
+    "access": "public",
+    "description": "Add the keys specified by `newOwnerKeys` to the set of owners of the chain\ntree with id `chainId` in a transaction, and register that transaction with\nthe notary group",
+    "lineNumber": 172,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chainId",
+        "description": "The ID of the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyAddr",
+        "description": "Address of a key that currently owns the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "newOwnerKeys",
+        "description": "List of key addresses for the new owners"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "setOwnerCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "typedef",
+    "name": "setOwnerCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.setOwnerCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.tip",
+        "description": "The chain tree tip after the transaction."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "setOwnerCallback"
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "establishCoin",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#establishCoin",
+    "access": "public",
+    "description": "Establish a new coin type associated with a chain tree.",
+    "lineNumber": 198,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chainId",
+        "description": "The ID of the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyAddr",
+        "description": "Address of a key that currently owns the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "coinName",
+        "description": "Name of the new coin"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "maximum",
+        "description": "Maximum number of coins of this type that can exist"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "establishCoinCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 72,
+    "kind": "typedef",
+    "name": "establishCoinCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.establishCoinCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.tip",
+        "description": "The chain tree tip after the transaction."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "establishCoinCallback"
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "mintCoin",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/tupelo.js~TupeloClient#mintCoin",
+    "access": "public",
+    "description": "Mint new coins of an already established coin type associated with a chain\ntree.",
+    "lineNumber": 226,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chainId",
+        "description": "The ID of the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "keyAddr",
+        "description": "Address of a key that currently owns the chain tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "coinName",
+        "description": "Name of the coin type"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "Number of coins to mint."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "establishCoinCallback"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "clbk",
+        "description": "Will be called with the results."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 74,
+    "kind": "typedef",
+    "name": "mintCoinCallback",
+    "memberof": "lib/tupelo.js~TupeloClient",
+    "static": true,
+    "longname": "lib/tupelo.js~TupeloClient.mintCoinCallback",
+    "access": "public",
+    "description": "",
+    "params": [
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "gRPC error object (null for successful requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error.code",
+        "description": "A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "RPC server response (null for failed requests)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response.tip",
+        "description": "The chain tree tip after the transaction."
+      }
+    ],
+    "type": {
+      "types": [
+        "function"
+      ],
+      "optional": false,
+      "name": "mintCoinCallback"
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "connect",
+    "memberof": "lib/tupelo.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/tupelo.js~connect",
+    "access": "public",
+    "export": true,
+    "importPath": "tupelo",
+    "importStyle": "{connect}",
+    "description": "Connect to a Tupelo wallet managed by a remote Tupelo RPC server.",
+    "lineNumber": 255,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletServer",
+        "description": "\"host:port\" string of the RPC wallet server"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletCreds",
+        "description": "Credentials for the connecting wallet"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletCreds.walletName",
+        "description": "Wallet name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "walletCreds.passPhrase",
+        "description": "Wallet passphrase"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "TupeloClient"
+      ],
+      "spread": false,
+      "description": "Tupelo client connection."
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# Tupelo.JS\n\n## Usage\n\n```javascript\nvar tupelo = require('tupelo');\n\nvar walletCreds = {\n    walletName: 'my-wallet',\n    passPhrase: 'super secret password'\n}\n\nvar client = tupelo.connect('localhost:50051', walletCreds)\n\nclient.generateKey(function(err, response){\n    console.log(response.keyAddr);\n})\n```\n",
+    "longname": "/home/zonotope/code/quorum/tupelo.js/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"tupelo\",\n  \"version\": \"0.0.1-alpha\",\n  \"description\": \"Tupelo JavaScript client\",\n  \"main\": \"lib/tupelo.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/QuorumControl/tupelo.js.git\"\n  },\n  \"author\": \"Quorum Control\",\n  \"license\": \"ISC\",\n  \"bugs\": {\n    \"url\": \"https://github.com/QuorumControl/tupelo.js/issues\"\n  },\n  \"homepage\": \"https://github.com/QuorumControl/tupelo.js#readme\",\n  \"dependencies\": {\n    \"@grpc/grpc-js\": \"~0.2.0\",\n    \"@grpc/proto-loader\": \"~0.3.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-node\": \"^1.0.3\",\n    \"esdoc-standard-plugin\": \"^1.0.0\"\n  }\n}\n",
+    "longname": "/home/zonotope/code/quorum/tupelo.js/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

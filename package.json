@@ -18,6 +18,9 @@
   "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
   "dependencies": {
     "@grpc/grpc-js": "~0.2.0",
-    "@grpc/proto-loader": "~0.3.0"
+    "@grpc/proto-loader": "~0.3.0",
+    "esdoc": "^1.1.0",
+    "esdoc-node": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0"
   }
 }
