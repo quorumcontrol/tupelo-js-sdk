@@ -378,57 +378,63 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "lib/tupelo.js~tupeloclient.createchaincallback",
-    "typedef/index.html#static-typedef-createChainCallback",
-    "lib/tupelo.js~TupeloClient.createChainCallback",
+    "lib/tupelo.js~tupeloclient.rpcerror",
+    "typedef/index.html#static-typedef-RpcError",
+    "lib/tupelo.js~TupeloClient.RpcError",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.establishcoincallback",
-    "typedef/index.html#static-typedef-establishCoinCallback",
-    "lib/tupelo.js~TupeloClient.establishCoinCallback",
+    "lib/tupelo.js~tupeloclient.createchainresponse",
+    "typedef/index.html#static-typedef-createChainResponse",
+    "lib/tupelo.js~TupeloClient.createChainResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.generatekeycallback",
-    "typedef/index.html#static-typedef-generateKeyCallback",
-    "lib/tupelo.js~TupeloClient.generateKeyCallback",
+    "lib/tupelo.js~tupeloclient.establishcoinresponse",
+    "typedef/index.html#static-typedef-establishCoinResponse",
+    "lib/tupelo.js~TupeloClient.establishCoinResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.gettipcallback",
-    "typedef/index.html#static-typedef-getTipCallback",
-    "lib/tupelo.js~TupeloClient.getTipCallback",
+    "lib/tupelo.js~tupeloclient.generatekeyresponse",
+    "typedef/index.html#static-typedef-generateKeyResponse",
+    "lib/tupelo.js~TupeloClient.generateKeyResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.listkeyscallback",
-    "typedef/index.html#static-typedef-listKeysCallback",
-    "lib/tupelo.js~TupeloClient.listKeysCallback",
+    "lib/tupelo.js~tupeloclient.gettipresponse",
+    "typedef/index.html#static-typedef-getTipResponse",
+    "lib/tupelo.js~TupeloClient.getTipResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.listkeyscallback",
-    "typedef/index.html#static-typedef-listKeysCallback",
-    "lib/tupelo.js~TupeloClient.listKeysCallback",
+    "lib/tupelo.js~tupeloclient.listchainidsresponse",
+    "typedef/index.html#static-typedef-listChainIdsResponse",
+    "lib/tupelo.js~TupeloClient.listChainIdsResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.mintcoincallback",
-    "typedef/index.html#static-typedef-mintCoinCallback",
-    "lib/tupelo.js~TupeloClient.mintCoinCallback",
+    "lib/tupelo.js~tupeloclient.listkeysresponse",
+    "typedef/index.html#static-typedef-listKeysResponse",
+    "lib/tupelo.js~TupeloClient.listKeysResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.setdatacallback",
-    "typedef/index.html#static-typedef-setDataCallback",
-    "lib/tupelo.js~TupeloClient.setDataCallback",
+    "lib/tupelo.js~tupeloclient.mintcoinresponse",
+    "typedef/index.html#static-typedef-mintCoinResponse",
+    "lib/tupelo.js~TupeloClient.mintCoinResponse",
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.setownercallback",
-    "typedef/index.html#static-typedef-setOwnerCallback",
-    "lib/tupelo.js~TupeloClient.setOwnerCallback",
+    "lib/tupelo.js~tupeloclient.setdataresponse",
+    "typedef/index.html#static-typedef-setDataResponse",
+    "lib/tupelo.js~TupeloClient.setDataResponse",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.setownerresponse",
+    "typedef/index.html#static-typedef-setOwnerResponse",
+    "lib/tupelo.js~TupeloClient.setOwnerResponse",
     "typedef"
   ]
 ]
