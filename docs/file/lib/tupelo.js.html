@@ -31,15 +31,16 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-createChainCallback">createChainCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-establishCoinCallback">establishCoinCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-generateKeyCallback">generateKeyCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-getTipCallback">getTipCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysCallback">listKeysCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysCallback">listKeysCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-mintCoinCallback">mintCoinCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setDataCallback">setDataCallback</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setOwnerCallback">setOwnerCallback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -56,6 +57,20 @@ var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});
 var tupeloPackage = grpc
     .loadPackageDefinition(tupeloPackageDefinition)
     .walletrpc;
+
+const promiseAroundRpcCallback = (toExec) =&gt; {
+  return new Promise((resolve, reject) =&gt; {  
+    var clbk = (err, response) =&gt; {
+      if (err == null) {
+        resolve(response);
+      } else {
+        reject(err);
+      }
+    }
+    toExec(clbk);
+  });
+}
+// {&quot;code&quot;:13,&quot;details&quot;:&quot;&quot;,&quot;metadata&quot;:{&quot;internalRepr&quot;:{}}}
 
 /**
  * Represents a connection to a specific Tupelo wallet managed by a remote
@@ -92,34 +107,32 @@ class TupeloClient {
   /**
    * Generate a new chain tree ownership key pair.
    *
-   * @param {generateKeyCallback} clbk - Will be called with the results.
+   * @return {Promise&lt;generateKeyResponse, RpcError&gt;}
    */
-  generateKey(clbk) {
-    this.rpc.generateKey({ creds: this.walletCreds }, clbk);
+  generateKey() {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.generateKey({ creds: this.walletCreds }, clbk);
+    });
   }
   /**
-   * @typedef {function} generateKeyCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.keyAddr - Public key address
+   * @typedef {Object} generateKeyResponse
+   * @property {string} keyAddr - Public key address
    */
 
 
   /**
    * List the addresses of the keys associated with the connected wallet.
    *
-   * @param {listKeysCallback} clbk - Will be called with the results.
+   * @return {Promise&lt;listKeysResponse, RpcError&gt;}
    */
-  listKeys(clbk) {
-    this.rpc.listKeys({ creds: this.walletCreds }, clbk);
+  listKeys() {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.listKeys({ creds: this.walletCreds }, clbk);
+    });
   }
   /**
-   * @typedef {function} listKeysCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string[]} response.keyAddrs - Public key addresses associated with the connected wallet.
+   * @typedef {Object} listKeysResponse
+   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.
    */
 
 
@@ -127,34 +140,32 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
-   * @param {createChainCallback} clbk - Will be called with the results.
+   * @return {Promise&lt;createChainResponse, RpcError&gt;}
    */
-  createChain(keyAddr, clbk) {
-    this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);
+  createChain(keyAddr) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);
+    });
   }
   /**
-   * @typedef {function} createChainCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.chainId - The ID of the new chain tree
+   * @typedef {Object} createChainResponse
+   * @property {string} chainId - The ID of the new chain tree
    */
 
 
   /**
    * List the IDs of the chain trees associated with the connected wallet.
    *
-   * @param {listChainIdsCallback} clbk - Will be called with the results.
+   * @return {Promise&lt;listChainIdsResponse, RpcError&gt;}
    */
-  listChainIds(clbk) {
-    this.rpc.listChainIds({ creds: this.walletCreds }, clbk);
+  listChainIds() {
+    return promiseAroundRpcCallback(() =&gt; {
+      this.rpc.listChainIds({ creds: this.walletCreds }, clbk);
+    });
   }
   /**
-   * @typedef {function} listKeysCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string[]} response.chainIds - Chain tree IDs associated with this wallet.
+   * @typedef {Object} listChainIdsResponse
+   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.
    */
 
 
@@ -163,17 +174,17 @@ class TupeloClient {
    * tree with id `chainId`
    *
    * @param {string} chainId - The ID of the chain tree.
-   * @param {getTipCallback} clbk - Will be called with the results.
+   * 
+   * @return {Promise&lt;getTipResponse, RpcError&gt;}
    */
-  getTip(chainId, clbk) {
-    this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);
+  getTip(chainId) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);
+    });
   }
   /**
-   * @typedef {function} getTipCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.tip - The chain tree tip as known by the Tupelo signers
+   * @typedef {Object} getTipResponse
+   * @property {string} tip - The chain tree tip as known by the Tupelo signers
    */
 
 
@@ -185,23 +196,23 @@ class TupeloClient {
    * @param {string} keyAddr - Address of the key that owns the chain tree.
    * @param {string} path - &apos;/&apos; delimited path into the chain tree to store the data
    * @param {string} value - The data to store.
-   * @param {setDataCallback} clbk - Will be called with the results.
+   * 
+   * @return {Promise&lt;setDataResponse, RpcError&gt;}
    */
-  setData(chainId, keyAddr, path, value, clbk) {
-    this.rpc.setData({
-      creds: this.walletCreds,
-      chainId: chainId,
-      keyAddr: keyAddr,
-      path: path,
-      value: value,
-    }, clbk);
+  setData(chainId, keyAddr, path, value) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.setData({
+        creds: this.walletCreds,
+        chainId: chainId,
+        keyAddr: keyAddr,
+        path: path,
+        value: value,
+      }, clbk);
+    });
   }
   /**
-   * @typedef {function} setDataCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.tip - The chain tree tip after the transaction.
+   * @typedef {Object} setDataResponse
+   * @property {string} tip - The chain tree tip after the transaction.
    */
 
 
@@ -214,22 +225,22 @@ class TupeloClient {
    * @param {string} chainId - The ID of the chain tree.
    * @param {string} keyAddr - Address of a key that currently owns the chain tree.
    * @param {string[]} newOwnerKeys - List of key addresses for the new owners
-   * @param {setOwnerCallback} clbk - Will be called with the results.
+   * 
+   * @return {Promise&lt;setOwnerResponse, RpcError&gt;}
    */
-  setOwner(chainId, keyAddr, newOwnerKeys, clbk) {
-    this.rpc.setOwner({
-      creds: this.walletCreds,
-      chainId: chainId,
-      keyAddr: key,
-      newOwnerKeys: newOwnerKeys,
-    }, clbk);
+  setOwner(chainId, keyAddr, newOwnerKeys) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.setOwner({
+        creds: this.walletCreds,
+        chainId: chainId,
+        keyAddr: key,
+        newOwnerKeys: newOwnerKeys,
+      }, clbk);
+    });
   }
   /**
-   * @typedef {function} setOwnerCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.tip - The chain tree tip after the transaction.
+   * @typedef {Object} setOwnerResponse
+   * @property {string} tip - The chain tree tip after the transaction.
    */
 
 
@@ -240,23 +251,23 @@ class TupeloClient {
    * @param {string} keyAddr - Address of a key that currently owns the chain tree.
    * @param {string} coinName - Name of the new coin
    * @param {number} maximum - Maximum number of coins of this type that can exist
-   * @param {establishCoinCallback} clbk - Will be called with the results.
+   * 
+   * @return {Promise&lt;establishCoinResponse, RpcError&gt;}
    */
-  establishCoin(chainId, keyAddr, coinName, maximum, clbk) {
-    this.rpc.establishCoin({
-      creds: this.walletCreds,
-      chainId: chainId,
-      keyAddr: key,
-      coinName: coinName,
-      maximum: maximum,
-    }, clbk);
+  establishCoin(chainId, keyAddr, coinName, maximum) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.establishCoin({
+        creds: this.walletCreds,
+        chainId: chainId,
+        keyAddr: key,
+        coinName: coinName,
+        maximum: maximum,
+      }, clbk);
+    });
   }
   /**
-   * @typedef {function} establishCoinCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.tip - The chain tree tip after the transaction.
+   * @typedef {Object} establishCoinResponse
+   * @property {string} tip - The chain tree tip after the transaction.
    */
 
 
@@ -268,25 +279,31 @@ class TupeloClient {
    * @param {string} keyAddr - Address of a key that currently owns the chain tree.
    * @param {string} coinName - Name of the coin type
    * @param {number} amount - Number of coins to mint.
-   * @param {establishCoinCallback} clbk - Will be called with the results.
+   * 
+   * @return {Promise&lt;mintCoinResponse, RpcError&gt;}
    */
-  mintCoin(chainId, keyAddr, coinName, amount, clbk) {
-    this.rpc.mintCoin({
-      creds: this.walletCreds,
-      chainId: chainId,
-      keyAddr: keyAddr,
-      coinName: coinName,
-      amount: amount,
-    }, clbk);
+  mintCoin(chainId, keyAddr, coinName, amount) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.mintCoin({
+        creds: this.walletCreds,
+        chainId: chainId,
+        keyAddr: keyAddr,
+        coinName: coinName,
+        amount: amount,
+      }, clbk);
+    });
   }
   /**
-   * @typedef {function} mintCoinCallback
-   * @param {?Object} error - gRPC error object (null for successful requests)
-   * @param {number} error.code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
-   * @param {?Object} response - RPC server response (null for failed requests)
-   * @param {string} response.tip - The chain tree tip after the transaction.
+   * @typedef {Object} mintCoinResponse
+   * @property {string} tip - The chain tree tip after the transaction.
    */
 
+  /**
+   * @typedef {Object} RpcError - gRPC error object
+   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)
+   * @property {string} details - Details about the error
+   * @property {?Object} metadata - Additional information about the error
+   */
 }
 
 /**
