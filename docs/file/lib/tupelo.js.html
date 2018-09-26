@@ -31,16 +31,16 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -106,7 +106,7 @@ class TupeloClient {
   /**
    * Generate a new chain tree ownership key pair.
    *
-   * @return {Promise&lt;generateKeyResponse, RpcError&gt;}
+   * @return {Promise&lt;GenerateKeyResponse, RpcError&gt;}
    */
   generateKey() {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -114,7 +114,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} generateKeyResponse
+   * @typedef {Object} GenerateKeyResponse
    * @property {string} keyAddr - Public key address
    */
 
@@ -122,7 +122,7 @@ class TupeloClient {
   /**
    * List the addresses of the keys associated with the connected wallet.
    *
-   * @return {Promise&lt;listKeysResponse, RpcError&gt;}
+   * @return {Promise&lt;ListKeysResponse, RpcError&gt;}
    */
   listKeys() {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -130,7 +130,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} listKeysResponse
+   * @typedef {Object} ListKeysResponse
    * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.
    */
 
@@ -139,7 +139,7 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
-   * @return {Promise&lt;createChainResponse, RpcError&gt;}
+   * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
   createChain(keyAddr) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -147,7 +147,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} createChainResponse
+   * @typedef {Object} CreateChainResponse
    * @property {string} chainId - The ID of the new chain tree
    */
 
@@ -155,7 +155,7 @@ class TupeloClient {
   /**
    * List the IDs of the chain trees associated with the connected wallet.
    *
-   * @return {Promise&lt;listChainIdsResponse, RpcError&gt;}
+   * @return {Promise&lt;ListChainIdsResponse, RpcError&gt;}
    */
   listChainIds() {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -163,7 +163,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} listChainIdsResponse
+   * @typedef {Object} ListChainIdsResponse
    * @property {string[]} chainIds - Chain tree IDs associated with this wallet.
    */
 
@@ -174,7 +174,7 @@ class TupeloClient {
    *
    * @param {string} chainId - The ID of the chain tree.
    *
-   * @return {Promise&lt;getTipResponse, RpcError&gt;}
+   * @return {Promise&lt;GetTipResponse, RpcError&gt;}
    */
   getTip(chainId) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -182,7 +182,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} getTipResponse
+   * @typedef {Object} GetTipResponse
    * @property {string} tip - The chain tree tip as known by the Tupelo signers
    */
 
@@ -196,7 +196,7 @@ class TupeloClient {
    * @param {string} path - &apos;/&apos; delimited path into the chain tree to store the data
    * @param {string} value - The data to store.
    *
-   * @return {Promise&lt;setDataResponse, RpcError&gt;}
+   * @return {Promise&lt;SetDataResponse, RpcError&gt;}
    */
   setData(chainId, keyAddr, path, value) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -210,7 +210,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} setDataResponse
+   * @typedef {Object} SetDataResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
@@ -225,7 +225,7 @@ class TupeloClient {
    * @param {string} keyAddr - Address of a key that currently owns the chain tree.
    * @param {string[]} newOwnerKeys - List of key addresses for the new owners
    *
-   * @return {Promise&lt;setOwnerResponse, RpcError&gt;}
+   * @return {Promise&lt;SetOwnerResponse, RpcError&gt;}
    */
   setOwner(chainId, keyAddr, newOwnerKeys) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -238,7 +238,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} setOwnerResponse
+   * @typedef {Object} SetOwnerResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
@@ -251,7 +251,7 @@ class TupeloClient {
    * @param {string} coinName - Name of the new coin
    * @param {number} maximum - Maximum number of coins of this type that can exist
    *
-   * @return {Promise&lt;establishCoinResponse, RpcError&gt;}
+   * @return {Promise&lt;EstablishCoinResponse, RpcError&gt;}
    */
   establishCoin(chainId, keyAddr, coinName, maximum) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -265,7 +265,7 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} establishCoinResponse
+   * @typedef {Object} EstablishCoinResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
@@ -279,7 +279,7 @@ class TupeloClient {
    * @param {string} coinName - Name of the coin type
    * @param {number} amount - Number of coins to mint.
    *
-   * @return {Promise&lt;mintCoinResponse, RpcError&gt;}
+   * @return {Promise&lt;MintCoinResponse, RpcError&gt;}
    */
   mintCoin(chainId, keyAddr, coinName, amount) {
     return promiseAroundRpcCallback((clbk) =&gt; {
@@ -293,9 +293,10 @@ class TupeloClient {
     });
   }
   /**
-   * @typedef {Object} mintCoinResponse
+   * @typedef {Object} MintCoinResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
+
 
   /**
    * @typedef {Object} RpcError - gRPC error object

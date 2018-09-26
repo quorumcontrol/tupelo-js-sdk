@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 7918,
+  "end": 7919,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 276,
+      "line": 277,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 7918,
+    "end": 7919,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 276,
+        "line": 277,
         "column": 0
       }
     },
@@ -1409,14 +1409,14 @@
       {
         "type": "Identifier",
         "start": 720,
-        "end": 7366,
+        "end": 7367,
         "loc": {
           "start": {
             "line": 30,
             "column": 0
           },
           "end": {
-            "line": 258,
+            "line": 259,
             "column": 1
           }
         },
@@ -1442,14 +1442,14 @@
         "body": {
           "type": "ClassBody",
           "start": 739,
-          "end": 7366,
+          "end": 7367,
           "loc": {
             "start": {
               "line": 30,
               "column": 19
             },
             "end": {
-              "line": 258,
+              "line": 259,
               "column": 1
             }
           },
@@ -2103,7 +2103,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+                  "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
                   "start": 1432,
                   "end": 1551,
                   "loc": {
@@ -2516,7 +2516,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+                  "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
                   "start": 1432,
                   "end": 1551,
                   "loc": {
@@ -2534,7 +2534,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+                  "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
                   "start": 1695,
                   "end": 1800,
                   "loc": {
@@ -2550,7 +2550,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+                  "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
                   "start": 1805,
                   "end": 1944,
                   "loc": {
@@ -2963,7 +2963,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+                  "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
                   "start": 1695,
                   "end": 1800,
                   "loc": {
@@ -2979,7 +2979,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+                  "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
                   "start": 1805,
                   "end": 1944,
                   "loc": {
@@ -2997,7 +2997,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+                  "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
                   "start": 2082,
                   "end": 2227,
                   "loc": {
@@ -3013,7 +3013,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+                  "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
                   "start": 2232,
                   "end": 2440,
                   "loc": {
@@ -3496,7 +3496,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+                  "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
                   "start": 2082,
                   "end": 2227,
                   "loc": {
@@ -3512,7 +3512,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+                  "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
                   "start": 2232,
                   "end": 2440,
                   "loc": {
@@ -3530,7 +3530,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+                  "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
                   "start": 2609,
                   "end": 2724,
                   "loc": {
@@ -3546,7 +3546,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+                  "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
                   "start": 2729,
                   "end": 2873,
                   "loc": {
@@ -3959,7 +3959,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+                  "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
                   "start": 2609,
                   "end": 2724,
                   "loc": {
@@ -3975,7 +3975,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+                  "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
                   "start": 2729,
                   "end": 2873,
                   "loc": {
@@ -3993,7 +3993,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+                  "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
                   "start": 3019,
                   "end": 3153,
                   "loc": {
@@ -4009,7 +4009,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+                  "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
                   "start": 3158,
                   "end": 3389,
                   "loc": {
@@ -4492,7 +4492,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+                  "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
                   "start": 3019,
                   "end": 3153,
                   "loc": {
@@ -4508,7 +4508,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+                  "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
                   "start": 3158,
                   "end": 3389,
                   "loc": {
@@ -4526,7 +4526,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+                  "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
                   "start": 3548,
                   "end": 3675,
                   "loc": {
@@ -4542,7 +4542,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+                  "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
                   "start": 3680,
                   "end": 4133,
                   "loc": {
@@ -5232,7 +5232,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+                  "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
                   "start": 3548,
                   "end": 3675,
                   "loc": {
@@ -5248,7 +5248,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+                  "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
                   "start": 3680,
                   "end": 4133,
                   "loc": {
@@ -5266,7 +5266,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 4407,
                   "end": 4527,
                   "loc": {
@@ -5282,7 +5282,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+                  "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
                   "start": 4533,
                   "end": 5006,
                   "loc": {
@@ -5903,7 +5903,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 4407,
                   "end": 4527,
                   "loc": {
@@ -5919,7 +5919,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+                  "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
                   "start": 4533,
                   "end": 5006,
                   "loc": {
@@ -5937,7 +5937,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 5277,
                   "end": 5398,
                   "loc": {
@@ -5953,7 +5953,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
                   "start": 5403,
                   "end": 5816,
                   "loc": {
@@ -6643,7 +6643,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 5277,
                   "end": 5398,
                   "loc": {
@@ -6659,7 +6659,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
                   "start": 5403,
                   "end": 5816,
                   "loc": {
@@ -6677,7 +6677,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 6120,
                   "end": 6246,
                   "loc": {
@@ -6693,7 +6693,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
                   "start": 6251,
                   "end": 6662,
                   "loc": {
@@ -7383,7 +7383,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 6120,
                   "end": 6246,
                   "loc": {
@@ -7399,7 +7399,7 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
                   "start": 6251,
                   "end": 6662,
                   "loc": {
@@ -7417,7 +7417,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} mintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                   "start": 6953,
                   "end": 7074,
                   "loc": {
@@ -7434,15 +7434,15 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                  "start": 7078,
-                  "end": 7364,
+                  "start": 7079,
+                  "end": 7365,
                   "loc": {
                     "start": {
-                      "line": 252,
+                      "line": 253,
                       "column": 2
                     },
                     "end": {
-                      "line": 257,
+                      "line": 258,
                       "column": 5
                     }
                   }
@@ -7458,29 +7458,29 @@
       },
       {
         "type": "Identifier",
-        "start": 7770,
-        "end": 7871,
+        "start": 7771,
+        "end": 7872,
         "loc": {
           "start": {
-            "line": 270,
+            "line": 271,
             "column": 0
           },
           "end": {
-            "line": 272,
+            "line": 273,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 7779,
-          "end": 7786,
+          "start": 7780,
+          "end": 7787,
           "loc": {
             "start": {
-              "line": 270,
+              "line": 271,
               "column": 9
             },
             "end": {
-              "line": 270,
+              "line": 271,
               "column": 16
             },
             "identifierName": "connect"
@@ -7494,15 +7494,15 @@
         "params": [
           {
             "type": "Identifier",
-            "start": 7787,
-            "end": 7799,
+            "start": 7788,
+            "end": 7800,
             "loc": {
               "start": {
-                "line": 270,
+                "line": 271,
                 "column": 17
               },
               "end": {
-                "line": 270,
+                "line": 271,
                 "column": 29
               },
               "identifierName": "walletServer"
@@ -7511,15 +7511,15 @@
           },
           {
             "type": "Identifier",
-            "start": 7801,
-            "end": 7812,
+            "start": 7802,
+            "end": 7813,
             "loc": {
               "start": {
-                "line": 270,
+                "line": 271,
                 "column": 31
               },
               "end": {
-                "line": 270,
+                "line": 271,
                 "column": 42
               },
               "identifierName": "walletCreds"
@@ -7529,58 +7529,58 @@
         ],
         "body": {
           "type": "BlockStatement",
-          "start": 7814,
-          "end": 7871,
+          "start": 7815,
+          "end": 7872,
           "loc": {
             "start": {
-              "line": 270,
+              "line": 271,
               "column": 44
             },
             "end": {
-              "line": 272,
+              "line": 273,
               "column": 1
             }
           },
           "body": [
             {
               "type": "ReturnStatement",
-              "start": 7818,
-              "end": 7869,
+              "start": 7819,
+              "end": 7870,
               "loc": {
                 "start": {
-                  "line": 271,
+                  "line": 272,
                   "column": 2
                 },
                 "end": {
-                  "line": 271,
+                  "line": 272,
                   "column": 53
                 }
               },
               "argument": {
                 "type": "NewExpression",
-                "start": 7825,
-                "end": 7868,
+                "start": 7826,
+                "end": 7869,
                 "loc": {
                   "start": {
-                    "line": 271,
+                    "line": 272,
                     "column": 9
                   },
                   "end": {
-                    "line": 271,
+                    "line": 272,
                     "column": 52
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 7829,
-                  "end": 7841,
+                  "start": 7830,
+                  "end": 7842,
                   "loc": {
                     "start": {
-                      "line": 271,
+                      "line": 272,
                       "column": 13
                     },
                     "end": {
-                      "line": 271,
+                      "line": 272,
                       "column": 25
                     },
                     "identifierName": "TupeloClient"
@@ -7590,15 +7590,15 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 7842,
-                    "end": 7854,
+                    "start": 7843,
+                    "end": 7855,
                     "loc": {
                       "start": {
-                        "line": 271,
+                        "line": 272,
                         "column": 26
                       },
                       "end": {
-                        "line": 271,
+                        "line": 272,
                         "column": 38
                       },
                       "identifierName": "walletServer"
@@ -7607,15 +7607,15 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 7856,
-                    "end": 7867,
+                    "start": 7857,
+                    "end": 7868,
                     "loc": {
                       "start": {
-                        "line": 271,
+                        "line": 272,
                         "column": 40
                       },
                       "end": {
-                        "line": 271,
+                        "line": 272,
                         "column": 51
                       },
                       "identifierName": "walletCreds"
@@ -7634,15 +7634,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 7873,
-        "end": 7897,
+        "start": 7874,
+        "end": 7898,
         "loc": {
           "start": {
-            "line": 274,
+            "line": 275,
             "column": 0
           },
           "end": {
-            "line": 274,
+            "line": 275,
             "column": 24
           }
         },
@@ -7650,29 +7650,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 7882,
-            "end": 7894,
+            "start": 7883,
+            "end": 7895,
             "loc": {
               "start": {
-                "line": 274,
+                "line": 275,
                 "column": 9
               },
               "end": {
-                "line": 274,
+                "line": 275,
                 "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 7882,
-              "end": 7894,
+              "start": 7883,
+              "end": 7895,
               "loc": {
                 "start": {
-                  "line": 274,
+                  "line": 275,
                   "column": 9
                 },
                 "end": {
-                  "line": 274,
+                  "line": 275,
                   "column": 21
                 },
                 "identifierName": "TupeloClient"
@@ -7681,15 +7681,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 7882,
-              "end": 7894,
+              "start": 7883,
+              "end": 7895,
               "loc": {
                 "start": {
-                  "line": 274,
+                  "line": 275,
                   "column": 9
                 },
                 "end": {
-                  "line": 274,
+                  "line": 275,
                   "column": 21
                 },
                 "identifierName": "TupeloClient"
@@ -7702,15 +7702,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 7898,
-        "end": 7917,
+        "start": 7899,
+        "end": 7918,
         "loc": {
           "start": {
-            "line": 275,
+            "line": 276,
             "column": 0
           },
           "end": {
-            "line": 275,
+            "line": 276,
             "column": 19
           }
         },
@@ -7718,29 +7718,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 7907,
-            "end": 7914,
+            "start": 7908,
+            "end": 7915,
             "loc": {
               "start": {
-                "line": 275,
+                "line": 276,
                 "column": 9
               },
               "end": {
-                "line": 275,
+                "line": 276,
                 "column": 16
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 7907,
-              "end": 7914,
+              "start": 7908,
+              "end": 7915,
               "loc": {
                 "start": {
-                  "line": 275,
+                  "line": 276,
                   "column": 9
                 },
                 "end": {
-                  "line": 275,
+                  "line": 276,
                   "column": 16
                 },
                 "identifierName": "connect"
@@ -7749,15 +7749,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 7907,
-              "end": 7914,
+              "start": 7908,
+              "end": 7915,
               "loc": {
                 "start": {
-                  "line": 275,
+                  "line": 276,
                   "column": 9
                 },
                 "end": {
-                  "line": 275,
+                  "line": 276,
                   "column": 16
                 },
                 "identifierName": "connect"
@@ -7770,29 +7770,29 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 7873,
-        "end": 7897,
+        "start": 7874,
+        "end": 7898,
         "loc": {
           "start": {
-            "line": 274,
+            "line": 275,
             "column": 0
           },
           "end": {
-            "line": 274,
+            "line": 275,
             "column": 24
           }
         },
         "declaration": {
           "type": "ClassDeclaration",
           "start": 720,
-          "end": 7366,
+          "end": 7367,
           "loc": {
             "start": {
               "line": 30,
               "column": 0
             },
             "end": {
-              "line": 258,
+              "line": 259,
               "column": 1
             }
           },
@@ -7818,14 +7818,14 @@
           "body": {
             "type": "ClassBody",
             "start": 739,
-            "end": 7366,
+            "end": 7367,
             "loc": {
               "start": {
                 "line": 30,
                 "column": 19
               },
               "end": {
-                "line": 258,
+                "line": 259,
                 "column": 1
               }
             },
@@ -8479,7 +8479,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+                    "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
                     "start": 1432,
                     "end": 1551,
                     "loc": {
@@ -8892,7 +8892,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+                    "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
                     "start": 1432,
                     "end": 1551,
                     "loc": {
@@ -8910,7 +8910,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+                    "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
                     "start": 1695,
                     "end": 1800,
                     "loc": {
@@ -8926,7 +8926,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+                    "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
                     "start": 1805,
                     "end": 1944,
                     "loc": {
@@ -9339,7 +9339,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+                    "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
                     "start": 1695,
                     "end": 1800,
                     "loc": {
@@ -9355,7 +9355,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+                    "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
                     "start": 1805,
                     "end": 1944,
                     "loc": {
@@ -9373,7 +9373,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+                    "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
                     "start": 2082,
                     "end": 2227,
                     "loc": {
@@ -9389,7 +9389,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+                    "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
                     "start": 2232,
                     "end": 2440,
                     "loc": {
@@ -9872,7 +9872,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+                    "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
                     "start": 2082,
                     "end": 2227,
                     "loc": {
@@ -9888,7 +9888,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+                    "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
                     "start": 2232,
                     "end": 2440,
                     "loc": {
@@ -9906,7 +9906,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+                    "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
                     "start": 2609,
                     "end": 2724,
                     "loc": {
@@ -9922,7 +9922,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+                    "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
                     "start": 2729,
                     "end": 2873,
                     "loc": {
@@ -10335,7 +10335,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+                    "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
                     "start": 2609,
                     "end": 2724,
                     "loc": {
@@ -10351,7 +10351,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+                    "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
                     "start": 2729,
                     "end": 2873,
                     "loc": {
@@ -10369,7 +10369,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+                    "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
                     "start": 3019,
                     "end": 3153,
                     "loc": {
@@ -10385,7 +10385,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+                    "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
                     "start": 3158,
                     "end": 3389,
                     "loc": {
@@ -10868,7 +10868,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+                    "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
                     "start": 3019,
                     "end": 3153,
                     "loc": {
@@ -10884,7 +10884,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+                    "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
                     "start": 3158,
                     "end": 3389,
                     "loc": {
@@ -10902,7 +10902,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+                    "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
                     "start": 3548,
                     "end": 3675,
                     "loc": {
@@ -10918,7 +10918,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+                    "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
                     "start": 3680,
                     "end": 4133,
                     "loc": {
@@ -11608,7 +11608,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+                    "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
                     "start": 3548,
                     "end": 3675,
                     "loc": {
@@ -11624,7 +11624,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+                    "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
                     "start": 3680,
                     "end": 4133,
                     "loc": {
@@ -11642,7 +11642,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 4407,
                     "end": 4527,
                     "loc": {
@@ -11658,7 +11658,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+                    "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
                     "start": 4533,
                     "end": 5006,
                     "loc": {
@@ -12279,7 +12279,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 4407,
                     "end": 4527,
                     "loc": {
@@ -12295,7 +12295,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+                    "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
                     "start": 4533,
                     "end": 5006,
                     "loc": {
@@ -12313,7 +12313,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 5277,
                     "end": 5398,
                     "loc": {
@@ -12329,7 +12329,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
                     "start": 5403,
                     "end": 5816,
                     "loc": {
@@ -13019,7 +13019,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 5277,
                     "end": 5398,
                     "loc": {
@@ -13035,7 +13035,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
                     "start": 5403,
                     "end": 5816,
                     "loc": {
@@ -13053,7 +13053,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 6120,
                     "end": 6246,
                     "loc": {
@@ -13069,7 +13069,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
                     "start": 6251,
                     "end": 6662,
                     "loc": {
@@ -13759,7 +13759,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 6120,
                     "end": 6246,
                     "loc": {
@@ -13775,7 +13775,7 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
                     "start": 6251,
                     "end": 6662,
                     "loc": {
@@ -13793,7 +13793,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} mintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
                     "start": 6953,
                     "end": 7074,
                     "loc": {
@@ -13810,15 +13810,15 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                    "start": 7078,
-                    "end": 7364,
+                    "start": 7079,
+                    "end": 7365,
                     "loc": {
                       "start": {
-                        "line": 252,
+                        "line": 253,
                         "column": 2
                       },
                       "end": {
-                        "line": 257,
+                        "line": 258,
                         "column": 5
                       }
                     }
@@ -13850,15 +13850,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 7368,
-              "end": 7769,
+              "start": 7369,
+              "end": 7770,
               "loc": {
                 "start": {
-                  "line": 260,
+                  "line": 261,
                   "column": 0
                 },
                 "end": {
-                  "line": 269,
+                  "line": 270,
                   "column": 3
                 }
               }
@@ -13872,43 +13872,43 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 7898,
-        "end": 7917,
+        "start": 7899,
+        "end": 7918,
         "loc": {
           "start": {
-            "line": 275,
+            "line": 276,
             "column": 0
           },
           "end": {
-            "line": 275,
+            "line": 276,
             "column": 19
           }
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 7770,
-          "end": 7871,
+          "start": 7771,
+          "end": 7872,
           "loc": {
             "start": {
-              "line": 270,
+              "line": 271,
               "column": 0
             },
             "end": {
-              "line": 272,
+              "line": 273,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 7779,
-            "end": 7786,
+            "start": 7780,
+            "end": 7787,
             "loc": {
               "start": {
-                "line": 270,
+                "line": 271,
                 "column": 9
               },
               "end": {
-                "line": 270,
+                "line": 271,
                 "column": 16
               },
               "identifierName": "connect"
@@ -13922,15 +13922,15 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 7787,
-              "end": 7799,
+              "start": 7788,
+              "end": 7800,
               "loc": {
                 "start": {
-                  "line": 270,
+                  "line": 271,
                   "column": 17
                 },
                 "end": {
-                  "line": 270,
+                  "line": 271,
                   "column": 29
                 },
                 "identifierName": "walletServer"
@@ -13939,15 +13939,15 @@
             },
             {
               "type": "Identifier",
-              "start": 7801,
-              "end": 7812,
+              "start": 7802,
+              "end": 7813,
               "loc": {
                 "start": {
-                  "line": 270,
+                  "line": 271,
                   "column": 31
                 },
                 "end": {
-                  "line": 270,
+                  "line": 271,
                   "column": 42
                 },
                 "identifierName": "walletCreds"
@@ -13957,58 +13957,58 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 7814,
-            "end": 7871,
+            "start": 7815,
+            "end": 7872,
             "loc": {
               "start": {
-                "line": 270,
+                "line": 271,
                 "column": 44
               },
               "end": {
-                "line": 272,
+                "line": 273,
                 "column": 1
               }
             },
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 7818,
-                "end": 7869,
+                "start": 7819,
+                "end": 7870,
                 "loc": {
                   "start": {
-                    "line": 271,
+                    "line": 272,
                     "column": 2
                   },
                   "end": {
-                    "line": 271,
+                    "line": 272,
                     "column": 53
                   }
                 },
                 "argument": {
                   "type": "NewExpression",
-                  "start": 7825,
-                  "end": 7868,
+                  "start": 7826,
+                  "end": 7869,
                   "loc": {
                     "start": {
-                      "line": 271,
+                      "line": 272,
                       "column": 9
                     },
                     "end": {
-                      "line": 271,
+                      "line": 272,
                       "column": 52
                     }
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 7829,
-                    "end": 7841,
+                    "start": 7830,
+                    "end": 7842,
                     "loc": {
                       "start": {
-                        "line": 271,
+                        "line": 272,
                         "column": 13
                       },
                       "end": {
-                        "line": 271,
+                        "line": 272,
                         "column": 25
                       },
                       "identifierName": "TupeloClient"
@@ -14018,15 +14018,15 @@
                   "arguments": [
                     {
                       "type": "Identifier",
-                      "start": 7842,
-                      "end": 7854,
+                      "start": 7843,
+                      "end": 7855,
                       "loc": {
                         "start": {
-                          "line": 271,
+                          "line": 272,
                           "column": 26
                         },
                         "end": {
-                          "line": 271,
+                          "line": 272,
                           "column": 38
                         },
                         "identifierName": "walletServer"
@@ -14035,15 +14035,15 @@
                     },
                     {
                       "type": "Identifier",
-                      "start": 7856,
-                      "end": 7867,
+                      "start": 7857,
+                      "end": 7868,
                       "loc": {
                         "start": {
-                          "line": 271,
+                          "line": 272,
                           "column": 40
                         },
                         "end": {
-                          "line": 271,
+                          "line": 272,
                           "column": 51
                         },
                         "identifierName": "walletCreds"
@@ -14060,15 +14060,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 7368,
-              "end": 7769,
+              "start": 7369,
+              "end": 7770,
               "loc": {
                 "start": {
-                  "line": 260,
+                  "line": 261,
                   "column": 0
                 },
                 "end": {
-                  "line": 269,
+                  "line": 270,
                   "column": 3
                 }
               }
@@ -14150,7 +14150,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+      "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
       "start": 1432,
       "end": 1551,
       "loc": {
@@ -14166,7 +14166,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+      "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
       "start": 1695,
       "end": 1800,
       "loc": {
@@ -14182,7 +14182,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+      "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
       "start": 1805,
       "end": 1944,
       "loc": {
@@ -14198,7 +14198,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+      "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
       "start": 2082,
       "end": 2227,
       "loc": {
@@ -14214,7 +14214,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+      "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
       "start": 2232,
       "end": 2440,
       "loc": {
@@ -14230,7 +14230,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+      "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
       "start": 2609,
       "end": 2724,
       "loc": {
@@ -14246,7 +14246,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+      "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
       "start": 2729,
       "end": 2873,
       "loc": {
@@ -14262,7 +14262,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+      "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
       "start": 3019,
       "end": 3153,
       "loc": {
@@ -14278,7 +14278,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+      "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
       "start": 3158,
       "end": 3389,
       "loc": {
@@ -14294,7 +14294,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+      "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
       "start": 3548,
       "end": 3675,
       "loc": {
@@ -14310,7 +14310,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+      "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
       "start": 3680,
       "end": 4133,
       "loc": {
@@ -14326,7 +14326,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 4407,
       "end": 4527,
       "loc": {
@@ -14342,7 +14342,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+      "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
       "start": 4533,
       "end": 5006,
       "loc": {
@@ -14358,7 +14358,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 5277,
       "end": 5398,
       "loc": {
@@ -14374,7 +14374,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
       "start": 5403,
       "end": 5816,
       "loc": {
@@ -14390,7 +14390,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 6120,
       "end": 6246,
       "loc": {
@@ -14406,7 +14406,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
       "start": 6251,
       "end": 6662,
       "loc": {
@@ -14422,7 +14422,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} mintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 6953,
       "end": 7074,
       "loc": {
@@ -14439,15 +14439,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 7078,
-      "end": 7364,
+      "start": 7079,
+      "end": 7365,
       "loc": {
         "start": {
-          "line": 252,
+          "line": 253,
           "column": 2
         },
         "end": {
-          "line": 257,
+          "line": 258,
           "column": 5
         }
       }
@@ -14455,15 +14455,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 7368,
-      "end": 7769,
+      "start": 7369,
+      "end": 7770,
       "loc": {
         "start": {
-          "line": 260,
+          "line": 261,
           "column": 0
         },
         "end": {
-          "line": 269,
+          "line": 270,
           "column": 3
         }
       }
@@ -18630,7 +18630,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   ",
+      "value": "*\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   ",
       "start": 1432,
       "end": 1551,
       "loc": {
@@ -19496,7 +19496,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
+      "value": "*\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   ",
       "start": 1695,
       "end": 1800,
       "loc": {
@@ -19512,7 +19512,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   ",
+      "value": "*\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   ",
       "start": 1805,
       "end": 1944,
       "loc": {
@@ -20378,7 +20378,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
+      "value": "*\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   ",
       "start": 2082,
       "end": 2227,
       "loc": {
@@ -20394,7 +20394,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   ",
+      "value": "*\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   ",
       "start": 2232,
       "end": 2440,
       "loc": {
@@ -21390,7 +21390,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
+      "value": "*\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   ",
       "start": 2609,
       "end": 2724,
       "loc": {
@@ -21406,7 +21406,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   ",
+      "value": "*\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   ",
       "start": 2729,
       "end": 2873,
       "loc": {
@@ -22272,7 +22272,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
+      "value": "*\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   ",
       "start": 3019,
       "end": 3153,
       "loc": {
@@ -22288,7 +22288,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   ",
+      "value": "*\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   ",
       "start": 3158,
       "end": 3389,
       "loc": {
@@ -23284,7 +23284,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
+      "value": "*\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   ",
       "start": 3548,
       "end": 3675,
       "loc": {
@@ -23300,7 +23300,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   ",
+      "value": "*\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   ",
       "start": 3680,
       "end": 4133,
       "loc": {
@@ -24790,7 +24790,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 4407,
       "end": 4527,
       "loc": {
@@ -24806,7 +24806,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   ",
+      "value": "*\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   ",
       "start": 4533,
       "end": 5006,
       "loc": {
@@ -26140,7 +26140,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 5277,
       "end": 5398,
       "loc": {
@@ -26156,7 +26156,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
       "start": 5403,
       "end": 5816,
       "loc": {
@@ -27646,7 +27646,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 6120,
       "end": 6246,
       "loc": {
@@ -27662,7 +27662,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
       "start": 6251,
       "end": 6662,
       "loc": {
@@ -29152,7 +29152,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} mintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
       "start": 6953,
       "end": 7074,
       "loc": {
@@ -29169,15 +29169,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 7078,
-      "end": 7364,
+      "start": 7079,
+      "end": 7365,
       "loc": {
         "start": {
-          "line": 252,
+          "line": 253,
           "column": 2
         },
         "end": {
-          "line": 257,
+          "line": 258,
           "column": 5
         }
       }
@@ -29194,15 +29194,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7365,
-      "end": 7366,
+      "start": 7366,
+      "end": 7367,
       "loc": {
         "start": {
-          "line": 258,
+          "line": 259,
           "column": 0
         },
         "end": {
-          "line": 258,
+          "line": 259,
           "column": 1
         }
       }
@@ -29210,15 +29210,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 7368,
-      "end": 7769,
+      "start": 7369,
+      "end": 7770,
       "loc": {
         "start": {
-          "line": 260,
+          "line": 261,
           "column": 0
         },
         "end": {
-          "line": 269,
+          "line": 270,
           "column": 3
         }
       }
@@ -29237,15 +29237,15 @@
         "binop": null
       },
       "value": "function",
-      "start": 7770,
-      "end": 7778,
+      "start": 7771,
+      "end": 7779,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 0
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 8
         }
       }
@@ -29263,15 +29263,15 @@
         "binop": null
       },
       "value": "connect",
-      "start": 7779,
-      "end": 7786,
+      "start": 7780,
+      "end": 7787,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 9
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 16
         }
       }
@@ -29288,15 +29288,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7786,
-      "end": 7787,
+      "start": 7787,
+      "end": 7788,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 16
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 17
         }
       }
@@ -29314,15 +29314,15 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 7787,
-      "end": 7799,
+      "start": 7788,
+      "end": 7800,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 17
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 29
         }
       }
@@ -29340,15 +29340,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7799,
-      "end": 7800,
+      "start": 7800,
+      "end": 7801,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 29
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 30
         }
       }
@@ -29366,15 +29366,15 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 7801,
-      "end": 7812,
+      "start": 7802,
+      "end": 7813,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 31
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 42
         }
       }
@@ -29391,15 +29391,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7812,
-      "end": 7813,
+      "start": 7813,
+      "end": 7814,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 42
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 43
         }
       }
@@ -29416,15 +29416,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7814,
-      "end": 7815,
+      "start": 7815,
+      "end": 7816,
       "loc": {
         "start": {
-          "line": 270,
+          "line": 271,
           "column": 44
         },
         "end": {
-          "line": 270,
+          "line": 271,
           "column": 45
         }
       }
@@ -29444,15 +29444,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 7818,
-      "end": 7824,
+      "start": 7819,
+      "end": 7825,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 2
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 8
         }
       }
@@ -29472,15 +29472,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 7825,
-      "end": 7828,
+      "start": 7826,
+      "end": 7829,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 9
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 12
         }
       }
@@ -29498,15 +29498,15 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 7829,
-      "end": 7841,
+      "start": 7830,
+      "end": 7842,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 13
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 25
         }
       }
@@ -29523,15 +29523,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7841,
-      "end": 7842,
+      "start": 7842,
+      "end": 7843,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 25
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 26
         }
       }
@@ -29549,15 +29549,15 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 7842,
-      "end": 7854,
+      "start": 7843,
+      "end": 7855,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 26
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 38
         }
       }
@@ -29575,15 +29575,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7854,
-      "end": 7855,
+      "start": 7855,
+      "end": 7856,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 38
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 39
         }
       }
@@ -29601,15 +29601,15 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 7856,
-      "end": 7867,
+      "start": 7857,
+      "end": 7868,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 40
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 51
         }
       }
@@ -29626,15 +29626,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7867,
-      "end": 7868,
+      "start": 7868,
+      "end": 7869,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 51
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 52
         }
       }
@@ -29652,15 +29652,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7868,
-      "end": 7869,
+      "start": 7869,
+      "end": 7870,
       "loc": {
         "start": {
-          "line": 271,
+          "line": 272,
           "column": 52
         },
         "end": {
-          "line": 271,
+          "line": 272,
           "column": 53
         }
       }
@@ -29677,15 +29677,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7870,
-      "end": 7871,
+      "start": 7871,
+      "end": 7872,
       "loc": {
         "start": {
-          "line": 272,
+          "line": 273,
           "column": 0
         },
         "end": {
-          "line": 272,
+          "line": 273,
           "column": 1
         }
       }
@@ -29705,15 +29705,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 7873,
-      "end": 7879,
+      "start": 7874,
+      "end": 7880,
       "loc": {
         "start": {
-          "line": 274,
+          "line": 275,
           "column": 0
         },
         "end": {
-          "line": 274,
+          "line": 275,
           "column": 6
         }
       }
@@ -29730,15 +29730,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7880,
-      "end": 7881,
+      "start": 7881,
+      "end": 7882,
       "loc": {
         "start": {
-          "line": 274,
+          "line": 275,
           "column": 7
         },
         "end": {
-          "line": 274,
+          "line": 275,
           "column": 8
         }
       }
@@ -29756,15 +29756,15 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 7882,
-      "end": 7894,
+      "start": 7883,
+      "end": 7895,
       "loc": {
         "start": {
-          "line": 274,
+          "line": 275,
           "column": 9
         },
         "end": {
-          "line": 274,
+          "line": 275,
           "column": 21
         }
       }
@@ -29781,15 +29781,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7895,
-      "end": 7896,
+      "start": 7896,
+      "end": 7897,
       "loc": {
         "start": {
-          "line": 274,
+          "line": 275,
           "column": 22
         },
         "end": {
-          "line": 274,
+          "line": 275,
           "column": 23
         }
       }
@@ -29807,15 +29807,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7896,
-      "end": 7897,
+      "start": 7897,
+      "end": 7898,
       "loc": {
         "start": {
-          "line": 274,
+          "line": 275,
           "column": 23
         },
         "end": {
-          "line": 274,
+          "line": 275,
           "column": 24
         }
       }
@@ -29835,15 +29835,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 7898,
-      "end": 7904,
+      "start": 7899,
+      "end": 7905,
       "loc": {
         "start": {
-          "line": 275,
+          "line": 276,
           "column": 0
         },
         "end": {
-          "line": 275,
+          "line": 276,
           "column": 6
         }
       }
@@ -29860,15 +29860,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7905,
-      "end": 7906,
+      "start": 7906,
+      "end": 7907,
       "loc": {
         "start": {
-          "line": 275,
+          "line": 276,
           "column": 7
         },
         "end": {
-          "line": 275,
+          "line": 276,
           "column": 8
         }
       }
@@ -29886,15 +29886,15 @@
         "binop": null
       },
       "value": "connect",
-      "start": 7907,
-      "end": 7914,
+      "start": 7908,
+      "end": 7915,
       "loc": {
         "start": {
-          "line": 275,
+          "line": 276,
           "column": 9
         },
         "end": {
-          "line": 275,
+          "line": 276,
           "column": 16
         }
       }
@@ -29911,15 +29911,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7915,
-      "end": 7916,
+      "start": 7916,
+      "end": 7917,
       "loc": {
         "start": {
-          "line": 275,
+          "line": 276,
           "column": 17
         },
         "end": {
-          "line": 275,
+          "line": 276,
           "column": 18
         }
       }
@@ -29937,15 +29937,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7916,
-      "end": 7917,
+      "start": 7917,
+      "end": 7918,
       "loc": {
         "start": {
-          "line": 275,
+          "line": 276,
           "column": 18
         },
         "end": {
-          "line": 275,
+          "line": 276,
           "column": 19
         }
       }
@@ -29963,15 +29963,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 7918,
-      "end": 7918,
+      "start": 7919,
+      "end": 7919,
       "loc": {
         "start": {
-          "line": 276,
+          "line": 277,
           "column": 0
         },
         "end": {
-          "line": 276,
+          "line": 277,
           "column": 0
         }
       }

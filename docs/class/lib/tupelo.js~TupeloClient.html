@@ -31,16 +31,16 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -235,7 +235,7 @@ Tupelo RPC server</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-createChain">createChain</a></span></span><span class="code" data-ice="signature">(keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-createChain">createChain</a></span></span><span class="code" data-ice="signature">(keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -264,7 +264,7 @@ Tupelo RPC server</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-establishCoin">establishCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-establishCoin">establishCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -293,7 +293,7 @@ Tupelo RPC server</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-generateKey">generateKey</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-generateKey">generateKey</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -322,7 +322,7 @@ Tupelo RPC server</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-getTip">getTip</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-getTip">getTip</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -352,7 +352,7 @@ tree with id <code>chainId</code></p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-listChainIds">listChainIds</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-listChainIds">listChainIds</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -381,7 +381,7 @@ tree with id <code>chainId</code></p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-listKeys">listKeys</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-listKeys">listKeys</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -410,7 +410,7 @@ tree with id <code>chainId</code></p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-mintCoin">mintCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-mintCoin">mintCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -440,7 +440,7 @@ tree.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-setData">setData</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, value: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-setData">setData</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, value: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -470,7 +470,7 @@ notary group.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-setOwner">setOwner</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, newOwnerKeys: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-setOwner">setOwner</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, newOwnerKeys: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -710,7 +710,7 @@ the notary group</p>
     
     
     
-    <span class="code" data-ice="name">createChain</span><span class="code" data-ice="signature">(keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">createChain</span><span class="code" data-ice="signature">(keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -751,7 +751,7 @@ the notary group</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-createChainResponse">createChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -783,7 +783,7 @@ the notary group</p>
     
     
     
-    <span class="code" data-ice="name">establishCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">establishCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -845,7 +845,7 @@ the notary group</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-establishCoinResponse">establishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -877,7 +877,7 @@ the notary group</p>
     
     
     
-    <span class="code" data-ice="name">generateKey</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">generateKey</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -901,7 +901,7 @@ the notary group</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-generateKeyResponse">generateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -933,7 +933,7 @@ the notary group</p>
     
     
     
-    <span class="code" data-ice="name">getTip</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">getTip</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -975,7 +975,7 @@ tree with id <code>chainId</code></p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-getTipResponse">getTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1007,7 +1007,7 @@ tree with id <code>chainId</code></p>
     
     
     
-    <span class="code" data-ice="name">listChainIds</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">listChainIds</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1031,7 +1031,7 @@ tree with id <code>chainId</code></p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listChainIdsResponse">listChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1063,7 +1063,7 @@ tree with id <code>chainId</code></p>
     
     
     
-    <span class="code" data-ice="name">listKeys</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">listKeys</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1087,7 +1087,7 @@ tree with id <code>chainId</code></p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-listKeysResponse">listKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1119,7 +1119,7 @@ tree with id <code>chainId</code></p>
     
     
     
-    <span class="code" data-ice="name">mintCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">mintCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1182,7 +1182,7 @@ tree.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-mintCoinResponse">mintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1214,7 +1214,7 @@ tree.</p>
     
     
     
-    <span class="code" data-ice="name">setData</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, value: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">setData</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, value: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1277,7 +1277,7 @@ notary group.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setDataResponse">setDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1309,7 +1309,7 @@ notary group.</p>
     
     
     
-    <span class="code" data-ice="name">setOwner</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, newOwnerKeys: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">setOwner</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, newOwnerKeys: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1366,7 +1366,7 @@ the notary group</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-setOwnerResponse">setOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>

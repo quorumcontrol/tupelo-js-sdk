@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "lib/tupelo.js",
-    "content": "var net = require(\"net\");\nvar fs = require(\"fs\");\nvar protoLoader = require(\"@grpc/proto-loader\");\nvar grpc = require(\"@grpc/grpc-js\");\n\nvar TUPELO_PROTO_FILE = __dirname + \"/proto/tupelo_rpc.proto\";\n\nvar tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});\nvar tupeloPackage = grpc\n    .loadPackageDefinition(tupeloPackageDefinition)\n    .walletrpc;\n\nconst promiseAroundRpcCallback = (toExec) => {\n  return new Promise((resolve, reject) => {\n    var clbk = (err, response) => {\n      if (err == null) {\n        resolve(response);\n      } else {\n        reject(err);\n      }\n    };\n    toExec(clbk);\n  });\n};\n\n/**\n * Represents a connection to a specific Tupelo wallet managed by a remote\n * Tupelo RPC server\n */\nclass TupeloClient {\n  constructor(walletServer, walletCreds) {\n    /**\n     * The URL (\"host:port\") of the RPC wallet server to connect to\n     *\n     * @type {string}\n     */\n    this.walletServer = walletServer;\n\n    /**\n     * The name and passphrase of the wallet to connect to\n     *\n     * @type {Object}\n     * @property {string} walletCreds.walletName - Wallet name\n     * @property {string} walletCreds.passPhrase - Wallet passphrase\n     */\n    this.walletCreds = walletCreds;\n\n    /**\n     * Back end Tupelo Wallet RPC service connection\n     *\n     * @type {WalletRPCService}\n     */\n    this.rpc = new tupeloPackage\n      .WalletRPCService(walletServer, grpc.credentials.createInsecure());\n\n  }\n\n  /**\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<generateKeyResponse, RpcError>}\n   */\n  generateKey() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.generateKey({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} generateKeyResponse\n   * @property {string} keyAddr - Public key address\n   */\n\n\n  /**\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<listKeysResponse, RpcError>}\n   */\n  listKeys() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.listKeys({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} listKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   */\n\n\n  /**\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<createChainResponse, RpcError>}\n   */\n  createChain(keyAddr) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} createChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   */\n\n\n  /**\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<listChainIdsResponse, RpcError>}\n   */\n  listChainIds() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.listChainIds({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} listChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   */\n\n\n  /**\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<getTipResponse, RpcError>}\n   */\n  getTip(chainId) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} getTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   */\n\n\n  /**\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<setDataResponse, RpcError>}\n   */\n  setData(chainId, keyAddr, path, value) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.setData({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        path: path,\n        value: value,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} setDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n\n  /**\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<setOwnerResponse, RpcError>}\n   */\n  setOwner(chainId, keyAddr, newOwnerKeys) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.setOwner({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        newOwnerKeys: newOwnerKeys,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} setOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<establishCoinResponse, RpcError>}\n   */\n  establishCoin(chainId, keyAddr, coinName, maximum) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.establishCoin({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        coinName: coinName,\n        maximum: maximum,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} establishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<mintCoinResponse, RpcError>}\n   */\n  mintCoin(chainId, keyAddr, coinName, amount) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.mintCoin({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        coinName: coinName,\n        amount: amount,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} mintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n  /**\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   */\n}\n\n/**\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n */\nfunction connect(walletServer, walletCreds) {\n  return new TupeloClient(walletServer, walletCreds);\n}\n\nexports.TupeloClient = TupeloClient;\nexports.connect = connect;\n",
+    "content": "var net = require(\"net\");\nvar fs = require(\"fs\");\nvar protoLoader = require(\"@grpc/proto-loader\");\nvar grpc = require(\"@grpc/grpc-js\");\n\nvar TUPELO_PROTO_FILE = __dirname + \"/proto/tupelo_rpc.proto\";\n\nvar tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});\nvar tupeloPackage = grpc\n    .loadPackageDefinition(tupeloPackageDefinition)\n    .walletrpc;\n\nconst promiseAroundRpcCallback = (toExec) => {\n  return new Promise((resolve, reject) => {\n    var clbk = (err, response) => {\n      if (err == null) {\n        resolve(response);\n      } else {\n        reject(err);\n      }\n    };\n    toExec(clbk);\n  });\n};\n\n/**\n * Represents a connection to a specific Tupelo wallet managed by a remote\n * Tupelo RPC server\n */\nclass TupeloClient {\n  constructor(walletServer, walletCreds) {\n    /**\n     * The URL (\"host:port\") of the RPC wallet server to connect to\n     *\n     * @type {string}\n     */\n    this.walletServer = walletServer;\n\n    /**\n     * The name and passphrase of the wallet to connect to\n     *\n     * @type {Object}\n     * @property {string} walletCreds.walletName - Wallet name\n     * @property {string} walletCreds.passPhrase - Wallet passphrase\n     */\n    this.walletCreds = walletCreds;\n\n    /**\n     * Back end Tupelo Wallet RPC service connection\n     *\n     * @type {WalletRPCService}\n     */\n    this.rpc = new tupeloPackage\n      .WalletRPCService(walletServer, grpc.credentials.createInsecure());\n\n  }\n\n  /**\n   * Generate a new chain tree ownership key pair.\n   *\n   * @return {Promise<GenerateKeyResponse, RpcError>}\n   */\n  generateKey() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.generateKey({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} GenerateKeyResponse\n   * @property {string} keyAddr - Public key address\n   */\n\n\n  /**\n   * List the addresses of the keys associated with the connected wallet.\n   *\n   * @return {Promise<ListKeysResponse, RpcError>}\n   */\n  listKeys() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.listKeys({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} ListKeysResponse\n   * @property {string[]} keyAddrs - Public key addresses associated with the connected wallet.\n   */\n\n\n  /**\n   * Create a new chain tree owned by the key at `keyAddr`.\n   *\n   * @param {string} keyAddr - Address of the key that owns the new chain tree.\n   * @return {Promise<CreateChainResponse, RpcError>}\n   */\n  createChain(keyAddr) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} CreateChainResponse\n   * @property {string} chainId - The ID of the new chain tree\n   */\n\n\n  /**\n   * List the IDs of the chain trees associated with the connected wallet.\n   *\n   * @return {Promise<ListChainIdsResponse, RpcError>}\n   */\n  listChainIds() {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.listChainIds({ creds: this.walletCreds }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} ListChainIdsResponse\n   * @property {string[]} chainIds - Chain tree IDs associated with this wallet.\n   */\n\n\n  /**\n   * Get the latest tip (as known by the Tupelo network signers) of the chain\n   * tree with id `chainId`\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   *\n   * @return {Promise<GetTipResponse, RpcError>}\n   */\n  getTip(chainId) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} GetTipResponse\n   * @property {string} tip - The chain tree tip as known by the Tupelo signers\n   */\n\n\n  /**\n   * Store data on a chain tree with a transaction validated by the network's\n   * notary group.\n   *\n   * @param {string} chainId - The ID of the chain tree to store the data on.\n   * @param {string} keyAddr - Address of the key that owns the chain tree.\n   * @param {string} path - '/' delimited path into the chain tree to store the data\n   * @param {string} value - The data to store.\n   *\n   * @return {Promise<SetDataResponse, RpcError>}\n   */\n  setData(chainId, keyAddr, path, value) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.setData({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        path: path,\n        value: value,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} SetDataResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n\n  /**\n   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain\n   * tree with id `chainId` in a transaction, and register that transaction with\n   * the notary group\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string[]} newOwnerKeys - List of key addresses for the new owners\n   *\n   * @return {Promise<SetOwnerResponse, RpcError>}\n   */\n  setOwner(chainId, keyAddr, newOwnerKeys) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.setOwner({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        newOwnerKeys: newOwnerKeys,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} SetOwnerResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   */\n  establishCoin(chainId, keyAddr, coinName, maximum) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.establishCoin({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        coinName: coinName,\n        maximum: maximum,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   */\n  mintCoin(chainId, keyAddr, coinName, amount) {\n    return promiseAroundRpcCallback((clbk) => {\n      this.rpc.mintCoin({\n        creds: this.walletCreds,\n        chainId: chainId,\n        keyAddr: keyAddr,\n        coinName: coinName,\n        amount: amount,\n      }, clbk);\n    });\n  }\n  /**\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   */\n\n\n  /**\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   */\n}\n\n/**\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n */\nfunction connect(walletServer, walletCreds) {\n  return new TupeloClient(walletServer, walletCreds);\n}\n\nexports.TupeloClient = TupeloClient;\nexports.connect = connect;\n",
     "static": true,
     "longname": "/home/zonotope/code/quorum/tupelo.js/lib/tupelo.js",
     "access": "public",
@@ -791,7 +791,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<generateKeyResponse, RpcError>"
+        "Promise<GenerateKeyResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -801,10 +801,10 @@
   {
     "__docId__": 59,
     "kind": "typedef",
-    "name": "generateKeyResponse",
+    "name": "GenerateKeyResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.generateKeyResponse",
+    "longname": "lib/tupelo.js~TupeloClient.GenerateKeyResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -824,7 +824,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "generateKeyResponse"
+      "name": "GenerateKeyResponse"
     }
   },
   {
@@ -842,7 +842,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<listKeysResponse, RpcError>"
+        "Promise<ListKeysResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -852,10 +852,10 @@
   {
     "__docId__": 61,
     "kind": "typedef",
-    "name": "listKeysResponse",
+    "name": "ListKeysResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.listKeysResponse",
+    "longname": "lib/tupelo.js~TupeloClient.ListKeysResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -875,7 +875,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "listKeysResponse"
+      "name": "ListKeysResponse"
     }
   },
   {
@@ -905,7 +905,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<createChainResponse, RpcError>"
+        "Promise<CreateChainResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -914,10 +914,10 @@
   {
     "__docId__": 63,
     "kind": "typedef",
-    "name": "createChainResponse",
+    "name": "CreateChainResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.createChainResponse",
+    "longname": "lib/tupelo.js~TupeloClient.CreateChainResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -937,7 +937,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "createChainResponse"
+      "name": "CreateChainResponse"
     }
   },
   {
@@ -955,7 +955,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<listChainIdsResponse, RpcError>"
+        "Promise<ListChainIdsResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -965,10 +965,10 @@
   {
     "__docId__": 65,
     "kind": "typedef",
-    "name": "listChainIdsResponse",
+    "name": "ListChainIdsResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.listChainIdsResponse",
+    "longname": "lib/tupelo.js~TupeloClient.ListChainIdsResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -988,7 +988,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "listChainIdsResponse"
+      "name": "ListChainIdsResponse"
     }
   },
   {
@@ -1018,7 +1018,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<getTipResponse, RpcError>"
+        "Promise<GetTipResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -1027,10 +1027,10 @@
   {
     "__docId__": 67,
     "kind": "typedef",
-    "name": "getTipResponse",
+    "name": "GetTipResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.getTipResponse",
+    "longname": "lib/tupelo.js~TupeloClient.GetTipResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -1050,7 +1050,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "getTipResponse"
+      "name": "GetTipResponse"
     }
   },
   {
@@ -1110,7 +1110,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<setDataResponse, RpcError>"
+        "Promise<SetDataResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -1119,10 +1119,10 @@
   {
     "__docId__": 69,
     "kind": "typedef",
-    "name": "setDataResponse",
+    "name": "SetDataResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.setDataResponse",
+    "longname": "lib/tupelo.js~TupeloClient.SetDataResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -1142,7 +1142,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "setDataResponse"
+      "name": "SetDataResponse"
     }
   },
   {
@@ -1192,7 +1192,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<setOwnerResponse, RpcError>"
+        "Promise<SetOwnerResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -1201,10 +1201,10 @@
   {
     "__docId__": 71,
     "kind": "typedef",
-    "name": "setOwnerResponse",
+    "name": "SetOwnerResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.setOwnerResponse",
+    "longname": "lib/tupelo.js~TupeloClient.SetOwnerResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -1224,7 +1224,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "setOwnerResponse"
+      "name": "SetOwnerResponse"
     }
   },
   {
@@ -1284,7 +1284,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<establishCoinResponse, RpcError>"
+        "Promise<EstablishCoinResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -1293,10 +1293,10 @@
   {
     "__docId__": 73,
     "kind": "typedef",
-    "name": "establishCoinResponse",
+    "name": "EstablishCoinResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.establishCoinResponse",
+    "longname": "lib/tupelo.js~TupeloClient.EstablishCoinResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -1316,7 +1316,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "establishCoinResponse"
+      "name": "EstablishCoinResponse"
     }
   },
   {
@@ -1376,7 +1376,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<mintCoinResponse, RpcError>"
+        "Promise<MintCoinResponse, RpcError>"
       ],
       "spread": false,
       "description": ""
@@ -1385,10 +1385,10 @@
   {
     "__docId__": 75,
     "kind": "typedef",
-    "name": "mintCoinResponse",
+    "name": "MintCoinResponse",
     "memberof": "lib/tupelo.js~TupeloClient",
     "static": true,
-    "longname": "lib/tupelo.js~TupeloClient.mintCoinResponse",
+    "longname": "lib/tupelo.js~TupeloClient.MintCoinResponse",
     "access": "public",
     "description": "",
     "properties": [
@@ -1408,7 +1408,7 @@
         "Object"
       ],
       "optional": false,
-      "name": "mintCoinResponse"
+      "name": "MintCoinResponse"
     }
   },
   {
@@ -1474,7 +1474,7 @@
     "importPath": "tupelo",
     "importStyle": "{connect}",
     "description": "Connect to a Tupelo wallet managed by a remote Tupelo RPC server.",
-    "lineNumber": 270,
+    "lineNumber": 271,
     "params": [
       {
         "nullable": null,
@@ -1528,7 +1528,7 @@
   },
   {
     "kind": "index",
-    "content": "# Tupelo.JS\n\n## Usage\n\n```javascript\nvar tupelo = require('tupelo');\n\nvar walletCreds = {\n    walletName: 'my-wallet',\n    passPhrase: 'super secret password'\n}\n\nvar client = tupelo.connect('localhost:50051', walletCreds)\n\nclient.generateKey(function(err, response){\n    console.log(response.keyAddr);\n})\n```\n",
+    "content": "# Tupelo.JS\n\n## Usage\n\n```javascript\nvar tupelo = require('tupelo');\n\nvar walletCreds = {\n    walletName: 'my-wallet',\n    passPhrase: 'super secret password'\n};\n\nvar client = tupelo.connect('localhost:50051', walletCreds);\n\nvar success = function(result) {\n  console.log('----- success: -----');\n  console.log(result);\n};\n\nvar error = function(err) {\n  console.log('----- error:   -----');\n  console.log(err);\n};\n\nclient.generateKey().then(success, error);\n// ----- success: -----\n// { keyAddr: '<new key address>' }\n```\n",
     "longname": "/home/zonotope/code/quorum/tupelo.js/README.md",
     "name": "./README.md",
     "static": true,
