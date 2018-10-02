@@ -11,6 +11,7 @@
           "description": "JavaScript RPC bindings to interact with Tupelo",
           "repository": "https://github.com/quorumControl/tupelo.js",
           "logo": "./img/tupelo.png",
+          "image": "./img/tupelo.png",
           "author": "Quorum Control"
         }
       }
