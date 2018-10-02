@@ -33,6 +33,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
@@ -153,6 +154,26 @@ class TupeloClient {
 
 
   /**
+   * Get a Base58 serialized chain tree Export
+   *
+   * @param {string} chainId - The ID of the chain tree to be exported
+   *
+   * @return {Promise&lt;ExportChainTreeResponse, RpcError&gt;}
+   */
+  exportChainTree(chainId) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.exportChainTree({ creds: this.walletCreds, chainId: chainId }, clbk);
+    });
+  }
+  /**
+   * @typedef {Object} ExportChainTreeResponse
+   * @property {Object} chainTree - The serialized chain tree
+   * @property {string[]} chainTree.dag - base58 encoded string array representing the chain tree dag nodes
+   * @property {Map&lt;String, Object} chainTree.signatures - Map of serialized signatures
+   */
+
+
+  /**
    * List the IDs of the chain trees associated with the connected wallet.
    *
    * @return {Promise&lt;ListChainIdsResponse, RpcError&gt;}
@@ -215,6 +236,15 @@ class TupeloClient {
    */
 
 
+  /**
+   * Resolve data stored in a specific chain tree path.
+   *
+   * @param {string} chainId - The ID of the chain tree to retrieve the data from.
+   * @param {string} path - &apos;/&apos; delimited path into the chain tree where the data is stored
+   */
+  resolve(chainId, path) {
+
+  }
 
   /**
    * Add the keys specified by `newOwnerKeys` to the set of owners of the chain

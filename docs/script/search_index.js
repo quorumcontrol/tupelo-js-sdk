@@ -318,6 +318,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#exportchaintree",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-exportChainTree",
+    "lib/tupelo.js~TupeloClient#exportChainTree",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#generatekey",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-generateKey",
     "lib/tupelo.js~TupeloClient#generateKey",
@@ -345,6 +351,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient#mintcoin",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-mintCoin",
     "lib/tupelo.js~TupeloClient#mintCoin",
+    "method"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient#resolve",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-resolve",
+    "lib/tupelo.js~TupeloClient#resolve",
     "method"
   ],
   [
@@ -387,6 +399,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient.establishcoinresponse",
     "typedef/index.html#static-typedef-EstablishCoinResponse",
     "lib/tupelo.js~TupeloClient.EstablishCoinResponse",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.exportchaintreeresponse",
+    "typedef/index.html#static-typedef-ExportChainTreeResponse",
+    "lib/tupelo.js~TupeloClient.ExportChainTreeResponse",
     "typedef"
   ],
   [
