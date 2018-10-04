@@ -306,9 +306,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "lib/tupelo.js~tupeloclient#createchain",
-    "class/lib/tupelo.js~TupeloClient.html#instance-method-createChain",
-    "lib/tupelo.js~TupeloClient#createChain",
+    "lib/tupelo.js~tupeloclient#createchaintree",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-createChainTree",
+    "lib/tupelo.js~TupeloClient#createChainTree",
     "method"
   ],
   [
@@ -333,6 +333,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient#gettip",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-getTip",
     "lib/tupelo.js~TupeloClient#getTip",
+    "method"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient#importchaintree",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-importChainTree",
+    "lib/tupelo.js~TupeloClient#importChainTree",
     "method"
   ],
   [
@@ -441,6 +447,18 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient.rpcerror",
     "typedef/index.html#static-typedef-RpcError",
     "lib/tupelo.js~TupeloClient.RpcError",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.serializedchaintree",
+    "typedef/index.html#static-typedef-SerializedChainTree",
+    "lib/tupelo.js~TupeloClient.SerializedChainTree",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.serializedsignature",
+    "typedef/index.html#static-typedef-SerializedSignature",
+    "lib/tupelo.js~TupeloClient.SerializedSignature",
     "typedef"
   ],
   [

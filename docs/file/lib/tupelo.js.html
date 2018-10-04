@@ -40,6 +40,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedChainTree">SerializedChainTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
 </ul>
@@ -142,16 +144,18 @@ class TupeloClient {
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
    * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
-  createChain(keyAddr) {
+  createChainTree(keyAddr) {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.createChain({ creds: this.walletCreds, keyAddr: keyAddr }, clbk);
+      this.rpc.createChainTree({
+        creds: this.walletCreds,
+        keyAddr: keyAddr
+      }, clbk);
     });
   }
   /**
    * @typedef {Object} CreateChainResponse
    * @property {string} chainId - The ID of the new chain tree
    */
-
 
   /**
    * Get a Base58 serialized chain tree Export
@@ -162,16 +166,33 @@ class TupeloClient {
    */
   exportChainTree(chainId) {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.exportChainTree({ creds: this.walletCreds, chainId: chainId }, clbk);
+      this.rpc.exportChainTree({
+        creds: this.walletCreds,
+        chainId: chainId
+      }, clbk);
     });
   }
   /**
    * @typedef {Object} ExportChainTreeResponse
-   * @property {Object} chainTree - The serialized chain tree
-   * @property {string[]} chainTree.dag - base58 encoded string array representing the chain tree dag nodes
-   * @property {Map&lt;String, Object} chainTree.signatures - Map of serialized signatures
+   * @property {SerializedChainTree} chainTree - The serialized chain tree
    */
 
+
+  /**
+   * Import a serialized chain tree and save it to the wallet.
+   *
+   * @param {string} keyAddr - Address of the key that owns the new chain tree.
+   * @param {SerializedChaintree} chainTree - Serialized chain tree to import
+   */
+  importChainTree(keyAddr, chainTree) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.importChainTree({
+        creds: this.walletCreds,
+        keyAddr: keyAddr,
+        chainTree: chainTree
+      }, clbk);
+    });
+   }
 
   /**
    * List the IDs of the chain trees associated with the connected wallet.
@@ -327,6 +348,18 @@ class TupeloClient {
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
+  /**
+   * @typedef {Object} SerializedChainTree
+   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes
+   * @property {Map&lt;String, SerializedSignature&gt;} signatures - Map of serialized signatures
+   */
+
+  /**
+   * @typedef {Object} SerializedSignature
+   * @property {boolean[]} signers - Array indicating which signers have signed
+   * @property {string} signature - base58 encoded signature
+   * @property {string} type - Signature type
+   */
 
   /**
    * @typedef {Object} RpcError - gRPC error object
