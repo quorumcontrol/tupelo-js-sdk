@@ -96,7 +96,7 @@ message SetDataRequest {
   string chain_id = 2;
   string key_addr = 3;
   string path = 4;
-  string value = 5;
+  bytes value = 5;
 }
 
 message SetDataResponse {

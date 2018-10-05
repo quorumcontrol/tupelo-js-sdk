@@ -39,6 +39,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedChainTree">SerializedChainTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
@@ -49,10 +50,12 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/tupelo.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var net = require(&quot;net&quot;);
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var cbor = require(&quot;cbor&quot;);
+
 var fs = require(&quot;fs&quot;);
-var protoLoader = require(&quot;@grpc/proto-loader&quot;);
+var net = require(&quot;net&quot;);
 var grpc = require(&quot;@grpc/grpc-js&quot;);
+var protoLoader = require(&quot;@grpc/proto-loader&quot;);
 
 var TUPELO_PROTO_FILE = __dirname + &quot;/proto/tupelo_rpc.proto&quot;;
 
@@ -242,12 +245,13 @@ class TupeloClient {
    */
   setData(chainId, keyAddr, path, value) {
     return promiseAroundRpcCallback((clbk) =&gt; {
+      var cborData = cbor.Encoder.encode(value);
       this.rpc.setData({
         creds: this.walletCreds,
         chainId: chainId,
         keyAddr: keyAddr,
         path: path,
-        value: value,
+        value: cborData,
       }, clbk);
     });
   }
@@ -264,8 +268,33 @@ class TupeloClient {
    * @param {string} path - &apos;/&apos; delimited path into the chain tree where the data is stored
    */
   resolve(chainId, path) {
+    return new Promise((resolve, reject) =&gt; {
+      var clbk = (err, response) =&gt; {
+        if (err == null) {
+          cbor.Decoder.decodeAll(response.data)
+            .then((decoded) =&gt; {
+              response.data = decoded;
+              resolve(response);
+            },(err) =&gt; {
+              reject(err);
+            });
+        } else {
+          reject(err);
+        }
+      };
 
+      this.rpc.resolve({
+        creds: this.walletCreds,
+        chainId: chainId,
+        path: path,
+      }, clbk);
+    });
   }
+  /**
+   * @typedef {Object} ResolveResponse
+   * @property {string} remainingPath - The path remaining after retrieving the data
+   * @property {Object} data - The data retrieved
+   */
 
   /**
    * Add the keys specified by `newOwnerKeys` to the set of owners of the chain

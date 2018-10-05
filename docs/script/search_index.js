@@ -444,6 +444,12 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "lib/tupelo.js~tupeloclient.resolveresponse",
+    "typedef/index.html#static-typedef-ResolveResponse",
+    "lib/tupelo.js~TupeloClient.ResolveResponse",
+    "typedef"
+  ],
+  [
     "lib/tupelo.js~tupeloclient.rpcerror",
     "typedef/index.html#static-typedef-RpcError",
     "lib/tupelo.js~TupeloClient.RpcError",
