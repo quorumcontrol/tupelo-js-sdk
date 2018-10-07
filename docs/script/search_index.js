@@ -478,5 +478,11 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-SetOwnerResponse",
     "lib/tupelo.js~TupeloClient.SetOwnerResponse",
     "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.walletcredentials",
+    "typedef/index.html#static-typedef-WalletCredentials",
+    "lib/tupelo.js~TupeloClient.WalletCredentials",
+    "typedef"
   ]
 ]

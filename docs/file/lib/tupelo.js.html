@@ -45,6 +45,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WalletCredentials">WalletCredentials</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -93,11 +94,15 @@ class TupeloClient {
     /**
      * The name and passphrase of the wallet to connect to
      *
-     * @type {Object}
-     * @property {string} walletCreds.walletName - Wallet name
-     * @property {string} walletCreds.passPhrase - Wallet passphrase
+     * @type {WalletCredentials}
      */
     this.walletCreds = walletCreds;
+    /**
+     * @typedef {Object} WalletCredentials
+     * @property {string} walletName - Wallet name
+     * @property {string} passPhrase - Wallet passphrase
+     */
+
 
     /**
      * Back end Tupelo Wallet RPC service connection
