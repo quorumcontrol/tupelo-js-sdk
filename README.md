@@ -45,7 +45,7 @@ You can install Tupelo.js with npm. Run the following command from your
 project's directory to add Tupelo.js to the npm project's dependencies.
 
 ```shell
-npm install tupelo
+npm install tupelo-client
 ```
 
 #### Usage

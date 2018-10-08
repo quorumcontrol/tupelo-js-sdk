@@ -1,5 +1,5 @@
 {
-  "name": "tupelo",
+  "name": "tupelo-client",
   "version": "0.0.1-alpha0",
   "description": "Tupelo JavaScript client",
   "main": "lib/tupelo.js",
