@@ -91,18 +91,18 @@ var keyAddr, chainId;
 // generate the key and chain tree
 client.generateKey()
   .then(function(generateKeyResult) {
-    keyAddr = generateKeyResult.keyAddr;
-    return client.generateChainTree(keyAddr);
+    keyAddr = generateKeyResponse.keyAddr;
+    return client.createChainTree(keyAddr);
   }, function(err) {
     console.log("-----------Error generating key:----------");
     console.log(err);
-  }).then(function(generateChainResult) {
-    chainId = generateChainResult.chainId;
+  }).then(function(createChainResponse) {
+    chainId = createChainResponse.chainId;
     console.log("----------Chain ID:----------");
     console.log(chainId);
     return chainId;
   }, function(err) {
-    console.log("-----------Error generating chain tree:----------");
+    console.log("-----------Error creating chain tree:----------");
     console.log(err);
   });
 ```
