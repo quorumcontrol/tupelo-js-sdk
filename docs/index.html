@@ -45,32 +45,85 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WalletCredentials">WalletCredentials</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.JS</h1><h2 id="usage">Usage</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">var tupelo = require(&apos;tupelo&apos;);
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.js</h1><p>A Node.js API client to both manage chain trees, and submit chain tree
+transactions to a notary group for verification through connecting with a Tupelo
+RPC server.</p>
+<h2 id="installation-and-usage">Installation and Usage</h2><p>The Node.js client cannot directly manage chain trees or connect to the notary
+group, so node applications must instead proxy through an RPC server to work
+with Tupelo.</p>
+<h3 id="rpc-server">RPC Server</h3><h4 id="installation">Installation</h4><p>To install the server, first contact us to get a Tupelo binary for your platform
+and save it in within your command <code>PATH</code> variable. If you do not wish to save
+the binary in your <code>PATH</code>, you can still execute it with the fully qualified or
+relative path to your chosen location for the binary.</p>
+<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> with the proper options. <code>qc3</code> also
+includes a help command that lists the available options and their descriptions:</p>
+<pre><code class="lang-shell"><code class="source-code prettyprint">% &gt; ./qc3 help rpc-server
+Launches a Tupelo RPC Server
 
-var walletCreds = {
+Usage:
+  qc3 rpc-server [flags]
+
+Flags:
+  -k, --bootstrap-keys string           which public keys to bootstrap the notary groups with
+  -s, --bootstrap-private-keys string   which private keys to bootstrap the notary groups with
+  -h, --help                            help for rpc-server
+  -t, --tls                             Encrypt connections with TLS/SSL (default true)
+  -C, --tls-cert string                 TLS certificate file
+  -K, --tls-key string                  TLS private key file
+
+Global Flags:</code>
+</code></pre>
+<h3 id="node-js-client">Node.js Client</h3><h4 id="installation">Installation</h4><p>You can install Tupelo.js with npm. Run the following command from your
+project&apos;s directory to add Tupelo.js to the npm project&apos;s dependencies.</p>
+<pre><code class="lang-shell"><code class="source-code prettyprint">npm install tupelo</code>
+</code></pre>
+<h4 id="usage">Usage</h4><p>Once you have installed the dependency, require the <code>tupelo</code> module from your
+application.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var tupelo = require(&apos;tupelo&apos;);</code>
+</code></pre>
+<h5 id="wallet-credentials">Wallet Credentials</h5><p>The RPC server stores all the chain trees it has access to in an encrypted
+wallet with a unique name and secret pass phrase. You must initialize the client
+with the correct wallet credentials for the wallet you&apos;d like to unlock for each
+RPC request. The wallet credentials should be an <a href="./docs/typedef/index.html#static-typedef-WalletCredentials">WalletCredentials
+object</a> with
+<code>walletName</code> and <code>passPhrase</code> keys.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var walletCreds = {
     walletName: &apos;my-wallet&apos;,
     passPhrase: &apos;super secret password&apos;
-};
+};</code>
+</code></pre>
+<h5 id="obtaining-an-rpc-client-connection">Obtaining an RPC client connection</h5><p>The <code>connect</code> function takes the host:port string of the RPC server and the
+wallet credentials object as arguments and returns an RPC client connection.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);</code>
+</code></pre>
+<h5 id="using-the-api">Using the API</h5><p>Here is how to create a new key and then a chain tree owned by that key as an
+example. See the <a href="./docs/index.html">API docs</a> for more information about the
+full Tupelo.js API.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">// save the key address and chain tree id for later use
+var keyAddr, chainId;
 
-var client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);
-
-var success = function(result) {
-  console.log(&apos;----- success: -----&apos;);
-  console.log(result);
-};
-
-var error = function(err) {
-  console.log(&apos;----- error:   -----&apos;);
-  console.log(err);
-};
-
-client.generateKey().then(success, error);
-// ----- success: -----
-// { keyAddr: &apos;&lt;new key address&gt;&apos; }</code>
+// generate the key and chain tree
+client.generateKey()
+  .then(function(generateKeyResult) {
+    keyAddr = generateKeyResult.keyAddr;
+    return client.generateChainTree(keyAddr);
+  }, function(err) {
+    console.log(&quot;-----------Error generating key:----------&quot;);
+    console.log(err);
+  }).then(function(generateChainResult) {
+    chainId = generateChainResult.chainId;
+    console.log(&quot;----------Chain ID:----------&quot;);
+    console.log(chainId);
+    return chainId;
+  }, function(err) {
+    console.log(&quot;-----------Error generating chain tree:----------&quot;);
+    console.log(err);
+  });</code>
 </code></pre>
 </div>
 </div>
