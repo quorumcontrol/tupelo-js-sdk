@@ -53,7 +53,7 @@ Once you have installed the dependency, require the `tupelo` module from your
 application.
 
 ```javascript
-var tupelo = require('tupelo');
+var tupelo = require('tupelo-client');
 ```
 
 ##### Wallet Credentials
