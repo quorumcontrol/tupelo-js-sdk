@@ -138,7 +138,7 @@ yargs.command('register [name passphrase]', 'Register a new timestamp chain tree
           passPhrase: argv.passPhrase
       };
 
-      stamper.register(creds);
+      register(creds);
   }).command('stamp [name passphrase]', 'Save a timestamp', (yargs) => {
       yargs.positional('name', {
         describe: 'Name of the wallet where  the chain tree is saved.'
@@ -153,7 +153,7 @@ yargs.command('register [name passphrase]', 'Register a new timestamp chain tree
           passPhrase: argv.passPhrase
       };
 
-      stamper.stamp(creds, argv.n);
+      stamp(creds, argv.n);
   }).command('tally [name passphrase -n <notes>]', 'Print saved timestamps', (yargs) => {
       yargs.positional('name', {
         describe: 'Name of the wallet where  the chain tree is saved.'
@@ -166,5 +166,5 @@ yargs.command('register [name passphrase]', 'Register a new timestamp chain tree
           passPhrase: argv.passPhrase
       };
 
-      stamper.printTally(creds);
+      printTally(creds);
   }).argv;
