@@ -49,7 +49,7 @@ npm install tupelo-client
 ```
 
 #### Usage
-Once you have installed the dependency, require the `tupelo` module from your
+Once you have installed the dependency, require the `tupelo-client` module from your
 application.
 
 ```javascript
