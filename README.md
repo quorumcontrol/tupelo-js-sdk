@@ -45,7 +45,7 @@ You can install Tupelo.js with npm. Run the following command from your
 project's directory to add Tupelo.js to the npm project's dependencies.
 
 ```shell
-npm install tupelo
+npm install tupelo-client
 ```
 
 #### Usage
@@ -53,7 +53,7 @@ Once you have installed the dependency, require the `tupelo` module from your
 application.
 
 ```javascript
-var tupelo = require('tupelo');
+var tupelo = require('tupelo-client');
 ```
 
 ##### Wallet Credentials
@@ -92,17 +92,17 @@ var keyAddr, chainId;
 client.generateKey()
   .then(function(generateKeyResult) {
     keyAddr = generateKeyResult.keyAddr;
-    return client.generateChainTree(keyAddr);
+    return client.createChainTree(keyAddr);
   }, function(err) {
     console.log("-----------Error generating key:----------");
     console.log(err);
-  }).then(function(generateChainResult) {
-    chainId = generateChainResult.chainId;
+  }).then(function(createChainResponse) {
+    chainId = createChainResponse.chainId;
     console.log("----------Chain ID:----------");
     console.log(chainId);
     return chainId;
   }, function(err) {
-    console.log("-----------Error generating chain tree:----------");
+    console.log("-----------Error creating chain tree:----------");
     console.log(err);
   });
 ```
