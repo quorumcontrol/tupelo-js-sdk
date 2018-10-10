@@ -91,7 +91,7 @@ var keyAddr, chainId;
 // generate the key and chain tree
 client.generateKey()
   .then(function(generateKeyResult) {
-    keyAddr = generateKeyResponse.keyAddr;
+    keyAddr = generateKeyResult.keyAddr;
     return client.createChainTree(keyAddr);
   }, function(err) {
     console.log("-----------Error generating key:----------");
