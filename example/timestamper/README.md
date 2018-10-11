@@ -12,6 +12,8 @@ First you must ensure that you have installed Node.js and a Tupelo RPC server is
 listening on "localhost:50051". See the Tupelo.js README for more details if
 necessary before running this sample program.
 
+NOTE: restarting the local RPC server will wipe out all data, therefore existing registered chains will no longer work. Either remove the `.timestamp-identifiers` state file to get a clean slate, or simply register a new timestamp chain tree.
+
 #### Usage
 Once the RPC is running you can run three basic timestamping commands with
 stamper.js. After you register, you can save notes over time and display them in
