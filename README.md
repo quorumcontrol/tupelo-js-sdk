@@ -17,9 +17,13 @@ the binary in your `PATH`, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.
 
 #### Usage
-You can run the RPC server by invoking `qc3` with the proper options. `qc3` also
-includes a help command that lists the available options and their descriptions:
+You can run the RPC server by invoking `qc3` with the proper options. To get started quickly in local development, simply run:
+```shell
+qc3 rpc-server --local-network 3
+```
+This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data!
 
+`qc3` also includes a help command that lists the available options and their descriptions:
 ```shell
 % > ./qc3 help rpc-server
 Launches a Tupelo RPC Server
@@ -31,11 +35,10 @@ Flags:
   -k, --bootstrap-keys string           which public keys to bootstrap the notary groups with
   -s, --bootstrap-private-keys string   which private keys to bootstrap the notary groups with
   -h, --help                            help for rpc-server
-  -t, --tls                             Encrypt connections with TLS/SSL (default false)
+  -l, --local-network int               Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
+  -t, --tls                             Encrypt connections with TLS/SSL
   -C, --tls-cert string                 TLS certificate file
   -K, --tls-key string                  TLS private key file
-
-Global Flags:
 ```
 
 ### Node.js Client
