@@ -60,8 +60,11 @@ with Tupelo.</p>
 and save it in within your command <code>PATH</code> variable. If you do not wish to save
 the binary in your <code>PATH</code>, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.</p>
-<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> with the proper options. <code>qc3</code> also
-includes a help command that lists the available options and their descriptions:</p>
+<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> with the proper options. To get started quickly in local development, simply run:</p>
+<pre><code class="lang-shell"><code class="source-code prettyprint">qc3 rpc-server --local-network 3</code>
+</code></pre>
+<p>This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data stored by the local group of signers!  (You may still have some retained in your application.)</p>
+<p><code>qc3</code> also includes a help command that lists the available options and their descriptions:</p>
 <pre><code class="lang-shell"><code class="source-code prettyprint">% &gt; ./qc3 help rpc-server
 Launches a Tupelo RPC Server
 
@@ -72,11 +75,10 @@ Flags:
   -k, --bootstrap-keys string           which public keys to bootstrap the notary groups with
   -s, --bootstrap-private-keys string   which private keys to bootstrap the notary groups with
   -h, --help                            help for rpc-server
-  -t, --tls                             Encrypt connections with TLS/SSL (default false)
+  -l, --local-network int               Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
+  -t, --tls                             Encrypt connections with TLS/SSL
   -C, --tls-cert string                 TLS certificate file
-  -K, --tls-key string                  TLS private key file
-
-Global Flags:</code>
+  -K, --tls-key string                  TLS private key file</code>
 </code></pre>
 <h3 id="node-js-client">Node.js Client</h3><h4 id="installation">Installation</h4><p>You can install Tupelo.js with npm. Run the following command from your
 project&apos;s directory to add Tupelo.js to the npm project&apos;s dependencies.</p>
