@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "tupelo~tupeloclient",
+    "tupelo-client~tupeloclient",
     "class/lib/tupelo.js~TupeloClient.html",
-    "<span>TupeloClient</span> <span class=\"search-result-import-path\">tupelo</span>",
+    "<span>TupeloClient</span> <span class=\"search-result-import-path\">tupelo-client</span>",
     "class"
   ],
   [
-    "tupelo~connect",
+    "tupelo-client~connect",
     "function/index.html#static-function-connect",
-    "<span>connect</span> <span class=\"search-result-import-path\">tupelo</span>",
+    "<span>connect</span> <span class=\"search-result-import-path\">tupelo-client</span>",
     "function"
   ],
   [
