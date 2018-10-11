@@ -21,7 +21,7 @@ You can run the RPC server by invoking `qc3` with the proper options. To get sta
 ```shell
 qc3 rpc-server --local-network 3
 ```
-This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data!
+This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data stored by the local group of signers!  (You may still have some retained in your application.)
 
 `qc3` also includes a help command that lists the available options and their descriptions:
 ```shell
