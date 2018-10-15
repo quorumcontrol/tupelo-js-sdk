@@ -4,11 +4,13 @@ transactions to a notary group for verification through connecting with a Tupelo
 RPC server.
 
 ## Installation and Usage
+Basic installation and usage instructions are below. Visit the full
+[API Documentation](https://quorumcontrol.github.io/tupelo.js/) for more.
+
+### RPC Server
 The Node.js client cannot directly manage chain trees or connect to the notary
 group, so node applications must instead proxy through an RPC server to work
 with Tupelo.
-
-### RPC Server
 
 #### Installation
 To install the server, first contact us to get a Tupelo binary for your platform
