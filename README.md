@@ -1,5 +1,5 @@
 # Tupelo.js
-A Node.js API client to both manage chain trees, and submit chain tree
+A Node.js API client to both manage Tupelo chain trees, and submit chain tree
 transactions to a notary group for verification through connecting with a Tupelo
 RPC server.
 
@@ -12,18 +12,23 @@ with Tupelo.
 
 #### Installation
 To install the server, first contact us to get a Tupelo binary for your platform
-and save it in within your command `PATH` variable. If you do not wish to save
-the binary in your `PATH`, you can still execute it with the fully qualified or
+and save it within your command `PATH` variable. If you do not wish to save the
+binary in your `PATH`, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.
 
 #### Usage
-You can run the RPC server by invoking `qc3` with the proper options. To get started quickly in local development, simply run:
+You can run the RPC server by invoking `qc3` with the proper options. To get
+started quickly in local development, simply run:
 ```shell
 qc3 rpc-server --local-network 3
 ```
-This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data stored by the local group of signers!  (You may still have some retained in your application.)
 
-`qc3` also includes a help command that lists the available options and their descriptions:
+This will spin up a 3 signer local network and bind the rpc server to it. Note
+that restarting the server will remove all data stored by the local group of
+signers! (You may still have some retained in your application.)
+
+`qc3` also includes a help command that lists the available options and their
+descriptions:
 ```shell
 % > ./qc3 help rpc-server
 Launches a Tupelo RPC Server
@@ -52,8 +57,8 @@ npm install tupelo-client
 ```
 
 #### Usage
-Once you have installed the dependency, require the `tupelo-client` module from your
-application.
+Once you have installed the dependency, require the `tupelo-client` module from
+your application.
 
 ```javascript
 var tupelo = require('tupelo-client');
