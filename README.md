@@ -19,16 +19,29 @@ binary in your `PATH`, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.
 
 #### Usage
-You can run the RPC server by invoking `qc3` with the proper options. To get
-started quickly in local development, simply run:
+You can run the RPC server by invoking `qc3` along with the necessary options.
+
+##### Connecting to a Local Notary Group
+To get started quickly for local development, simply run:
 ```shell
 qc3 rpc-server --local-network 3
 ```
 
-This will spin up a 3 signer local network and bind the rpc server to it. Note
-that restarting the server will remove all data stored by the local group of
-signers! (You may still have some retained in your application.)
+This will spin up a 3 signer local, in-memory notary group after first
+generating three random keypairs for the group to use. Then it will start the
+RPC server and bind it to the local notary group. Note that restarting the
+server will remove all data stored by the local notary group signers! (You may
+still have some retained application state.)
 
+##### Connecting to the Tupelo Alpha Test Network
+To connect to the Tupelo alpha test network notary group, contact us to get the
+public key file corresponding to the running network. Then you can start the
+server and bind it to the notary group with:
+```shell
+qc3 rpc-server --bootstrap-keys <public key file>
+```
+
+##### Other Options
 `qc3` also includes a help command that lists the available options and their
 descriptions:
 ```shell
@@ -39,13 +52,12 @@ Usage:
   qc3 rpc-server [flags]
 
 Flags:
-  -k, --bootstrap-keys string           which public keys to bootstrap the notary groups with
-  -s, --bootstrap-private-keys string   which private keys to bootstrap the notary groups with
-  -h, --help                            help for rpc-server
-  -l, --local-network int               Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
-  -t, --tls                             Encrypt connections with TLS/SSL
-  -C, --tls-cert string                 TLS certificate file
-  -K, --tls-key string                  TLS private key file
+  -k, --bootstrap-keys string   which public keys to bootstrap the notary groups with
+  -h, --help                    help for rpc-server
+  -l, --local-network int       Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
+  -t, --tls                     Encrypt connections with TLS/SSL
+  -C, --tls-cert string         TLS certificate file
+  -K, --tls-key string          TLS private key file
 ```
 
 ### Node.js Client
