@@ -50,21 +50,34 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.js</h1><p>A Node.js API client to both manage chain trees, and submit chain tree
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.js</h1><p>A Node.js API client to both manage Tupelo chain trees, and submit chain tree
 transactions to a notary group for verification through connecting with a Tupelo
 RPC server.</p>
-<h2 id="installation-and-usage">Installation and Usage</h2><p>The Node.js client cannot directly manage chain trees or connect to the notary
+<h2 id="installation-and-usage">Installation and Usage</h2><p>Basic installation and usage instructions are below. Visit the full
+<a href="https://quorumcontrol.github.io/tupelo.js/">API Documentation</a> for more.</p>
+<h3 id="rpc-server">RPC Server</h3><p>The Node.js client cannot directly manage chain trees or connect to the notary
 group, so node applications must instead proxy through an RPC server to work
 with Tupelo.</p>
-<h3 id="rpc-server">RPC Server</h3><h4 id="installation">Installation</h4><p>To install the server, first contact us to get a Tupelo binary for your platform
-and save it in within your command <code>PATH</code> variable. If you do not wish to save
-the binary in your <code>PATH</code>, you can still execute it with the fully qualified or
+<h4 id="installation">Installation</h4><p>To install the server, first contact us to get a Tupelo binary for your platform
+and save it within your command <code>PATH</code> variable. If you do not wish to save the
+binary in your <code>PATH</code>, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.</p>
-<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> with the proper options. To get started quickly in local development, simply run:</p>
+<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> along with the necessary options.</p>
+<h5 id="connecting-to-a-local-notary-group">Connecting to a Local Notary Group</h5><p>To get started quickly for local development, simply run:</p>
 <pre><code class="lang-shell"><code class="source-code prettyprint">qc3 rpc-server --local-network 3</code>
 </code></pre>
-<p>This will spin up a 3 signer local network and bind the rpc server to it. Note that restarting the server will remove all data stored by the local group of signers!  (You may still have some retained in your application.)</p>
-<p><code>qc3</code> also includes a help command that lists the available options and their descriptions:</p>
+<p>This will spin up a 3 signer local, in-memory notary group after first
+generating three random keypairs for the group to use. Then it will start the
+RPC server and bind it to the local notary group. Note that restarting the
+server will remove all data stored by the local notary group signers! (You may
+still have some retained application state.)</p>
+<h5 id="connecting-to-the-tupelo-alpha-test-network">Connecting to the Tupelo Alpha Test Network</h5><p>To connect to the Tupelo alpha test network notary group, contact us to get the
+public key file corresponding to the running network. Then you can start the
+server and bind it to the notary group with:</p>
+<pre><code class="lang-shell"><code class="source-code prettyprint">qc3 rpc-server --bootstrap-keys &lt;public key file&gt;</code>
+</code></pre>
+<h5 id="other-options">Other Options</h5><p><code>qc3</code> also includes a help command that lists the available options and their
+descriptions:</p>
 <pre><code class="lang-shell"><code class="source-code prettyprint">% &gt; ./qc3 help rpc-server
 Launches a Tupelo RPC Server
 
@@ -72,20 +85,19 @@ Usage:
   qc3 rpc-server [flags]
 
 Flags:
-  -k, --bootstrap-keys string           which public keys to bootstrap the notary groups with
-  -s, --bootstrap-private-keys string   which private keys to bootstrap the notary groups with
-  -h, --help                            help for rpc-server
-  -l, --local-network int               Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
-  -t, --tls                             Encrypt connections with TLS/SSL
-  -C, --tls-cert string                 TLS certificate file
-  -K, --tls-key string                  TLS private key file</code>
+  -k, --bootstrap-keys string   which public keys to bootstrap the notary groups with
+  -h, --help                    help for rpc-server
+  -l, --local-network int       Run local network with randomly generated keys, specifying number of nodes as argument. Mutually exlusive with bootstrap-*
+  -t, --tls                     Encrypt connections with TLS/SSL
+  -C, --tls-cert string         TLS certificate file
+  -K, --tls-key string          TLS private key file</code>
 </code></pre>
 <h3 id="node-js-client">Node.js Client</h3><h4 id="installation">Installation</h4><p>You can install Tupelo.js with npm. Run the following command from your
 project&apos;s directory to add Tupelo.js to the npm project&apos;s dependencies.</p>
 <pre><code class="lang-shell"><code class="source-code prettyprint">npm install tupelo-client</code>
 </code></pre>
-<h4 id="usage">Usage</h4><p>Once you have installed the dependency, require the <code>tupelo-client</code> module from your
-application.</p>
+<h4 id="usage">Usage</h4><p>Once you have installed the dependency, require the <code>tupelo-client</code> module from
+your application.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">var tupelo = require(&apos;tupelo-client&apos;);</code>
 </code></pre>
 <h5 id="wallet-credentials">Wallet Credentials</h5><p>The RPC server stores all the chain trees it has access to in an encrypted
