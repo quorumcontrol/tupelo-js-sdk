@@ -39,6 +39,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RegisterResponse">RegisterResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedChainTree">SerializedChainTree</a></span></span></li>
@@ -121,9 +122,14 @@ full Tupelo.js API.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">// save the key address and chain tree id for later use
 var keyAddr, chainId;
 
-// generate the key and chain tree
-client.generateKey()
-  .then(function(generateKeyResult) {
+// register a new wallet, then generate a key and chain tree stored there
+client.register()
+  .then(function(registerResult) {
+    return generateKey()
+  }, function(err) {
+    console.log(&quot;-----------Error registering wallet:----------&quot;);
+    console.log(err);
+  }).then(function(generateKeyResult) {
     keyAddr = generateKeyResult.keyAddr;
     return client.createChainTree(keyAddr);
   }, function(err) {
