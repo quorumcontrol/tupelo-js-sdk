@@ -47,7 +47,10 @@ function register(creds) {
     let client = connect(creds);
     var keyAddr, chainId;
 
-    client.generateKey()
+    client.registerWallet()
+        .then(function() {
+            return client.generateKey()
+        })
         .then(function(generateKeyResult) {
             keyAddr = generateKeyResult.keyAddr;
             return client.createChainTree(keyAddr);
