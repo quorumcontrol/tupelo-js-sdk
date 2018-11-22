@@ -39,6 +39,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RegisterWalletResponse">RegisterWalletResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedChainTree">SerializedChainTree</a></span></span></li>
@@ -113,6 +114,21 @@ class TupeloClient {
       .WalletRPCService(walletServer, grpc.credentials.createInsecure());
 
   }
+
+  /**
+   * Register a new tupelo chain tree wallet.
+   *
+   * @return {Promise&lt;RegisterWalletResponse, RpcError&gt;}
+   */
+  registerWallet() {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.registerWallet({ creds: this.walletCreds }, clbk);
+    });
+  }
+  /**
+   * @typedef {Object} RegisterWalletResponse
+   * @property {string} walletName - The name of the newly registered wallet
+   */
 
   /**
    * Generate a new chain tree ownership key pair.
