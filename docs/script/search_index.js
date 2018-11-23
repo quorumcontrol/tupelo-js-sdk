@@ -360,6 +360,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#register",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-register",
+    "lib/tupelo.js~TupeloClient#register",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#resolve",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-resolve",
     "lib/tupelo.js~TupeloClient#resolve",
@@ -441,6 +447,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient.mintcoinresponse",
     "typedef/index.html#static-typedef-MintCoinResponse",
     "lib/tupelo.js~TupeloClient.MintCoinResponse",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.registerresponse",
+    "typedef/index.html#static-typedef-RegisterResponse",
+    "lib/tupelo.js~TupeloClient.RegisterResponse",
     "typedef"
   ],
   [

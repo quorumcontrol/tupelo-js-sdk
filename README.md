@@ -110,9 +110,14 @@ full Tupelo.js API.
 // save the key address and chain tree id for later use
 var keyAddr, chainId;
 
-// generate the key and chain tree
-client.generateKey()
-  .then(function(generateKeyResult) {
+// register a new wallet, then generate a key and chain tree stored there
+client.register()
+  .then(function(registerResult) {
+    return generateKey()
+  }, function(err) {
+    console.log("-----------Error registering wallet:----------");
+    console.log(err);
+  }).then(function(generateKeyResult) {
     keyAddr = generateKeyResult.keyAddr;
     return client.createChainTree(keyAddr);
   }, function(err) {
