@@ -1,0 +1,10 @@
+{
+  "name": "petition",
+  "version": "0.0.1",
+  "description": "",
+  "main": "stamper.js",
+  "author": "",
+  "dependencies": {
+    "tupelo-client": "git+ssh://git@github.com:QuorumControl/tupelo.js.git#798486d76e6662372ddfc838d1e942c7fcbb04c4"
+  }
+}
