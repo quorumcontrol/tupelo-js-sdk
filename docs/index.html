@@ -63,9 +63,9 @@ with Tupelo.</p>
 and save it within your command <code>PATH</code> variable. If you do not wish to save the
 binary in your <code>PATH</code>, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.</p>
-<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>qc3</code> along with the necessary options.</p>
+<h4 id="usage">Usage</h4><p>You can run the RPC server by invoking <code>tupelo</code> along with the necessary options.</p>
 <h5 id="connecting-to-a-local-notary-group">Connecting to a Local Notary Group</h5><p>To get started quickly for local development, simply run:</p>
-<pre><code class="lang-shell"><code class="source-code prettyprint">qc3 rpc-server --local-network 3</code>
+<pre><code class="lang-shell"><code class="source-code prettyprint">tupelo rpc-server --local-network 3</code>
 </code></pre>
 <p>This will spin up a 3 signer local, in-memory notary group after first
 generating three random keypairs for the group to use. Then it will start the
@@ -75,15 +75,15 @@ still have some retained application state.)</p>
 <h5 id="connecting-to-the-tupelo-alpha-test-network">Connecting to the Tupelo Alpha Test Network</h5><p>To connect to the Tupelo alpha test network notary group, contact us to get the
 public key file corresponding to the running network. Then you can start the
 server and bind it to the notary group with:</p>
-<pre><code class="lang-shell"><code class="source-code prettyprint">qc3 rpc-server --bootstrap-keys &lt;public key file&gt;</code>
+<pre><code class="lang-shell"><code class="source-code prettyprint">tupelo rpc-server --bootstrap-keys &lt;public key file&gt;</code>
 </code></pre>
-<h5 id="other-options">Other Options</h5><p><code>qc3</code> also includes a help command that lists the available options and their
+<h5 id="other-options">Other Options</h5><p><code>tupelo</code> also includes a help command that lists the available options and their
 descriptions:</p>
-<pre><code class="lang-shell"><code class="source-code prettyprint">% &gt; ./qc3 help rpc-server
+<pre><code class="lang-shell"><code class="source-code prettyprint">% &gt; ./tupelo help rpc-server
 Launches a Tupelo RPC Server
 
 Usage:
-  qc3 rpc-server [flags]
+  tupelo rpc-server [flags]
 
 Flags:
   -k, --bootstrap-keys string   which public keys to bootstrap the notary groups with

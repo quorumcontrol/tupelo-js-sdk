@@ -19,12 +19,12 @@ binary in your `PATH`, you can still execute it with the fully qualified or
 relative path to your chosen location for the binary.
 
 #### Usage
-You can run the RPC server by invoking `qc3` along with the necessary options.
+You can run the RPC server by invoking `tupelo` along with the necessary options.
 
 ##### Connecting to a Local Notary Group
 To get started quickly for local development, simply run:
 ```shell
-qc3 rpc-server --local-network 3
+tupelo rpc-server --local-network 3
 ```
 
 This will spin up a 3 signer local, in-memory notary group after first
@@ -38,18 +38,18 @@ To connect to the Tupelo alpha test network notary group, contact us to get the
 public key file corresponding to the running network. Then you can start the
 server and bind it to the notary group with:
 ```shell
-qc3 rpc-server --bootstrap-keys <public key file>
+tupelo rpc-server --bootstrap-keys <public key file>
 ```
 
 ##### Other Options
-`qc3` also includes a help command that lists the available options and their
+`tupelo` also includes a help command that lists the available options and their
 descriptions:
 ```shell
-% > ./qc3 help rpc-server
+% > ./tupelo help rpc-server
 Launches a Tupelo RPC Server
 
 Usage:
-  qc3 rpc-server [flags]
+  tupelo rpc-server [flags]
 
 Flags:
   -k, --bootstrap-keys string   which public keys to bootstrap the notary groups with
