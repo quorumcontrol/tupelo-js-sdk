@@ -5,7 +5,7 @@
   "main": "stamper.js",
   "author": "Quorum Control",
   "dependencies": {
-    "tupelo-client": "0.0.1-alpha0",
+    "tupelo-client": "0.0.2-alpha1",
     "yargs": "^12.0.2"
   }
 }
