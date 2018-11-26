@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const tupelo = require('tupelo-client');
+const tupelo = require('../../lib/tupelo.js');
 const fs = require('fs');
 const yargs = require('yargs');
 
