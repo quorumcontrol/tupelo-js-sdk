@@ -113,7 +113,7 @@ var keyAddr, chainId;
 // register a new wallet, then generate a key and chain tree stored there
 client.register()
   .then(function(registerResult) {
-    return generateKey()
+    return client.generateKey()
   }, function(err) {
     console.log("-----------Error registering wallet:----------");
     console.log(err);
