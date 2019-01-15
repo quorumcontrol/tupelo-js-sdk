@@ -3,15 +3,17 @@
 const tupelo = require('tupelo-client');
 const fs = require('fs');
 const yargs = require('yargs');
+const assert = require('assert');
 
 /* configuration file i/o functions */
 const localIdentifierPath = './.timestamper-identifiers';
 
-
-function identifierObj(key, chain) {
+function identifierObj(keyAddr, chainId) {
+  assert.notEqual(keyAddr, null);
+  assert.notEqual(chainId, null);
   return {
-    keyAddr: key,
-    chainId: chain
+    keyAddr: keyAddr,
+    chainId: chainId,
   };
 };
 
@@ -20,12 +22,12 @@ function dataFileExists() {
 }
 
 function writeIdentifierFile(configObj) {
-  let data = JSON.stringify(configObj);
+  const  data = JSON.stringify(configObj);
   fs.writeFileSync(localIdentifierPath, data);
 };
 
 function readIdentifierFile() {
-  let raw = fs.readFileSync(localIdentifierPath);
+  const raw = fs.readFileSync(localIdentifierPath);
   return JSON.parse(raw);
 };
 
@@ -44,8 +46,8 @@ function connect(creds) {
 };
 
 function register(creds) {
-  let client = connect(creds);
-  var keyAddr, chainId;
+  const client = connect(creds);
+  let keyAddr;
 
   client.register()
     .then(function(registerResult){
@@ -60,8 +62,8 @@ function register(creds) {
       console.log("Error generating key.");
       console.log(err);
     }).then(function(createChainResponse) {
-      chainId = createChainResponse.chainId;
-      let obj = identifierObj(keyAddr, chainId);
+      const chainId = createChainResponse.chainId;
+      const obj = identifierObj(keyAddr, chainId);
       console.log("Saving registration.");
       return writeIdentifierFile(obj);
     }, function(err) {
@@ -77,16 +79,16 @@ function stamp(creds, notes) {
     return;
   }
 
-  let identifiers = readIdentifierFile();
-  let client = connect(creds);
+  const identifiers = readIdentifierFile();
+  const client = connect(creds);
 
-  let time = currentTime();
-  let entry = time + NOTE_SEPARATOR + notes;
+  const time = currentTime();
+  const entry = time + NOTE_SEPARATOR + notes;
 
   client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH)
     .then(function(resp) {
-      let stamps,
-          data = resp.data;
+      let stamps;
+      const data = resp.data;
 
       if (data) {
         stamps = data + STAMP_SEPARATOR + entry;
@@ -133,45 +135,47 @@ function printTally(creds) {
     });
 };
 
-yargs.command('register [name passphrase]', 'Register a new timestamp chain tree', (yargs) => {
-  yargs.positional('name', {
-    describe: 'Name of the wallet to save the chain tree.'
-  }).positional('passphrase', {
-    describe: 'Wallet passphrase.'
-  });
-}, (argv) => {
-  let creds = {
-    walletName: argv.name,
-    passPhrase: argv.passPhrase
-  };
+yargs
+  .demandCommand(1)
+  .command('register <name> <passphrase>', 'Register a new timestamp chain tree', (yargs) => {
+    yargs.positional('name', {
+      describe: 'Name of the wallet to save the chain tree.'
+    }).positional('passphrase', {
+      describe: 'Wallet passphrase.'
+    });
+  }, (argv) => {
+    const creds = {
+      walletName: argv.name,
+      passPhrase: argv.passPhrase
+    };
 
-  register(creds);
-}).command('stamp [name passphrase]', 'Save a timestamp', (yargs) => {
-  yargs.positional('name', {
-    describe: 'Name of the wallet where  the chain tree is saved.'
-  }).positional('passphrase', {
-    describe: 'Wallet passphrase.'
-  }).describe('n', 'Save a note')
-    .alias('n', 'note')
-    .demand('n');
-}, (argv) => {
-  let creds = {
-    walletName: argv.name,
-    passPhrase: argv.passPhrase
-  };
+    register(creds);
+  }).command('stamp <name> <passphrase>', 'Save a timestamp', (yargs) => {
+    yargs.positional('name', {
+      describe: 'Name of the wallet where  the chain tree is saved.'
+    }).positional('passphrase', {
+      describe: 'Wallet passphrase.'
+    }).describe('n', 'Save a note')
+      .alias('n', 'note')
+      .demand('n');
+  }, (argv) => {
+    const creds = {
+      walletName: argv.name,
+      passPhrase: argv.passPhrase
+    };
 
-  stamp(creds, argv.n);
-}).command('tally [name passphrase -n <notes>]', 'Print saved timestamps', (yargs) => {
-  yargs.positional('name', {
-    describe: 'Name of the wallet where  the chain tree is saved.'
-  }).positional('passphrase', {
-    describe: 'Wallet passphrase.'
-  });
-}, (argv) => {
-  let creds = {
-    walletName: argv.name,
-    passPhrase: argv.passPhrase
-  };
+    stamp(creds, argv.n);
+  }).command('tally <name> <passphrase> -n <notes>', 'Print saved timestamps', (yargs) => {
+    yargs.positional('name', {
+      describe: 'Name of the wallet where  the chain tree is saved.'
+    }).positional('passphrase', {
+      describe: 'Wallet passphrase.'
+    });
+  }, (argv) => {
+    const creds = {
+      walletName: argv.name,
+      passPhrase: argv.passPhrase
+    };
 
-  printTally(creds);
-}).argv;
+    printTally(creds);
+  }).argv;
