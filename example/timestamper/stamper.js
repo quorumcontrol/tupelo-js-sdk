@@ -8,25 +8,25 @@ const assert = require('assert');
 /* configuration file i/o functions */
 const localIdentifierPath = './.timestamper-identifiers';
 
-function identifierObj(keyAddr, chainId) {
+const identifierObj = (keyAddr, chainId) => {
   assert.notEqual(keyAddr, null);
   assert.notEqual(chainId, null);
   return {
-    keyAddr: keyAddr,
-    chainId: chainId,
+    keyAddr,
+    chainId,
   };
 };
 
-function dataFileExists() {
+const dataFileExists = () => {
   return fs.existsSync(localIdentifierPath);
-}
+};
 
-function writeIdentifierFile(configObj) {
-  const  data = JSON.stringify(configObj);
+const writeIdentifierFile = (configObj) => {
+  const data = JSON.stringify(configObj);
   fs.writeFileSync(localIdentifierPath, data);
 };
 
-function readIdentifierFile() {
+const readIdentifierFile = () => {
   const raw = fs.readFileSync(localIdentifierPath);
   return JSON.parse(raw);
 };
@@ -37,46 +37,28 @@ const CHAIN_TREE_STAMP_PATH = 'timestamper/stamps';
 const STAMP_SEPARATOR = ',,';
 const NOTE_SEPARATOR = '-:';
 
-function currentTime() {
+const currentTime = () => {
   return new Date().getTime().toString();
 };
 
-function connect(creds) {
+const connect = (creds) => {
   return tupelo.connect(TUPELO_HOST, creds);
 };
 
-function register(creds) {
+const register = async (creds) => {
   const client = connect(creds);
-  let keyAddr;
 
-  client.register()
-    .then(function(registerResult){
-      return client.generateKey()
-    }, function(err) {
-      console.log("Error registering wallet.");
-      console.log(err);
-    }).then(function(generateKeyResult) {
-      keyAddr = generateKeyResult.keyAddr;
-      return client.createChainTree(keyAddr);
-    }, function(err) {
-      console.log("Error generating key.");
-      console.log(err);
-    }).then(function(createChainResponse) {
-      const chainId = createChainResponse.chainId;
-      const obj = identifierObj(keyAddr, chainId);
-      console.log("Saving registration.");
-      return writeIdentifierFile(obj);
-    }, function(err) {
-      console.log("Error creating chain tree.");
-      console.log(err);
-    });
+  await client.register();
+  const {keyAddr,} = await client.generateKey();
+  const {chainId,} = await client.createChainTree(keyAddr);
+  const obj = identifierObj(keyAddr, chainId);
+  writeIdentifierFile(obj);
 };
 
-function stamp(creds, notes) {
+const stamp = async (creds, notes) => {
   if (!dataFileExists()) {
-    console.log("Error: you must register before you can record stamps.");
-
-    return;
+    console.error('Error: you must register before you can record stamps.');
+    process.exit(1);
   }
 
   const identifiers = readIdentifierFile();
@@ -85,54 +67,34 @@ function stamp(creds, notes) {
   const time = currentTime();
   const entry = time + NOTE_SEPARATOR + notes;
 
-  client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH)
-    .then(function(resp) {
-      let stamps;
-      const data = resp.data;
-
-      if (data) {
-        stamps = data + STAMP_SEPARATOR + entry;
-      } else {
-        stamps = entry;
-      }
-
-      return client.setData(identifiers.chainId,
-                            identifiers.keyAddr,
-                            CHAIN_TREE_STAMP_PATH,
-                            stamps);
-    }, function(err) {
-      console.log('Error reading stamps: ' + err);
-    }).then(function(setDataResult) {
-      console.log('Stamp recorded');
-    }, function(err) {
-      console.log('Error recording stamp: ' + err);
-    });
-};
-
-function printTally(creds) {
-  if (!dataFileExists()) {
-    console.log("Error: you must register before you can print stamp tallies.");
-
-    return;
+  const {data,} = await client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
+  let stamps;
+  if (data) {
+    stamps = data + STAMP_SEPARATOR + entry;
+  } else {
+    stamps = entry;
   }
 
-  let identifiers = readIdentifierFile();
-  let client = connect(creds);
-  let path = CHAIN_TREE_STAMP_PATH;
+  await client.setData(identifiers.chainId, identifiers.keyAddr, CHAIN_TREE_STAMP_PATH, stamps);
+};
 
-  client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH)
-    .then(function(resp) {
-      let tally = resp.data[0];
+const printTally = async (creds) => {
+  if (!dataFileExists()) {
+    console.error('Error: you must register before you can print stamp tallies.');
+    process.exit(1);
+  }
 
-      if (tally) {
-        console.log('----Timestamps----');
-        console.log(tally.replace(new RegExp(STAMP_SEPARATOR, 'g'), '\n'));
-      } else {
-        console.log('----No Stamps-----');
-      }
-    }, function(err) {
-      console.log('Error fetching tally: '  + err);
-    });
+  const identifiers = readIdentifierFile();
+  const client = connect(creds);
+
+  const {data,} = await client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
+  const tally = data[0];
+  if (tally) {
+    console.log('----Timestamps----');
+    console.log(tally.replace(new RegExp(STAMP_SEPARATOR, 'g'), '\n'));
+  } else {
+    console.log('----No Stamps-----');
+  }
 };
 
 yargs
@@ -149,7 +111,11 @@ yargs
       passPhrase: argv.passPhrase
     };
 
-    register(creds);
+    register(creds)
+      .catch((err) => {
+        console.error(err);
+        process.exit(1);
+      });
   }).command('stamp <name> <passphrase>', 'Save a timestamp', (yargs) => {
     yargs.positional('name', {
       describe: 'Name of the wallet where  the chain tree is saved.'
@@ -164,7 +130,11 @@ yargs
       passPhrase: argv.passPhrase
     };
 
-    stamp(creds, argv.n);
+    stamp(creds, argv.n)
+      .catch((err) => {
+        console.error(err);
+        process.exit(1);
+      });
   }).command('tally <name> <passphrase>', 'Print saved timestamps', (yargs) => {
     yargs.positional('name', {
       describe: 'Name of the wallet where  the chain tree is saved.'
@@ -176,6 +146,9 @@ yargs
       walletName: argv.name,
       passPhrase: argv.passPhrase
     };
-
-    printTally(creds);
+    printTally(creds)
+      .catch((err) => {
+        console.error(err);
+        process.exit(1);
+      });
   }).argv;
