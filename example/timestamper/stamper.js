@@ -165,7 +165,7 @@ yargs
     };
 
     stamp(creds, argv.n);
-  }).command('tally <name> <passphrase> -n <notes>', 'Print saved timestamps', (yargs) => {
+  }).command('tally <name> <passphrase>', 'Print saved timestamps', (yargs) => {
     yargs.positional('name', {
       describe: 'Name of the wallet where  the chain tree is saved.'
     }).positional('passphrase', {
