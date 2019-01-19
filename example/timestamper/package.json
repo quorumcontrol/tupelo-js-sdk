@@ -7,8 +7,5 @@
   "dependencies": {
     "tupelo-client": "file:../../",
     "yargs": "^12.0.2"
-  },
-  "devDependencies": {
-    "eslint": "^5.12.0"
   }
 }
