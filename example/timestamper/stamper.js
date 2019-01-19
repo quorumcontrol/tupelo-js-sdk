@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-
 const tupelo = require('tupelo-client');
 const fs = require('fs');
 const yargs = require('yargs');
@@ -31,7 +30,6 @@ const readIdentifierFile = () => {
   return JSON.parse(raw);
 };
 
-/* tupelo chain tree manipulation functions */
 const TUPELO_HOST = 'localhost:50051';
 const CHAIN_TREE_STAMP_PATH = 'timestamper/stamps';
 const STAMP_SEPARATOR = ',,';
@@ -137,7 +135,7 @@ yargs
       });
   }).command('tally <name> <passphrase>', 'Print saved timestamps', (yargs) => {
     yargs.positional('name', {
-      describe: 'Name of the wallet where  the chain tree is saved.'
+      describe: 'Name of the wallet where the chain tree is saved.'
     }).positional('passphrase', {
       describe: 'Wallet passphrase.'
     });
