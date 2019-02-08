@@ -11,13 +11,13 @@ describe("ownership transfer", function() {
             walletName: "alice-test",
             passPhrase: "test",
         });
-        // await alice.register();
+        await alice.register();
 
         const bob = Tupelo.connect(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
-        // await bob.register();
+        await bob.register();
 
         let resp = await bob.generateKey();
         const bobKey = resp.keyAddr;
@@ -50,13 +50,13 @@ describe("ownership transfer", function() {
             walletName: "alice-test",
             passPhrase: "test",
         });
-        await alice.register();
+        // await alice.register();
 
         const bob = Tupelo.connect(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
-        await bob.register();
+        // await bob.register();
 
         let resp = await bob.generateKey();
         const bobKey = resp.keyAddr;
