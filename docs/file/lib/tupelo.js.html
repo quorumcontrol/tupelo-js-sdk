@@ -205,14 +205,12 @@ class TupeloClient {
   /**
    * Import a serialized chain tree and save it to the wallet.
    *
-   * @param {string} keyAddr - Address of the key that owns the new chain tree.
    * @param {SerializedChaintree} chainTree - Serialized chain tree to import
    */
-  importChainTree(keyAddr, chainTree) {
+  importChainTree(chainTree) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.importChainTree({
         creds: this.walletCreds,
-        keyAddr: keyAddr,
         chainTree: chainTree
       }, clbk);
     });
@@ -400,6 +398,7 @@ class TupeloClient {
 
   /**
    * @typedef {Object} SerializedChainTree
+   * @property {string} tip - Hash of the latest root tree node.
    * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes
    * @property {Map&lt;String, SerializedSignature&gt;} signatures - Map of serialized signatures
    */
