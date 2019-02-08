@@ -37,8 +37,7 @@ describe("ownership transfer", function() {
         assert.equal(result.data, "hi");
 
         let chainTreeExport = await alice.exportChainTree(chainId);
-        
-        resp = await bob.importChainTree(bobKey, chainTreeExport);
+        resp = await bob.importChainTree(chainTreeExport.chainTree);
         console.log(resp);
 
         return Promise.resolve(true);
@@ -50,12 +49,14 @@ describe("ownership transfer", function() {
             walletName: "alice-test",
             passPhrase: "test",
         });
+        // TODO: clear RPC server state between tests automatically
         // await alice.register();
 
         const bob = Tupelo.connect(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
+        // TODO: clear RPC server state between tests automatically
         // await bob.register();
 
         let resp = await bob.generateKey();
