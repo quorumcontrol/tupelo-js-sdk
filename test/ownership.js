@@ -1,6 +1,6 @@
 const assert = require("assert");
 const Tupelo = require("../lib/tupelo");
-const TUPELO_HOST = 'localhost:50051';
+const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051'
 
 describe("ownership transfer", function() {
     this.timeout(30000);
@@ -12,14 +12,14 @@ describe("ownership transfer", function() {
             passPhrase: "test",
         });
         // TODO: clear RPC server state between tests automatically
-        // await alice.register();
+        await alice.register();
 
         const bob = Tupelo.connect(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
         // TODO: clear RPC server state between tests automatically
-        // await bob.register();
+        await bob.register();
 
         let resp = await bob.generateKey();
         const bobKey = resp.keyAddr;
