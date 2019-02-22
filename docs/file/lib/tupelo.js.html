@@ -46,6 +46,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfig">StorageAdapterConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForBadger">StorageAdapterConfigForBadger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForIpld">StorageAdapterConfigForIpld</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WalletCredentials">WalletCredentials</a></span></span></li>
 </ul>
 </div>
@@ -166,13 +169,15 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
    * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
-  createChainTree(keyAddr) {
+  createChainTree(keyAddr, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.createChainTree({
         creds: this.walletCreds,
-        keyAddr: keyAddr
+        keyAddr: keyAddr,
+        storageAdapter: storageAdapter
       }, clbk);
     });
   }
@@ -206,12 +211,17 @@ class TupeloClient {
    * Import a serialized chain tree and save it to the wallet.
    *
    * @param {SerializedChaintree} chainTree - Serialized chain tree to import
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
+   * 
+   * 
+   * StorageAdapterConfig
    */
-  importChainTree(chainTree) {
+  importChainTree(chainTree, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.importChainTree({
         creds: this.walletCreds,
-        chainTree: chainTree
+        chainTree: chainTree,
+        storageAdapter: storageAdapter
       }, clbk);
     });
   }
@@ -394,6 +404,23 @@ class TupeloClient {
   /**
    * @typedef {Object} MintCoinResponse
    * @property {string} tip - The chain tree tip after the transaction.
+   */
+
+   /**
+   * @typedef {Object} StorageAdapterConfigForBadger
+   * @property {string} path - Path for badger db
+   */
+
+   /**
+   * @typedef {Object} StorageAdapterConfigForIpld
+   * @property {string} path - Path to ipld initialized configuration
+   * @property {boolean} [online=false] - if true, starts IPFS node in online mode
+   */
+
+   /**
+   * @typedef {Object} StorageAdapterConfig
+   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter
+   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter
    */
 
   /**
