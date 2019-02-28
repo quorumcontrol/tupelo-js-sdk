@@ -4,7 +4,7 @@
   "description": "Tupelo JavaScript client",
   "main": "lib/tupelo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "docker run -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/src quorumcontrol/tupelo-integration-runner"
   },
   "repository": {
     "type": "git",
