@@ -65,7 +65,7 @@ const stamp = async (creds, notes) => {
   const time = currentTime();
   const entry = time + NOTE_SEPARATOR + notes;
 
-  const {data,} = await client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
+  const {data,} = await client.resolveData(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
   let stamps;
   if (data) {
     stamps = data + STAMP_SEPARATOR + entry;
@@ -85,7 +85,7 @@ const printTally = async (creds) => {
   const identifiers = readIdentifierFile();
   const client = connect(creds);
 
-  const {data,} = await client.resolve(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
+  const {data,} = await client.resolveData(identifiers.chainId, CHAIN_TREE_STAMP_PATH);
   const tally = data[0];
   if (tally) {
     console.log('----Timestamps----');

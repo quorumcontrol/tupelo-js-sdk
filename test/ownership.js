@@ -32,15 +32,15 @@ describe("ownership transfer", function() {
 
         resp = await alice.setData(chainId, aliceKey, "path/to/here", "hi");
         assert.notEqual(resp.tip, null);
-    
-        let result = await alice.resolve(chainId, "path/to/here");
+
+        let result = await alice.resolveData(chainId, "path/to/here");
         assert.equal(result.data, "hi");
 
         let chainTreeExport = await alice.exportChainTree(chainId);
         resp = await bob.importChainTree(chainTreeExport.chainTree);
         assert.equal(resp.chainId, chainId)
 
-        result = await bob.resolve(chainId, "path/to/here");
+        result = await bob.resolveData(chainId, "path/to/here");
         assert.equal(result.data, "hi");
 
         return Promise.resolve(true);
@@ -74,13 +74,13 @@ describe("ownership transfer", function() {
         resp = await alice.setData(chainId, aliceKey, "path/to/here", "hi");
         assert.notEqual(resp.tip, null);
     
-        let result = await alice.resolve(chainId, "path/to/here");
+        let result = await alice.resolveData(chainId, "path/to/here");
         assert.equal(result.data, "hi");
 
         resp = await alice.setOwner(chainId, aliceKey, [aliceKey, bobKey]);
         assert.notEqual(resp.tip, null);
 
-        result = await alice.resolve(chainId, "path/to/here");
+        result = await alice.resolveData(chainId, "path/to/here");
         assert.equal(result.data, "hi");
 
         return Promise.resolve(true);
@@ -116,7 +116,7 @@ describe("ownership transfer", function() {
 
         // make sure all sets can be read back
         for (let i = 0; i < 5; i++) {
-            let result = await alice.resolve(chainId, "path/to/" + i.toString());
+            let result = await alice.resolveData(chainId, "path/to/" + i.toString());
             assert.equal(result.data, "value: " + i.toString());
         }
 
@@ -132,7 +132,7 @@ describe("ownership transfer", function() {
 
         // make sure bob can read all the previous history
         for (let i = 0; i < 5; i++) {
-            let result = await bob.resolve(chainId, "path/to/" + i.toString());
+            let result = await bob.resolveData(chainId, "path/to/" + i.toString());
             assert.equal(result.data, "value: " + i.toString());
         }
 
@@ -140,7 +140,7 @@ describe("ownership transfer", function() {
         resp = await bob.setData(chainId, bobKey, "path/to/bobvalue", "bobdidthis");
         assert.notEqual(resp.tip, null);
 
-        result = await bob.resolve(chainId, "path/to/bobvalue");
+        result = await bob.resolveData(chainId, "path/to/bobvalue");
         assert.equal(result.data, "bobdidthis");
 
         return Promise.resolve(true);
