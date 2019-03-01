@@ -133,3 +133,9 @@ client.register()
     console.log(err);
   });
 ```
+
+## Tests
+
+There are some RPC integration tests that can be run against a live Tupelo RPC
+server by running `npm test`. Note that you will need a working Docker
+environment setup.

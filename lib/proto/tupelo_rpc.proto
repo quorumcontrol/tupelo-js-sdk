@@ -8,15 +8,18 @@ message Credentials {
   string pass_phrase = 2;
 }
 
-message SerializedSignature {
+message SerializableSignature {
   repeated bool signers = 1;
-  string signature = 2;
+  bytes signature = 2;
   string type = 3;
 }
 
-message SerializedChainTree {
-  repeated string dag = 1;
-  map<string, SerializedSignature> signatures = 2;
+message SerializableChainTree {
+  repeated bytes dag = 1;
+  map<string, SerializableSignature> signatures = 2;
+  // tip is a string because of compatability with the javascript layer
+  // which cannot seem to parse a golang cid.Bytes()
+  string tip = 3;
 }
 
 message RegisterWalletRequest {
@@ -27,9 +30,26 @@ message RegisterWalletResponse {
   string wallet_name = 1;
 }
 
+message StorageAdapterConfigForBadger {
+  string path = 1;
+}
+
+message StorageAdapterConfigForIpld {
+  string path = 1;
+  bool offline = 2;
+}
+
+message StorageAdapterConfig {
+  oneof adapter_config {
+    StorageAdapterConfigForBadger badger = 1;
+    StorageAdapterConfigForIpld ipld = 2;
+  }
+}
+
 message GenerateChainRequest {
   Credentials creds = 1;
   string key_addr = 2;
+  StorageAdapterConfig storage_adapter = 3;
 }
 
 message GenerateChainResponse {
@@ -42,13 +62,14 @@ message ExportChainRequest {
 }
 
 message ExportChainResponse {
-  SerializedChainTree chain_tree = 1;
+  string chain_tree = 1;
 }
 
 message ImportChainRequest {
   Credentials creds = 1;
-  string key_addr = 2;
-  SerializedChainTree chain_tree = 3;
+  // index 2 is a deleted key, intentionally omitted
+  string chain_tree = 3;
+  StorageAdapterConfig storage_adapter = 4;
 }
 
 message ImportChainResponse {
@@ -161,3 +182,4 @@ service WalletRPCService {
   rpc EstablishCoin (EstablishCoinRequest) returns (EstablishCoinResponse);
   rpc MintCoin (MintCoinRequest) returns (MintCoinResponse);
 }
+

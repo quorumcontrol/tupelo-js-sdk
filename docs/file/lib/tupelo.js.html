@@ -46,6 +46,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfig">StorageAdapterConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForBadger">StorageAdapterConfigForBadger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForIpld">StorageAdapterConfigForIpld</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WalletCredentials">WalletCredentials</a></span></span></li>
 </ul>
 </div>
@@ -78,6 +81,8 @@ const promiseAroundRpcCallback = (toExec) =&gt; {
     toExec(clbk);
   });
 };
+
+const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;
 
 /**
  * Represents a connection to a specific Tupelo wallet managed by a remote
@@ -166,13 +171,15 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
    * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
-  createChainTree(keyAddr) {
+  createChainTree(keyAddr, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.createChainTree({
         creds: this.walletCreds,
-        keyAddr: keyAddr
+        keyAddr: keyAddr,
+        storageAdapter: storageAdapter
       }, clbk);
     });
   }
@@ -205,15 +212,18 @@ class TupeloClient {
   /**
    * Import a serialized chain tree and save it to the wallet.
    *
-   * @param {string} keyAddr - Address of the key that owns the new chain tree.
    * @param {SerializedChaintree} chainTree - Serialized chain tree to import
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
+   * 
+   * 
+   * StorageAdapterConfig
    */
-  importChainTree(keyAddr, chainTree) {
+  importChainTree(chainTree, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.importChainTree({
         creds: this.walletCreds,
-        keyAddr: keyAddr,
-        chainTree: chainTree
+        chainTree: chainTree,
+        storageAdapter: storageAdapter
       }, clbk);
     });
   }
@@ -281,12 +291,13 @@ class TupeloClient {
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
-
   /**
-   * Resolve data stored in a specific chain tree path.
+   * Resolve data from the root of the chain tree
    *
    * @param {string} chainId - The ID of the chain tree to retrieve the data from.
    * @param {string} path - &apos;/&apos; delimited path into the chain tree where the data is stored
+   *
+   * @return {Promise&lt;ResolveResponse, RpcError&gt;}
    */
   resolve(chainId, path) {
     return new Promise((resolve, reject) =&gt; {
@@ -316,6 +327,25 @@ class TupeloClient {
    * @property {string} remainingPath - The path remaining after retrieving the data
    * @property {Object} data - The data retrieved
    */
+
+  /**
+   * Resolve data from the user portion of the chain tree
+   *
+   * @param {string} chainId - The ID of the chain tree to retrieve the data from.
+   * @param {string} path - &apos;/&apos; delimited path inside of tree/data where the data is stored
+   *
+   * @return {Promise&lt;ResolveResponse, RpcError&gt;}
+   */
+  resolveData(chainId, path) {
+    let resolvePath = CHAINTREE_DATA_PATH
+    let trimmedPath = path ? path.replace(/^\/+/g, &apos;&apos;) : path
+
+    if (trimmedPath) {
+      resolvePath += &quot;/&quot; + trimmedPath
+    }
+
+    return this.resolve(chainId, resolvePath)
+  }
 
   /**
    * Add the keys specified by `newOwnerKeys` to the set of owners of the chain
@@ -398,8 +428,26 @@ class TupeloClient {
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
+   /**
+   * @typedef {Object} StorageAdapterConfigForBadger
+   * @property {string} path - Path for badger db
+   */
+
+   /**
+   * @typedef {Object} StorageAdapterConfigForIpld
+   * @property {string} path - Path to ipld initialized configuration
+   * @property {boolean} [online=false] - if true, starts IPFS node in online mode
+   */
+
+   /**
+   * @typedef {Object} StorageAdapterConfig
+   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter
+   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter
+   */
+
   /**
    * @typedef {Object} SerializedChainTree
+   * @property {string} tip - Hash of the latest root tree node.
    * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes
    * @property {Map&lt;String, SerializedSignature&gt;} signatures - Map of serialized signatures
    */

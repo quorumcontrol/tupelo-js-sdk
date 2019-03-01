@@ -46,6 +46,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SerializedSignature">SerializedSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataResponse">SetDataResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerResponse">SetOwnerResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfig">StorageAdapterConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForBadger">StorageAdapterConfigForBadger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfigForIpld">StorageAdapterConfigForIpld</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WalletCredentials">WalletCredentials</a></span></span></li>
 </ul>
 </div>
@@ -125,7 +128,7 @@ var keyAddr, chainId;
 // register a new wallet, then generate a key and chain tree stored there
 client.register()
   .then(function(registerResult) {
-    return generateKey()
+    return client.generateKey()
   }, function(err) {
     console.log(&quot;-----------Error registering wallet:----------&quot;);
     console.log(err);

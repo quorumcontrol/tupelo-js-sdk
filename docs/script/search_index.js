@@ -372,6 +372,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#resolvedata",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-resolveData",
+    "lib/tupelo.js~TupeloClient#resolveData",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#rpc",
     "class/lib/tupelo.js~TupeloClient.html#instance-member-rpc",
     "lib/tupelo.js~TupeloClient#rpc",
@@ -489,6 +495,24 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient.setownerresponse",
     "typedef/index.html#static-typedef-SetOwnerResponse",
     "lib/tupelo.js~TupeloClient.SetOwnerResponse",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.storageadapterconfig",
+    "typedef/index.html#static-typedef-StorageAdapterConfig",
+    "lib/tupelo.js~TupeloClient.StorageAdapterConfig",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.storageadapterconfigforbadger",
+    "typedef/index.html#static-typedef-StorageAdapterConfigForBadger",
+    "lib/tupelo.js~TupeloClient.StorageAdapterConfigForBadger",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.storageadapterconfigforipld",
+    "typedef/index.html#static-typedef-StorageAdapterConfigForIpld",
+    "lib/tupelo.js~TupeloClient.StorageAdapterConfigForIpld",
     "typedef"
   ],
   [

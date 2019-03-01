@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+# allow pull to fail for offline use
+docker pull quorumcontrol/tupelo-integration-runner || true
+
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/src quorumcontrol/tupelo-integration-runner
