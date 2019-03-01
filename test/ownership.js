@@ -2,6 +2,8 @@ const assert = require("assert");
 const Tupelo = require("../lib/tupelo");
 const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051'
 
+// TODO: Remove the "oldResult" tests once resolveData support is released.
+
 describe("ownership transfer", function() {
     this.timeout(30000);
 
@@ -34,14 +36,16 @@ describe("ownership transfer", function() {
         assert.notEqual(resp.tip, null);
 
         let result = await alice.resolveData(chainId, "path/to/here");
-        assert.equal(result.data, "hi");
+        let oldResult = await alice.resolve(chainId, "path/to/here");
+        assert.ok(result.data == "hi" || oldResult.data == "hi");
 
         let chainTreeExport = await alice.exportChainTree(chainId);
         resp = await bob.importChainTree(chainTreeExport.chainTree);
         assert.equal(resp.chainId, chainId)
 
         result = await bob.resolveData(chainId, "path/to/here");
-        assert.equal(result.data, "hi");
+        oldResult = await bob.resolve(chainId, "path/to/here");
+        assert.ok(result.data == "hi" || oldResult.data == "hi");
 
         return Promise.resolve(true);
     });
@@ -73,15 +77,17 @@ describe("ownership transfer", function() {
 
         resp = await alice.setData(chainId, aliceKey, "path/to/here", "hi");
         assert.notEqual(resp.tip, null);
-    
+
         let result = await alice.resolveData(chainId, "path/to/here");
-        assert.equal(result.data, "hi");
+        let oldResult = await alice.resolve(chainId, "path/to/here");
+        assert.ok(result.data == "hi" || oldResult.data == "hi");
 
         resp = await alice.setOwner(chainId, aliceKey, [aliceKey, bobKey]);
         assert.notEqual(resp.tip, null);
 
         result = await alice.resolveData(chainId, "path/to/here");
-        assert.equal(result.data, "hi");
+        oldResult = await alice.resolve(chainId, "path/to/here");
+        assert.ok(result.data == "hi" || oldResult.data == "hi");
 
         return Promise.resolve(true);
     });
@@ -117,7 +123,8 @@ describe("ownership transfer", function() {
         // make sure all sets can be read back
         for (let i = 0; i < 5; i++) {
             let result = await alice.resolveData(chainId, "path/to/" + i.toString());
-            assert.equal(result.data, "value: " + i.toString());
+            let oldResult = await alice.resolve(chainId, "path/to/" + i.toString());
+            assert.ok(result.data == "value: " + i.toString() || oldResult.data == "value: " + i.toString());
         }
 
         // transfer ownership to be shared with Alice and bob
@@ -133,7 +140,8 @@ describe("ownership transfer", function() {
         // make sure bob can read all the previous history
         for (let i = 0; i < 5; i++) {
             let result = await bob.resolveData(chainId, "path/to/" + i.toString());
-            assert.equal(result.data, "value: " + i.toString());
+            let oldResult = await bob.resolve(chainId, "path/to/" + i.toString());
+            assert.ok(result.data == "value: " + i.toString() || oldResult.data == "value: " + i.toString());
         }
 
         // and can himself write to the tree
@@ -141,7 +149,8 @@ describe("ownership transfer", function() {
         assert.notEqual(resp.tip, null);
 
         result = await bob.resolveData(chainId, "path/to/bobvalue");
-        assert.equal(result.data, "bobdidthis");
+        oldResult = await bob.resolve(chainId, "path/to/bobvalue");
+        assert.ok(result.data == "bobdidthis" || oldResult.data == "bobdidthis");
 
         return Promise.resolve(true);
     });
