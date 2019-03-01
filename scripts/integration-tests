@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
+
+if [[ -z "${SOURCE_MOUNT}" ]]; then
+  SOURCE_MOUNT="-v ${PWD}:/src"
+fi
 
 # allow pull to fail for offline use
 docker pull quorumcontrol/tupelo-integration-runner || true
 
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/src quorumcontrol/tupelo-integration-runner
+docker run -v /var/run/docker.sock:/var/run/docker.sock ${SOURCE_MOUNT} quorumcontrol/tupelo-integration-runner
