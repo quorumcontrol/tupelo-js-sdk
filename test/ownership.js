@@ -9,14 +9,14 @@ describe("ownership transfer", function() {
 
     it("can export and import", async ()=> {
 
-        const alice = Tupelo.connect(TUPELO_HOST, {
+        const alice = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "alice-test",
             passPhrase: "test",
         });
         // TODO: clear RPC server state between tests automatically
         await alice.register();
 
-        const bob = Tupelo.connect(TUPELO_HOST, {
+        const bob = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
@@ -52,14 +52,14 @@ describe("ownership transfer", function() {
 
     it("can transfer from alice to bob", async ()=> {
 
-        const alice = Tupelo.connect(TUPELO_HOST, {
+        const alice = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "alice-test",
             passPhrase: "test",
         });
         // TODO: clear RPC server state between tests automatically
         // await alice.register();
 
-        const bob = Tupelo.connect(TUPELO_HOST, {
+        const bob = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
@@ -93,14 +93,14 @@ describe("ownership transfer", function() {
     });
 
     it("can do a real transfer from alice to bob", async ()=> {
-        const alice = Tupelo.connect(TUPELO_HOST, {
+        const alice = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "alice-test",
             passPhrase: "test",
         });
         // TODO: clear RPC server state between tests automatically
         // await alice.register();
 
-        const bob = Tupelo.connect(TUPELO_HOST, {
+        const bob = Tupelo.connectInsecure(TUPELO_HOST, {
             walletName: "bob-test",
             passPhrase: "test",
         });
