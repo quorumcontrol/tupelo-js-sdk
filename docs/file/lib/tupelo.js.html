@@ -30,7 +30,6 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
@@ -64,6 +63,8 @@ var protoLoader = require(&quot;@grpc/proto-loader&quot;);
 
 var TUPELO_PROTO_FILE = __dirname + &quot;/proto/tupelo_rpc.proto&quot;;
 
+const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;;
+
 var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});
 var tupeloPackage = grpc
     .loadPackageDefinition(tupeloPackageDefinition)
@@ -82,14 +83,28 @@ const promiseAroundRpcCallback = (toExec) =&gt; {
   });
 };
 
-const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;
+const walletCredMetadata = (walletCreds) =&gt; {
+  var meta = new grpc.Metadata();
+  meta.add(&apos;wallet&apos;, walletCreds.walletName);
+  meta.add(&apos;passphrase&apos;, walletCreds.passphrase);
+
+  return meta;
+};
+
+const connectionCredentials = (secure) =&gt; {
+  if (secure) {
+    return grpc.credentials.createSsl();
+  } else {
+    return grpc.credentials.createInsecure();
+  }
+};
 
 /**
  * Represents a connection to a specific Tupelo wallet managed by a remote
  * Tupelo RPC server
  */
 class TupeloClient {
-  constructor(walletServer, walletCreds) {
+  constructor(walletServer, walletCreds, security = true) {
     /**
      * The URL (&quot;host:port&quot;) of the RPC wallet server to connect to
      *
@@ -103,12 +118,12 @@ class TupeloClient {
      * @type {WalletCredentials}
      */
     this.walletCreds = walletCreds;
+    this.credentials = walletCredMetadata(walletCreds);
     /**
      * @typedef {Object} WalletCredentials
      * @property {string} walletName - Wallet name
      * @property {string} passPhrase - Wallet passphrase
      */
-
 
     /**
      * Back end Tupelo Wallet RPC service connection
@@ -116,8 +131,7 @@ class TupeloClient {
      * @type {WalletRPCService}
      */
     this.rpc = new tupeloPackage
-      .WalletRPCService(walletServer, grpc.credentials.createInsecure());
-
+      .WalletRPCService(walletServer, connectionCredentials(security));
   }
 
   /**
@@ -127,7 +141,7 @@ class TupeloClient {
    */
   register() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.register({ creds: this.walletCreds }, clbk);
+      this.rpc.register({}, this.credentials, clbk);
     });
   }
   /**
@@ -142,7 +156,7 @@ class TupeloClient {
    */
   generateKey() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.generateKey({ creds: this.walletCreds }, clbk);
+      this.rpc.generateKey({}, this.credentials, clbk);
     });
   }
   /**
@@ -158,7 +172,7 @@ class TupeloClient {
    */
   listKeys() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.listKeys({ creds: this.walletCreds }, clbk);
+      this.rpc.listKeys({}, this.credentials, clbk);
     });
   }
   /**
@@ -171,16 +185,15 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
-   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree
    * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
   createChainTree(keyAddr, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.createChainTree({
-        creds: this.walletCreds,
         keyAddr: keyAddr,
         storageAdapter: storageAdapter
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -189,7 +202,7 @@ class TupeloClient {
    */
 
   /**
-   * Get a Base58 serialized chain tree Export
+   * Get a Base64 serialized chain tree Export
    *
    * @param {string} chainId - The ID of the chain tree to be exported
    *
@@ -198,9 +211,8 @@ class TupeloClient {
   exportChainTree(chainId) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.exportChainTree({
-        creds: this.walletCreds,
         chainId: chainId
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -213,18 +225,18 @@ class TupeloClient {
    * Import a serialized chain tree and save it to the wallet.
    *
    * @param {SerializedChaintree} chainTree - Serialized chain tree to import
-   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
-   * 
-   * 
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree
+   *
+   *
    * StorageAdapterConfig
    */
   importChainTree(chainTree, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.importChainTree({
-        creds: this.walletCreds,
+        keyAddr: keyAddr,
         chainTree: chainTree,
         storageAdapter: storageAdapter
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
 
@@ -235,7 +247,7 @@ class TupeloClient {
    */
   listChainIds() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.listChainIds({ creds: this.walletCreds }, clbk);
+      this.rpc.listChainIds({}, this.credn, clbk);
     });
   }
   /**
@@ -254,7 +266,7 @@ class TupeloClient {
    */
   getTip(chainId) {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);
+      this.rpc.getTip({ chainId: chainId }, this.credentials, clbk);
     });
   }
   /**
@@ -278,12 +290,11 @@ class TupeloClient {
     return promiseAroundRpcCallback((clbk) =&gt; {
       var cborData = cbor.Encoder.encode(value);
       this.rpc.setData({
-        creds: this.walletCreds,
         chainId: chainId,
         keyAddr: keyAddr,
         path: path,
         value: cborData,
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -316,10 +327,9 @@ class TupeloClient {
       };
 
       this.rpc.resolve({
-        creds: this.walletCreds,
         chainId: chainId,
         path: path,
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -361,11 +371,10 @@ class TupeloClient {
   setOwner(chainId, keyAddr, newOwnerKeys) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.setOwner({
-        creds: this.walletCreds,
         chainId: chainId,
         keyAddr: keyAddr,
         newOwnerKeys: newOwnerKeys,
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -387,12 +396,11 @@ class TupeloClient {
   establishCoin(chainId, keyAddr, coinName, maximum) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.establishCoin({
-        creds: this.walletCreds,
         chainId: chainId,
         keyAddr: keyAddr,
         coinName: coinName,
         maximum: maximum,
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -415,12 +423,11 @@ class TupeloClient {
   mintCoin(chainId, keyAddr, coinName, amount) {
     return promiseAroundRpcCallback((clbk) =&gt; {
       this.rpc.mintCoin({
-        creds: this.walletCreds,
         chainId: chainId,
         keyAddr: keyAddr,
         coinName: coinName,
         amount: amount,
-      }, clbk);
+      }, this.credentials, clbk);
     });
   }
   /**
@@ -468,7 +475,8 @@ class TupeloClient {
 }
 
 /**
- * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.
+ * Open a secure connection to a Tupelo wallet managed by a remote Tupelo RPC
+ * server.
  *
  * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
  * @param {Object} walletCreds - Credentials for the connecting wallet
@@ -477,8 +485,24 @@ class TupeloClient {
  *
  * @return {TupeloClient} Tupelo client connection.
  */
-function connect(walletServer, walletCreds) {
+function connectTLS(walletServer, walletCreds) {
   return new TupeloClient(walletServer, walletCreds);
+}
+
+/**
+ * Open an insecure connection to a Tupelo wallet managed by a remote Tupelo RPC
+ * server. This function should only be used in development as it transmits
+ * wallet credentials without any encryption.
+ *
+ * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
+ * @param {Object} walletCreds - Credentials for the connecting wallet
+ * @param {string} walletCreds.walletName - Wallet name
+ * @param {string} walletCreds.passPhrase - Wallet passphrase
+ *
+ * @return {TupeloClient} Tupelo client connection.
+ */
+function connectInsecure(walletServer, walletCreds) {
+  return new TupeloClient(walletServer, walletCreds, false);
 }
 
 exports.TupeloClient = TupeloClient;

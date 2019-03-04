@@ -40,7 +40,7 @@ const currentTime = () => {
 };
 
 const connect = (creds) => {
-  return tupelo.connect(TUPELO_HOST, creds);
+  return tupelo.connectInsecure(TUPELO_HOST, creds);
 };
 
 const register = async (creds) => {

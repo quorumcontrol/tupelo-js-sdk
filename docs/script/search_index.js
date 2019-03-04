@@ -6,12 +6,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "tupelo-client~connect",
-    "function/index.html#static-function-connect",
-    "<span>connect</span> <span class=\"search-result-import-path\">tupelo-client</span>",
-    "function"
-  ],
-  [
     "lib/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "lib/.external-ecmascript.js~Array",
@@ -310,6 +304,12 @@ window.esdocSearchIndex = [
     "class/lib/tupelo.js~TupeloClient.html#instance-method-createChainTree",
     "lib/tupelo.js~TupeloClient#createChainTree",
     "method"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient#credentials",
+    "class/lib/tupelo.js~TupeloClient.html#instance-member-credentials",
+    "lib/tupelo.js~TupeloClient#credentials",
+    "member"
   ],
   [
     "lib/tupelo.js~tupeloclient#establishcoin",

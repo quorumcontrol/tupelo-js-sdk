@@ -1,18 +1,21 @@
 {
-  "coverage": "76%",
-  "expectCount": 25,
-  "actualCount": 19,
+  "coverage": "68.96%",
+  "expectCount": 29,
+  "actualCount": 20,
   "files": {
     "lib/tupelo.js": {
-      "expectCount": 25,
-      "actualCount": 19,
+      "expectCount": 29,
+      "actualCount": 20,
       "undocumentLines": [
         8,
         10,
-        11,
-        15,
-        28,
-        35
+        12,
+        13,
+        17,
+        30,
+        38,
+        51,
+        65
       ]
     }
   }
