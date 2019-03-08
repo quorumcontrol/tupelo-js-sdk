@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 12473,
+  "end": 12613,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 429,
+      "line": 430,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 12473,
+    "end": 12613,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 429,
+        "line": 430,
         "column": 0
       }
     },
@@ -1551,14 +1551,14 @@
       {
         "type": "Identifier",
         "start": 788,
-        "end": 11921,
+        "end": 12061,
         "loc": {
           "start": {
             "line": 34,
             "column": 0
           },
           "end": {
-            "line": 411,
+            "line": 412,
             "column": 1
           }
         },
@@ -1584,14 +1584,14 @@
         "body": {
           "type": "ClassBody",
           "start": 807,
-          "end": 11921,
+          "end": 12061,
           "loc": {
             "start": {
               "line": 34,
               "column": 19
             },
             "end": {
-              "line": 411,
+              "line": 412,
               "column": 1
             }
           },
@@ -11559,16 +11559,16 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} path - Path to ipld initialized configuration\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
+                  "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
                   "start": 10608,
-                  "end": 10821,
+                  "end": 10961,
                   "loc": {
                     "start": {
                       "line": 379,
                       "column": 3
                     },
                     "end": {
-                      "line": 383,
+                      "line": 384,
                       "column": 5
                     }
                   }
@@ -11576,15 +11576,15 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-                  "start": 10826,
-                  "end": 11075,
+                  "start": 10966,
+                  "end": 11215,
                   "loc": {
                     "start": {
-                      "line": 385,
+                      "line": 386,
                       "column": 3
                     },
                     "end": {
-                      "line": 389,
+                      "line": 390,
                       "column": 5
                     }
                   }
@@ -11592,15 +11592,15 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-                  "start": 11079,
-                  "end": 11386,
+                  "start": 11219,
+                  "end": 11526,
                   "loc": {
                     "start": {
-                      "line": 391,
+                      "line": 392,
                       "column": 2
                     },
                     "end": {
-                      "line": 396,
+                      "line": 397,
                       "column": 5
                     }
                   }
@@ -11608,15 +11608,15 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-                  "start": 11390,
-                  "end": 11629,
+                  "start": 11530,
+                  "end": 11769,
                   "loc": {
                     "start": {
-                      "line": 398,
+                      "line": 399,
                       "column": 2
                     },
                     "end": {
-                      "line": 403,
+                      "line": 404,
                       "column": 5
                     }
                   }
@@ -11624,15 +11624,15 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                  "start": 11633,
-                  "end": 11919,
+                  "start": 11773,
+                  "end": 12059,
                   "loc": {
                     "start": {
-                      "line": 405,
+                      "line": 406,
                       "column": 2
                     },
                     "end": {
-                      "line": 410,
+                      "line": 411,
                       "column": 5
                     }
                   }
@@ -11648,29 +11648,29 @@
       },
       {
         "type": "Identifier",
-        "start": 12325,
-        "end": 12426,
+        "start": 12465,
+        "end": 12566,
         "loc": {
           "start": {
-            "line": 423,
+            "line": 424,
             "column": 0
           },
           "end": {
-            "line": 425,
+            "line": 426,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 12334,
-          "end": 12341,
+          "start": 12474,
+          "end": 12481,
           "loc": {
             "start": {
-              "line": 423,
+              "line": 424,
               "column": 9
             },
             "end": {
-              "line": 423,
+              "line": 424,
               "column": 16
             },
             "identifierName": "connect"
@@ -11684,15 +11684,15 @@
         "params": [
           {
             "type": "Identifier",
-            "start": 12342,
-            "end": 12354,
+            "start": 12482,
+            "end": 12494,
             "loc": {
               "start": {
-                "line": 423,
+                "line": 424,
                 "column": 17
               },
               "end": {
-                "line": 423,
+                "line": 424,
                 "column": 29
               },
               "identifierName": "walletServer"
@@ -11701,15 +11701,15 @@
           },
           {
             "type": "Identifier",
-            "start": 12356,
-            "end": 12367,
+            "start": 12496,
+            "end": 12507,
             "loc": {
               "start": {
-                "line": 423,
+                "line": 424,
                 "column": 31
               },
               "end": {
-                "line": 423,
+                "line": 424,
                 "column": 42
               },
               "identifierName": "walletCreds"
@@ -11719,58 +11719,58 @@
         ],
         "body": {
           "type": "BlockStatement",
-          "start": 12369,
-          "end": 12426,
+          "start": 12509,
+          "end": 12566,
           "loc": {
             "start": {
-              "line": 423,
+              "line": 424,
               "column": 44
             },
             "end": {
-              "line": 425,
+              "line": 426,
               "column": 1
             }
           },
           "body": [
             {
               "type": "ReturnStatement",
-              "start": 12373,
-              "end": 12424,
+              "start": 12513,
+              "end": 12564,
               "loc": {
                 "start": {
-                  "line": 424,
+                  "line": 425,
                   "column": 2
                 },
                 "end": {
-                  "line": 424,
+                  "line": 425,
                   "column": 53
                 }
               },
               "argument": {
                 "type": "NewExpression",
-                "start": 12380,
-                "end": 12423,
+                "start": 12520,
+                "end": 12563,
                 "loc": {
                   "start": {
-                    "line": 424,
+                    "line": 425,
                     "column": 9
                   },
                   "end": {
-                    "line": 424,
+                    "line": 425,
                     "column": 52
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 12384,
-                  "end": 12396,
+                  "start": 12524,
+                  "end": 12536,
                   "loc": {
                     "start": {
-                      "line": 424,
+                      "line": 425,
                       "column": 13
                     },
                     "end": {
-                      "line": 424,
+                      "line": 425,
                       "column": 25
                     },
                     "identifierName": "TupeloClient"
@@ -11780,15 +11780,15 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 12397,
-                    "end": 12409,
+                    "start": 12537,
+                    "end": 12549,
                     "loc": {
                       "start": {
-                        "line": 424,
+                        "line": 425,
                         "column": 26
                       },
                       "end": {
-                        "line": 424,
+                        "line": 425,
                         "column": 38
                       },
                       "identifierName": "walletServer"
@@ -11797,15 +11797,15 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 12411,
-                    "end": 12422,
+                    "start": 12551,
+                    "end": 12562,
                     "loc": {
                       "start": {
-                        "line": 424,
+                        "line": 425,
                         "column": 40
                       },
                       "end": {
-                        "line": 424,
+                        "line": 425,
                         "column": 51
                       },
                       "identifierName": "walletCreds"
@@ -11824,15 +11824,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12428,
-        "end": 12452,
+        "start": 12568,
+        "end": 12592,
         "loc": {
           "start": {
-            "line": 427,
+            "line": 428,
             "column": 0
           },
           "end": {
-            "line": 427,
+            "line": 428,
             "column": 24
           }
         },
@@ -11840,29 +11840,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 12437,
-            "end": 12449,
+            "start": 12577,
+            "end": 12589,
             "loc": {
               "start": {
-                "line": 427,
+                "line": 428,
                 "column": 9
               },
               "end": {
-                "line": 427,
+                "line": 428,
                 "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 12437,
-              "end": 12449,
+              "start": 12577,
+              "end": 12589,
               "loc": {
                 "start": {
-                  "line": 427,
+                  "line": 428,
                   "column": 9
                 },
                 "end": {
-                  "line": 427,
+                  "line": 428,
                   "column": 21
                 },
                 "identifierName": "TupeloClient"
@@ -11871,15 +11871,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 12437,
-              "end": 12449,
+              "start": 12577,
+              "end": 12589,
               "loc": {
                 "start": {
-                  "line": 427,
+                  "line": 428,
                   "column": 9
                 },
                 "end": {
-                  "line": 427,
+                  "line": 428,
                   "column": 21
                 },
                 "identifierName": "TupeloClient"
@@ -11892,15 +11892,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12453,
-        "end": 12472,
+        "start": 12593,
+        "end": 12612,
         "loc": {
           "start": {
-            "line": 428,
+            "line": 429,
             "column": 0
           },
           "end": {
-            "line": 428,
+            "line": 429,
             "column": 19
           }
         },
@@ -11908,29 +11908,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 12462,
-            "end": 12469,
+            "start": 12602,
+            "end": 12609,
             "loc": {
               "start": {
-                "line": 428,
+                "line": 429,
                 "column": 9
               },
               "end": {
-                "line": 428,
+                "line": 429,
                 "column": 16
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 12462,
-              "end": 12469,
+              "start": 12602,
+              "end": 12609,
               "loc": {
                 "start": {
-                  "line": 428,
+                  "line": 429,
                   "column": 9
                 },
                 "end": {
-                  "line": 428,
+                  "line": 429,
                   "column": 16
                 },
                 "identifierName": "connect"
@@ -11939,15 +11939,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 12462,
-              "end": 12469,
+              "start": 12602,
+              "end": 12609,
               "loc": {
                 "start": {
-                  "line": 428,
+                  "line": 429,
                   "column": 9
                 },
                 "end": {
-                  "line": 428,
+                  "line": 429,
                   "column": 16
                 },
                 "identifierName": "connect"
@@ -11960,29 +11960,29 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12428,
-        "end": 12452,
+        "start": 12568,
+        "end": 12592,
         "loc": {
           "start": {
-            "line": 427,
+            "line": 428,
             "column": 0
           },
           "end": {
-            "line": 427,
+            "line": 428,
             "column": 24
           }
         },
         "declaration": {
           "type": "ClassDeclaration",
           "start": 788,
-          "end": 11921,
+          "end": 12061,
           "loc": {
             "start": {
               "line": 34,
               "column": 0
             },
             "end": {
-              "line": 411,
+              "line": 412,
               "column": 1
             }
           },
@@ -12008,14 +12008,14 @@
           "body": {
             "type": "ClassBody",
             "start": 807,
-            "end": 11921,
+            "end": 12061,
             "loc": {
               "start": {
                 "line": 34,
                 "column": 19
               },
               "end": {
-                "line": 411,
+                "line": 412,
                 "column": 1
               }
             },
@@ -21983,16 +21983,16 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} path - Path to ipld initialized configuration\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
+                    "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
                     "start": 10608,
-                    "end": 10821,
+                    "end": 10961,
                     "loc": {
                       "start": {
                         "line": 379,
                         "column": 3
                       },
                       "end": {
-                        "line": 383,
+                        "line": 384,
                         "column": 5
                       }
                     }
@@ -22000,15 +22000,15 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-                    "start": 10826,
-                    "end": 11075,
+                    "start": 10966,
+                    "end": 11215,
                     "loc": {
                       "start": {
-                        "line": 385,
+                        "line": 386,
                         "column": 3
                       },
                       "end": {
-                        "line": 389,
+                        "line": 390,
                         "column": 5
                       }
                     }
@@ -22016,15 +22016,15 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-                    "start": 11079,
-                    "end": 11386,
+                    "start": 11219,
+                    "end": 11526,
                     "loc": {
                       "start": {
-                        "line": 391,
+                        "line": 392,
                         "column": 2
                       },
                       "end": {
-                        "line": 396,
+                        "line": 397,
                         "column": 5
                       }
                     }
@@ -22032,15 +22032,15 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-                    "start": 11390,
-                    "end": 11629,
+                    "start": 11530,
+                    "end": 11769,
                     "loc": {
                       "start": {
-                        "line": 398,
+                        "line": 399,
                         "column": 2
                       },
                       "end": {
-                        "line": 403,
+                        "line": 404,
                         "column": 5
                       }
                     }
@@ -22048,15 +22048,15 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                    "start": 11633,
-                    "end": 11919,
+                    "start": 11773,
+                    "end": 12059,
                     "loc": {
                       "start": {
-                        "line": 405,
+                        "line": 406,
                         "column": 2
                       },
                       "end": {
-                        "line": 410,
+                        "line": 411,
                         "column": 5
                       }
                     }
@@ -22088,15 +22088,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 11923,
-              "end": 12324,
+              "start": 12063,
+              "end": 12464,
               "loc": {
                 "start": {
-                  "line": 413,
+                  "line": 414,
                   "column": 0
                 },
                 "end": {
-                  "line": 422,
+                  "line": 423,
                   "column": 3
                 }
               }
@@ -22110,43 +22110,43 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12453,
-        "end": 12472,
+        "start": 12593,
+        "end": 12612,
         "loc": {
           "start": {
-            "line": 428,
+            "line": 429,
             "column": 0
           },
           "end": {
-            "line": 428,
+            "line": 429,
             "column": 19
           }
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 12325,
-          "end": 12426,
+          "start": 12465,
+          "end": 12566,
           "loc": {
             "start": {
-              "line": 423,
+              "line": 424,
               "column": 0
             },
             "end": {
-              "line": 425,
+              "line": 426,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 12334,
-            "end": 12341,
+            "start": 12474,
+            "end": 12481,
             "loc": {
               "start": {
-                "line": 423,
+                "line": 424,
                 "column": 9
               },
               "end": {
-                "line": 423,
+                "line": 424,
                 "column": 16
               },
               "identifierName": "connect"
@@ -22160,15 +22160,15 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 12342,
-              "end": 12354,
+              "start": 12482,
+              "end": 12494,
               "loc": {
                 "start": {
-                  "line": 423,
+                  "line": 424,
                   "column": 17
                 },
                 "end": {
-                  "line": 423,
+                  "line": 424,
                   "column": 29
                 },
                 "identifierName": "walletServer"
@@ -22177,15 +22177,15 @@
             },
             {
               "type": "Identifier",
-              "start": 12356,
-              "end": 12367,
+              "start": 12496,
+              "end": 12507,
               "loc": {
                 "start": {
-                  "line": 423,
+                  "line": 424,
                   "column": 31
                 },
                 "end": {
-                  "line": 423,
+                  "line": 424,
                   "column": 42
                 },
                 "identifierName": "walletCreds"
@@ -22195,58 +22195,58 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 12369,
-            "end": 12426,
+            "start": 12509,
+            "end": 12566,
             "loc": {
               "start": {
-                "line": 423,
+                "line": 424,
                 "column": 44
               },
               "end": {
-                "line": 425,
+                "line": 426,
                 "column": 1
               }
             },
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 12373,
-                "end": 12424,
+                "start": 12513,
+                "end": 12564,
                 "loc": {
                   "start": {
-                    "line": 424,
+                    "line": 425,
                     "column": 2
                   },
                   "end": {
-                    "line": 424,
+                    "line": 425,
                     "column": 53
                   }
                 },
                 "argument": {
                   "type": "NewExpression",
-                  "start": 12380,
-                  "end": 12423,
+                  "start": 12520,
+                  "end": 12563,
                   "loc": {
                     "start": {
-                      "line": 424,
+                      "line": 425,
                       "column": 9
                     },
                     "end": {
-                      "line": 424,
+                      "line": 425,
                       "column": 52
                     }
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 12384,
-                    "end": 12396,
+                    "start": 12524,
+                    "end": 12536,
                     "loc": {
                       "start": {
-                        "line": 424,
+                        "line": 425,
                         "column": 13
                       },
                       "end": {
-                        "line": 424,
+                        "line": 425,
                         "column": 25
                       },
                       "identifierName": "TupeloClient"
@@ -22256,15 +22256,15 @@
                   "arguments": [
                     {
                       "type": "Identifier",
-                      "start": 12397,
-                      "end": 12409,
+                      "start": 12537,
+                      "end": 12549,
                       "loc": {
                         "start": {
-                          "line": 424,
+                          "line": 425,
                           "column": 26
                         },
                         "end": {
-                          "line": 424,
+                          "line": 425,
                           "column": 38
                         },
                         "identifierName": "walletServer"
@@ -22273,15 +22273,15 @@
                     },
                     {
                       "type": "Identifier",
-                      "start": 12411,
-                      "end": 12422,
+                      "start": 12551,
+                      "end": 12562,
                       "loc": {
                         "start": {
-                          "line": 424,
+                          "line": 425,
                           "column": 40
                         },
                         "end": {
-                          "line": 424,
+                          "line": 425,
                           "column": 51
                         },
                         "identifierName": "walletCreds"
@@ -22298,15 +22298,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 11923,
-              "end": 12324,
+              "start": 12063,
+              "end": 12464,
               "loc": {
                 "start": {
-                  "line": 413,
+                  "line": 414,
                   "column": 0
                 },
                 "end": {
-                  "line": 422,
+                  "line": 423,
                   "column": 3
                 }
               }
@@ -22836,16 +22836,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} path - Path to ipld initialized configuration\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
+      "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
       "start": 10608,
-      "end": 10821,
+      "end": 10961,
       "loc": {
         "start": {
           "line": 379,
           "column": 3
         },
         "end": {
-          "line": 383,
+          "line": 384,
           "column": 5
         }
       }
@@ -22853,15 +22853,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-      "start": 10826,
-      "end": 11075,
+      "start": 10966,
+      "end": 11215,
       "loc": {
         "start": {
-          "line": 385,
+          "line": 386,
           "column": 3
         },
         "end": {
-          "line": 389,
+          "line": 390,
           "column": 5
         }
       }
@@ -22869,15 +22869,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-      "start": 11079,
-      "end": 11386,
+      "start": 11219,
+      "end": 11526,
       "loc": {
         "start": {
-          "line": 391,
+          "line": 392,
           "column": 2
         },
         "end": {
-          "line": 396,
+          "line": 397,
           "column": 5
         }
       }
@@ -22885,15 +22885,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-      "start": 11390,
-      "end": 11629,
+      "start": 11530,
+      "end": 11769,
       "loc": {
         "start": {
-          "line": 398,
+          "line": 399,
           "column": 2
         },
         "end": {
-          "line": 403,
+          "line": 404,
           "column": 5
         }
       }
@@ -22901,15 +22901,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 11633,
-      "end": 11919,
+      "start": 11773,
+      "end": 12059,
       "loc": {
         "start": {
-          "line": 405,
+          "line": 406,
           "column": 2
         },
         "end": {
-          "line": 410,
+          "line": 411,
           "column": 5
         }
       }
@@ -22917,15 +22917,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 11923,
-      "end": 12324,
+      "start": 12063,
+      "end": 12464,
       "loc": {
         "start": {
-          "line": 413,
+          "line": 414,
           "column": 0
         },
         "end": {
-          "line": 422,
+          "line": 423,
           "column": 3
         }
       }
@@ -45793,16 +45793,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} path - Path to ipld initialized configuration\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
+      "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
       "start": 10608,
-      "end": 10821,
+      "end": 10961,
       "loc": {
         "start": {
           "line": 379,
           "column": 3
         },
         "end": {
-          "line": 383,
+          "line": 384,
           "column": 5
         }
       }
@@ -45810,15 +45810,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-      "start": 10826,
-      "end": 11075,
+      "start": 10966,
+      "end": 11215,
       "loc": {
         "start": {
-          "line": 385,
+          "line": 386,
           "column": 3
         },
         "end": {
-          "line": 389,
+          "line": 390,
           "column": 5
         }
       }
@@ -45826,15 +45826,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-      "start": 11079,
-      "end": 11386,
+      "start": 11219,
+      "end": 11526,
       "loc": {
         "start": {
-          "line": 391,
+          "line": 392,
           "column": 2
         },
         "end": {
-          "line": 396,
+          "line": 397,
           "column": 5
         }
       }
@@ -45842,15 +45842,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-      "start": 11390,
-      "end": 11629,
+      "start": 11530,
+      "end": 11769,
       "loc": {
         "start": {
-          "line": 398,
+          "line": 399,
           "column": 2
         },
         "end": {
-          "line": 403,
+          "line": 404,
           "column": 5
         }
       }
@@ -45858,15 +45858,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 11633,
-      "end": 11919,
+      "start": 11773,
+      "end": 12059,
       "loc": {
         "start": {
-          "line": 405,
+          "line": 406,
           "column": 2
         },
         "end": {
-          "line": 410,
+          "line": 411,
           "column": 5
         }
       }
@@ -45883,15 +45883,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 11920,
-      "end": 11921,
+      "start": 12060,
+      "end": 12061,
       "loc": {
         "start": {
-          "line": 411,
+          "line": 412,
           "column": 0
         },
         "end": {
-          "line": 411,
+          "line": 412,
           "column": 1
         }
       }
@@ -45899,15 +45899,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 11923,
-      "end": 12324,
+      "start": 12063,
+      "end": 12464,
       "loc": {
         "start": {
-          "line": 413,
+          "line": 414,
           "column": 0
         },
         "end": {
-          "line": 422,
+          "line": 423,
           "column": 3
         }
       }
@@ -45926,15 +45926,15 @@
         "binop": null
       },
       "value": "function",
-      "start": 12325,
-      "end": 12333,
+      "start": 12465,
+      "end": 12473,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 0
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 8
         }
       }
@@ -45952,15 +45952,15 @@
         "binop": null
       },
       "value": "connect",
-      "start": 12334,
-      "end": 12341,
+      "start": 12474,
+      "end": 12481,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 9
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 16
         }
       }
@@ -45977,15 +45977,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12341,
-      "end": 12342,
+      "start": 12481,
+      "end": 12482,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 16
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 17
         }
       }
@@ -46003,15 +46003,15 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 12342,
-      "end": 12354,
+      "start": 12482,
+      "end": 12494,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 17
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 29
         }
       }
@@ -46029,15 +46029,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12354,
-      "end": 12355,
+      "start": 12494,
+      "end": 12495,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 29
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 30
         }
       }
@@ -46055,15 +46055,15 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 12356,
-      "end": 12367,
+      "start": 12496,
+      "end": 12507,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 31
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 42
         }
       }
@@ -46080,15 +46080,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12367,
-      "end": 12368,
+      "start": 12507,
+      "end": 12508,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 42
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 43
         }
       }
@@ -46105,15 +46105,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12369,
-      "end": 12370,
+      "start": 12509,
+      "end": 12510,
       "loc": {
         "start": {
-          "line": 423,
+          "line": 424,
           "column": 44
         },
         "end": {
-          "line": 423,
+          "line": 424,
           "column": 45
         }
       }
@@ -46133,15 +46133,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 12373,
-      "end": 12379,
+      "start": 12513,
+      "end": 12519,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 2
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 8
         }
       }
@@ -46161,15 +46161,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 12380,
-      "end": 12383,
+      "start": 12520,
+      "end": 12523,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 9
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 12
         }
       }
@@ -46187,15 +46187,15 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 12384,
-      "end": 12396,
+      "start": 12524,
+      "end": 12536,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 13
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 25
         }
       }
@@ -46212,15 +46212,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12396,
-      "end": 12397,
+      "start": 12536,
+      "end": 12537,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 25
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 26
         }
       }
@@ -46238,15 +46238,15 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 12397,
-      "end": 12409,
+      "start": 12537,
+      "end": 12549,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 26
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 38
         }
       }
@@ -46264,15 +46264,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12409,
-      "end": 12410,
+      "start": 12549,
+      "end": 12550,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 38
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 39
         }
       }
@@ -46290,15 +46290,15 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 12411,
-      "end": 12422,
+      "start": 12551,
+      "end": 12562,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 40
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 51
         }
       }
@@ -46315,15 +46315,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12422,
-      "end": 12423,
+      "start": 12562,
+      "end": 12563,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 51
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 52
         }
       }
@@ -46341,15 +46341,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12423,
-      "end": 12424,
+      "start": 12563,
+      "end": 12564,
       "loc": {
         "start": {
-          "line": 424,
+          "line": 425,
           "column": 52
         },
         "end": {
-          "line": 424,
+          "line": 425,
           "column": 53
         }
       }
@@ -46366,15 +46366,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12425,
-      "end": 12426,
+      "start": 12565,
+      "end": 12566,
       "loc": {
         "start": {
-          "line": 425,
+          "line": 426,
           "column": 0
         },
         "end": {
-          "line": 425,
+          "line": 426,
           "column": 1
         }
       }
@@ -46394,15 +46394,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 12428,
-      "end": 12434,
+      "start": 12568,
+      "end": 12574,
       "loc": {
         "start": {
-          "line": 427,
+          "line": 428,
           "column": 0
         },
         "end": {
-          "line": 427,
+          "line": 428,
           "column": 6
         }
       }
@@ -46419,15 +46419,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12435,
-      "end": 12436,
+      "start": 12575,
+      "end": 12576,
       "loc": {
         "start": {
-          "line": 427,
+          "line": 428,
           "column": 7
         },
         "end": {
-          "line": 427,
+          "line": 428,
           "column": 8
         }
       }
@@ -46445,15 +46445,15 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 12437,
-      "end": 12449,
+      "start": 12577,
+      "end": 12589,
       "loc": {
         "start": {
-          "line": 427,
+          "line": 428,
           "column": 9
         },
         "end": {
-          "line": 427,
+          "line": 428,
           "column": 21
         }
       }
@@ -46470,15 +46470,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12450,
-      "end": 12451,
+      "start": 12590,
+      "end": 12591,
       "loc": {
         "start": {
-          "line": 427,
+          "line": 428,
           "column": 22
         },
         "end": {
-          "line": 427,
+          "line": 428,
           "column": 23
         }
       }
@@ -46496,15 +46496,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12451,
-      "end": 12452,
+      "start": 12591,
+      "end": 12592,
       "loc": {
         "start": {
-          "line": 427,
+          "line": 428,
           "column": 23
         },
         "end": {
-          "line": 427,
+          "line": 428,
           "column": 24
         }
       }
@@ -46524,15 +46524,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 12453,
-      "end": 12459,
+      "start": 12593,
+      "end": 12599,
       "loc": {
         "start": {
-          "line": 428,
+          "line": 429,
           "column": 0
         },
         "end": {
-          "line": 428,
+          "line": 429,
           "column": 6
         }
       }
@@ -46549,15 +46549,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12460,
-      "end": 12461,
+      "start": 12600,
+      "end": 12601,
       "loc": {
         "start": {
-          "line": 428,
+          "line": 429,
           "column": 7
         },
         "end": {
-          "line": 428,
+          "line": 429,
           "column": 8
         }
       }
@@ -46575,15 +46575,15 @@
         "binop": null
       },
       "value": "connect",
-      "start": 12462,
-      "end": 12469,
+      "start": 12602,
+      "end": 12609,
       "loc": {
         "start": {
-          "line": 428,
+          "line": 429,
           "column": 9
         },
         "end": {
-          "line": 428,
+          "line": 429,
           "column": 16
         }
       }
@@ -46600,15 +46600,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12470,
-      "end": 12471,
+      "start": 12610,
+      "end": 12611,
       "loc": {
         "start": {
-          "line": 428,
+          "line": 429,
           "column": 17
         },
         "end": {
-          "line": 428,
+          "line": 429,
           "column": 18
         }
       }
@@ -46626,15 +46626,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12471,
-      "end": 12472,
+      "start": 12611,
+      "end": 12612,
       "loc": {
         "start": {
-          "line": 428,
+          "line": 429,
           "column": 18
         },
         "end": {
-          "line": 428,
+          "line": 429,
           "column": 19
         }
       }
@@ -46652,15 +46652,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12473,
-      "end": 12473,
+      "start": 12613,
+      "end": 12613,
       "loc": {
         "start": {
-          "line": 429,
+          "line": 430,
           "column": 0
         },
         "end": {
-          "line": 429,
+          "line": 430,
           "column": 0
         }
       }

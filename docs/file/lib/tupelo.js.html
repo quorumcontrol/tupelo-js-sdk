@@ -435,7 +435,8 @@ class TupeloClient {
 
    /**
    * @typedef {Object} StorageAdapterConfigForIpld
-   * @property {string} path - Path to ipld initialized configuration
+   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.
+   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.
    * @property {boolean} [online=false] - if true, starts IPFS node in online mode
    */
 
