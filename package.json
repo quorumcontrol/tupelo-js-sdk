@@ -4,7 +4,8 @@
   "description": "Tupelo JavaScript client",
   "main": "lib/tupelo.js",
   "scripts": {
-    "test": "scripts/integration-tests"
+    "test": "scripts/integration-tests",
+    "docs": "esdoc"
   },
   "repository": {
     "type": "git",
