@@ -94,7 +94,7 @@ const walletCreds = {
 ```
 
 ##### Obtaining an RPC client connection
-The `connect` function takes the host:port string of the RPC server and the
+The [`connect`](https://quorumcontrol.github.io/tupelo.js/function/index.html#static-function-connect) function takes the host:port string of the RPC server and the
 wallet credentials object as arguments and returns an RPC client connection.
 
 ```javascript
