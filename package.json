@@ -18,15 +18,15 @@
   },
   "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
   "dependencies": {
-    "@grpc/grpc-js": "~0.2.0",
-    "@grpc/proto-loader": "~0.3.0",
-    "cbor": "^4.1.1"
+    "@grpc/grpc-js": "~0.4",
+    "@grpc/proto-loader": "~0.5.0",
+    "cbor": "^4.1.5"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
     "esdoc": "^1.1.0",
     "esdoc-node": "^1.0.3",
     "esdoc-standard-plugin": "^1.0.0",
-    "mocha": "^5.2.0"
+    "eslint": "^5.16",
+    "mocha": "^6.1.4"
   }
 }
