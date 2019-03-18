@@ -5,7 +5,7 @@ RPC server.
 
 ## Installation and Usage
 Basic installation and usage instructions are below. Visit the full
-[API Documentation](https://quorumcontrol.github.io/tupelo.js/) for more.
+[API Documentation](https://quorumcontrol.github.io/tupelo.js/identifiers.html) for more.
 
 ### RPC Server
 The Node.js client cannot directly manage chain trees or connect to the notary
@@ -82,7 +82,7 @@ const tupelo = require('tupelo-client');
 The RPC server stores all the chain trees it has access to in an encrypted
 wallet with a unique name and secret pass phrase. You must initialize the client
 with the correct wallet credentials for the wallet you'd like to unlock for each
-RPC request. The wallet credentials should be an
+RPC request. The wallet credentials should be a
 [WalletCredentials object](https://quorumcontrol.github.io/tupelo.js/typedef/index.html#static-typedef-WalletCredentials) with
 `walletName` and `passPhrase` keys.
 
@@ -103,7 +103,7 @@ const client = tupelo.connect('localhost:50051', walletCreds);
 
 ##### Using the API
 Here is how to create a new key and then a chain tree owned by that key as an
-example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/) for more information about the
+example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/identifiers.html) for more information about the
 full Tupelo.js API.
 
 ```javascript
