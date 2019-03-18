@@ -102,7 +102,7 @@ project&apos;s directory to add Tupelo.js to the npm project&apos;s dependencies
 </code></pre>
 <h4 id="usage">Usage</h4><p>Once you have installed the dependency, require the <code>tupelo-client</code> module from
 your application.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">var tupelo = require(&apos;tupelo-client&apos;);</code>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const tupelo = require(&apos;tupelo-client&apos;);</code>
 </code></pre>
 <h5 id="wallet-credentials">Wallet Credentials</h5><p>The RPC server stores all the chain trees it has access to in an encrypted
 wallet with a unique name and secret pass phrase. You must initialize the client
@@ -110,42 +110,29 @@ with the correct wallet credentials for the wallet you&apos;d like to unlock for
 RPC request. The wallet credentials should be an
 <a href="https://quorumcontrol.github.io/tupelo.js/typedef/index.html#static-typedef-WalletCredentials">WalletCredentials object</a> with
 <code>walletName</code> and <code>passPhrase</code> keys.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">var walletCreds = {
-    walletName: &apos;my-wallet&apos;,
-    passPhrase: &apos;super secret password&apos;
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const walletCreds = {
+  walletName: &apos;my-wallet&apos;,
+  passPhrase: &apos;super secret password&apos;
 };</code>
 </code></pre>
 <h5 id="obtaining-an-rpc-client-connection">Obtaining an RPC client connection</h5><p>The <code>connect</code> function takes the host:port string of the RPC server and the
 wallet credentials object as arguments and returns an RPC client connection.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">var client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);</code>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);</code>
 </code></pre>
 <h5 id="using-the-api">Using the API</h5><p>Here is how to create a new key and then a chain tree owned by that key as an
 example. See the <a href="https://quorumcontrol.github.io/tupelo.js/">API docs</a> for more information about the
 full Tupelo.js API.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">// save the key address and chain tree id for later use
-var keyAddr, chainId;
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const main = async () =&gt; {
+  // register a new wallet, then generate a key and chain tree stored there
+  await client.register();
+  const {keyAddr,} = await client.generateKey();
+  const {chainId,} = await client.createChainTree(keyAddr);
+  console.log(chainId);
+};
 
-// register a new wallet, then generate a key and chain tree stored there
-client.register()
-  .then(function(registerResult) {
-    return client.generateKey()
-  }, function(err) {
-    console.log(&quot;-----------Error registering wallet:----------&quot;);
-    console.log(err);
-  }).then(function(generateKeyResult) {
-    keyAddr = generateKeyResult.keyAddr;
-    return client.createChainTree(keyAddr);
-  }, function(err) {
-    console.log(&quot;-----------Error generating key:----------&quot;);
-    console.log(err);
-  }).then(function(createChainResponse) {
-    chainId = createChainResponse.chainId;
-    console.log(&quot;----------Chain ID:----------&quot;);
-    console.log(chainId);
-    return chainId;
-  }, function(err) {
-    console.log(&quot;-----------Error creating chain tree:----------&quot;);
-    console.log(err);
+main()
+  .catch((err) =&gt; {
+    console.error(&apos;-----------Error creating chain tree:----------:&apos;, err)
   });</code>
 </code></pre>
 <h2 id="tests">Tests</h2><p>There are some RPC integration tests that can be run against a live Tupelo RPC

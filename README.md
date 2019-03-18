@@ -75,7 +75,7 @@ Once you have installed the dependency, require the `tupelo-client` module from
 your application.
 
 ```javascript
-var tupelo = require('tupelo-client');
+const tupelo = require('tupelo-client');
 ```
 
 ##### Wallet Credentials
@@ -87,9 +87,9 @@ RPC request. The wallet credentials should be an
 `walletName` and `passPhrase` keys.
 
 ```javascript
-var walletCreds = {
-    walletName: 'my-wallet',
-    passPhrase: 'super secret password'
+const walletCreds = {
+  walletName: 'my-wallet',
+  passPhrase: 'super secret password'
 };
 ```
 
@@ -98,7 +98,7 @@ The `connect` function takes the host:port string of the RPC server and the
 wallet credentials object as arguments and returns an RPC client connection.
 
 ```javascript
-var client = tupelo.connect('localhost:50051', walletCreds);
+const client = tupelo.connect('localhost:50051', walletCreds);
 ```
 
 ##### Using the API
@@ -107,30 +107,17 @@ example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/) for more
 full Tupelo.js API.
 
 ```javascript
-// save the key address and chain tree id for later use
-var keyAddr, chainId;
+const main = async () => {
+  // register a new wallet, then generate a key and chain tree stored there
+  await client.register();
+  const {keyAddr,} = await client.generateKey();
+  const {chainId,} = await client.createChainTree(keyAddr);
+  console.log(chainId);
+};
 
-// register a new wallet, then generate a key and chain tree stored there
-client.register()
-  .then(function(registerResult) {
-    return client.generateKey()
-  }, function(err) {
-    console.log("-----------Error registering wallet:----------");
-    console.log(err);
-  }).then(function(generateKeyResult) {
-    keyAddr = generateKeyResult.keyAddr;
-    return client.createChainTree(keyAddr);
-  }, function(err) {
-    console.log("-----------Error generating key:----------");
-    console.log(err);
-  }).then(function(createChainResponse) {
-    chainId = createChainResponse.chainId;
-    console.log("----------Chain ID:----------");
-    console.log(chainId);
-    return chainId;
-  }, function(err) {
-    console.log("-----------Error creating chain tree:----------");
-    console.log(err);
+main()
+  .catch((err) => {
+    console.error('-----------Error creating chain tree:----------:', err)
   });
 ```
 
