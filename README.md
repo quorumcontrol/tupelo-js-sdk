@@ -107,18 +107,21 @@ example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/identifier
 full Tupelo.js API.
 
 ```javascript
+const tupelo = require('tupelo-client');
+
 const main = async () => {
+  const walletCreds = {
+    walletName: 'my-wallet',
+    passPhrase: 'super secret password'
+  };
+  const client = tupelo.connect('localhost:50051', walletCreds);
+
   // register a new wallet, then generate a key and chain tree stored there
   await client.register();
   const {keyAddr,} = await client.generateKey();
   const {chainId,} = await client.createChainTree(keyAddr);
   console.log(chainId);
 };
-
-main()
-  .catch((err) => {
-    console.error('-----------Error creating chain tree:----------:', err)
-  });
 ```
 
 ## Tests

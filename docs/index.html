@@ -122,18 +122,21 @@ wallet credentials object as arguments and returns an RPC client connection.</p>
 <h5 id="using-the-api">Using the API</h5><p>Here is how to create a new key and then a chain tree owned by that key as an
 example. See the <a href="https://quorumcontrol.github.io/tupelo.js/identifiers.html">API docs</a> for more information about the
 full Tupelo.js API.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">const main = async () =&gt; {
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const tupelo = require(&apos;tupelo-client&apos;);
+
+const main = async () =&gt; {
+  const walletCreds = {
+    walletName: &apos;my-wallet&apos;,
+    passPhrase: &apos;super secret password&apos;
+  };
+  const client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);
+
   // register a new wallet, then generate a key and chain tree stored there
   await client.register();
   const {keyAddr,} = await client.generateKey();
   const {chainId,} = await client.createChainTree(keyAddr);
   console.log(chainId);
-};
-
-main()
-  .catch((err) =&gt; {
-    console.error(&apos;-----------Error creating chain tree:----------:&apos;, err)
-  });</code>
+};</code>
 </code></pre>
 <h2 id="tests">Tests</h2><p>There are some RPC integration tests that can be run against a live Tupelo RPC
 server by running <code>npm test</code>. Note that you will need a working Docker
