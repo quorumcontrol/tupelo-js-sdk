@@ -5,7 +5,7 @@ RPC server.
 
 ## Installation and Usage
 Basic installation and usage instructions are below. Visit the full
-[API Documentation](https://quorumcontrol.github.io/tupelo.js/) for more.
+[API Documentation](https://quorumcontrol.github.io/tupelo.js/identifiers.html) for more.
 
 ### RPC Server
 The Node.js client cannot directly manage chain trees or connect to the notary
@@ -75,63 +75,53 @@ Once you have installed the dependency, require the `tupelo-client` module from
 your application.
 
 ```javascript
-var tupelo = require('tupelo-client');
+const tupelo = require('tupelo-client');
 ```
 
 ##### Wallet Credentials
 The RPC server stores all the chain trees it has access to in an encrypted
 wallet with a unique name and secret pass phrase. You must initialize the client
 with the correct wallet credentials for the wallet you'd like to unlock for each
-RPC request. The wallet credentials should be an
+RPC request. The wallet credentials should be a
 [WalletCredentials object](https://quorumcontrol.github.io/tupelo.js/typedef/index.html#static-typedef-WalletCredentials) with
 `walletName` and `passPhrase` keys.
 
 ```javascript
-var walletCreds = {
-    walletName: 'my-wallet',
-    passPhrase: 'super secret password'
+const walletCreds = {
+  walletName: 'my-wallet',
+  passPhrase: 'super secret password'
 };
 ```
 
 ##### Obtaining an RPC client connection
-The `connect` function takes the host:port string of the RPC server and the
+The [`connect`](https://quorumcontrol.github.io/tupelo.js/function/index.html#static-function-connect) function takes the host:port string of the RPC server and the
 wallet credentials object as arguments and returns an RPC client connection.
 
 ```javascript
-var client = tupelo.connect('localhost:50051', walletCreds);
+const client = tupelo.connect('localhost:50051', walletCreds);
 ```
 
 ##### Using the API
 Here is how to create a new key and then a chain tree owned by that key as an
-example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/) for more information about the
+example. See the [API docs](https://quorumcontrol.github.io/tupelo.js/identifiers.html) for more information about the
 full Tupelo.js API.
 
 ```javascript
-// save the key address and chain tree id for later use
-var keyAddr, chainId;
+const tupelo = require('tupelo-client');
 
-// register a new wallet, then generate a key and chain tree stored there
-client.register()
-  .then(function(registerResult) {
-    return client.generateKey()
-  }, function(err) {
-    console.log("-----------Error registering wallet:----------");
-    console.log(err);
-  }).then(function(generateKeyResult) {
-    keyAddr = generateKeyResult.keyAddr;
-    return client.createChainTree(keyAddr);
-  }, function(err) {
-    console.log("-----------Error generating key:----------");
-    console.log(err);
-  }).then(function(createChainResponse) {
-    chainId = createChainResponse.chainId;
-    console.log("----------Chain ID:----------");
-    console.log(chainId);
-    return chainId;
-  }, function(err) {
-    console.log("-----------Error creating chain tree:----------");
-    console.log(err);
-  });
+const main = async () => {
+  const walletCreds = {
+    walletName: 'my-wallet',
+    passPhrase: 'super secret password'
+  };
+  const client = tupelo.connect('localhost:50051', walletCreds);
+
+  // register a new wallet, then generate a key and chain tree stored there
+  await client.register();
+  const {keyAddr,} = await client.generateKey();
+  const {chainId,} = await client.createChainTree(keyAddr);
+  console.log(chainId);
+};
 ```
 
 ## Tests
