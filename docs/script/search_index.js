@@ -312,9 +312,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "lib/tupelo.js~tupeloclient#establishcoin",
-    "class/lib/tupelo.js~TupeloClient.html#instance-method-establishCoin",
-    "lib/tupelo.js~TupeloClient#establishCoin",
+    "lib/tupelo.js~tupeloclient#establishtoken",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-establishToken",
+    "lib/tupelo.js~TupeloClient#establishToken",
     "method"
   ],
   [
@@ -354,9 +354,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "lib/tupelo.js~tupeloclient#mintcoin",
-    "class/lib/tupelo.js~TupeloClient.html#instance-method-mintCoin",
-    "lib/tupelo.js~TupeloClient#mintCoin",
+    "lib/tupelo.js~tupeloclient#minttoken",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-mintToken",
+    "lib/tupelo.js~TupeloClient#mintToken",
     "method"
   ],
   [
@@ -414,9 +414,9 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.establishcoinresponse",
-    "typedef/index.html#static-typedef-EstablishCoinResponse",
-    "lib/tupelo.js~TupeloClient.EstablishCoinResponse",
+    "lib/tupelo.js~tupeloclient.establishtokenresponse",
+    "typedef/index.html#static-typedef-EstablishTokenResponse",
+    "lib/tupelo.js~TupeloClient.EstablishTokenResponse",
     "typedef"
   ],
   [
@@ -450,9 +450,9 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
-    "lib/tupelo.js~tupeloclient.mintcoinresponse",
-    "typedef/index.html#static-typedef-MintCoinResponse",
-    "lib/tupelo.js~TupeloClient.MintCoinResponse",
+    "lib/tupelo.js~tupeloclient.minttokenresponse",
+    "typedef/index.html#static-typedef-MintTokenResponse",
+    "lib/tupelo.js~TupeloClient.MintTokenResponse",
     "typedef"
   ],
   [

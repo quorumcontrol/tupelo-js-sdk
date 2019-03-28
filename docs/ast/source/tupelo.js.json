@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 12641,
+  "end": 12664,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 12641,
+    "end": 12664,
     "loc": {
       "start": {
         "line": 1,
@@ -1551,7 +1551,7 @@
       {
         "type": "Identifier",
         "start": 788,
-        "end": 12089,
+        "end": 12112,
         "loc": {
           "start": {
             "line": 34,
@@ -1584,7 +1584,7 @@
         "body": {
           "type": "ClassBody",
           "start": 807,
-          "end": 12089,
+          "end": 12112,
           "loc": {
             "start": {
               "line": 34,
@@ -10063,9 +10063,9 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
                   "start": 8843,
-                  "end": 9256,
+                  "end": 9261,
                   "loc": {
                     "start": {
                       "line": 320,
@@ -10081,8 +10081,8 @@
             },
             {
               "type": "ClassMethod",
-              "start": 9259,
-              "end": 9557,
+              "start": 9264,
+              "end": 9567,
               "loc": {
                 "start": {
                   "line": 330,
@@ -10097,8 +10097,8 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 9259,
-                "end": 9272,
+                "start": 9264,
+                "end": 9278,
                 "loc": {
                   "start": {
                     "line": 330,
@@ -10106,11 +10106,11 @@
                   },
                   "end": {
                     "line": 330,
-                    "column": 15
+                    "column": 16
                   },
-                  "identifierName": "establishCoin"
+                  "identifierName": "establishToken"
                 },
-                "name": "establishCoin",
+                "name": "establishToken",
                 "leadingComments": null
               },
               "kind": "method",
@@ -10121,16 +10121,16 @@
               "params": [
                 {
                   "type": "Identifier",
-                  "start": 9273,
-                  "end": 9280,
+                  "start": 9279,
+                  "end": 9286,
                   "loc": {
                     "start": {
                       "line": 330,
-                      "column": 16
+                      "column": 17
                     },
                     "end": {
                       "line": 330,
-                      "column": 23
+                      "column": 24
                     },
                     "identifierName": "chainId"
                   },
@@ -10138,16 +10138,16 @@
                 },
                 {
                   "type": "Identifier",
-                  "start": 9282,
-                  "end": 9289,
+                  "start": 9288,
+                  "end": 9295,
                   "loc": {
                     "start": {
                       "line": 330,
-                      "column": 25
+                      "column": 26
                     },
                     "end": {
                       "line": 330,
-                      "column": 32
+                      "column": 33
                     },
                     "identifierName": "keyAddr"
                   },
@@ -10155,33 +10155,33 @@
                 },
                 {
                   "type": "Identifier",
-                  "start": 9291,
-                  "end": 9299,
+                  "start": 9297,
+                  "end": 9306,
                   "loc": {
                     "start": {
                       "line": 330,
-                      "column": 34
+                      "column": 35
                     },
                     "end": {
-                      "line": 330,
-                      "column": 42
-                    },
-                    "identifierName": "coinName"
-                  },
-                  "name": "coinName"
-                },
-                {
-                  "type": "Identifier",
-                  "start": 9301,
-                  "end": 9308,
-                  "loc": {
-                    "start": {
                       "line": 330,
                       "column": 44
                     },
+                    "identifierName": "tokenName"
+                  },
+                  "name": "tokenName"
+                },
+                {
+                  "type": "Identifier",
+                  "start": 9308,
+                  "end": 9315,
+                  "loc": {
+                    "start": {
+                      "line": 330,
+                      "column": 46
+                    },
                     "end": {
                       "line": 330,
-                      "column": 51
+                      "column": 53
                     },
                     "identifierName": "maximum"
                   },
@@ -10190,12 +10190,12 @@
               ],
               "body": {
                 "type": "BlockStatement",
-                "start": 9310,
-                "end": 9557,
+                "start": 9317,
+                "end": 9567,
                 "loc": {
                   "start": {
                     "line": 330,
-                    "column": 53
+                    "column": 55
                   },
                   "end": {
                     "line": 340,
@@ -10205,8 +10205,8 @@
                 "body": [
                   {
                     "type": "ReturnStatement",
-                    "start": 9316,
-                    "end": 9553,
+                    "start": 9323,
+                    "end": 9563,
                     "loc": {
                       "start": {
                         "line": 331,
@@ -10219,8 +10219,8 @@
                     },
                     "argument": {
                       "type": "CallExpression",
-                      "start": 9323,
-                      "end": 9552,
+                      "start": 9330,
+                      "end": 9562,
                       "loc": {
                         "start": {
                           "line": 331,
@@ -10233,8 +10233,8 @@
                       },
                       "callee": {
                         "type": "Identifier",
-                        "start": 9323,
-                        "end": 9347,
+                        "start": 9330,
+                        "end": 9354,
                         "loc": {
                           "start": {
                             "line": 331,
@@ -10251,8 +10251,8 @@
                       "arguments": [
                         {
                           "type": "ArrowFunctionExpression",
-                          "start": 9348,
-                          "end": 9551,
+                          "start": 9355,
+                          "end": 9561,
                           "loc": {
                             "start": {
                               "line": 331,
@@ -10270,8 +10270,8 @@
                           "params": [
                             {
                               "type": "Identifier",
-                              "start": 9349,
-                              "end": 9353,
+                              "start": 9356,
+                              "end": 9360,
                               "loc": {
                                 "start": {
                                   "line": 331,
@@ -10288,8 +10288,8 @@
                           ],
                           "body": {
                             "type": "BlockStatement",
-                            "start": 9358,
-                            "end": 9551,
+                            "start": 9365,
+                            "end": 9561,
                             "loc": {
                               "start": {
                                 "line": 331,
@@ -10303,8 +10303,8 @@
                             "body": [
                               {
                                 "type": "ExpressionStatement",
-                                "start": 9366,
-                                "end": 9545,
+                                "start": 9373,
+                                "end": 9555,
                                 "loc": {
                                   "start": {
                                     "line": 332,
@@ -10317,8 +10317,8 @@
                                 },
                                 "expression": {
                                   "type": "CallExpression",
-                                  "start": 9366,
-                                  "end": 9544,
+                                  "start": 9373,
+                                  "end": 9554,
                                   "loc": {
                                     "start": {
                                       "line": 332,
@@ -10331,8 +10331,8 @@
                                   },
                                   "callee": {
                                     "type": "MemberExpression",
-                                    "start": 9366,
-                                    "end": 9388,
+                                    "start": 9373,
+                                    "end": 9396,
                                     "loc": {
                                       "start": {
                                         "line": 332,
@@ -10340,13 +10340,13 @@
                                       },
                                       "end": {
                                         "line": 332,
-                                        "column": 28
+                                        "column": 29
                                       }
                                     },
                                     "object": {
                                       "type": "MemberExpression",
-                                      "start": 9366,
-                                      "end": 9374,
+                                      "start": 9373,
+                                      "end": 9381,
                                       "loc": {
                                         "start": {
                                           "line": 332,
@@ -10359,8 +10359,8 @@
                                       },
                                       "object": {
                                         "type": "ThisExpression",
-                                        "start": 9366,
-                                        "end": 9370,
+                                        "start": 9373,
+                                        "end": 9377,
                                         "loc": {
                                           "start": {
                                             "line": 332,
@@ -10374,8 +10374,8 @@
                                       },
                                       "property": {
                                         "type": "Identifier",
-                                        "start": 9371,
-                                        "end": 9374,
+                                        "start": 9378,
+                                        "end": 9381,
                                         "loc": {
                                           "start": {
                                             "line": 332,
@@ -10393,8 +10393,8 @@
                                     },
                                     "property": {
                                       "type": "Identifier",
-                                      "start": 9375,
-                                      "end": 9388,
+                                      "start": 9382,
+                                      "end": 9396,
                                       "loc": {
                                         "start": {
                                           "line": 332,
@@ -10402,23 +10402,23 @@
                                         },
                                         "end": {
                                           "line": 332,
-                                          "column": 28
+                                          "column": 29
                                         },
-                                        "identifierName": "establishCoin"
+                                        "identifierName": "establishToken"
                                       },
-                                      "name": "establishCoin"
+                                      "name": "establishToken"
                                     },
                                     "computed": false
                                   },
                                   "arguments": [
                                     {
                                       "type": "ObjectExpression",
-                                      "start": 9389,
-                                      "end": 9537,
+                                      "start": 9397,
+                                      "end": 9547,
                                       "loc": {
                                         "start": {
                                           "line": 332,
-                                          "column": 29
+                                          "column": 30
                                         },
                                         "end": {
                                           "line": 338,
@@ -10428,8 +10428,8 @@
                                       "properties": [
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 9399,
-                                          "end": 9422,
+                                          "start": 9407,
+                                          "end": 9430,
                                           "loc": {
                                             "start": {
                                               "line": 333,
@@ -10445,8 +10445,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 9399,
-                                            "end": 9404,
+                                            "start": 9407,
+                                            "end": 9412,
                                             "loc": {
                                               "start": {
                                                 "line": 333,
@@ -10462,8 +10462,8 @@
                                           },
                                           "value": {
                                             "type": "MemberExpression",
-                                            "start": 9406,
-                                            "end": 9422,
+                                            "start": 9414,
+                                            "end": 9430,
                                             "loc": {
                                               "start": {
                                                 "line": 333,
@@ -10476,8 +10476,8 @@
                                             },
                                             "object": {
                                               "type": "ThisExpression",
-                                              "start": 9406,
-                                              "end": 9410,
+                                              "start": 9414,
+                                              "end": 9418,
                                               "loc": {
                                                 "start": {
                                                   "line": 333,
@@ -10491,8 +10491,8 @@
                                             },
                                             "property": {
                                               "type": "Identifier",
-                                              "start": 9411,
-                                              "end": 9422,
+                                              "start": 9419,
+                                              "end": 9430,
                                               "loc": {
                                                 "start": {
                                                   "line": 333,
@@ -10511,8 +10511,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 9432,
-                                          "end": 9448,
+                                          "start": 9440,
+                                          "end": 9456,
                                           "loc": {
                                             "start": {
                                               "line": 334,
@@ -10528,8 +10528,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 9432,
-                                            "end": 9439,
+                                            "start": 9440,
+                                            "end": 9447,
                                             "loc": {
                                               "start": {
                                                 "line": 334,
@@ -10545,8 +10545,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 9441,
-                                            "end": 9448,
+                                            "start": 9449,
+                                            "end": 9456,
                                             "loc": {
                                               "start": {
                                                 "line": 334,
@@ -10563,8 +10563,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 9458,
-                                          "end": 9474,
+                                          "start": 9466,
+                                          "end": 9482,
                                           "loc": {
                                             "start": {
                                               "line": 335,
@@ -10580,8 +10580,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 9458,
-                                            "end": 9465,
+                                            "start": 9466,
+                                            "end": 9473,
                                             "loc": {
                                               "start": {
                                                 "line": 335,
@@ -10597,8 +10597,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 9467,
-                                            "end": 9474,
+                                            "start": 9475,
+                                            "end": 9482,
                                             "loc": {
                                               "start": {
                                                 "line": 335,
@@ -10615,8 +10615,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 9484,
-                                          "end": 9502,
+                                          "start": 9492,
+                                          "end": 9512,
                                           "loc": {
                                             "start": {
                                               "line": 336,
@@ -10624,7 +10624,7 @@
                                             },
                                             "end": {
                                               "line": 336,
-                                              "column": 26
+                                              "column": 28
                                             }
                                           },
                                           "method": false,
@@ -10632,8 +10632,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 9484,
-                                            "end": 9492,
+                                            "start": 9492,
+                                            "end": 9501,
                                             "loc": {
                                               "start": {
                                                 "line": 336,
@@ -10641,34 +10641,34 @@
                                               },
                                               "end": {
                                                 "line": 336,
-                                                "column": 16
+                                                "column": 17
                                               },
-                                              "identifierName": "coinName"
+                                              "identifierName": "tokenName"
                                             },
-                                            "name": "coinName"
+                                            "name": "tokenName"
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 9494,
-                                            "end": 9502,
+                                            "start": 9503,
+                                            "end": 9512,
                                             "loc": {
                                               "start": {
                                                 "line": 336,
-                                                "column": 18
+                                                "column": 19
                                               },
                                               "end": {
                                                 "line": 336,
-                                                "column": 26
+                                                "column": 28
                                               },
-                                              "identifierName": "coinName"
+                                              "identifierName": "tokenName"
                                             },
-                                            "name": "coinName"
+                                            "name": "tokenName"
                                           }
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 9512,
-                                          "end": 9528,
+                                          "start": 9522,
+                                          "end": 9538,
                                           "loc": {
                                             "start": {
                                               "line": 337,
@@ -10684,8 +10684,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 9512,
-                                            "end": 9519,
+                                            "start": 9522,
+                                            "end": 9529,
                                             "loc": {
                                               "start": {
                                                 "line": 337,
@@ -10701,8 +10701,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 9521,
-                                            "end": 9528,
+                                            "start": 9531,
+                                            "end": 9538,
                                             "loc": {
                                               "start": {
                                                 "line": 337,
@@ -10721,8 +10721,8 @@
                                     },
                                     {
                                       "type": "Identifier",
-                                      "start": 9539,
-                                      "end": 9543,
+                                      "start": 9549,
+                                      "end": 9553,
                                       "loc": {
                                         "start": {
                                           "line": 338,
@@ -10769,9 +10769,9 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+                  "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
                   "start": 8843,
-                  "end": 9256,
+                  "end": 9261,
                   "loc": {
                     "start": {
                       "line": 320,
@@ -10787,9 +10787,9 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                  "start": 9560,
-                  "end": 9686,
+                  "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "start": 9570,
+                  "end": 9697,
                   "loc": {
                     "start": {
                       "line": 341,
@@ -10803,9 +10803,9 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-                  "start": 9691,
-                  "end": 10102,
+                  "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+                  "start": 9702,
+                  "end": 10119,
                   "loc": {
                     "start": {
                       "line": 347,
@@ -10821,8 +10821,8 @@
             },
             {
               "type": "ClassMethod",
-              "start": 10105,
-              "end": 10390,
+              "start": 10122,
+              "end": 10412,
               "loc": {
                 "start": {
                   "line": 358,
@@ -10837,8 +10837,8 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 10105,
-                "end": 10113,
+                "start": 10122,
+                "end": 10131,
                 "loc": {
                   "start": {
                     "line": 358,
@@ -10846,11 +10846,11 @@
                   },
                   "end": {
                     "line": 358,
-                    "column": 10
+                    "column": 11
                   },
-                  "identifierName": "mintCoin"
+                  "identifierName": "mintToken"
                 },
-                "name": "mintCoin",
+                "name": "mintToken",
                 "leadingComments": null
               },
               "kind": "method",
@@ -10861,16 +10861,16 @@
               "params": [
                 {
                   "type": "Identifier",
-                  "start": 10114,
-                  "end": 10121,
+                  "start": 10132,
+                  "end": 10139,
                   "loc": {
                     "start": {
                       "line": 358,
-                      "column": 11
+                      "column": 12
                     },
                     "end": {
                       "line": 358,
-                      "column": 18
+                      "column": 19
                     },
                     "identifierName": "chainId"
                   },
@@ -10878,16 +10878,16 @@
                 },
                 {
                   "type": "Identifier",
-                  "start": 10123,
-                  "end": 10130,
+                  "start": 10141,
+                  "end": 10148,
                   "loc": {
                     "start": {
                       "line": 358,
-                      "column": 20
+                      "column": 21
                     },
                     "end": {
                       "line": 358,
-                      "column": 27
+                      "column": 28
                     },
                     "identifierName": "keyAddr"
                   },
@@ -10895,33 +10895,33 @@
                 },
                 {
                   "type": "Identifier",
-                  "start": 10132,
-                  "end": 10140,
+                  "start": 10150,
+                  "end": 10159,
                   "loc": {
                     "start": {
                       "line": 358,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
-                      "line": 358,
-                      "column": 37
-                    },
-                    "identifierName": "coinName"
-                  },
-                  "name": "coinName"
-                },
-                {
-                  "type": "Identifier",
-                  "start": 10142,
-                  "end": 10148,
-                  "loc": {
-                    "start": {
                       "line": 358,
                       "column": 39
                     },
+                    "identifierName": "tokenName"
+                  },
+                  "name": "tokenName"
+                },
+                {
+                  "type": "Identifier",
+                  "start": 10161,
+                  "end": 10167,
+                  "loc": {
+                    "start": {
+                      "line": 358,
+                      "column": 41
+                    },
                     "end": {
                       "line": 358,
-                      "column": 45
+                      "column": 47
                     },
                     "identifierName": "amount"
                   },
@@ -10930,12 +10930,12 @@
               ],
               "body": {
                 "type": "BlockStatement",
-                "start": 10150,
-                "end": 10390,
+                "start": 10169,
+                "end": 10412,
                 "loc": {
                   "start": {
                     "line": 358,
-                    "column": 47
+                    "column": 49
                   },
                   "end": {
                     "line": 368,
@@ -10945,8 +10945,8 @@
                 "body": [
                   {
                     "type": "ReturnStatement",
-                    "start": 10156,
-                    "end": 10386,
+                    "start": 10175,
+                    "end": 10408,
                     "loc": {
                       "start": {
                         "line": 359,
@@ -10959,8 +10959,8 @@
                     },
                     "argument": {
                       "type": "CallExpression",
-                      "start": 10163,
-                      "end": 10385,
+                      "start": 10182,
+                      "end": 10407,
                       "loc": {
                         "start": {
                           "line": 359,
@@ -10973,8 +10973,8 @@
                       },
                       "callee": {
                         "type": "Identifier",
-                        "start": 10163,
-                        "end": 10187,
+                        "start": 10182,
+                        "end": 10206,
                         "loc": {
                           "start": {
                             "line": 359,
@@ -10991,8 +10991,8 @@
                       "arguments": [
                         {
                           "type": "ArrowFunctionExpression",
-                          "start": 10188,
-                          "end": 10384,
+                          "start": 10207,
+                          "end": 10406,
                           "loc": {
                             "start": {
                               "line": 359,
@@ -11010,8 +11010,8 @@
                           "params": [
                             {
                               "type": "Identifier",
-                              "start": 10189,
-                              "end": 10193,
+                              "start": 10208,
+                              "end": 10212,
                               "loc": {
                                 "start": {
                                   "line": 359,
@@ -11028,8 +11028,8 @@
                           ],
                           "body": {
                             "type": "BlockStatement",
-                            "start": 10198,
-                            "end": 10384,
+                            "start": 10217,
+                            "end": 10406,
                             "loc": {
                               "start": {
                                 "line": 359,
@@ -11043,8 +11043,8 @@
                             "body": [
                               {
                                 "type": "ExpressionStatement",
-                                "start": 10206,
-                                "end": 10378,
+                                "start": 10225,
+                                "end": 10400,
                                 "loc": {
                                   "start": {
                                     "line": 360,
@@ -11057,8 +11057,8 @@
                                 },
                                 "expression": {
                                   "type": "CallExpression",
-                                  "start": 10206,
-                                  "end": 10377,
+                                  "start": 10225,
+                                  "end": 10399,
                                   "loc": {
                                     "start": {
                                       "line": 360,
@@ -11071,8 +11071,8 @@
                                   },
                                   "callee": {
                                     "type": "MemberExpression",
-                                    "start": 10206,
-                                    "end": 10223,
+                                    "start": 10225,
+                                    "end": 10243,
                                     "loc": {
                                       "start": {
                                         "line": 360,
@@ -11080,13 +11080,13 @@
                                       },
                                       "end": {
                                         "line": 360,
-                                        "column": 23
+                                        "column": 24
                                       }
                                     },
                                     "object": {
                                       "type": "MemberExpression",
-                                      "start": 10206,
-                                      "end": 10214,
+                                      "start": 10225,
+                                      "end": 10233,
                                       "loc": {
                                         "start": {
                                           "line": 360,
@@ -11099,8 +11099,8 @@
                                       },
                                       "object": {
                                         "type": "ThisExpression",
-                                        "start": 10206,
-                                        "end": 10210,
+                                        "start": 10225,
+                                        "end": 10229,
                                         "loc": {
                                           "start": {
                                             "line": 360,
@@ -11114,8 +11114,8 @@
                                       },
                                       "property": {
                                         "type": "Identifier",
-                                        "start": 10211,
-                                        "end": 10214,
+                                        "start": 10230,
+                                        "end": 10233,
                                         "loc": {
                                           "start": {
                                             "line": 360,
@@ -11133,8 +11133,8 @@
                                     },
                                     "property": {
                                       "type": "Identifier",
-                                      "start": 10215,
-                                      "end": 10223,
+                                      "start": 10234,
+                                      "end": 10243,
                                       "loc": {
                                         "start": {
                                           "line": 360,
@@ -11142,23 +11142,23 @@
                                         },
                                         "end": {
                                           "line": 360,
-                                          "column": 23
+                                          "column": 24
                                         },
-                                        "identifierName": "mintCoin"
+                                        "identifierName": "mintToken"
                                       },
-                                      "name": "mintCoin"
+                                      "name": "mintToken"
                                     },
                                     "computed": false
                                   },
                                   "arguments": [
                                     {
                                       "type": "ObjectExpression",
-                                      "start": 10224,
-                                      "end": 10370,
+                                      "start": 10244,
+                                      "end": 10392,
                                       "loc": {
                                         "start": {
                                           "line": 360,
-                                          "column": 24
+                                          "column": 25
                                         },
                                         "end": {
                                           "line": 366,
@@ -11168,8 +11168,8 @@
                                       "properties": [
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 10234,
-                                          "end": 10257,
+                                          "start": 10254,
+                                          "end": 10277,
                                           "loc": {
                                             "start": {
                                               "line": 361,
@@ -11185,8 +11185,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 10234,
-                                            "end": 10239,
+                                            "start": 10254,
+                                            "end": 10259,
                                             "loc": {
                                               "start": {
                                                 "line": 361,
@@ -11202,8 +11202,8 @@
                                           },
                                           "value": {
                                             "type": "MemberExpression",
-                                            "start": 10241,
-                                            "end": 10257,
+                                            "start": 10261,
+                                            "end": 10277,
                                             "loc": {
                                               "start": {
                                                 "line": 361,
@@ -11216,8 +11216,8 @@
                                             },
                                             "object": {
                                               "type": "ThisExpression",
-                                              "start": 10241,
-                                              "end": 10245,
+                                              "start": 10261,
+                                              "end": 10265,
                                               "loc": {
                                                 "start": {
                                                   "line": 361,
@@ -11231,8 +11231,8 @@
                                             },
                                             "property": {
                                               "type": "Identifier",
-                                              "start": 10246,
-                                              "end": 10257,
+                                              "start": 10266,
+                                              "end": 10277,
                                               "loc": {
                                                 "start": {
                                                   "line": 361,
@@ -11251,8 +11251,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 10267,
-                                          "end": 10283,
+                                          "start": 10287,
+                                          "end": 10303,
                                           "loc": {
                                             "start": {
                                               "line": 362,
@@ -11268,8 +11268,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 10267,
-                                            "end": 10274,
+                                            "start": 10287,
+                                            "end": 10294,
                                             "loc": {
                                               "start": {
                                                 "line": 362,
@@ -11285,8 +11285,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 10276,
-                                            "end": 10283,
+                                            "start": 10296,
+                                            "end": 10303,
                                             "loc": {
                                               "start": {
                                                 "line": 362,
@@ -11303,8 +11303,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 10293,
-                                          "end": 10309,
+                                          "start": 10313,
+                                          "end": 10329,
                                           "loc": {
                                             "start": {
                                               "line": 363,
@@ -11320,8 +11320,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 10293,
-                                            "end": 10300,
+                                            "start": 10313,
+                                            "end": 10320,
                                             "loc": {
                                               "start": {
                                                 "line": 363,
@@ -11337,8 +11337,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 10302,
-                                            "end": 10309,
+                                            "start": 10322,
+                                            "end": 10329,
                                             "loc": {
                                               "start": {
                                                 "line": 363,
@@ -11355,8 +11355,8 @@
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 10319,
-                                          "end": 10337,
+                                          "start": 10339,
+                                          "end": 10359,
                                           "loc": {
                                             "start": {
                                               "line": 364,
@@ -11364,7 +11364,7 @@
                                             },
                                             "end": {
                                               "line": 364,
-                                              "column": 26
+                                              "column": 28
                                             }
                                           },
                                           "method": false,
@@ -11372,8 +11372,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 10319,
-                                            "end": 10327,
+                                            "start": 10339,
+                                            "end": 10348,
                                             "loc": {
                                               "start": {
                                                 "line": 364,
@@ -11381,34 +11381,34 @@
                                               },
                                               "end": {
                                                 "line": 364,
-                                                "column": 16
+                                                "column": 17
                                               },
-                                              "identifierName": "coinName"
+                                              "identifierName": "tokenName"
                                             },
-                                            "name": "coinName"
+                                            "name": "tokenName"
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 10329,
-                                            "end": 10337,
+                                            "start": 10350,
+                                            "end": 10359,
                                             "loc": {
                                               "start": {
                                                 "line": 364,
-                                                "column": 18
+                                                "column": 19
                                               },
                                               "end": {
                                                 "line": 364,
-                                                "column": 26
+                                                "column": 28
                                               },
-                                              "identifierName": "coinName"
+                                              "identifierName": "tokenName"
                                             },
-                                            "name": "coinName"
+                                            "name": "tokenName"
                                           }
                                         },
                                         {
                                           "type": "ObjectProperty",
-                                          "start": 10347,
-                                          "end": 10361,
+                                          "start": 10369,
+                                          "end": 10383,
                                           "loc": {
                                             "start": {
                                               "line": 365,
@@ -11424,8 +11424,8 @@
                                           "computed": false,
                                           "key": {
                                             "type": "Identifier",
-                                            "start": 10347,
-                                            "end": 10353,
+                                            "start": 10369,
+                                            "end": 10375,
                                             "loc": {
                                               "start": {
                                                 "line": 365,
@@ -11441,8 +11441,8 @@
                                           },
                                           "value": {
                                             "type": "Identifier",
-                                            "start": 10355,
-                                            "end": 10361,
+                                            "start": 10377,
+                                            "end": 10383,
                                             "loc": {
                                               "start": {
                                                 "line": 365,
@@ -11461,8 +11461,8 @@
                                     },
                                     {
                                       "type": "Identifier",
-                                      "start": 10372,
-                                      "end": 10376,
+                                      "start": 10394,
+                                      "end": 10398,
                                       "loc": {
                                         "start": {
                                           "line": 366,
@@ -11493,9 +11493,9 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                  "start": 9560,
-                  "end": 9686,
+                  "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "start": 9570,
+                  "end": 9697,
                   "loc": {
                     "start": {
                       "line": 341,
@@ -11509,9 +11509,9 @@
                 },
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-                  "start": 9691,
-                  "end": 10102,
+                  "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+                  "start": 9702,
+                  "end": 10119,
                   "loc": {
                     "start": {
                       "line": 347,
@@ -11527,9 +11527,9 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                  "start": 10393,
-                  "end": 10514,
+                  "value": "*\n   * @typedef {Object} MintTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                  "start": 10415,
+                  "end": 10537,
                   "loc": {
                     "start": {
                       "line": 369,
@@ -11544,8 +11544,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} StorageAdapterConfigForBadger\n   * @property {string} path - Path for badger db\n   ",
-                  "start": 10519,
-                  "end": 10631,
+                  "start": 10542,
+                  "end": 10654,
                   "loc": {
                     "start": {
                       "line": 374,
@@ -11560,8 +11560,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
-                  "start": 10636,
-                  "end": 10989,
+                  "start": 10659,
+                  "end": 11012,
                   "loc": {
                     "start": {
                       "line": 379,
@@ -11576,8 +11576,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-                  "start": 10994,
-                  "end": 11243,
+                  "start": 11017,
+                  "end": 11266,
                   "loc": {
                     "start": {
                       "line": 386,
@@ -11592,8 +11592,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-                  "start": 11247,
-                  "end": 11554,
+                  "start": 11270,
+                  "end": 11577,
                   "loc": {
                     "start": {
                       "line": 392,
@@ -11608,8 +11608,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-                  "start": 11558,
-                  "end": 11797,
+                  "start": 11581,
+                  "end": 11820,
                   "loc": {
                     "start": {
                       "line": 399,
@@ -11624,8 +11624,8 @@
                 {
                   "type": "CommentBlock",
                   "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                  "start": 11801,
-                  "end": 12087,
+                  "start": 11824,
+                  "end": 12110,
                   "loc": {
                     "start": {
                       "line": 406,
@@ -11648,8 +11648,8 @@
       },
       {
         "type": "Identifier",
-        "start": 12493,
-        "end": 12594,
+        "start": 12516,
+        "end": 12617,
         "loc": {
           "start": {
             "line": 424,
@@ -11662,8 +11662,8 @@
         },
         "id": {
           "type": "Identifier",
-          "start": 12502,
-          "end": 12509,
+          "start": 12525,
+          "end": 12532,
           "loc": {
             "start": {
               "line": 424,
@@ -11684,8 +11684,8 @@
         "params": [
           {
             "type": "Identifier",
-            "start": 12510,
-            "end": 12522,
+            "start": 12533,
+            "end": 12545,
             "loc": {
               "start": {
                 "line": 424,
@@ -11701,8 +11701,8 @@
           },
           {
             "type": "Identifier",
-            "start": 12524,
-            "end": 12535,
+            "start": 12547,
+            "end": 12558,
             "loc": {
               "start": {
                 "line": 424,
@@ -11719,8 +11719,8 @@
         ],
         "body": {
           "type": "BlockStatement",
-          "start": 12537,
-          "end": 12594,
+          "start": 12560,
+          "end": 12617,
           "loc": {
             "start": {
               "line": 424,
@@ -11734,8 +11734,8 @@
           "body": [
             {
               "type": "ReturnStatement",
-              "start": 12541,
-              "end": 12592,
+              "start": 12564,
+              "end": 12615,
               "loc": {
                 "start": {
                   "line": 425,
@@ -11748,8 +11748,8 @@
               },
               "argument": {
                 "type": "NewExpression",
-                "start": 12548,
-                "end": 12591,
+                "start": 12571,
+                "end": 12614,
                 "loc": {
                   "start": {
                     "line": 425,
@@ -11762,8 +11762,8 @@
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 12552,
-                  "end": 12564,
+                  "start": 12575,
+                  "end": 12587,
                   "loc": {
                     "start": {
                       "line": 425,
@@ -11780,8 +11780,8 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 12565,
-                    "end": 12577,
+                    "start": 12588,
+                    "end": 12600,
                     "loc": {
                       "start": {
                         "line": 425,
@@ -11797,8 +11797,8 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 12579,
-                    "end": 12590,
+                    "start": 12602,
+                    "end": 12613,
                     "loc": {
                       "start": {
                         "line": 425,
@@ -11824,8 +11824,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12596,
-        "end": 12620,
+        "start": 12619,
+        "end": 12643,
         "loc": {
           "start": {
             "line": 428,
@@ -11840,8 +11840,8 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 12605,
-            "end": 12617,
+            "start": 12628,
+            "end": 12640,
             "loc": {
               "start": {
                 "line": 428,
@@ -11854,8 +11854,8 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 12605,
-              "end": 12617,
+              "start": 12628,
+              "end": 12640,
               "loc": {
                 "start": {
                   "line": 428,
@@ -11871,8 +11871,8 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 12605,
-              "end": 12617,
+              "start": 12628,
+              "end": 12640,
               "loc": {
                 "start": {
                   "line": 428,
@@ -11892,8 +11892,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12621,
-        "end": 12640,
+        "start": 12644,
+        "end": 12663,
         "loc": {
           "start": {
             "line": 429,
@@ -11908,8 +11908,8 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 12630,
-            "end": 12637,
+            "start": 12653,
+            "end": 12660,
             "loc": {
               "start": {
                 "line": 429,
@@ -11922,8 +11922,8 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 12630,
-              "end": 12637,
+              "start": 12653,
+              "end": 12660,
               "loc": {
                 "start": {
                   "line": 429,
@@ -11939,8 +11939,8 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 12630,
-              "end": 12637,
+              "start": 12653,
+              "end": 12660,
               "loc": {
                 "start": {
                   "line": 429,
@@ -11960,8 +11960,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12596,
-        "end": 12620,
+        "start": 12619,
+        "end": 12643,
         "loc": {
           "start": {
             "line": 428,
@@ -11975,7 +11975,7 @@
         "declaration": {
           "type": "ClassDeclaration",
           "start": 788,
-          "end": 12089,
+          "end": 12112,
           "loc": {
             "start": {
               "line": 34,
@@ -12008,7 +12008,7 @@
           "body": {
             "type": "ClassBody",
             "start": 807,
-            "end": 12089,
+            "end": 12112,
             "loc": {
               "start": {
                 "line": 34,
@@ -20487,9 +20487,9 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
                     "start": 8843,
-                    "end": 9256,
+                    "end": 9261,
                     "loc": {
                       "start": {
                         "line": 320,
@@ -20505,8 +20505,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 9259,
-                "end": 9557,
+                "start": 9264,
+                "end": 9567,
                 "loc": {
                   "start": {
                     "line": 330,
@@ -20521,8 +20521,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 9259,
-                  "end": 9272,
+                  "start": 9264,
+                  "end": 9278,
                   "loc": {
                     "start": {
                       "line": 330,
@@ -20530,11 +20530,11 @@
                     },
                     "end": {
                       "line": 330,
-                      "column": 15
+                      "column": 16
                     },
-                    "identifierName": "establishCoin"
+                    "identifierName": "establishToken"
                   },
-                  "name": "establishCoin",
+                  "name": "establishToken",
                   "leadingComments": null
                 },
                 "kind": "method",
@@ -20545,16 +20545,16 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 9273,
-                    "end": 9280,
+                    "start": 9279,
+                    "end": 9286,
                     "loc": {
                       "start": {
                         "line": 330,
-                        "column": 16
+                        "column": 17
                       },
                       "end": {
                         "line": 330,
-                        "column": 23
+                        "column": 24
                       },
                       "identifierName": "chainId"
                     },
@@ -20562,16 +20562,16 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 9282,
-                    "end": 9289,
+                    "start": 9288,
+                    "end": 9295,
                     "loc": {
                       "start": {
                         "line": 330,
-                        "column": 25
+                        "column": 26
                       },
                       "end": {
                         "line": 330,
-                        "column": 32
+                        "column": 33
                       },
                       "identifierName": "keyAddr"
                     },
@@ -20579,33 +20579,33 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 9291,
-                    "end": 9299,
+                    "start": 9297,
+                    "end": 9306,
                     "loc": {
                       "start": {
                         "line": 330,
-                        "column": 34
+                        "column": 35
                       },
                       "end": {
-                        "line": 330,
-                        "column": 42
-                      },
-                      "identifierName": "coinName"
-                    },
-                    "name": "coinName"
-                  },
-                  {
-                    "type": "Identifier",
-                    "start": 9301,
-                    "end": 9308,
-                    "loc": {
-                      "start": {
                         "line": 330,
                         "column": 44
                       },
+                      "identifierName": "tokenName"
+                    },
+                    "name": "tokenName"
+                  },
+                  {
+                    "type": "Identifier",
+                    "start": 9308,
+                    "end": 9315,
+                    "loc": {
+                      "start": {
+                        "line": 330,
+                        "column": 46
+                      },
                       "end": {
                         "line": 330,
-                        "column": 51
+                        "column": 53
                       },
                       "identifierName": "maximum"
                     },
@@ -20614,12 +20614,12 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 9310,
-                  "end": 9557,
+                  "start": 9317,
+                  "end": 9567,
                   "loc": {
                     "start": {
                       "line": 330,
-                      "column": 53
+                      "column": 55
                     },
                     "end": {
                       "line": 340,
@@ -20629,8 +20629,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 9316,
-                      "end": 9553,
+                      "start": 9323,
+                      "end": 9563,
                       "loc": {
                         "start": {
                           "line": 331,
@@ -20643,8 +20643,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 9323,
-                        "end": 9552,
+                        "start": 9330,
+                        "end": 9562,
                         "loc": {
                           "start": {
                             "line": 331,
@@ -20657,8 +20657,8 @@
                         },
                         "callee": {
                           "type": "Identifier",
-                          "start": 9323,
-                          "end": 9347,
+                          "start": 9330,
+                          "end": 9354,
                           "loc": {
                             "start": {
                               "line": 331,
@@ -20675,8 +20675,8 @@
                         "arguments": [
                           {
                             "type": "ArrowFunctionExpression",
-                            "start": 9348,
-                            "end": 9551,
+                            "start": 9355,
+                            "end": 9561,
                             "loc": {
                               "start": {
                                 "line": 331,
@@ -20694,8 +20694,8 @@
                             "params": [
                               {
                                 "type": "Identifier",
-                                "start": 9349,
-                                "end": 9353,
+                                "start": 9356,
+                                "end": 9360,
                                 "loc": {
                                   "start": {
                                     "line": 331,
@@ -20712,8 +20712,8 @@
                             ],
                             "body": {
                               "type": "BlockStatement",
-                              "start": 9358,
-                              "end": 9551,
+                              "start": 9365,
+                              "end": 9561,
                               "loc": {
                                 "start": {
                                   "line": 331,
@@ -20727,8 +20727,8 @@
                               "body": [
                                 {
                                   "type": "ExpressionStatement",
-                                  "start": 9366,
-                                  "end": 9545,
+                                  "start": 9373,
+                                  "end": 9555,
                                   "loc": {
                                     "start": {
                                       "line": 332,
@@ -20741,8 +20741,8 @@
                                   },
                                   "expression": {
                                     "type": "CallExpression",
-                                    "start": 9366,
-                                    "end": 9544,
+                                    "start": 9373,
+                                    "end": 9554,
                                     "loc": {
                                       "start": {
                                         "line": 332,
@@ -20755,8 +20755,8 @@
                                     },
                                     "callee": {
                                       "type": "MemberExpression",
-                                      "start": 9366,
-                                      "end": 9388,
+                                      "start": 9373,
+                                      "end": 9396,
                                       "loc": {
                                         "start": {
                                           "line": 332,
@@ -20764,13 +20764,13 @@
                                         },
                                         "end": {
                                           "line": 332,
-                                          "column": 28
+                                          "column": 29
                                         }
                                       },
                                       "object": {
                                         "type": "MemberExpression",
-                                        "start": 9366,
-                                        "end": 9374,
+                                        "start": 9373,
+                                        "end": 9381,
                                         "loc": {
                                           "start": {
                                             "line": 332,
@@ -20783,8 +20783,8 @@
                                         },
                                         "object": {
                                           "type": "ThisExpression",
-                                          "start": 9366,
-                                          "end": 9370,
+                                          "start": 9373,
+                                          "end": 9377,
                                           "loc": {
                                             "start": {
                                               "line": 332,
@@ -20798,8 +20798,8 @@
                                         },
                                         "property": {
                                           "type": "Identifier",
-                                          "start": 9371,
-                                          "end": 9374,
+                                          "start": 9378,
+                                          "end": 9381,
                                           "loc": {
                                             "start": {
                                               "line": 332,
@@ -20817,8 +20817,8 @@
                                       },
                                       "property": {
                                         "type": "Identifier",
-                                        "start": 9375,
-                                        "end": 9388,
+                                        "start": 9382,
+                                        "end": 9396,
                                         "loc": {
                                           "start": {
                                             "line": 332,
@@ -20826,23 +20826,23 @@
                                           },
                                           "end": {
                                             "line": 332,
-                                            "column": 28
+                                            "column": 29
                                           },
-                                          "identifierName": "establishCoin"
+                                          "identifierName": "establishToken"
                                         },
-                                        "name": "establishCoin"
+                                        "name": "establishToken"
                                       },
                                       "computed": false
                                     },
                                     "arguments": [
                                       {
                                         "type": "ObjectExpression",
-                                        "start": 9389,
-                                        "end": 9537,
+                                        "start": 9397,
+                                        "end": 9547,
                                         "loc": {
                                           "start": {
                                             "line": 332,
-                                            "column": 29
+                                            "column": 30
                                           },
                                           "end": {
                                             "line": 338,
@@ -20852,8 +20852,8 @@
                                         "properties": [
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 9399,
-                                            "end": 9422,
+                                            "start": 9407,
+                                            "end": 9430,
                                             "loc": {
                                               "start": {
                                                 "line": 333,
@@ -20869,8 +20869,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 9399,
-                                              "end": 9404,
+                                              "start": 9407,
+                                              "end": 9412,
                                               "loc": {
                                                 "start": {
                                                   "line": 333,
@@ -20886,8 +20886,8 @@
                                             },
                                             "value": {
                                               "type": "MemberExpression",
-                                              "start": 9406,
-                                              "end": 9422,
+                                              "start": 9414,
+                                              "end": 9430,
                                               "loc": {
                                                 "start": {
                                                   "line": 333,
@@ -20900,8 +20900,8 @@
                                               },
                                               "object": {
                                                 "type": "ThisExpression",
-                                                "start": 9406,
-                                                "end": 9410,
+                                                "start": 9414,
+                                                "end": 9418,
                                                 "loc": {
                                                   "start": {
                                                     "line": 333,
@@ -20915,8 +20915,8 @@
                                               },
                                               "property": {
                                                 "type": "Identifier",
-                                                "start": 9411,
-                                                "end": 9422,
+                                                "start": 9419,
+                                                "end": 9430,
                                                 "loc": {
                                                   "start": {
                                                     "line": 333,
@@ -20935,8 +20935,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 9432,
-                                            "end": 9448,
+                                            "start": 9440,
+                                            "end": 9456,
                                             "loc": {
                                               "start": {
                                                 "line": 334,
@@ -20952,8 +20952,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 9432,
-                                              "end": 9439,
+                                              "start": 9440,
+                                              "end": 9447,
                                               "loc": {
                                                 "start": {
                                                   "line": 334,
@@ -20969,8 +20969,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 9441,
-                                              "end": 9448,
+                                              "start": 9449,
+                                              "end": 9456,
                                               "loc": {
                                                 "start": {
                                                   "line": 334,
@@ -20987,8 +20987,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 9458,
-                                            "end": 9474,
+                                            "start": 9466,
+                                            "end": 9482,
                                             "loc": {
                                               "start": {
                                                 "line": 335,
@@ -21004,8 +21004,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 9458,
-                                              "end": 9465,
+                                              "start": 9466,
+                                              "end": 9473,
                                               "loc": {
                                                 "start": {
                                                   "line": 335,
@@ -21021,8 +21021,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 9467,
-                                              "end": 9474,
+                                              "start": 9475,
+                                              "end": 9482,
                                               "loc": {
                                                 "start": {
                                                   "line": 335,
@@ -21039,8 +21039,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 9484,
-                                            "end": 9502,
+                                            "start": 9492,
+                                            "end": 9512,
                                             "loc": {
                                               "start": {
                                                 "line": 336,
@@ -21048,7 +21048,7 @@
                                               },
                                               "end": {
                                                 "line": 336,
-                                                "column": 26
+                                                "column": 28
                                               }
                                             },
                                             "method": false,
@@ -21056,8 +21056,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 9484,
-                                              "end": 9492,
+                                              "start": 9492,
+                                              "end": 9501,
                                               "loc": {
                                                 "start": {
                                                   "line": 336,
@@ -21065,34 +21065,34 @@
                                                 },
                                                 "end": {
                                                   "line": 336,
-                                                  "column": 16
+                                                  "column": 17
                                                 },
-                                                "identifierName": "coinName"
+                                                "identifierName": "tokenName"
                                               },
-                                              "name": "coinName"
+                                              "name": "tokenName"
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 9494,
-                                              "end": 9502,
+                                              "start": 9503,
+                                              "end": 9512,
                                               "loc": {
                                                 "start": {
                                                   "line": 336,
-                                                  "column": 18
+                                                  "column": 19
                                                 },
                                                 "end": {
                                                   "line": 336,
-                                                  "column": 26
+                                                  "column": 28
                                                 },
-                                                "identifierName": "coinName"
+                                                "identifierName": "tokenName"
                                               },
-                                              "name": "coinName"
+                                              "name": "tokenName"
                                             }
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 9512,
-                                            "end": 9528,
+                                            "start": 9522,
+                                            "end": 9538,
                                             "loc": {
                                               "start": {
                                                 "line": 337,
@@ -21108,8 +21108,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 9512,
-                                              "end": 9519,
+                                              "start": 9522,
+                                              "end": 9529,
                                               "loc": {
                                                 "start": {
                                                   "line": 337,
@@ -21125,8 +21125,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 9521,
-                                              "end": 9528,
+                                              "start": 9531,
+                                              "end": 9538,
                                               "loc": {
                                                 "start": {
                                                   "line": 337,
@@ -21145,8 +21145,8 @@
                                       },
                                       {
                                         "type": "Identifier",
-                                        "start": 9539,
-                                        "end": 9543,
+                                        "start": 9549,
+                                        "end": 9553,
                                         "loc": {
                                           "start": {
                                             "line": 338,
@@ -21193,9 +21193,9 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+                    "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
                     "start": 8843,
-                    "end": 9256,
+                    "end": 9261,
                     "loc": {
                       "start": {
                         "line": 320,
@@ -21211,9 +21211,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                    "start": 9560,
-                    "end": 9686,
+                    "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "start": 9570,
+                    "end": 9697,
                     "loc": {
                       "start": {
                         "line": 341,
@@ -21227,9 +21227,9 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-                    "start": 9691,
-                    "end": 10102,
+                    "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+                    "start": 9702,
+                    "end": 10119,
                     "loc": {
                       "start": {
                         "line": 347,
@@ -21245,8 +21245,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 10105,
-                "end": 10390,
+                "start": 10122,
+                "end": 10412,
                 "loc": {
                   "start": {
                     "line": 358,
@@ -21261,8 +21261,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 10105,
-                  "end": 10113,
+                  "start": 10122,
+                  "end": 10131,
                   "loc": {
                     "start": {
                       "line": 358,
@@ -21270,11 +21270,11 @@
                     },
                     "end": {
                       "line": 358,
-                      "column": 10
+                      "column": 11
                     },
-                    "identifierName": "mintCoin"
+                    "identifierName": "mintToken"
                   },
-                  "name": "mintCoin",
+                  "name": "mintToken",
                   "leadingComments": null
                 },
                 "kind": "method",
@@ -21285,16 +21285,16 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 10114,
-                    "end": 10121,
+                    "start": 10132,
+                    "end": 10139,
                     "loc": {
                       "start": {
                         "line": 358,
-                        "column": 11
+                        "column": 12
                       },
                       "end": {
                         "line": 358,
-                        "column": 18
+                        "column": 19
                       },
                       "identifierName": "chainId"
                     },
@@ -21302,16 +21302,16 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 10123,
-                    "end": 10130,
+                    "start": 10141,
+                    "end": 10148,
                     "loc": {
                       "start": {
                         "line": 358,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 358,
-                        "column": 27
+                        "column": 28
                       },
                       "identifierName": "keyAddr"
                     },
@@ -21319,33 +21319,33 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 10132,
-                    "end": 10140,
+                    "start": 10150,
+                    "end": 10159,
                     "loc": {
                       "start": {
                         "line": 358,
-                        "column": 29
+                        "column": 30
                       },
                       "end": {
-                        "line": 358,
-                        "column": 37
-                      },
-                      "identifierName": "coinName"
-                    },
-                    "name": "coinName"
-                  },
-                  {
-                    "type": "Identifier",
-                    "start": 10142,
-                    "end": 10148,
-                    "loc": {
-                      "start": {
                         "line": 358,
                         "column": 39
                       },
+                      "identifierName": "tokenName"
+                    },
+                    "name": "tokenName"
+                  },
+                  {
+                    "type": "Identifier",
+                    "start": 10161,
+                    "end": 10167,
+                    "loc": {
+                      "start": {
+                        "line": 358,
+                        "column": 41
+                      },
                       "end": {
                         "line": 358,
-                        "column": 45
+                        "column": 47
                       },
                       "identifierName": "amount"
                     },
@@ -21354,12 +21354,12 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 10150,
-                  "end": 10390,
+                  "start": 10169,
+                  "end": 10412,
                   "loc": {
                     "start": {
                       "line": 358,
-                      "column": 47
+                      "column": 49
                     },
                     "end": {
                       "line": 368,
@@ -21369,8 +21369,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 10156,
-                      "end": 10386,
+                      "start": 10175,
+                      "end": 10408,
                       "loc": {
                         "start": {
                           "line": 359,
@@ -21383,8 +21383,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 10163,
-                        "end": 10385,
+                        "start": 10182,
+                        "end": 10407,
                         "loc": {
                           "start": {
                             "line": 359,
@@ -21397,8 +21397,8 @@
                         },
                         "callee": {
                           "type": "Identifier",
-                          "start": 10163,
-                          "end": 10187,
+                          "start": 10182,
+                          "end": 10206,
                           "loc": {
                             "start": {
                               "line": 359,
@@ -21415,8 +21415,8 @@
                         "arguments": [
                           {
                             "type": "ArrowFunctionExpression",
-                            "start": 10188,
-                            "end": 10384,
+                            "start": 10207,
+                            "end": 10406,
                             "loc": {
                               "start": {
                                 "line": 359,
@@ -21434,8 +21434,8 @@
                             "params": [
                               {
                                 "type": "Identifier",
-                                "start": 10189,
-                                "end": 10193,
+                                "start": 10208,
+                                "end": 10212,
                                 "loc": {
                                   "start": {
                                     "line": 359,
@@ -21452,8 +21452,8 @@
                             ],
                             "body": {
                               "type": "BlockStatement",
-                              "start": 10198,
-                              "end": 10384,
+                              "start": 10217,
+                              "end": 10406,
                               "loc": {
                                 "start": {
                                   "line": 359,
@@ -21467,8 +21467,8 @@
                               "body": [
                                 {
                                   "type": "ExpressionStatement",
-                                  "start": 10206,
-                                  "end": 10378,
+                                  "start": 10225,
+                                  "end": 10400,
                                   "loc": {
                                     "start": {
                                       "line": 360,
@@ -21481,8 +21481,8 @@
                                   },
                                   "expression": {
                                     "type": "CallExpression",
-                                    "start": 10206,
-                                    "end": 10377,
+                                    "start": 10225,
+                                    "end": 10399,
                                     "loc": {
                                       "start": {
                                         "line": 360,
@@ -21495,8 +21495,8 @@
                                     },
                                     "callee": {
                                       "type": "MemberExpression",
-                                      "start": 10206,
-                                      "end": 10223,
+                                      "start": 10225,
+                                      "end": 10243,
                                       "loc": {
                                         "start": {
                                           "line": 360,
@@ -21504,13 +21504,13 @@
                                         },
                                         "end": {
                                           "line": 360,
-                                          "column": 23
+                                          "column": 24
                                         }
                                       },
                                       "object": {
                                         "type": "MemberExpression",
-                                        "start": 10206,
-                                        "end": 10214,
+                                        "start": 10225,
+                                        "end": 10233,
                                         "loc": {
                                           "start": {
                                             "line": 360,
@@ -21523,8 +21523,8 @@
                                         },
                                         "object": {
                                           "type": "ThisExpression",
-                                          "start": 10206,
-                                          "end": 10210,
+                                          "start": 10225,
+                                          "end": 10229,
                                           "loc": {
                                             "start": {
                                               "line": 360,
@@ -21538,8 +21538,8 @@
                                         },
                                         "property": {
                                           "type": "Identifier",
-                                          "start": 10211,
-                                          "end": 10214,
+                                          "start": 10230,
+                                          "end": 10233,
                                           "loc": {
                                             "start": {
                                               "line": 360,
@@ -21557,8 +21557,8 @@
                                       },
                                       "property": {
                                         "type": "Identifier",
-                                        "start": 10215,
-                                        "end": 10223,
+                                        "start": 10234,
+                                        "end": 10243,
                                         "loc": {
                                           "start": {
                                             "line": 360,
@@ -21566,23 +21566,23 @@
                                           },
                                           "end": {
                                             "line": 360,
-                                            "column": 23
+                                            "column": 24
                                           },
-                                          "identifierName": "mintCoin"
+                                          "identifierName": "mintToken"
                                         },
-                                        "name": "mintCoin"
+                                        "name": "mintToken"
                                       },
                                       "computed": false
                                     },
                                     "arguments": [
                                       {
                                         "type": "ObjectExpression",
-                                        "start": 10224,
-                                        "end": 10370,
+                                        "start": 10244,
+                                        "end": 10392,
                                         "loc": {
                                           "start": {
                                             "line": 360,
-                                            "column": 24
+                                            "column": 25
                                           },
                                           "end": {
                                             "line": 366,
@@ -21592,8 +21592,8 @@
                                         "properties": [
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 10234,
-                                            "end": 10257,
+                                            "start": 10254,
+                                            "end": 10277,
                                             "loc": {
                                               "start": {
                                                 "line": 361,
@@ -21609,8 +21609,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 10234,
-                                              "end": 10239,
+                                              "start": 10254,
+                                              "end": 10259,
                                               "loc": {
                                                 "start": {
                                                   "line": 361,
@@ -21626,8 +21626,8 @@
                                             },
                                             "value": {
                                               "type": "MemberExpression",
-                                              "start": 10241,
-                                              "end": 10257,
+                                              "start": 10261,
+                                              "end": 10277,
                                               "loc": {
                                                 "start": {
                                                   "line": 361,
@@ -21640,8 +21640,8 @@
                                               },
                                               "object": {
                                                 "type": "ThisExpression",
-                                                "start": 10241,
-                                                "end": 10245,
+                                                "start": 10261,
+                                                "end": 10265,
                                                 "loc": {
                                                   "start": {
                                                     "line": 361,
@@ -21655,8 +21655,8 @@
                                               },
                                               "property": {
                                                 "type": "Identifier",
-                                                "start": 10246,
-                                                "end": 10257,
+                                                "start": 10266,
+                                                "end": 10277,
                                                 "loc": {
                                                   "start": {
                                                     "line": 361,
@@ -21675,8 +21675,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 10267,
-                                            "end": 10283,
+                                            "start": 10287,
+                                            "end": 10303,
                                             "loc": {
                                               "start": {
                                                 "line": 362,
@@ -21692,8 +21692,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 10267,
-                                              "end": 10274,
+                                              "start": 10287,
+                                              "end": 10294,
                                               "loc": {
                                                 "start": {
                                                   "line": 362,
@@ -21709,8 +21709,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 10276,
-                                              "end": 10283,
+                                              "start": 10296,
+                                              "end": 10303,
                                               "loc": {
                                                 "start": {
                                                   "line": 362,
@@ -21727,8 +21727,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 10293,
-                                            "end": 10309,
+                                            "start": 10313,
+                                            "end": 10329,
                                             "loc": {
                                               "start": {
                                                 "line": 363,
@@ -21744,8 +21744,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 10293,
-                                              "end": 10300,
+                                              "start": 10313,
+                                              "end": 10320,
                                               "loc": {
                                                 "start": {
                                                   "line": 363,
@@ -21761,8 +21761,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 10302,
-                                              "end": 10309,
+                                              "start": 10322,
+                                              "end": 10329,
                                               "loc": {
                                                 "start": {
                                                   "line": 363,
@@ -21779,8 +21779,8 @@
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 10319,
-                                            "end": 10337,
+                                            "start": 10339,
+                                            "end": 10359,
                                             "loc": {
                                               "start": {
                                                 "line": 364,
@@ -21788,7 +21788,7 @@
                                               },
                                               "end": {
                                                 "line": 364,
-                                                "column": 26
+                                                "column": 28
                                               }
                                             },
                                             "method": false,
@@ -21796,8 +21796,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 10319,
-                                              "end": 10327,
+                                              "start": 10339,
+                                              "end": 10348,
                                               "loc": {
                                                 "start": {
                                                   "line": 364,
@@ -21805,34 +21805,34 @@
                                                 },
                                                 "end": {
                                                   "line": 364,
-                                                  "column": 16
+                                                  "column": 17
                                                 },
-                                                "identifierName": "coinName"
+                                                "identifierName": "tokenName"
                                               },
-                                              "name": "coinName"
+                                              "name": "tokenName"
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 10329,
-                                              "end": 10337,
+                                              "start": 10350,
+                                              "end": 10359,
                                               "loc": {
                                                 "start": {
                                                   "line": 364,
-                                                  "column": 18
+                                                  "column": 19
                                                 },
                                                 "end": {
                                                   "line": 364,
-                                                  "column": 26
+                                                  "column": 28
                                                 },
-                                                "identifierName": "coinName"
+                                                "identifierName": "tokenName"
                                               },
-                                              "name": "coinName"
+                                              "name": "tokenName"
                                             }
                                           },
                                           {
                                             "type": "ObjectProperty",
-                                            "start": 10347,
-                                            "end": 10361,
+                                            "start": 10369,
+                                            "end": 10383,
                                             "loc": {
                                               "start": {
                                                 "line": 365,
@@ -21848,8 +21848,8 @@
                                             "computed": false,
                                             "key": {
                                               "type": "Identifier",
-                                              "start": 10347,
-                                              "end": 10353,
+                                              "start": 10369,
+                                              "end": 10375,
                                               "loc": {
                                                 "start": {
                                                   "line": 365,
@@ -21865,8 +21865,8 @@
                                             },
                                             "value": {
                                               "type": "Identifier",
-                                              "start": 10355,
-                                              "end": 10361,
+                                              "start": 10377,
+                                              "end": 10383,
                                               "loc": {
                                                 "start": {
                                                   "line": 365,
@@ -21885,8 +21885,8 @@
                                       },
                                       {
                                         "type": "Identifier",
-                                        "start": 10372,
-                                        "end": 10376,
+                                        "start": 10394,
+                                        "end": 10398,
                                         "loc": {
                                           "start": {
                                             "line": 366,
@@ -21917,9 +21917,9 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                    "start": 9560,
-                    "end": 9686,
+                    "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "start": 9570,
+                    "end": 9697,
                     "loc": {
                       "start": {
                         "line": 341,
@@ -21933,9 +21933,9 @@
                   },
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-                    "start": 9691,
-                    "end": 10102,
+                    "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+                    "start": 9702,
+                    "end": 10119,
                     "loc": {
                       "start": {
                         "line": 347,
@@ -21951,9 +21951,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-                    "start": 10393,
-                    "end": 10514,
+                    "value": "*\n   * @typedef {Object} MintTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+                    "start": 10415,
+                    "end": 10537,
                     "loc": {
                       "start": {
                         "line": 369,
@@ -21968,8 +21968,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} StorageAdapterConfigForBadger\n   * @property {string} path - Path for badger db\n   ",
-                    "start": 10519,
-                    "end": 10631,
+                    "start": 10542,
+                    "end": 10654,
                     "loc": {
                       "start": {
                         "line": 374,
@@ -21984,8 +21984,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
-                    "start": 10636,
-                    "end": 10989,
+                    "start": 10659,
+                    "end": 11012,
                     "loc": {
                       "start": {
                         "line": 379,
@@ -22000,8 +22000,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-                    "start": 10994,
-                    "end": 11243,
+                    "start": 11017,
+                    "end": 11266,
                     "loc": {
                       "start": {
                         "line": 386,
@@ -22016,8 +22016,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-                    "start": 11247,
-                    "end": 11554,
+                    "start": 11270,
+                    "end": 11577,
                     "loc": {
                       "start": {
                         "line": 392,
@@ -22032,8 +22032,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-                    "start": 11558,
-                    "end": 11797,
+                    "start": 11581,
+                    "end": 11820,
                     "loc": {
                       "start": {
                         "line": 399,
@@ -22048,8 +22048,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-                    "start": 11801,
-                    "end": 12087,
+                    "start": 11824,
+                    "end": 12110,
                     "loc": {
                       "start": {
                         "line": 406,
@@ -22088,8 +22088,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 12091,
-              "end": 12492,
+              "start": 12114,
+              "end": 12515,
               "loc": {
                 "start": {
                   "line": 414,
@@ -22110,8 +22110,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 12621,
-        "end": 12640,
+        "start": 12644,
+        "end": 12663,
         "loc": {
           "start": {
             "line": 429,
@@ -22124,8 +22124,8 @@
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 12493,
-          "end": 12594,
+          "start": 12516,
+          "end": 12617,
           "loc": {
             "start": {
               "line": 424,
@@ -22138,8 +22138,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 12502,
-            "end": 12509,
+            "start": 12525,
+            "end": 12532,
             "loc": {
               "start": {
                 "line": 424,
@@ -22160,8 +22160,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 12510,
-              "end": 12522,
+              "start": 12533,
+              "end": 12545,
               "loc": {
                 "start": {
                   "line": 424,
@@ -22177,8 +22177,8 @@
             },
             {
               "type": "Identifier",
-              "start": 12524,
-              "end": 12535,
+              "start": 12547,
+              "end": 12558,
               "loc": {
                 "start": {
                   "line": 424,
@@ -22195,8 +22195,8 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 12537,
-            "end": 12594,
+            "start": 12560,
+            "end": 12617,
             "loc": {
               "start": {
                 "line": 424,
@@ -22210,8 +22210,8 @@
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 12541,
-                "end": 12592,
+                "start": 12564,
+                "end": 12615,
                 "loc": {
                   "start": {
                     "line": 425,
@@ -22224,8 +22224,8 @@
                 },
                 "argument": {
                   "type": "NewExpression",
-                  "start": 12548,
-                  "end": 12591,
+                  "start": 12571,
+                  "end": 12614,
                   "loc": {
                     "start": {
                       "line": 425,
@@ -22238,8 +22238,8 @@
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 12552,
-                    "end": 12564,
+                    "start": 12575,
+                    "end": 12587,
                     "loc": {
                       "start": {
                         "line": 425,
@@ -22256,8 +22256,8 @@
                   "arguments": [
                     {
                       "type": "Identifier",
-                      "start": 12565,
-                      "end": 12577,
+                      "start": 12588,
+                      "end": 12600,
                       "loc": {
                         "start": {
                           "line": 425,
@@ -22273,8 +22273,8 @@
                     },
                     {
                       "type": "Identifier",
-                      "start": 12579,
-                      "end": 12590,
+                      "start": 12602,
+                      "end": 12613,
                       "loc": {
                         "start": {
                           "line": 425,
@@ -22298,8 +22298,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-              "start": 12091,
-              "end": 12492,
+              "start": 12114,
+              "end": 12515,
               "loc": {
                 "start": {
                   "line": 414,
@@ -22756,9 +22756,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
       "start": 8843,
-      "end": 9256,
+      "end": 9261,
       "loc": {
         "start": {
           "line": 320,
@@ -22772,9 +22772,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-      "start": 9560,
-      "end": 9686,
+      "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "start": 9570,
+      "end": 9697,
       "loc": {
         "start": {
           "line": 341,
@@ -22788,9 +22788,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-      "start": 9691,
-      "end": 10102,
+      "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+      "start": 9702,
+      "end": 10119,
       "loc": {
         "start": {
           "line": 347,
@@ -22804,9 +22804,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-      "start": 10393,
-      "end": 10514,
+      "value": "*\n   * @typedef {Object} MintTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "start": 10415,
+      "end": 10537,
       "loc": {
         "start": {
           "line": 369,
@@ -22821,8 +22821,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfigForBadger\n   * @property {string} path - Path for badger db\n   ",
-      "start": 10519,
-      "end": 10631,
+      "start": 10542,
+      "end": 10654,
       "loc": {
         "start": {
           "line": 374,
@@ -22837,8 +22837,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
-      "start": 10636,
-      "end": 10989,
+      "start": 10659,
+      "end": 11012,
       "loc": {
         "start": {
           "line": 379,
@@ -22853,8 +22853,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-      "start": 10994,
-      "end": 11243,
+      "start": 11017,
+      "end": 11266,
       "loc": {
         "start": {
           "line": 386,
@@ -22869,8 +22869,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-      "start": 11247,
-      "end": 11554,
+      "start": 11270,
+      "end": 11577,
       "loc": {
         "start": {
           "line": 392,
@@ -22885,8 +22885,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-      "start": 11558,
-      "end": 11797,
+      "start": 11581,
+      "end": 11820,
       "loc": {
         "start": {
           "line": 399,
@@ -22901,8 +22901,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 11801,
-      "end": 12087,
+      "start": 11824,
+      "end": 12110,
       "loc": {
         "start": {
           "line": 406,
@@ -22917,8 +22917,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 12091,
-      "end": 12492,
+      "start": 12114,
+      "end": 12515,
       "loc": {
         "start": {
           "line": 414,
@@ -42765,9 +42765,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Establish a new coin type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the new coin\n   * @param {number} maximum - Maximum number of coins of this type that can exist\n   *\n   * @return {Promise<EstablishCoinResponse, RpcError>}\n   ",
+      "value": "*\n   * Establish a new token type associated with a chain tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the new token\n   * @param {number} maximum - Maximum number of tokens of this type that can exist\n   *\n   * @return {Promise<EstablishTokenResponse, RpcError>}\n   ",
       "start": 8843,
-      "end": 9256,
+      "end": 9261,
       "loc": {
         "start": {
           "line": 320,
@@ -42791,9 +42791,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "establishCoin",
-      "start": 9259,
-      "end": 9272,
+      "value": "establishToken",
+      "start": 9264,
+      "end": 9278,
       "loc": {
         "start": {
           "line": 330,
@@ -42801,7 +42801,7 @@
         },
         "end": {
           "line": 330,
-          "column": 15
+          "column": 16
         }
       }
     },
@@ -42817,16 +42817,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9272,
-      "end": 9273,
+      "start": 9278,
+      "end": 9279,
       "loc": {
         "start": {
           "line": 330,
-          "column": 15
+          "column": 16
         },
         "end": {
           "line": 330,
-          "column": 16
+          "column": 17
         }
       }
     },
@@ -42843,16 +42843,16 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 9273,
-      "end": 9280,
+      "start": 9279,
+      "end": 9286,
       "loc": {
         "start": {
           "line": 330,
-          "column": 16
+          "column": 17
         },
         "end": {
           "line": 330,
-          "column": 23
+          "column": 24
         }
       }
     },
@@ -42869,16 +42869,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9280,
-      "end": 9281,
+      "start": 9286,
+      "end": 9287,
       "loc": {
         "start": {
           "line": 330,
-          "column": 23
+          "column": 24
         },
         "end": {
           "line": 330,
-          "column": 24
+          "column": 25
         }
       }
     },
@@ -42895,16 +42895,16 @@
         "binop": null
       },
       "value": "keyAddr",
-      "start": 9282,
-      "end": 9289,
+      "start": 9288,
+      "end": 9295,
       "loc": {
         "start": {
           "line": 330,
-          "column": 25
+          "column": 26
         },
         "end": {
           "line": 330,
-          "column": 32
+          "column": 33
         }
       }
     },
@@ -42921,16 +42921,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9289,
-      "end": 9290,
+      "start": 9295,
+      "end": 9296,
       "loc": {
         "start": {
           "line": 330,
-          "column": 32
+          "column": 33
         },
         "end": {
           "line": 330,
-          "column": 33
+          "column": 34
         }
       }
     },
@@ -42946,17 +42946,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "coinName",
-      "start": 9291,
-      "end": 9299,
+      "value": "tokenName",
+      "start": 9297,
+      "end": 9306,
       "loc": {
         "start": {
           "line": 330,
-          "column": 34
+          "column": 35
         },
         "end": {
           "line": 330,
-          "column": 42
+          "column": 44
         }
       }
     },
@@ -42973,16 +42973,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9299,
-      "end": 9300,
+      "start": 9306,
+      "end": 9307,
       "loc": {
         "start": {
           "line": 330,
-          "column": 42
+          "column": 44
         },
         "end": {
           "line": 330,
-          "column": 43
+          "column": 45
         }
       }
     },
@@ -42999,16 +42999,16 @@
         "binop": null
       },
       "value": "maximum",
-      "start": 9301,
-      "end": 9308,
+      "start": 9308,
+      "end": 9315,
       "loc": {
         "start": {
           "line": 330,
-          "column": 44
+          "column": 46
         },
         "end": {
           "line": 330,
-          "column": 51
+          "column": 53
         }
       }
     },
@@ -43024,16 +43024,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9308,
-      "end": 9309,
+      "start": 9315,
+      "end": 9316,
       "loc": {
         "start": {
           "line": 330,
-          "column": 51
+          "column": 53
         },
         "end": {
           "line": 330,
-          "column": 52
+          "column": 54
         }
       }
     },
@@ -43049,16 +43049,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9310,
-      "end": 9311,
+      "start": 9317,
+      "end": 9318,
       "loc": {
         "start": {
           "line": 330,
-          "column": 53
+          "column": 55
         },
         "end": {
           "line": 330,
-          "column": 54
+          "column": 56
         }
       }
     },
@@ -43077,8 +43077,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 9316,
-      "end": 9322,
+      "start": 9323,
+      "end": 9329,
       "loc": {
         "start": {
           "line": 331,
@@ -43103,8 +43103,8 @@
         "binop": null
       },
       "value": "promiseAroundRpcCallback",
-      "start": 9323,
-      "end": 9347,
+      "start": 9330,
+      "end": 9354,
       "loc": {
         "start": {
           "line": 331,
@@ -43128,8 +43128,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9347,
-      "end": 9348,
+      "start": 9354,
+      "end": 9355,
       "loc": {
         "start": {
           "line": 331,
@@ -43153,8 +43153,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9348,
-      "end": 9349,
+      "start": 9355,
+      "end": 9356,
       "loc": {
         "start": {
           "line": 331,
@@ -43179,8 +43179,8 @@
         "binop": null
       },
       "value": "clbk",
-      "start": 9349,
-      "end": 9353,
+      "start": 9356,
+      "end": 9360,
       "loc": {
         "start": {
           "line": 331,
@@ -43204,8 +43204,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9353,
-      "end": 9354,
+      "start": 9360,
+      "end": 9361,
       "loc": {
         "start": {
           "line": 331,
@@ -43230,8 +43230,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9355,
-      "end": 9357,
+      "start": 9362,
+      "end": 9364,
       "loc": {
         "start": {
           "line": 331,
@@ -43255,8 +43255,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9358,
-      "end": 9359,
+      "start": 9365,
+      "end": 9366,
       "loc": {
         "start": {
           "line": 331,
@@ -43283,8 +43283,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 9366,
-      "end": 9370,
+      "start": 9373,
+      "end": 9377,
       "loc": {
         "start": {
           "line": 332,
@@ -43309,8 +43309,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9370,
-      "end": 9371,
+      "start": 9377,
+      "end": 9378,
       "loc": {
         "start": {
           "line": 332,
@@ -43335,8 +43335,8 @@
         "binop": null
       },
       "value": "rpc",
-      "start": 9371,
-      "end": 9374,
+      "start": 9378,
+      "end": 9381,
       "loc": {
         "start": {
           "line": 332,
@@ -43361,8 +43361,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9374,
-      "end": 9375,
+      "start": 9381,
+      "end": 9382,
       "loc": {
         "start": {
           "line": 332,
@@ -43386,9 +43386,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "establishCoin",
-      "start": 9375,
-      "end": 9388,
+      "value": "establishToken",
+      "start": 9382,
+      "end": 9396,
       "loc": {
         "start": {
           "line": 332,
@@ -43396,7 +43396,7 @@
         },
         "end": {
           "line": 332,
-          "column": 28
+          "column": 29
         }
       }
     },
@@ -43412,16 +43412,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9388,
-      "end": 9389,
+      "start": 9396,
+      "end": 9397,
       "loc": {
         "start": {
           "line": 332,
-          "column": 28
+          "column": 29
         },
         "end": {
           "line": 332,
-          "column": 29
+          "column": 30
         }
       }
     },
@@ -43437,16 +43437,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9389,
-      "end": 9390,
+      "start": 9397,
+      "end": 9398,
       "loc": {
         "start": {
           "line": 332,
-          "column": 29
+          "column": 30
         },
         "end": {
           "line": 332,
-          "column": 30
+          "column": 31
         }
       }
     },
@@ -43463,8 +43463,8 @@
         "binop": null
       },
       "value": "creds",
-      "start": 9399,
-      "end": 9404,
+      "start": 9407,
+      "end": 9412,
       "loc": {
         "start": {
           "line": 333,
@@ -43489,8 +43489,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9404,
-      "end": 9405,
+      "start": 9412,
+      "end": 9413,
       "loc": {
         "start": {
           "line": 333,
@@ -43517,8 +43517,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 9406,
-      "end": 9410,
+      "start": 9414,
+      "end": 9418,
       "loc": {
         "start": {
           "line": 333,
@@ -43543,8 +43543,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9410,
-      "end": 9411,
+      "start": 9418,
+      "end": 9419,
       "loc": {
         "start": {
           "line": 333,
@@ -43569,8 +43569,8 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 9411,
-      "end": 9422,
+      "start": 9419,
+      "end": 9430,
       "loc": {
         "start": {
           "line": 333,
@@ -43595,8 +43595,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9422,
-      "end": 9423,
+      "start": 9430,
+      "end": 9431,
       "loc": {
         "start": {
           "line": 333,
@@ -43621,8 +43621,8 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 9432,
-      "end": 9439,
+      "start": 9440,
+      "end": 9447,
       "loc": {
         "start": {
           "line": 334,
@@ -43647,8 +43647,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9439,
-      "end": 9440,
+      "start": 9447,
+      "end": 9448,
       "loc": {
         "start": {
           "line": 334,
@@ -43673,8 +43673,8 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 9441,
-      "end": 9448,
+      "start": 9449,
+      "end": 9456,
       "loc": {
         "start": {
           "line": 334,
@@ -43699,8 +43699,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9448,
-      "end": 9449,
+      "start": 9456,
+      "end": 9457,
       "loc": {
         "start": {
           "line": 334,
@@ -43725,8 +43725,8 @@
         "binop": null
       },
       "value": "keyAddr",
-      "start": 9458,
-      "end": 9465,
+      "start": 9466,
+      "end": 9473,
       "loc": {
         "start": {
           "line": 335,
@@ -43751,37 +43751,37 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9465,
-      "end": 9466,
-      "loc": {
-        "start": {
-          "line": 335,
-          "column": 15
-        },
-        "end": {
-          "line": 335,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "keyAddr",
-      "start": 9467,
+      "start": 9473,
       "end": 9474,
       "loc": {
         "start": {
           "line": 335,
+          "column": 15
+        },
+        "end": {
+          "line": 335,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "keyAddr",
+      "start": 9475,
+      "end": 9482,
+      "loc": {
+        "start": {
+          "line": 335,
           "column": 17
         },
         "end": {
@@ -43803,8 +43803,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9474,
-      "end": 9475,
+      "start": 9482,
+      "end": 9483,
       "loc": {
         "start": {
           "line": 335,
@@ -43828,9 +43828,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "coinName",
-      "start": 9484,
-      "end": 9492,
+      "value": "tokenName",
+      "start": 9492,
+      "end": 9501,
       "loc": {
         "start": {
           "line": 336,
@@ -43838,7 +43838,7 @@
         },
         "end": {
           "line": 336,
-          "column": 16
+          "column": 17
         }
       }
     },
@@ -43855,16 +43855,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9492,
-      "end": 9493,
+      "start": 9501,
+      "end": 9502,
       "loc": {
         "start": {
           "line": 336,
-          "column": 16
+          "column": 17
         },
         "end": {
           "line": 336,
-          "column": 17
+          "column": 18
         }
       }
     },
@@ -43880,17 +43880,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "coinName",
-      "start": 9494,
-      "end": 9502,
+      "value": "tokenName",
+      "start": 9503,
+      "end": 9512,
       "loc": {
         "start": {
           "line": 336,
-          "column": 18
+          "column": 19
         },
         "end": {
           "line": 336,
-          "column": 26
+          "column": 28
         }
       }
     },
@@ -43907,16 +43907,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9502,
-      "end": 9503,
+      "start": 9512,
+      "end": 9513,
       "loc": {
         "start": {
           "line": 336,
-          "column": 26
+          "column": 28
         },
         "end": {
           "line": 336,
-          "column": 27
+          "column": 29
         }
       }
     },
@@ -43933,8 +43933,8 @@
         "binop": null
       },
       "value": "maximum",
-      "start": 9512,
-      "end": 9519,
+      "start": 9522,
+      "end": 9529,
       "loc": {
         "start": {
           "line": 337,
@@ -43959,8 +43959,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9519,
-      "end": 9520,
+      "start": 9529,
+      "end": 9530,
       "loc": {
         "start": {
           "line": 337,
@@ -43985,8 +43985,8 @@
         "binop": null
       },
       "value": "maximum",
-      "start": 9521,
-      "end": 9528,
+      "start": 9531,
+      "end": 9538,
       "loc": {
         "start": {
           "line": 337,
@@ -44011,8 +44011,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9528,
-      "end": 9529,
+      "start": 9538,
+      "end": 9539,
       "loc": {
         "start": {
           "line": 337,
@@ -44036,8 +44036,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9536,
-      "end": 9537,
+      "start": 9546,
+      "end": 9547,
       "loc": {
         "start": {
           "line": 338,
@@ -44062,8 +44062,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9537,
-      "end": 9538,
+      "start": 9547,
+      "end": 9548,
       "loc": {
         "start": {
           "line": 338,
@@ -44088,8 +44088,8 @@
         "binop": null
       },
       "value": "clbk",
-      "start": 9539,
-      "end": 9543,
+      "start": 9549,
+      "end": 9553,
       "loc": {
         "start": {
           "line": 338,
@@ -44113,8 +44113,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9543,
-      "end": 9544,
+      "start": 9553,
+      "end": 9554,
       "loc": {
         "start": {
           "line": 338,
@@ -44139,8 +44139,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9544,
-      "end": 9545,
+      "start": 9554,
+      "end": 9555,
       "loc": {
         "start": {
           "line": 338,
@@ -44164,8 +44164,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9550,
-      "end": 9551,
+      "start": 9560,
+      "end": 9561,
       "loc": {
         "start": {
           "line": 339,
@@ -44189,8 +44189,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9551,
-      "end": 9552,
+      "start": 9561,
+      "end": 9562,
       "loc": {
         "start": {
           "line": 339,
@@ -44215,8 +44215,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 9552,
-      "end": 9553,
+      "start": 9562,
+      "end": 9563,
       "loc": {
         "start": {
           "line": 339,
@@ -44240,8 +44240,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 9556,
-      "end": 9557,
+      "start": 9566,
+      "end": 9567,
       "loc": {
         "start": {
           "line": 340,
@@ -44255,9 +44255,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} EstablishCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-      "start": 9560,
-      "end": 9686,
+      "value": "*\n   * @typedef {Object} EstablishTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "start": 9570,
+      "end": 9697,
       "loc": {
         "start": {
           "line": 341,
@@ -44271,9 +44271,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Mint new coins of an already established coin type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} coinName - Name of the coin type\n   * @param {number} amount - Number of coins to mint.\n   *\n   * @return {Promise<MintCoinResponse, RpcError>}\n   ",
-      "start": 9691,
-      "end": 10102,
+      "value": "*\n   * Mint new tokens of an already established token type associated with a chain\n   * tree.\n   *\n   * @param {string} chainId - The ID of the chain tree.\n   * @param {string} keyAddr - Address of a key that currently owns the chain tree.\n   * @param {string} tokenName - Name of the token type\n   * @param {number} amount - Number of tokens to mint.\n   *\n   * @return {Promise<MintTokenResponse, RpcError>}\n   ",
+      "start": 9702,
+      "end": 10119,
       "loc": {
         "start": {
           "line": 347,
@@ -44297,9 +44297,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "mintCoin",
-      "start": 10105,
-      "end": 10113,
+      "value": "mintToken",
+      "start": 10122,
+      "end": 10131,
       "loc": {
         "start": {
           "line": 358,
@@ -44307,7 +44307,7 @@
         },
         "end": {
           "line": 358,
-          "column": 10
+          "column": 11
         }
       }
     },
@@ -44323,16 +44323,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10113,
-      "end": 10114,
+      "start": 10131,
+      "end": 10132,
       "loc": {
         "start": {
           "line": 358,
-          "column": 10
+          "column": 11
         },
         "end": {
           "line": 358,
-          "column": 11
+          "column": 12
         }
       }
     },
@@ -44349,16 +44349,16 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 10114,
-      "end": 10121,
+      "start": 10132,
+      "end": 10139,
       "loc": {
         "start": {
           "line": 358,
-          "column": 11
+          "column": 12
         },
         "end": {
           "line": 358,
-          "column": 18
+          "column": 19
         }
       }
     },
@@ -44375,16 +44375,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10121,
-      "end": 10122,
+      "start": 10139,
+      "end": 10140,
       "loc": {
         "start": {
           "line": 358,
-          "column": 18
+          "column": 19
         },
         "end": {
           "line": 358,
-          "column": 19
+          "column": 20
         }
       }
     },
@@ -44401,16 +44401,16 @@
         "binop": null
       },
       "value": "keyAddr",
-      "start": 10123,
-      "end": 10130,
+      "start": 10141,
+      "end": 10148,
       "loc": {
         "start": {
           "line": 358,
-          "column": 20
+          "column": 21
         },
         "end": {
           "line": 358,
-          "column": 27
+          "column": 28
         }
       }
     },
@@ -44427,16 +44427,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10130,
-      "end": 10131,
+      "start": 10148,
+      "end": 10149,
       "loc": {
         "start": {
           "line": 358,
-          "column": 27
+          "column": 28
         },
         "end": {
           "line": 358,
-          "column": 28
+          "column": 29
         }
       }
     },
@@ -44452,17 +44452,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "coinName",
-      "start": 10132,
-      "end": 10140,
+      "value": "tokenName",
+      "start": 10150,
+      "end": 10159,
       "loc": {
         "start": {
           "line": 358,
-          "column": 29
+          "column": 30
         },
         "end": {
           "line": 358,
-          "column": 37
+          "column": 39
         }
       }
     },
@@ -44479,16 +44479,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10140,
-      "end": 10141,
+      "start": 10159,
+      "end": 10160,
       "loc": {
         "start": {
           "line": 358,
-          "column": 37
+          "column": 39
         },
         "end": {
           "line": 358,
-          "column": 38
+          "column": 40
         }
       }
     },
@@ -44505,16 +44505,16 @@
         "binop": null
       },
       "value": "amount",
-      "start": 10142,
-      "end": 10148,
+      "start": 10161,
+      "end": 10167,
       "loc": {
         "start": {
           "line": 358,
-          "column": 39
+          "column": 41
         },
         "end": {
           "line": 358,
-          "column": 45
+          "column": 47
         }
       }
     },
@@ -44530,16 +44530,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10148,
-      "end": 10149,
+      "start": 10167,
+      "end": 10168,
       "loc": {
         "start": {
           "line": 358,
-          "column": 45
+          "column": 47
         },
         "end": {
           "line": 358,
-          "column": 46
+          "column": 48
         }
       }
     },
@@ -44555,16 +44555,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10150,
-      "end": 10151,
+      "start": 10169,
+      "end": 10170,
       "loc": {
         "start": {
           "line": 358,
-          "column": 47
+          "column": 49
         },
         "end": {
           "line": 358,
-          "column": 48
+          "column": 50
         }
       }
     },
@@ -44583,8 +44583,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 10156,
-      "end": 10162,
+      "start": 10175,
+      "end": 10181,
       "loc": {
         "start": {
           "line": 359,
@@ -44609,8 +44609,8 @@
         "binop": null
       },
       "value": "promiseAroundRpcCallback",
-      "start": 10163,
-      "end": 10187,
+      "start": 10182,
+      "end": 10206,
       "loc": {
         "start": {
           "line": 359,
@@ -44634,8 +44634,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10187,
-      "end": 10188,
+      "start": 10206,
+      "end": 10207,
       "loc": {
         "start": {
           "line": 359,
@@ -44659,8 +44659,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10188,
-      "end": 10189,
+      "start": 10207,
+      "end": 10208,
       "loc": {
         "start": {
           "line": 359,
@@ -44685,8 +44685,8 @@
         "binop": null
       },
       "value": "clbk",
-      "start": 10189,
-      "end": 10193,
+      "start": 10208,
+      "end": 10212,
       "loc": {
         "start": {
           "line": 359,
@@ -44710,8 +44710,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10193,
-      "end": 10194,
+      "start": 10212,
+      "end": 10213,
       "loc": {
         "start": {
           "line": 359,
@@ -44736,8 +44736,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10195,
-      "end": 10197,
+      "start": 10214,
+      "end": 10216,
       "loc": {
         "start": {
           "line": 359,
@@ -44761,8 +44761,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10198,
-      "end": 10199,
+      "start": 10217,
+      "end": 10218,
       "loc": {
         "start": {
           "line": 359,
@@ -44789,8 +44789,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 10206,
-      "end": 10210,
+      "start": 10225,
+      "end": 10229,
       "loc": {
         "start": {
           "line": 360,
@@ -44815,8 +44815,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10210,
-      "end": 10211,
+      "start": 10229,
+      "end": 10230,
       "loc": {
         "start": {
           "line": 360,
@@ -44841,8 +44841,8 @@
         "binop": null
       },
       "value": "rpc",
-      "start": 10211,
-      "end": 10214,
+      "start": 10230,
+      "end": 10233,
       "loc": {
         "start": {
           "line": 360,
@@ -44867,8 +44867,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10214,
-      "end": 10215,
+      "start": 10233,
+      "end": 10234,
       "loc": {
         "start": {
           "line": 360,
@@ -44892,9 +44892,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "mintCoin",
-      "start": 10215,
-      "end": 10223,
+      "value": "mintToken",
+      "start": 10234,
+      "end": 10243,
       "loc": {
         "start": {
           "line": 360,
@@ -44902,7 +44902,7 @@
         },
         "end": {
           "line": 360,
-          "column": 23
+          "column": 24
         }
       }
     },
@@ -44918,16 +44918,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10223,
-      "end": 10224,
+      "start": 10243,
+      "end": 10244,
       "loc": {
         "start": {
           "line": 360,
-          "column": 23
+          "column": 24
         },
         "end": {
           "line": 360,
-          "column": 24
+          "column": 25
         }
       }
     },
@@ -44943,16 +44943,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10224,
-      "end": 10225,
+      "start": 10244,
+      "end": 10245,
       "loc": {
         "start": {
           "line": 360,
-          "column": 24
+          "column": 25
         },
         "end": {
           "line": 360,
-          "column": 25
+          "column": 26
         }
       }
     },
@@ -44969,8 +44969,8 @@
         "binop": null
       },
       "value": "creds",
-      "start": 10234,
-      "end": 10239,
+      "start": 10254,
+      "end": 10259,
       "loc": {
         "start": {
           "line": 361,
@@ -44995,8 +44995,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10239,
-      "end": 10240,
+      "start": 10259,
+      "end": 10260,
       "loc": {
         "start": {
           "line": 361,
@@ -45023,8 +45023,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 10241,
-      "end": 10245,
+      "start": 10261,
+      "end": 10265,
       "loc": {
         "start": {
           "line": 361,
@@ -45049,8 +45049,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10245,
-      "end": 10246,
+      "start": 10265,
+      "end": 10266,
       "loc": {
         "start": {
           "line": 361,
@@ -45075,8 +45075,8 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 10246,
-      "end": 10257,
+      "start": 10266,
+      "end": 10277,
       "loc": {
         "start": {
           "line": 361,
@@ -45101,8 +45101,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10257,
-      "end": 10258,
+      "start": 10277,
+      "end": 10278,
       "loc": {
         "start": {
           "line": 361,
@@ -45127,8 +45127,8 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 10267,
-      "end": 10274,
+      "start": 10287,
+      "end": 10294,
       "loc": {
         "start": {
           "line": 362,
@@ -45153,8 +45153,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10274,
-      "end": 10275,
+      "start": 10294,
+      "end": 10295,
       "loc": {
         "start": {
           "line": 362,
@@ -45179,8 +45179,8 @@
         "binop": null
       },
       "value": "chainId",
-      "start": 10276,
-      "end": 10283,
+      "start": 10296,
+      "end": 10303,
       "loc": {
         "start": {
           "line": 362,
@@ -45205,8 +45205,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10283,
-      "end": 10284,
+      "start": 10303,
+      "end": 10304,
       "loc": {
         "start": {
           "line": 362,
@@ -45231,8 +45231,8 @@
         "binop": null
       },
       "value": "keyAddr",
-      "start": 10293,
-      "end": 10300,
+      "start": 10313,
+      "end": 10320,
       "loc": {
         "start": {
           "line": 363,
@@ -45257,8 +45257,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10300,
-      "end": 10301,
+      "start": 10320,
+      "end": 10321,
       "loc": {
         "start": {
           "line": 363,
@@ -45283,8 +45283,8 @@
         "binop": null
       },
       "value": "keyAddr",
-      "start": 10302,
-      "end": 10309,
+      "start": 10322,
+      "end": 10329,
       "loc": {
         "start": {
           "line": 363,
@@ -45309,94 +45309,94 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10309,
-      "end": 10310,
-      "loc": {
-        "start": {
-          "line": 363,
-          "column": 24
-        },
-        "end": {
-          "line": 363,
-          "column": 25
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "coinName",
-      "start": 10319,
-      "end": 10327,
-      "loc": {
-        "start": {
-          "line": 364,
-          "column": 8
-        },
-        "end": {
-          "line": 364,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 10327,
-      "end": 10328,
-      "loc": {
-        "start": {
-          "line": 364,
-          "column": 16
-        },
-        "end": {
-          "line": 364,
-          "column": 17
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "coinName",
       "start": 10329,
-      "end": 10337,
+      "end": 10330,
       "loc": {
         "start": {
+          "line": 363,
+          "column": 24
+        },
+        "end": {
+          "line": 363,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "tokenName",
+      "start": 10339,
+      "end": 10348,
+      "loc": {
+        "start": {
+          "line": 364,
+          "column": 8
+        },
+        "end": {
+          "line": 364,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 10348,
+      "end": 10349,
+      "loc": {
+        "start": {
+          "line": 364,
+          "column": 17
+        },
+        "end": {
           "line": 364,
           "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "tokenName",
+      "start": 10350,
+      "end": 10359,
+      "loc": {
+        "start": {
+          "line": 364,
+          "column": 19
         },
         "end": {
           "line": 364,
-          "column": 26
+          "column": 28
         }
       }
     },
@@ -45413,16 +45413,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10337,
-      "end": 10338,
+      "start": 10359,
+      "end": 10360,
       "loc": {
         "start": {
           "line": 364,
-          "column": 26
+          "column": 28
         },
         "end": {
           "line": 364,
-          "column": 27
+          "column": 29
         }
       }
     },
@@ -45439,8 +45439,8 @@
         "binop": null
       },
       "value": "amount",
-      "start": 10347,
-      "end": 10353,
+      "start": 10369,
+      "end": 10375,
       "loc": {
         "start": {
           "line": 365,
@@ -45465,8 +45465,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10353,
-      "end": 10354,
+      "start": 10375,
+      "end": 10376,
       "loc": {
         "start": {
           "line": 365,
@@ -45491,8 +45491,8 @@
         "binop": null
       },
       "value": "amount",
-      "start": 10355,
-      "end": 10361,
+      "start": 10377,
+      "end": 10383,
       "loc": {
         "start": {
           "line": 365,
@@ -45517,8 +45517,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10361,
-      "end": 10362,
+      "start": 10383,
+      "end": 10384,
       "loc": {
         "start": {
           "line": 365,
@@ -45542,8 +45542,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10369,
-      "end": 10370,
+      "start": 10391,
+      "end": 10392,
       "loc": {
         "start": {
           "line": 366,
@@ -45568,8 +45568,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10370,
-      "end": 10371,
+      "start": 10392,
+      "end": 10393,
       "loc": {
         "start": {
           "line": 366,
@@ -45594,8 +45594,8 @@
         "binop": null
       },
       "value": "clbk",
-      "start": 10372,
-      "end": 10376,
+      "start": 10394,
+      "end": 10398,
       "loc": {
         "start": {
           "line": 366,
@@ -45619,8 +45619,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10376,
-      "end": 10377,
+      "start": 10398,
+      "end": 10399,
       "loc": {
         "start": {
           "line": 366,
@@ -45645,8 +45645,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10377,
-      "end": 10378,
+      "start": 10399,
+      "end": 10400,
       "loc": {
         "start": {
           "line": 366,
@@ -45670,8 +45670,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10383,
-      "end": 10384,
+      "start": 10405,
+      "end": 10406,
       "loc": {
         "start": {
           "line": 367,
@@ -45695,8 +45695,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10384,
-      "end": 10385,
+      "start": 10406,
+      "end": 10407,
       "loc": {
         "start": {
           "line": 367,
@@ -45721,8 +45721,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10385,
-      "end": 10386,
+      "start": 10407,
+      "end": 10408,
       "loc": {
         "start": {
           "line": 367,
@@ -45746,8 +45746,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10389,
-      "end": 10390,
+      "start": 10411,
+      "end": 10412,
       "loc": {
         "start": {
           "line": 368,
@@ -45761,9 +45761,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @typedef {Object} MintCoinResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
-      "start": 10393,
-      "end": 10514,
+      "value": "*\n   * @typedef {Object} MintTokenResponse\n   * @property {string} tip - The chain tree tip after the transaction.\n   ",
+      "start": 10415,
+      "end": 10537,
       "loc": {
         "start": {
           "line": 369,
@@ -45778,8 +45778,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfigForBadger\n   * @property {string} path - Path for badger db\n   ",
-      "start": 10519,
-      "end": 10631,
+      "start": 10542,
+      "end": 10654,
       "loc": {
         "start": {
           "line": 374,
@@ -45794,8 +45794,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfigForIpld\n   * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.\n   * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.\n   * @property {boolean} [online=false] - if true, starts IPFS node in online mode\n   ",
-      "start": 10636,
-      "end": 10989,
+      "start": 10659,
+      "end": 11012,
       "loc": {
         "start": {
           "line": 379,
@@ -45810,8 +45810,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} StorageAdapterConfig\n   * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter\n   * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter\n   ",
-      "start": 10994,
-      "end": 11243,
+      "start": 11017,
+      "end": 11266,
       "loc": {
         "start": {
           "line": 386,
@@ -45826,8 +45826,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedChainTree\n   * @property {string} tip - Hash of the latest root tree node.\n   * @property {string[]} dag - base58 encoded string array representing the chain tree dag nodes\n   * @property {Map<String, SerializedSignature>} signatures - Map of serialized signatures\n   ",
-      "start": 11247,
-      "end": 11554,
+      "start": 11270,
+      "end": 11577,
       "loc": {
         "start": {
           "line": 392,
@@ -45842,8 +45842,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} SerializedSignature\n   * @property {boolean[]} signers - Array indicating which signers have signed\n   * @property {string} signature - base58 encoded signature\n   * @property {string} type - Signature type\n   ",
-      "start": 11558,
-      "end": 11797,
+      "start": 11581,
+      "end": 11820,
       "loc": {
         "start": {
           "line": 399,
@@ -45858,8 +45858,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n   * @typedef {Object} RpcError - gRPC error object\n   * @property {number} code - A [gRPC status](https://grpc.io/grpc/node/grpc.html#.status)\n   * @property {string} details - Details about the error\n   * @property {?Object} metadata - Additional information about the error\n   ",
-      "start": 11801,
-      "end": 12087,
+      "start": 11824,
+      "end": 12110,
       "loc": {
         "start": {
           "line": 406,
@@ -45883,8 +45883,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12088,
-      "end": 12089,
+      "start": 12111,
+      "end": 12112,
       "loc": {
         "start": {
           "line": 412,
@@ -45899,8 +45899,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.\n *\n * @param {string} walletServer - \"host:port\" string of the RPC wallet server\n * @param {Object} walletCreds - Credentials for the connecting wallet\n * @param {string} walletCreds.walletName - Wallet name\n * @param {string} walletCreds.passPhrase - Wallet passphrase\n *\n * @return {TupeloClient} Tupelo client connection.\n ",
-      "start": 12091,
-      "end": 12492,
+      "start": 12114,
+      "end": 12515,
       "loc": {
         "start": {
           "line": 414,
@@ -45926,8 +45926,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 12493,
-      "end": 12501,
+      "start": 12516,
+      "end": 12524,
       "loc": {
         "start": {
           "line": 424,
@@ -45952,8 +45952,8 @@
         "binop": null
       },
       "value": "connect",
-      "start": 12502,
-      "end": 12509,
+      "start": 12525,
+      "end": 12532,
       "loc": {
         "start": {
           "line": 424,
@@ -45977,8 +45977,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12509,
-      "end": 12510,
+      "start": 12532,
+      "end": 12533,
       "loc": {
         "start": {
           "line": 424,
@@ -46003,8 +46003,8 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 12510,
-      "end": 12522,
+      "start": 12533,
+      "end": 12545,
       "loc": {
         "start": {
           "line": 424,
@@ -46029,8 +46029,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12522,
-      "end": 12523,
+      "start": 12545,
+      "end": 12546,
       "loc": {
         "start": {
           "line": 424,
@@ -46055,8 +46055,8 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 12524,
-      "end": 12535,
+      "start": 12547,
+      "end": 12558,
       "loc": {
         "start": {
           "line": 424,
@@ -46080,8 +46080,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12535,
-      "end": 12536,
+      "start": 12558,
+      "end": 12559,
       "loc": {
         "start": {
           "line": 424,
@@ -46105,8 +46105,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12537,
-      "end": 12538,
+      "start": 12560,
+      "end": 12561,
       "loc": {
         "start": {
           "line": 424,
@@ -46133,8 +46133,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 12541,
-      "end": 12547,
+      "start": 12564,
+      "end": 12570,
       "loc": {
         "start": {
           "line": 425,
@@ -46161,8 +46161,8 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 12548,
-      "end": 12551,
+      "start": 12571,
+      "end": 12574,
       "loc": {
         "start": {
           "line": 425,
@@ -46187,8 +46187,8 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 12552,
-      "end": 12564,
+      "start": 12575,
+      "end": 12587,
       "loc": {
         "start": {
           "line": 425,
@@ -46212,8 +46212,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12564,
-      "end": 12565,
+      "start": 12587,
+      "end": 12588,
       "loc": {
         "start": {
           "line": 425,
@@ -46238,8 +46238,8 @@
         "binop": null
       },
       "value": "walletServer",
-      "start": 12565,
-      "end": 12577,
+      "start": 12588,
+      "end": 12600,
       "loc": {
         "start": {
           "line": 425,
@@ -46264,8 +46264,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12577,
-      "end": 12578,
+      "start": 12600,
+      "end": 12601,
       "loc": {
         "start": {
           "line": 425,
@@ -46290,8 +46290,8 @@
         "binop": null
       },
       "value": "walletCreds",
-      "start": 12579,
-      "end": 12590,
+      "start": 12602,
+      "end": 12613,
       "loc": {
         "start": {
           "line": 425,
@@ -46315,8 +46315,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12590,
-      "end": 12591,
+      "start": 12613,
+      "end": 12614,
       "loc": {
         "start": {
           "line": 425,
@@ -46341,8 +46341,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12591,
-      "end": 12592,
+      "start": 12614,
+      "end": 12615,
       "loc": {
         "start": {
           "line": 425,
@@ -46366,8 +46366,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12593,
-      "end": 12594,
+      "start": 12616,
+      "end": 12617,
       "loc": {
         "start": {
           "line": 426,
@@ -46394,8 +46394,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 12596,
-      "end": 12602,
+      "start": 12619,
+      "end": 12625,
       "loc": {
         "start": {
           "line": 428,
@@ -46419,8 +46419,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12603,
-      "end": 12604,
+      "start": 12626,
+      "end": 12627,
       "loc": {
         "start": {
           "line": 428,
@@ -46445,8 +46445,8 @@
         "binop": null
       },
       "value": "TupeloClient",
-      "start": 12605,
-      "end": 12617,
+      "start": 12628,
+      "end": 12640,
       "loc": {
         "start": {
           "line": 428,
@@ -46470,8 +46470,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12618,
-      "end": 12619,
+      "start": 12641,
+      "end": 12642,
       "loc": {
         "start": {
           "line": 428,
@@ -46496,8 +46496,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12619,
-      "end": 12620,
+      "start": 12642,
+      "end": 12643,
       "loc": {
         "start": {
           "line": 428,
@@ -46524,8 +46524,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 12621,
-      "end": 12627,
+      "start": 12644,
+      "end": 12650,
       "loc": {
         "start": {
           "line": 429,
@@ -46549,8 +46549,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12628,
-      "end": 12629,
+      "start": 12651,
+      "end": 12652,
       "loc": {
         "start": {
           "line": 429,
@@ -46575,8 +46575,8 @@
         "binop": null
       },
       "value": "connect",
-      "start": 12630,
-      "end": 12637,
+      "start": 12653,
+      "end": 12660,
       "loc": {
         "start": {
           "line": 429,
@@ -46600,8 +46600,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12638,
-      "end": 12639,
+      "start": 12661,
+      "end": 12662,
       "loc": {
         "start": {
           "line": 429,
@@ -46626,8 +46626,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12639,
-      "end": 12640,
+      "start": 12662,
+      "end": 12663,
       "loc": {
         "start": {
           "line": 429,
@@ -46652,8 +46652,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12641,
-      "end": 12641,
+      "start": 12664,
+      "end": 12664,
       "loc": {
         "start": {
           "line": 430,
