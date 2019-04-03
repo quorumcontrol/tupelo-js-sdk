@@ -42,6 +42,23 @@ describe("setting and retrieving data", function() {
     return Promise.resolve(true);
   });
 
+  it("can retrieve a key with a basic value given a certain tip", async () => {
+    let {wallet, walletKey, chainId} = await createWalletWithChain();
+
+    for ([key, val] of Object.entries(basicTypes)) {
+      let resp = await wallet.setData(chainId, walletKey, key, val);
+      const {tip,} = resp;
+      assert.notEqual(tip, null);
+      resp = await wallet.resolveAt(chainId, `/tree/data/${key}`, tip);
+      assert.deepStrictEqual(resp.data, [val,]);
+      
+      const newKey = `${key}New`;
+      resp = await wallet.setData(chainId, walletKey, newKey, val);
+      resp = await wallet.resolveAt(chainId, `/tree/data/${newKey}`, tip);
+      assert.deepStrictEqual(resp.data, [null,]);
+    }
+  });
+
   it("can set and retrieve keys with array values", async ()=> {
     let {wallet, walletKey, chainId} = await createWalletWithChain();
 
