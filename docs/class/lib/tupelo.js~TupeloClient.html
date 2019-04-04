@@ -32,13 +32,13 @@
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GenerateKeyResponse">GenerateKeyResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GetTipResponse">GetTipResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RegisterResponse">RegisterResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
@@ -273,13 +273,13 @@ Tupelo RPC server</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-establishCoin">establishCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-establishToken">establishToken</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tokenName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Establish a new coin type associated with a chain tree.</p>
+        <div data-ice="description"><p>Establish a new token type associated with a chain tree.</p>
 </div>
       </div>
     </td>
@@ -477,13 +477,13 @@ tree with id <code>chainId</code></p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-mintCoin">mintCoin</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-mintToken">mintToken</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tokenName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Mint new coins of an already established coin type associated with a chain
+        <div data-ice="description"><p>Mint new tokens of an already established token type associated with a chain
 tree.</p>
 </div>
       </div>
@@ -913,14 +913,14 @@ the notary group</p>
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-establishCoin">
+  <h3 data-ice="anchor" id="instance-method-establishToken">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">establishCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">establishToken</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tokenName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, maximum: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -931,7 +931,7 @@ the notary group</p>
   
   
   
-  <div data-ice="description"><p>Establish a new coin type associated with a chain tree.</p>
+  <div data-ice="description"><p>Establish a new token type associated with a chain tree.</p>
 </div>
 
   
@@ -959,17 +959,17 @@ the notary group</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">coinName</td>
+      <td data-ice="name" class="code" data-depth="0">tokenName</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Name of the new coin</p>
+      <td data-ice="description"><p>Name of the new token</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">maximum</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Maximum number of coins of this type that can exist</p>
+      <td data-ice="description"><p>Maximum number of tokens of this type that can exist</p>
 </td>
     </tr>
 </tbody>
@@ -982,7 +982,7 @@ the notary group</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishCoinResponse">EstablishCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
@@ -1403,14 +1403,14 @@ tree with id <code>chainId</code></p>
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-mintCoin">
+  <h3 data-ice="anchor" id="instance-method-mintToken">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">mintCoin</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, coinName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="code" data-ice="name">mintToken</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tokenName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1421,7 +1421,7 @@ tree with id <code>chainId</code></p>
   
   
   
-  <div data-ice="description"><p>Mint new coins of an already established coin type associated with a chain
+  <div data-ice="description"><p>Mint new tokens of an already established token type associated with a chain
 tree.</p>
 </div>
 
@@ -1450,17 +1450,17 @@ tree.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">coinName</td>
+      <td data-ice="name" class="code" data-depth="0">tokenName</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Name of the coin type</p>
+      <td data-ice="description"><p>Name of the token type</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">amount</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Number of coins to mint.</p>
+      <td data-ice="description"><p>Number of tokens to mint.</p>
 </td>
     </tr>
 </tbody>
@@ -1473,7 +1473,7 @@ tree.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintCoinResponse">MintCoinResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
           
         </tr>
       </tbody>
