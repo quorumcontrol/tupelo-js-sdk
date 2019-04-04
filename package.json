@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
   "dependencies": {
+    "tupelo-messages": "file:../messages/build/js",
     "@grpc/grpc-js": "~0.2.0",
-    "@grpc/proto-loader": "~0.3.0",
     "cbor": "^4.1.1"
   },
   "devDependencies": {
