@@ -9,14 +9,15 @@ const createWalletWithChain = async () => {
     walletName: crypto.randomBytes(32).toString('hex'),
     passPhrase: "test",
   });
-  await wallet.register()
+  await wallet.register();
   let resp = await wallet.generateKey();
   const walletKey = resp.keyAddr;
   assert.equal(42, walletKey.length);
   let {chainId,} = await wallet.createChainTree(walletKey);
-  return {wallet: wallet, walletKey: walletKey, chainId: chainId}
-}
+  return {wallet: wallet, walletKey: walletKey, chainId: chainId};
+};
 
+<<<<<<< HEAD
 const itRequires = (version) => {
   const curVer = process.env.TUPELO_VERSION || "";
   if (curVer === "" || curVer === "master") {
