@@ -1,4 +1,3 @@
-// RUN `go generate` in this directory when updating the service.proto. Requires the protoc command to be in your path.
 syntax = "proto3";
 package walletrpc;
 
