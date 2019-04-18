@@ -67,8 +67,6 @@
 <div class="content" data-ice="content"><h1 data-ice="title">lib/tupelo.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var cbor = require(&quot;cbor&quot;);
 
-var fs = require(&quot;fs&quot;);
-var net = require(&quot;net&quot;);
 var grpc = require(&quot;@grpc/grpc-js&quot;);
 var protoLoader = require(&quot;@grpc/proto-loader&quot;);
 
@@ -359,6 +357,36 @@ class TupeloClient {
 
     return this.resolve(chainId, resolvePath);
   }
+  
+  /**
+   * Resolve data from a tip of a chain tree given a certain path.
+   *
+   * @param {string} chainId - The ID of the chain tree to retrieve the data from.
+   * @param {string} path - &apos;/&apos; delimited path into the chain tree where the data is stored
+   * @param {string} tip - The tip in question.
+   *
+   * @return {Promise&lt;ResolveResponse, RpcError&gt;}
+   */
+  async resolveAt(chainId, path, tip) {
+    const response = await new Promise((resolve, reject) =&gt; {
+      this.rpc.resolveAt({
+        creds: this.walletCreds,
+        tip,
+        chainId,
+        path,
+      }, (err, response) =&gt; {
+        if (err == null) {
+          resolve(response);
+        } else {
+          reject(err);
+        }
+      });
+    });
+
+    const decoded = await cbor.Decoder.decodeAll(response.data);
+    response.data = decoded;
+    return response;
+  }
 
   /**
    * Add the keys specified by `newOwnerKeys` to the set of owners of the chain
@@ -591,11 +619,11 @@ const setDataTransaction = (path, value) =&gt; {
  *
  * @return SetOwnerTransaction
  */
-const setOwnerTransaction = (authentication) =&gt; {
+const setOwnerTransaction = (newOwnerKeys) =&gt; {
   return {
     type: &quot;SETOWNERSHIP&quot;,
     setOwnershipPayload: {
-      authentication: authentication,
+      authentication: newOwnerKeys,
     }
   };
 };
