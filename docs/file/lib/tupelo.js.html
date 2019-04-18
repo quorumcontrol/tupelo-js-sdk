@@ -31,6 +31,15 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-establishTokenTransaction">establishTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mintTokenTransaction">mintTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setDataTransaction">setDataTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setOwnerTransaction">setOwnerTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenTransaction">EstablishTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenTransaction">MintTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataTransaction">SetDataTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerTransaction">SetOwnerTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenMonetaryPolicy">TokenMonetaryPolicy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
@@ -39,6 +48,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PlayTransactionsResponse">PlayTransactionsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RegisterResponse">RegisterResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
@@ -64,7 +74,11 @@ var protoLoader = require(&quot;@grpc/proto-loader&quot;);
 
 var TUPELO_PROTO_FILE = __dirname + &quot;/proto/tupelo_rpc.proto&quot;;
 
-var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, {});
+var protoOpts = {
+  enums: String,
+  defaults: true,
+};
+var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, protoOpts);
 var tupeloPackage = grpc
     .loadPackageDefinition(tupeloPackageDefinition)
     .walletrpc;
@@ -82,7 +96,7 @@ const promiseAroundRpcCallback = (toExec) =&gt; {
   });
 };
 
-const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;
+const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;;
 
 /**
  * Represents a connection to a specific Tupelo wallet managed by a remote
@@ -117,7 +131,6 @@ class TupeloClient {
      */
     this.rpc = new tupeloPackage
       .WalletRPCService(walletServer, grpc.credentials.createInsecure());
-
   }
 
   /**
@@ -171,7 +184,7 @@ class TupeloClient {
    * Create a new chain tree owned by the key at `keyAddr`.
    *
    * @param {string} keyAddr - Address of the key that owns the new chain tree.
-   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree
    * @return {Promise&lt;CreateChainResponse, RpcError&gt;}
    */
   createChainTree(keyAddr, storageAdapter) {
@@ -213,9 +226,9 @@ class TupeloClient {
    * Import a serialized chain tree and save it to the wallet.
    *
    * @param {SerializedChaintree} chainTree - Serialized chain tree to import
-   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree 
-   * 
-   * 
+   * @param {StorageAdapterConfig} [storageAdapter] - Storage configuration for the chain tree
+   *
+   *
    * StorageAdapterConfig
    */
   importChainTree(chainTree, storageAdapter) {
@@ -337,14 +350,14 @@ class TupeloClient {
    * @return {Promise&lt;ResolveResponse, RpcError&gt;}
    */
   resolveData(chainId, path) {
-    let resolvePath = CHAINTREE_DATA_PATH
-    let trimmedPath = path ? path.replace(/^\/+/g, &apos;&apos;) : path
+    let resolvePath = CHAINTREE_DATA_PATH;
+    let trimmedPath = path ? path.replace(/^\/+/g, &apos;&apos;) : path;
 
     if (trimmedPath) {
-      resolvePath += &quot;/&quot; + trimmedPath
+      resolvePath += &quot;/&quot; + trimmedPath;
     }
 
-    return this.resolve(chainId, resolvePath)
+    return this.resolve(chainId, resolvePath);
   }
 
   /**
@@ -428,19 +441,43 @@ class TupeloClient {
    * @property {string} tip - The chain tree tip after the transaction.
    */
 
-   /**
+  /**
+   * Apply a sequence of transactions to a chain tree
+   *
+   * @param {string} chainId - The ID of the chain tree to store the data on.
+   * @param {string} keyAddr - Address of the key that owns the chain tree.
+   * @param {Object[]} transactions - List of transactions to apply
+   *
+   * @return {Promise&lt;PlayTransactionsResponse, RpcError&gt;}
+   */
+  playTransactions(chainId, keyAddr, transactions) {
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.playTransactions({
+        creds: this.walletCreds,
+        chainId: chainId,
+        keyAddr: keyAddr,
+        transactions: transactions,
+      }, clbk);
+    });
+  }
+  /**
+   * @typedef {Object} PlayTransactionsResponse
+   * @property {string} tip - The chain tree tip as known by the Tupelo signers after the transactions are applied
+   */
+
+  /**
    * @typedef {Object} StorageAdapterConfigForBadger
    * @property {string} path - Path for badger db
    */
 
-   /**
+  /**
    * @typedef {Object} StorageAdapterConfigForIpld
    * @property {string} [path] - Path to ipld initialized configuration. Either path or address is required.
    * @property {string} [address] - Multiaddr for ipfs http api. Either path or address is required.
    * @property {boolean} [online=false] - if true, starts IPFS node in online mode
    */
 
-   /**
+  /**
    * @typedef {Object} StorageAdapterConfig
    * @property {StorageAdapterConfigForBadger} badger - Configure and use the badger storage adapter
    * @property {StorageAdapterConfigForIpld} ipld - Configure and use the ipld storage adapter
@@ -469,6 +506,105 @@ class TupeloClient {
 }
 
 /**
+ * Build an establish token transaction object to use in a play transactions
+ * request
+ *
+ * @param {string} tokenName - Name of the new token
+ * @param {number} maximum - Maximum number of tokens of this type that can exist
+ *
+ * @return {EstablishTokenTransaction}
+ */
+const establishTokenTransaction = (tokenName, maximum) =&gt; {
+  return {
+    type: &quot;ESTABLISHTOKEN&quot;,
+    establishTokenPayload: {
+      name: tokenName,
+      monetaryPolicy: {
+        maximum: maximum,
+      }
+    }
+  };
+};
+/**
+ * @typedef {Object} EstablishTokenTransaction
+ * @property {string} name - Name of the new token
+ * @property {TokenMonetaryPolicy} monetaryPolicy - The tokens monetary policy
+ */
+
+/**
+ * @typedef {Object} TokenMonetaryPolicy
+ * @property {number} maximum - Maximum total tokens allowed
+ */
+
+/**
+ * Build a mint token transaction object to use in a play transactions request
+ *
+ * @param {string} tokenName - Name of the token type
+ * @param {number} amount - Number of tokens to mint.
+ *
+ * @return MintTokenTransaction
+ */
+const mintTokenTransaction = (tokenName, amount) =&gt; {
+  return {
+    type: &quot;MINTTOKEN&quot;,
+    mintTokenPayload: {
+      name: tokenName,
+      amount: amount,
+    }
+  };
+};
+/**
+ * @typedef {Object} MintTokenTransaction
+ * @property {string} name - Name of the token to mint
+ * @property {TokenMonetaryPolicy} amount - The number of tokens to mint
+ */
+
+/**
+ * Build a set data transaction object to use in a play transactions request
+ *
+ * @param {string} path - &apos;/&apos; delimited path into the chain tree to store the data
+ * @param {string|number|boolean|Array|Object} value - The data to store.
+ *
+ * @return SetDataTransaction
+ */
+const setDataTransaction = (path, value) =&gt; {
+  var cborData = cbor.Encoder.encode(value);
+  return {
+    type: &quot;SETDATA&quot;,
+    setDataPayload: {
+      path: path,
+      value: cborData,
+    }
+  };
+};
+/**
+ * @typedef {Object} SetDataTransaction
+ * @property {string} path - ChainTree data path to set
+ * @property {bytes} value - Cbor encoded data to set
+ */
+
+/**
+ * Build a set ownership transaction object to use in a play transactions
+ * request
+ *
+ * @param {string[]} newOwnerKeys - List of key addresses for the new owners
+ *
+ * @return SetOwnerTransaction
+ */
+const setOwnerTransaction = (authentication) =&gt; {
+  return {
+    type: &quot;SETOWNERSHIP&quot;,
+    setOwnershipPayload: {
+      authentication: authentication,
+    }
+  };
+};
+/**
+ * @typedef {Object} SetOwnerTransaction
+ * @property {string[]} authentication - The key addresses of the new owners
+ */
+
+/**
  * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.
  *
  * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
@@ -482,8 +618,12 @@ function connect(walletServer, walletCreds) {
   return new TupeloClient(walletServer, walletCreds);
 }
 
-exports.TupeloClient = TupeloClient;
+exports.establishTokenTransaction = establishTokenTransaction;
+exports.mintTokenTransaction = mintTokenTransaction;
+exports.setDataTransaction = setDataTransaction;
+exports.setOwnerTransaction = setOwnerTransaction;
 exports.connect = connect;
+exports.TupeloClient = TupeloClient;
 </code></pre>
 
 </div>
