@@ -17,6 +17,38 @@ const createWalletWithChain = async () => {
   return {wallet: wallet, walletKey: walletKey, chainId: chainId}
 }
 
+const itRequires = (version) => {
+  const curVer = process.env.TUPELO_VERSION || "";
+  if (curVer === "" || curVer === "master") {
+    return it;
+  }
+
+  const [curMajor, curMinor, _] = curVer.split(".");
+  const components = version.split(".");
+  const numComponents = components.length;
+  if (numComponents === 0) {
+    return it;
+  }
+
+  if (components[0] > curMajor) {
+    return it.skip;
+  }
+  if (numComponents === 1) {
+    return it;
+  }
+  if (components[1] > curMinor) {
+    return it.skip;
+  }
+  if (numComponents === 2) {
+    return it;
+  }
+  if (components[2] > curMinor) {
+    return it.skip;
+  }
+
+  return it;
+}
+
 describe("setting and retrieving data", function() {
   this.timeout(30000);
   let resp;
@@ -40,6 +72,23 @@ describe("setting and retrieving data", function() {
     }
 
     return Promise.resolve(true);
+  });
+
+  itRequires("0.2")("can retrieve a key with a basic value given a certain tip", async () => {
+    let {wallet, walletKey, chainId} = await createWalletWithChain();
+
+    for ([key, val] of Object.entries(basicTypes)) {
+      let resp = await wallet.setData(chainId, walletKey, key, val);
+      const {tip,} = resp;
+      assert.notEqual(tip, null);
+      resp = await wallet.resolveAt(chainId, `/tree/data/${key}`, tip);
+      assert.deepStrictEqual(resp.data, [val,]);
+      
+      const newKey = `${key}New`;
+      resp = await wallet.setData(chainId, walletKey, newKey, val);
+      resp = await wallet.resolveAt(chainId, `/tree/data/${newKey}`, tip);
+      assert.deepStrictEqual(resp.data, [null,]);
+    }
   });
 
   it("can set and retrieve keys with array values", async ()=> {
