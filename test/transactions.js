@@ -1,26 +1,13 @@
+const helpers = require("./helpers");
 const assert = require("assert");
 const tupelo = require("../lib/tupelo");
-const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051';
-
-const createWalletWithChain = async () => {
-  const wallet = tupelo.connect(TUPELO_HOST, {
-    walletName: "playtransactions",
-    passPhrase: "test",
-  });
-  await wallet.register();
-  let resp = await wallet.generateKey();
-  const walletKey = resp.keyAddr;
-  assert.equal(42, walletKey.length);
-  let {chainId,} = await wallet.createChainTree(walletKey);
-  return {wallet: wallet, walletKey: walletKey, chainId: chainId};
-};
 
 describe("playing transactions", function() {
   this.timeout(30000);
   let resp;
 
   it("signs a batch of transactions", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     let path1 = "some/data";
     let val1 = "foo";
