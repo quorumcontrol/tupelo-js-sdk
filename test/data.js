@@ -17,6 +17,38 @@ const createWalletWithChain = async () => {
   return {wallet: wallet, walletKey: walletKey, chainId: chainId}
 }
 
+const itRequires = (version) => {
+  const curVer = process.env.TUPELO_VERSION || "";
+  if (curVer === "" || curVer === "master") {
+    return it;
+  }
+
+  const [curMajor, curMinor, _] = curVer.split(".");
+  const components = version.split(".");
+  const numComponents = components.length;
+  if (numComponents === 0) {
+    return it;
+  }
+
+  if (components[0] > curMajor) {
+    return it.skip;
+  }
+  if (numComponents === 1) {
+    return it;
+  }
+  if (components[1] > curMinor) {
+    return it.skip;
+  }
+  if (numComponents === 2) {
+    return it;
+  }
+  if (components[2] > curMinor) {
+    return it.skip;
+  }
+
+  return it;
+}
+
 describe("setting and retrieving data", function() {
   this.timeout(30000);
   let resp;
@@ -42,7 +74,7 @@ describe("setting and retrieving data", function() {
     return Promise.resolve(true);
   });
 
-  it("can retrieve a key with a basic value given a certain tip", async () => {
+  itRequires("0.2")("can retrieve a key with a basic value given a certain tip", async () => {
     let {wallet, walletKey, chainId} = await createWalletWithChain();
 
     for ([key, val] of Object.entries(basicTypes)) {
