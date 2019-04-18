@@ -1,53 +1,8 @@
+const helpers = require("./helpers");
 const assert = require("assert");
-const crypto = require("crypto");
 const Tagged = require("cbor/lib/tagged");
 const Tupelo = require("../lib/tupelo");
-const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051';
-
-const createWalletWithChain = async () => {
-  const wallet = Tupelo.connect(TUPELO_HOST, {
-    walletName: crypto.randomBytes(32).toString('hex'),
-    passPhrase: "test",
-  });
-  await wallet.register()
-  let resp = await wallet.generateKey();
-  const walletKey = resp.keyAddr;
-  assert.equal(42, walletKey.length);
-  let {chainId,} = await wallet.createChainTree(walletKey);
-  return {wallet: wallet, walletKey: walletKey, chainId: chainId}
-}
-
-const itRequires = (version) => {
-  const curVer = process.env.TUPELO_VERSION || "";
-  if (curVer === "" || curVer === "master") {
-    return it;
-  }
-
-  const [curMajor, curMinor, _] = curVer.split(".");
-  const components = version.split(".");
-  const numComponents = components.length;
-  if (numComponents === 0) {
-    return it;
-  }
-
-  if (components[0] > curMajor) {
-    return it.skip;
-  }
-  if (numComponents === 1) {
-    return it;
-  }
-  if (components[1] > curMinor) {
-    return it.skip;
-  }
-  if (numComponents === 2) {
-    return it;
-  }
-  if (components[2] > curMinor) {
-    return it.skip;
-  }
-
-  return it;
-}
+const itRequires = helpers.itRequires
 
 describe("setting and retrieving data", function() {
   this.timeout(30000);
@@ -62,7 +17,7 @@ describe("setting and retrieving data", function() {
   };
 
   it("can set and retrieve keys with basic values", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     for ([key, val] of Object.entries(basicTypes)) {
       resp = await wallet.setData(chainId, walletKey, key, val);
@@ -75,7 +30,7 @@ describe("setting and retrieving data", function() {
   });
 
   itRequires("0.2")("can retrieve a key with a basic value given a certain tip", async () => {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     for ([key, val] of Object.entries(basicTypes)) {
       let resp = await wallet.setData(chainId, walletKey, key, val);
@@ -92,7 +47,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve keys with array values", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     for ([key, val] of Object.entries(basicTypes)) {
       resp = await wallet.setData(chainId, walletKey, "path/to/" + key, [val, val, val]);
@@ -110,7 +65,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve keys with object values", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     for ([key, val] of Object.entries(basicTypes)) {
       resp = await wallet.setData(chainId, walletKey, "path/to/" + key, {key: val});
@@ -128,7 +83,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve the root data object", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "/", basicTypes);
     assert.notEqual(resp.tip, null);
@@ -139,7 +94,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve sibling keys", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "parent/sibling1", "val1");
     assert.notEqual(resp.tip, null);
@@ -152,7 +107,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve first cousin keys", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "parent/sibling1/child", "val1");
     assert.notEqual(resp.tip, null);
@@ -167,7 +122,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve second cousin keys", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "parent/sibling1/child/anotherChild", "val1");
     assert.notEqual(resp.tip, null);
@@ -182,7 +137,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve basic value on ancestor with existing descendant", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "parent/sibling1/child", "val1");
     assert.notEqual(resp.tip, null);
@@ -199,7 +154,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can set and retrieve descendant with with existing ancestor", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "parent", {name: "val1"});
     assert.notEqual(resp.tip, null);
@@ -219,7 +174,7 @@ describe("setting and retrieving data", function() {
   });
 
   it("can overwrite keys", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     resp = await wallet.setData(chainId, walletKey, "/", {stableKey: "val1", changingKey: "val2"});
     assert.notEqual(resp.tip, null);

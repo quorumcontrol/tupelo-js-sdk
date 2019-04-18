@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "name": "setOwnerTransaction",
+    "filePath": "lib/tupelo.js",
+    "lines": [
+      {
+        "lineNumber": 518,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 519,
+        "line": " * Build a set ownership transaction object to use in a play transactions"
+      },
+      {
+        "lineNumber": 520,
+        "line": " * request"
+      },
+      {
+        "lineNumber": 521,
+        "line": " *"
+      },
+      {
+        "lineNumber": 522,
+        "line": " * @param {string[]} newOwnerKeys - List of key addresses for the new owners"
+      },
+      {
+        "lineNumber": 523,
+        "line": " *"
+      },
+      {
+        "lineNumber": 524,
+        "line": " * @return SetOwnerTransaction"
+      },
+      {
+        "lineNumber": 525,
+        "line": " */"
+      },
+      {
+        "lineNumber": 526,
+        "line": "const setOwnerTransaction = (authentication) => {"
+      }
+    ],
+    "codeParams": [
+      "authentication"
+    ],
+    "docParams": [
+      "newOwnerKeys"
+    ]
+  }
+]
