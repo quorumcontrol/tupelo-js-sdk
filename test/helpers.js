@@ -17,3 +17,35 @@ const createWalletWithChain = async () => {
 };
 
 exports.createWalletWithChain = createWalletWithChain;
+
+exports.itRequires = (version) => {
+  const curVer = process.env.TUPELO_VERSION || "";
+  if (curVer === "" || curVer === "master") {
+    return it;
+  }
+
+  const [curMajor, curMinor, curPatch] = curVer.split(".");
+  const components = version.split(".");
+  const numComponents = components.length;
+  if (numComponents === 0) {
+    return it;
+  }
+
+  if (components[0] > curMajor) {
+    return it.skip;
+  }
+  if (numComponents === 1) {
+    return it;
+  }
+  if (components[1] > curMinor) {
+    return it.skip;
+  }
+  if (numComponents === 2) {
+    return it;
+  }
+  if (components[2] > curPatch) {
+    return it.skip;
+  }
+
+  return it;
+}
