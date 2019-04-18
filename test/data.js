@@ -91,6 +91,18 @@ describe("setting and retrieving data", function() {
     });
   });
 
+  it("can return remainingPath if path is not fully resolved", async ()=> {
+    let {wallet, walletKey, chainId} = await createWalletWithChain();
+
+    let resp = await wallet.setData(chainId, walletKey, 'key', 'value');
+    assert.notEqual(resp.tip, null);
+    resp = await wallet.resolveData(chainId, 'key/child');
+    assert.deepStrictEqual(resp, {
+      data: ['value'],
+      remainingPath: 'child',
+    });
+  });
+
   it("can set and retrieve the root data object", async ()=> {
     let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
