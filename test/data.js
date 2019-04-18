@@ -17,7 +17,6 @@ const createWalletWithChain = async () => {
   return {wallet: wallet, walletKey: walletKey, chainId: chainId};
 };
 
-<<<<<<< HEAD
 const itRequires = (version) => {
   const curVer = process.env.TUPELO_VERSION || "";
   if (curVer === "" || curVer === "master") {
