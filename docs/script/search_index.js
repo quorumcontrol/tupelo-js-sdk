@@ -12,6 +12,30 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "tupelo-client~establishtokentransaction",
+    "function/index.html#static-function-establishTokenTransaction",
+    "<span>establishTokenTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
+    "tupelo-client~minttokentransaction",
+    "function/index.html#static-function-mintTokenTransaction",
+    "<span>mintTokenTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
+    "tupelo-client~setdatatransaction",
+    "function/index.html#static-function-setDataTransaction",
+    "<span>setDataTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
+    "tupelo-client~setownertransaction",
+    "function/index.html#static-function-setOwnerTransaction",
+    "<span>setOwnerTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
     "lib/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "lib/.external-ecmascript.js~Array",
@@ -300,6 +324,36 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/tupelo.js~establishtokentransaction",
+    "typedef/index.html#static-typedef-EstablishTokenTransaction",
+    "lib/tupelo.js~EstablishTokenTransaction",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~minttokentransaction",
+    "typedef/index.html#static-typedef-MintTokenTransaction",
+    "lib/tupelo.js~MintTokenTransaction",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~setdatatransaction",
+    "typedef/index.html#static-typedef-SetDataTransaction",
+    "lib/tupelo.js~SetDataTransaction",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~setownertransaction",
+    "typedef/index.html#static-typedef-SetOwnerTransaction",
+    "lib/tupelo.js~SetOwnerTransaction",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tokenmonetarypolicy",
+    "typedef/index.html#static-typedef-TokenMonetaryPolicy",
+    "lib/tupelo.js~TokenMonetaryPolicy",
+    "typedef"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#constructor",
     "class/lib/tupelo.js~TupeloClient.html#instance-constructor-constructor",
     "lib/tupelo.js~TupeloClient#constructor",
@@ -360,6 +414,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#playtransactions",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-playTransactions",
+    "lib/tupelo.js~TupeloClient#playTransactions",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#register",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-register",
     "lib/tupelo.js~TupeloClient#register",
@@ -369,6 +429,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient#resolve",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-resolve",
     "lib/tupelo.js~TupeloClient#resolve",
+    "method"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient#resolveat",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-resolveAt",
+    "lib/tupelo.js~TupeloClient#resolveAt",
     "method"
   ],
   [
@@ -453,6 +519,12 @@ window.esdocSearchIndex = [
     "lib/tupelo.js~tupeloclient.minttokenresponse",
     "typedef/index.html#static-typedef-MintTokenResponse",
     "lib/tupelo.js~TupeloClient.MintTokenResponse",
+    "typedef"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient.playtransactionsresponse",
+    "typedef/index.html#static-typedef-PlayTransactionsResponse",
+    "lib/tupelo.js~TupeloClient.PlayTransactionsResponse",
     "typedef"
   ],
   [

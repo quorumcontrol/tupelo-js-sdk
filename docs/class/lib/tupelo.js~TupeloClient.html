@@ -31,6 +31,15 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-establishTokenTransaction">establishTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mintTokenTransaction">mintTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setDataTransaction">setDataTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setOwnerTransaction">setOwnerTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenTransaction">EstablishTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenTransaction">MintTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataTransaction">SetDataTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerTransaction">SetOwnerTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenMonetaryPolicy">TokenMonetaryPolicy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
@@ -39,6 +48,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListChainIdsResponse">ListChainIdsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ListKeysResponse">ListKeysResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenResponse">MintTokenResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PlayTransactionsResponse">PlayTransactionsResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RegisterResponse">RegisterResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span></span></li>
@@ -55,13 +65,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TupeloClient} from &apos;<span><a href="file/lib/tupelo.js.html#lineNumber34">tupelo-client</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {TupeloClient} from &apos;<span><a href="file/lib/tupelo.js.html#lineNumber36">tupelo-client</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/tupelo.js.html#lineNumber34">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/tupelo.js.html#lineNumber36">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -507,6 +517,35 @@ tree.</p>
           
           
           
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-playTransactions">playTransactions</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transactions: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-PlayTransactionsResponse">PlayTransactionsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Apply a sequence of transactions to a chain tree</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
           <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-register">register</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-RegisterResponse">RegisterResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
         </p>
       </div>
@@ -543,6 +582,35 @@ tree.</p>
         
         
         <div data-ice="description"><p>Resolve data from the root of the chain tree</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html#instance-method-resolveAt">resolveAt</a></span></span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tip: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Resolve data from a tip of a chain tree given a certain path.</p>
 </div>
       </div>
     </td>
@@ -663,7 +731,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
@@ -709,7 +777,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber61">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber63">source</a></span></span>
     </span>
   </h3>
 
@@ -753,7 +821,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber48">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
@@ -797,7 +865,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber43">source</a></span></span>
     </span>
   </h3>
 
@@ -844,7 +912,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber120">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber121">source</a></span></span>
     </span>
   </h3>
 
@@ -924,7 +992,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber330">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber361">source</a></span></span>
     </span>
   </h3>
 
@@ -1018,7 +1086,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -1091,7 +1159,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber87">source</a></span></span>
     </span>
   </h3>
 
@@ -1147,7 +1215,7 @@ the notary group</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber198">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber199">source</a></span></span>
     </span>
   </h3>
 
@@ -1221,7 +1289,7 @@ tree with id <code>chainId</code></p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber164">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber165">source</a></span></span>
     </span>
   </h3>
 
@@ -1252,7 +1320,7 @@ tree with id <code>chainId</code></p>
       <td data-ice="name" class="code" data-depth="0">storageAdapter</td>
       <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-StorageAdapterConfig">StorageAdapterConfig</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Storage configuration for the chain tree </p>
+      <td data-ice="description"><p>Storage configuration for the chain tree</p>
 <p>StorageAdapterConfig</p>
 </td>
     </tr>
@@ -1302,7 +1370,7 @@ tree with id <code>chainId</code></p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber179">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber180">source</a></span></span>
     </span>
   </h3>
 
@@ -1358,7 +1426,7 @@ tree with id <code>chainId</code></p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber102">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber103">source</a></span></span>
     </span>
   </h3>
 
@@ -1414,7 +1482,7 @@ tree with id <code>chainId</code></p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber358">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber389">source</a></span></span>
     </span>
   </h3>
 
@@ -1498,6 +1566,93 @@ tree.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-playTransactions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">playTransactions</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, keyAddr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transactions: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span><span>[]</span></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-PlayTransactionsResponse">PlayTransactionsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber414">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Apply a sequence of transactions to a chain tree</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">chainId</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The ID of the chain tree to store the data on.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">keyAddr</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Address of the key that owns the chain tree.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">transactions</td>
+      <td data-ice="type" class="code"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span><span>[]</span></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>List of transactions to apply</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-PlayTransactionsResponse">PlayTransactionsResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-register">
     <span class="access" data-ice="access">public</span>
     
@@ -1509,7 +1664,7 @@ tree.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber71">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber72">source</a></span></span>
     </span>
   </h3>
 
@@ -1565,7 +1720,7 @@ tree.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber245">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber246">source</a></span></span>
     </span>
   </h3>
 
@@ -1634,6 +1789,93 @@ tree.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-resolveAt">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    
+    <span class="code" data-ice="name">resolveAt</span><span class="code" data-ice="signature">(chainId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, tip: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber303">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Resolve data from a tip of a chain tree given a certain path.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">chainId</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The ID of the chain tree to retrieve the data from.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">path</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&apos;/&apos; delimited path into the chain tree where the data is stored</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">tip</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The tip in question.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ResolveResponse">ResolveResponse</a></span>, <span><a href="typedef/index.html#static-typedef-RpcError">RpcError</a></span>&gt;</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-resolveData">
     <span class="access" data-ice="access">public</span>
     
@@ -1645,7 +1887,7 @@ tree.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber282">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber283">source</a></span></span>
     </span>
   </h3>
 
@@ -1725,7 +1967,7 @@ tree.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber220">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber221">source</a></span></span>
     </span>
   </h3>
 
@@ -1820,7 +2062,7 @@ notary group.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber304">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/tupelo.js.html#lineNumber335">source</a></span></span>
     </span>
   </h3>
 
