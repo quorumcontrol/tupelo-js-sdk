@@ -110,20 +110,46 @@ Here is an example of how to create a new key and then a chain tree owned by tha
 ```javascript
 const tupelo = require('tupelo-client');
 
-const main = async () => {
+const createTree = async () => {
   const walletCreds = {
     walletName: 'my-wallet',
     passPhrase: 'super secret password'
   };
-  const client = tupelo.connect('localhost:50051', walletCreds);
+  const wallet = tupelo.connect('localhost:50051', walletCreds);
 
   // register a new wallet, then generate a key and chain tree stored there
-  await client.register();
-  const {keyAddr,} = await client.generateKey();
-  const {chainId,} = await client.createChainTree(keyAddr);
+  await wallet.register();
+  const {keyAddr: walletKey,} = await wallet.generateKey();
+  const {chainId,} = await wallet.createTree(walletKey);
+  return {wallet, walletKey, chainId,};
+};
+
+const main = async () => {
+  const {chainId,} = await createTree();
   console.log(chainId);
 };
 ```
+
+Another example, of how to set data in a tree and resolving it (using the `createTree`
+function from the previous example):
+
+```javascript
+const assert = require('assert');
+
+const main = async () => {
+  const {chainId, wallet, walletKey,} = await createTree();
+  await wallet.setData(chainId, walletKey, 'key', 'value');
+
+  // Resolve the path we just set
+  let resp = await wallet.resolveData(chainId, 'key');
+  assert.deepStrictEqual(resp.data, ['value']);
+  assert.equal(resp.remainingPath, '');
+
+  // Resolve a child path of what we set before; it will resolve, but not for the full path
+  resp = await wallet.resolveData(chainId, 'key/child');
+  assert.deepStrictEqual(resp.data, ['value']);
+  assert.strictEqual(resp.remainingPath, 'child');
+};
 
 ## Tests
 

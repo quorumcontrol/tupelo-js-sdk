@@ -321,6 +321,9 @@ class TupeloClient {
           cbor.Decoder.decodeAll(response.data)
             .then((decoded) =&gt; {
               response.data = decoded;
+              if (response.remainingPath === undefined) {
+                response.remainingPath = null;
+              }
               resolve(response);
             },(err) =&gt; {
               reject(err);

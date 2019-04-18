@@ -25,7 +25,7 @@ describe("setting and retrieving data", function() {
       resp = await wallet.resolveData(chainId, key);
       assert.deepStrictEqual(resp, {
         data: [val],
-        remainingPath: null,
+        remainingPath: '',
       });
     }
   });
@@ -56,7 +56,7 @@ describe("setting and retrieving data", function() {
       resp = await wallet.resolveData(chainId, "path/to/" + key);
       assert.deepStrictEqual(resp, {
         data: [[val, val, val]],
-        remainingPath: null,
+        remainingPath: '',
       });
     }
 
@@ -65,7 +65,7 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "path/to/mixedTypes");
     assert.deepStrictEqual(resp, {
       data: [Object.values(basicTypes)],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -78,7 +78,7 @@ describe("setting and retrieving data", function() {
       resp = await wallet.resolveData(chainId, "path/to/" + key);
       assert.deepStrictEqual(resp, {
         data: [{key: val}],
-        remainingPath: null,
+        remainingPath: '',
       });
     }
 
@@ -87,12 +87,12 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "path/to/full");
     assert.deepStrictEqual(resp, {
       data: [basicTypes],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
   it("can return remainingPath if path is not fully resolved", async ()=> {
-    let {wallet, walletKey, chainId} = await createWalletWithChain();
+    let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     let resp = await wallet.setData(chainId, walletKey, 'key', 'value');
     assert.notEqual(resp.tip, null);
@@ -111,7 +111,7 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "/");
     assert.deepStrictEqual(resp, {
       data: [basicTypes],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -125,7 +125,7 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "parent");
     assert.deepStrictEqual(resp, {
       data: [{sibling1: "val1", sibling2: "val2"}],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -139,12 +139,12 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "parent/sibling1/child");
     assert.deepStrictEqual(resp, {
       data: ["val1"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "parent/sibling2/child");
     assert.deepStrictEqual(resp, {
       data: ["val2"],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -158,12 +158,12 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "parent/sibling1/child/anotherChild");
     assert.deepStrictEqual(resp, {
       data: ["val1"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "parent/sibling2/child/anotherChild");
     assert.deepStrictEqual(resp, {
       data: ["val2"],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -177,16 +177,16 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "parent/sibling1/child");
     assert.deepStrictEqual(resp, {
       data: ["val1"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "parent/name");
     assert.deepStrictEqual(resp, {
       data: ["val2"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "parent");
     assert.strictEqual(resp.data[0].name, "val2");
-    assert.equal(resp.remainingPath, null);
+    assert.equal(resp.remainingPath, '');
   });
 
   it("can set and retrieve descendant with with existing ancestor", async ()=> {
@@ -199,18 +199,18 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "parent/name");
     assert.deepStrictEqual(resp, {
       data: ["val1"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "parent");
     assert.strictEqual(resp.data[0].name, "val1");
-    assert.equal(resp.remainingPath, null);
+    assert.equal(resp.remainingPath, '');
     assert.ok(
       (resp.data[0].sibling1 instanceof Tagged) && resp.data[0].sibling1.tag == 42
     , "Expected sibling1 to be a CID (type Tagged with tag 42)");
     resp = await wallet.resolveData(chainId, "parent/sibling1/child");
     assert.deepStrictEqual(resp, {
       data: ["val2"],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 
@@ -222,7 +222,7 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "/");
     assert.deepStrictEqual(resp, {
       data: [{stableKey: "val1", changingKey: "val2"}],
-      remainingPath: null,
+      remainingPath: '',
     });
 
     resp = await wallet.setData(chainId, walletKey, "changingKey", "val3");
@@ -230,7 +230,7 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "/");
     assert.deepStrictEqual(resp, {
       data: [{stableKey: "val1", changingKey: "val3"}],
-      remainingPath: null,
+      remainingPath: '',
     });
 
     resp = await wallet.setData(chainId, walletKey, "changingKey", ["val4", "val5"]);
@@ -238,12 +238,12 @@ describe("setting and retrieving data", function() {
     resp = await wallet.resolveData(chainId, "stableKey");
     assert.deepStrictEqual(resp, {
       data: ["val1"],
-      remainingPath: null,
+      remainingPath: '',
     });
     resp = await wallet.resolveData(chainId, "changingKey");
     assert.deepStrictEqual(resp, {
       data: [["val4", "val5"]],
-      remainingPath: null,
+      remainingPath: '',
     });
   });
 });

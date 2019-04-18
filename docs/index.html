@@ -64,13 +64,13 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.js</h1><p>A Node.js API client to both manage Tupelo chain trees, and submit chain tree
-transactions to a notary group for verification through connecting with a Tupelo
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="tupelo-js">Tupelo.js</h1><p>A Node.js API client to both manage Tupelo chain trees and submit chain tree
+transactions to a notary group for verification, through connecting with a Tupelo
 RPC server.</p>
 <h2 id="installation-and-usage">Installation and Usage</h2><p>Basic installation and usage instructions are below. Visit the full
 <a href="https://quorumcontrol.github.io/tupelo.js/identifiers.html">API Documentation</a> for more.</p>
-<h3 id="rpc-server">RPC Server</h3><p>The Node.js client cannot directly manage chain trees or connect to the notary
-group, so node applications must instead proxy through an RPC server to work
+<h3 id="rpc-server">RPC Server</h3><p>The Node.js client cannot directly manage chain trees nor connect to the notary
+group, so Node.js applications must instead proxy through an RPC server to work
 with Tupelo.</p>
 <h4 id="installation">Installation</h4><p>To install the server, first contact us to get a Tupelo binary for your platform
 and save it within your command <code>PATH</code> variable. If you do not wish to save the
@@ -116,7 +116,7 @@ your application.</p>
 </code></pre>
 <h5 id="wallet-credentials">Wallet Credentials</h5><p>The RPC server stores all the chain trees it has access to in an encrypted
 wallet with a unique name and secret pass phrase. You must initialize the client
-with the correct wallet credentials for the wallet you&apos;d like to unlock for each
+with the correct credentials for the wallet you&apos;d like to unlock for each
 RPC request. The wallet credentials should be a
 <a href="https://quorumcontrol.github.io/tupelo.js/typedef/index.html#static-typedef-WalletCredentials">WalletCredentials object</a> with
 <code>walletName</code> and <code>passPhrase</code> keys.</p>
@@ -129,25 +129,46 @@ RPC request. The wallet credentials should be a
 wallet credentials object as arguments and returns an RPC client connection.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);</code>
 </code></pre>
-<h5 id="using-the-api">Using the API</h5><p>Here is how to create a new key and then a chain tree owned by that key as an
-example. See the <a href="https://quorumcontrol.github.io/tupelo.js/identifiers.html">API docs</a> for more information about the
-full Tupelo.js API.</p>
+<h5 id="using-the-api">Using the API</h5><p>See the <a href="https://quorumcontrol.github.io/tupelo.js/identifiers.html">API docs</a> for full
+information about the Tupelo.js API.</p>
+<p>Here is an example of how to create a new key and then a chain tree owned by that key. </p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const tupelo = require(&apos;tupelo-client&apos;);
 
-const main = async () =&gt; {
+const createTree = async () =&gt; {
   const walletCreds = {
     walletName: &apos;my-wallet&apos;,
     passPhrase: &apos;super secret password&apos;
   };
-  const client = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);
+  const wallet = tupelo.connect(&apos;localhost:50051&apos;, walletCreds);
 
   // register a new wallet, then generate a key and chain tree stored there
-  await client.register();
-  const {keyAddr,} = await client.generateKey();
-  const {chainId,} = await client.createChainTree(keyAddr);
+  await wallet.register();
+  const {keyAddr: walletKey,} = await wallet.generateKey();
+  const {chainId,} = await wallet.createTree(walletKey);
+  return {wallet, walletKey, chainId,};
+};
+
+const main = async () =&gt; {
+  const {chainId,} = await createTree();
   console.log(chainId);
 };</code>
 </code></pre>
+<p>Another example, of how to set data in a tree and resolving it (using the <code>createTree</code>
+function from the previous example):</p>
+<p><code>`</code>javascript
+const assert = require(&apos;assert&apos;);</p>
+<p>const main = async () =&gt; {
+  const {chainId, wallet, walletKey,} = await createTree();
+  await wallet.setData(chainId, walletKey, &apos;key&apos;, &apos;value&apos;);</p>
+<p>  // Resolve the path we just set
+  let resp = await wallet.resolveData(chainId, &apos;key&apos;);
+  assert.deepStrictEqual(resp.data, [&apos;value&apos;]);
+  assert.equal(resp.remainingPath, null);</p>
+<p>  // Resolve a child path of what we set before; it will resolve, but not for the full path
+  resp = await wallet.resolveData(chainId, &apos;key/child&apos;);
+  assert.deepStrictEqual(resp.data, [&apos;value&apos;]);
+  assert.strictEqual(resp.remainingPath, &apos;child&apos;);
+};</p>
 <h2 id="tests">Tests</h2><p>There are some RPC integration tests that can be run against a live Tupelo RPC
 server by running <code>npm test</code>. Note that you will need a working Docker
 environment setup.</p>
