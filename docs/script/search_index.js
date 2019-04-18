@@ -432,6 +432,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#resolveat",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-resolveAt",
+    "lib/tupelo.js~TupeloClient#resolveAt",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#resolvedata",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-resolveData",
     "lib/tupelo.js~TupeloClient#resolveData",
