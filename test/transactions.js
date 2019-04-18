@@ -1,12 +1,13 @@
 const helpers = require("./helpers");
 const assert = require("assert");
 const tupelo = require("../lib/tupelo");
+const itRequires = helpers.itRequires
 
 describe("playing transactions", function() {
   this.timeout(30000);
   let resp;
 
-  it("signs a batch of transactions", async ()=> {
+  itRequires("0.2")("signs a batch of transactions", async ()=> {
     let {wallet, walletKey, chainId} = await helpers.createWalletWithChain();
 
     let path1 = "some/data";
