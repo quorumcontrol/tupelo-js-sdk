@@ -321,8 +321,8 @@ class TupeloClient {
           cbor.Decoder.decodeAll(response.data)
             .then((decoded) =&gt; {
               response.data = decoded;
-              if (response.remainingPath === undefined) {
-                response.remainingPath = null;
+              if (response.remainingPath == null) {
+                response.remainingPath = &apos;&apos;;
               }
               resolve(response);
             },(err) =&gt; {
@@ -347,7 +347,7 @@ class TupeloClient {
    */
 
   /**
-   * Resolve data from the user portion of the chain tree.
+   * Resolve data from the user portion (&quot;/tree/data&quot;) of the chain tree.
    *
    * The data will be resolved in the tree according to the path until we reach the end
    * of the path or a leaf node. If we reach a leaf node before the end of the path, 
