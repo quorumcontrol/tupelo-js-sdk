@@ -1,7 +1,7 @@
 const helpers = require("./helpers");
 const assert = require("assert");
 const tupelo = require("../lib/tupelo");
-const itRequires = helpers.itRequires
+const itRequires = helpers.itRequires;
 
 describe("playing transactions", function() {
   this.timeout(30000);

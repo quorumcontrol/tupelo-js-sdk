@@ -2,6 +2,8 @@ const assert = require("assert");
 const crypto = require("crypto");
 const Tagged = require("cbor/lib/tagged");
 const Tupelo = require("../lib/tupelo");
+const helpers = require("./helpers");
+const itRequires = helpers.itRequires;
 const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051';
 
 const createWalletWithChain = async () => {
@@ -55,7 +57,7 @@ describe("token operations", function() {
       assert.notEqual(err, null);
     }
 
-    // FIXME: Should pass, fix incoming in tupelo
+    // TODO: This requires 0.2.0+ but could be put into an itRequires test now
     // resp = await wallet.mintToken(chainId, walletKey, "token-a", 50);
     // assert.notEqual(resp.tip, null);
 
@@ -74,5 +76,22 @@ describe("token operations", function() {
     assert.rejects(async () => {
       await wallet.establishToken(chainId, walletKey, "token-a");
     });
+  });
+
+  itRequires("0.2")("can send and receive tokens", async ()=> {
+    let {wallet: senderWallet, walletKey: senderWalletKey, chainId: senderChainId} = await createWalletWithChain();
+    let {wallet: recipientWallet, walletKey: recipientWalletKey, chainId: recipientChainId} = await createWalletWithChain();
+
+    resp = await senderWallet.establishToken(senderChainId, senderWalletKey, "token-a", 500);
+    assert.notEqual(resp.tip, null);
+
+    resp = await senderWallet.mintToken(senderChainId, senderWalletKey, "token-a", 250);
+    assert.notEqual(resp.tip, null);
+
+    resp = await senderWallet.sendToken(senderChainId, senderWalletKey, "token-a", recipientChainId, 100);
+    assert.notEqual(resp.sendToken, null);
+
+    resp = await recipientWallet.receiveToken(recipientChainId, recipientWalletKey, resp.sendToken);
+    assert.notEqual(resp.tip, null);
   });
 });
