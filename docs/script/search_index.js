@@ -420,6 +420,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/tupelo.js~tupeloclient#receivetoken",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-receiveToken",
+    "lib/tupelo.js~TupeloClient#receiveToken",
+    "method"
+  ],
+  [
     "lib/tupelo.js~tupeloclient#register",
     "class/lib/tupelo.js~TupeloClient.html#instance-method-register",
     "lib/tupelo.js~TupeloClient#register",
@@ -448,6 +454,12 @@ window.esdocSearchIndex = [
     "class/lib/tupelo.js~TupeloClient.html#instance-member-rpc",
     "lib/tupelo.js~TupeloClient#rpc",
     "member"
+  ],
+  [
+    "lib/tupelo.js~tupeloclient#sendtoken",
+    "class/lib/tupelo.js~TupeloClient.html#instance-method-sendToken",
+    "lib/tupelo.js~TupeloClient#sendToken",
+    "method"
   ],
   [
     "lib/tupelo.js~tupeloclient#setdata",
