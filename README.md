@@ -150,9 +150,24 @@ const main = async () => {
   assert.deepStrictEqual(resp.data, ['value']);
   assert.strictEqual(resp.remainingPath, 'child');
 };
+```
 
 ## Tests
-
 There are some RPC integration tests that can be run against a live Tupelo RPC
 server by running `npm test`. Note that you will need a working Docker
 environment setup.
+
+## Examples
+There are some example apps in the example directory, which should be of help in understanding
+how to use Tupelo.
+
+### transfer-ownership
+This example demonstrates Tupelo's feature of transferring the ownership of a chain tree
+from one party (identified by a public key) to another. See the
+[whitepaper](https://docs.quorumcontrol.com/docs/whitepaper.html)'s discussion of
+the `SET_OWNERSHIP` transaction type for background on ownership transfer in Tupelo.
+
+### timestamper
+This is a highly trivial app that simply shows how one may write to chain trees and read back
+from them.
+
