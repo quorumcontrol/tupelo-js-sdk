@@ -10,44 +10,39 @@ listening on "localhost:50051". See the Tupelo.js README for more details if
 necessary before running this sample program.
 
 NOTE: restarting the local RPC server will wipe out all data, therefore existing registered
-chains will no longer work. Either remove the `.ownership-identifiers` state file to get a clean
-slate, or simply register a new chain tree.
+chains will no longer work. Either remove the `.wallet-state` file to get a clean slate, or
+simply register a new chain tree.
 
 #### Usage
-Once the RPC is running you can run three commands with ownership.js. After registering,
-you can generate a new key pair and assign it as the new chaintree owner.
+Once the RPC server is running you can run three commands with ownership.js. After registering a
+source and a destination wallet, you can create a new chain tree and transfer it from the
+originating wallet to the other one.
 
 ```shell
 % > ./ownership.js --help
 ownership.js <command>
 
 Commands:
-  ownership.js register <name>              Register a new chain tree
+  ownership.js register <name>              Register a new wallet
   <passphrase>
-  ownership.js generate-key <name>          Generate a new key pair
-  <passphrase>
-  ownership.js set-owner <name>             Set new owner for a chain tree
-  <passphrase> <key>
+  ownership.js create <name> <passphrase>   Create a new chain tree for a
+                                            certain wallet
+  ownership.js transfer-ownership           Transfer ownership of a chain tree
+  <source-name> <source-passphrase>
+  <dest-name> <dest-passphrase>
 
 Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
 ```
 
-#### Examples
+#### Example Usage
 
-Creating a chaintree:
+The following is an example of how you can use the app to register two wallets, creating
+a chain tree with one of them and finally transfer ownership of the tree:
 ```shell
-./ownership.js register wallet_name wallet_password
+./ownership.js register wallet1 p@ssphr4se
+./ownership.js register wallet2 p@ssphr4se
+./ownership.js create wallet1 p@ssphr4se
+./ownership.js transfer-ownership wallet1 p@ssphr4se wallet2 p@ssphr4se
 ```
-
-Generating a new key pair:
-```shell
-./ownership.js generate-key wallet_name wallet_password
-```
-
-Transferring ownership of previously created chaintree to public key generated in previous step:
-```shell
-./ownership.js transfer-ownership wallet_name wallet_password $PUBLIC_KEY
-```
-
