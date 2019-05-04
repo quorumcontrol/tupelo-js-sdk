@@ -155,23 +155,34 @@ const main = async () =&gt; {
 </code></pre>
 <p>Another example, of how to set data in a tree and resolving it (using the <code>createTree</code>
 function from the previous example):</p>
-<p><code>`</code>javascript
-const assert = require(&apos;assert&apos;);</p>
-<p>const main = async () =&gt; {
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const assert = require(&apos;assert&apos;);
+
+const main = async () =&gt; {
   const {chainId, wallet, walletKey,} = await createTree();
-  await wallet.setData(chainId, walletKey, &apos;key&apos;, &apos;value&apos;);</p>
-<p>  // Resolve the path we just set
+  await wallet.setData(chainId, walletKey, &apos;key&apos;, &apos;value&apos;);
+
+  // Resolve the path we just set
   let resp = await wallet.resolveData(chainId, &apos;key&apos;);
   assert.deepStrictEqual(resp.data, [&apos;value&apos;]);
-  assert.equal(resp.remainingPath, &apos;&apos;);</p>
-<p>  // Resolve a child path of what we set before; it will resolve, but not for the full path
+  assert.equal(resp.remainingPath, &apos;&apos;);
+
+  // Resolve a child path of what we set before; it will resolve, but not for the full path
   resp = await wallet.resolveData(chainId, &apos;key/child&apos;);
   assert.deepStrictEqual(resp.data, [&apos;value&apos;]);
   assert.strictEqual(resp.remainingPath, &apos;child&apos;);
-};</p>
+};</code>
+</code></pre>
 <h2 id="tests">Tests</h2><p>There are some RPC integration tests that can be run against a live Tupelo RPC
 server by running <code>npm test</code>. Note that you will need a working Docker
 environment setup.</p>
+<h2 id="examples">Examples</h2><p>There are some example apps in the examples directory, which should be of help in understanding
+how to use Tupelo.</p>
+<h3 id="transfer-ownership">transfer-ownership</h3><p>This example demonstrates Tupelo&apos;s feature of transferring the ownership of a chain tree
+from one party (identified by a public key) to another. See the
+<a href="https://docs.quorumcontrol.com/docs/whitepaper.html">whitepaper</a>&apos;s discussion of
+the <code>SET_OWNERSHIP</code> transaction type for background on ownership transfer in Tupelo.</p>
+<h3 id="timestamper">timestamper</h3><p>This is a highly trivial app that simply shows how one may write to chain trees and read back
+from them.</p>
 </div>
 </div>
 
