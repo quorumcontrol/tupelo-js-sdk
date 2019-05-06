@@ -40,38 +40,6 @@ describe("ownership transfer", function () {
     assert.deepStrictEqual(result.data, ["hi",]);
   });
   
-  it("can transfer from alice to bob", async () => {
-    const alice = Tupelo.connect(TUPELO_HOST, {
-      walletName: "alice-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    // await alice.register();
-    const {keyAddr: aliceKey} = await alice.generateKey();
-    const {chainId,} = await alice.createChainTree(aliceKey);
-    
-    const bob = Tupelo.connect(TUPELO_HOST, {
-      walletName: "bob-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    // await bob.register();
-    const {keyAddr: bobKey} = await bob.generateKey();
-    assert.strictEqual(bobKey.length, 42);
-    
-    let resp = await alice.setData(chainId, aliceKey, "path/to/here", "hi");
-    assert.notEqual(resp.tip, null);
-    
-    let result = await alice.resolveData(chainId, "path/to/here");
-    assert.deepStrictEqual(result.data, ["hi",]);
-    
-    resp = await alice.setOwner(chainId, aliceKey, [aliceKey, bobKey]);
-    assert.notEqual(resp.tip, null);
-    
-    result = await alice.resolveData(chainId, "path/to/here");
-    assert.deepStrictEqual(result.data, ["hi"]);
-  });
-  
   it("can do a real transfer from alice to bob", async () => {
     const alice = Tupelo.connect(TUPELO_HOST, {
       walletName: "alice-test",
