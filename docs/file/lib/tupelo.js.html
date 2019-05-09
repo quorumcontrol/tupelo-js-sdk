@@ -400,13 +400,12 @@ class TupeloClient {
   }
 
   /**
-   * Add the keys specified by `newOwnerKeys` to the set of owners of the chain
-   * tree with id `chainId` in a transaction, and register that transaction with
-   * the notary group
+   * Define the set of owners of the chain tree with ID `chainId` as the set of keys in
+   * `newOwnerKeys` in a transaction, and register that transaction with the notary group.
    *
    * @param {string} chainId - The ID of the chain tree.
    * @param {string} keyAddr - Address of a key that currently owns the chain tree.
-   * @param {string[]} newOwnerKeys - List of key addresses for the new owners
+   * @param {string[]} newOwnerKeys - List of key addresses for the new owners.
    *
    * @return {Promise&lt;SetOwnerResponse, RpcError&gt;}
    */
@@ -424,7 +423,6 @@ class TupeloClient {
    * @typedef {Object} SetOwnerResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
-
 
   /**
    * Establish a new token type associated with a chain tree.
@@ -451,7 +449,6 @@ class TupeloClient {
    * @typedef {Object} EstablishTokenResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
-
 
   /**
    * Mint new tokens of an already established token type associated with a chain
