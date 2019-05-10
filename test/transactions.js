@@ -4,7 +4,7 @@ const tupelo = require("../lib/tupelo");
 const itRequires = helpers.itRequires;
 
 describe("playing transactions", function() {
-  this.timeout(30000);
+  this.timeout(60000);
   let resp;
 
   itRequires("0.2")("signs a batch of transactions", async ()=> {

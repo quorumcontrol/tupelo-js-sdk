@@ -20,7 +20,7 @@ const createWalletWithChain = async () => {
 };
 
 describe("token operations", function() {
-  this.timeout(30000);
+  this.timeout(60000);
   let resp;
 
   it("can establish and mint token without maximum", async ()=> {

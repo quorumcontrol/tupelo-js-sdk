@@ -5,7 +5,7 @@ const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051'
 // TODO: Remove the "oldResult" tests once resolveData support is released.
 
 describe("ownership transfer", function () {
-  this.timeout(30000);
+  this.timeout(60000);
   
   it("can export and import", async () => {
     const alice = Tupelo.connect(TUPELO_HOST, {

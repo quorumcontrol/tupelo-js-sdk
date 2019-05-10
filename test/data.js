@@ -5,7 +5,7 @@ const Tupelo = require("../lib/tupelo");
 const itRequires = helpers.itRequires
 
 describe("setting and retrieving data", function() {
-  this.timeout(30000);
+  this.timeout(60000);
   let resp;
 
   let basicTypes = {
