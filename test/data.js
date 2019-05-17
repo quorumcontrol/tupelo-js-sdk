@@ -1,7 +1,6 @@
 const helpers = require("./helpers");
 const assert = require("assert");
 const Tagged = require("cbor/lib/tagged");
-const Tupelo = require("../lib/tupelo");
 const itRequires = helpers.itRequires
 
 describe("setting and retrieving data", function() {

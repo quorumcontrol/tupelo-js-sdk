@@ -1,6 +1,5 @@
 const assert = require("assert");
-const Tupelo = require("../lib/tupelo");
-const TUPELO_HOST = process.env.TUPELO_RPC_HOST || 'localhost:50051'
+const helpers = require("./helpers");
 
 // TODO: Remove the "oldResult" tests once resolveData support is released.
 
@@ -8,24 +7,9 @@ describe("ownership transfer", function () {
   this.timeout(30000);
   
   it("can export and import", async () => {
-    const alice = Tupelo.connect(TUPELO_HOST, {
-      walletName: "alice-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    await alice.register();
-    const {keyAddr: aliceKey,} = await alice.generateKey();
-    const {chainId,} = await alice.createChainTree(aliceKey);
-    
-    const bob = Tupelo.connect(TUPELO_HOST, {
-      walletName: "bob-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    await bob.register();
-    const {keyAddr: bobKey,} = await bob.generateKey();
-    assert.strictEqual(bobKey.length, 42);
-    
+    let {wallet: alice, walletKey: aliceKey, chainId: chainId} = await helpers.createWalletWithChain();
+    let {wallet: bob, walletKey: bobKey, chainId: bobChainId} = await helpers.createWalletWithChain();
+        
     let resp = await alice.setData(chainId, aliceKey, "path/to/here", "hi");
     assert.notEqual(resp.tip, null);
     
@@ -41,22 +25,8 @@ describe("ownership transfer", function () {
   });
   
   it("can do a real transfer from alice to bob", async () => {
-    const alice = Tupelo.connect(TUPELO_HOST, {
-      walletName: "alice-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    // await alice.register();
-    const {keyAddr: aliceKey,} = await alice.generateKey();
-    let {chainId,} = await alice.createChainTree(aliceKey);
-    
-    const bob = Tupelo.connect(TUPELO_HOST, {
-      walletName: "bob-test",
-      passPhrase: "test",
-    });
-    // TODO: clear RPC server state between tests automatically
-    // await bob.register();
-    const {keyAddr: bobKey,} = await bob.generateKey();
+    let {wallet: alice, walletKey: aliceKey, chainId: chainId} = await helpers.createWalletWithChain();
+    let {wallet: bob, walletKey: bobKey, chainId: bobChainId} = await helpers.createWalletWithChain();
     
     for (let i = 0; i < 5; i++) {
       const resp = await alice.setData(chainId, aliceKey, "path/to/" + i.toString(),
