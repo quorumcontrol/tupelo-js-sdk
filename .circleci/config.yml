@@ -14,8 +14,8 @@ jobs:
       - setup_remote_docker
 
       - run: |
-          docker create -v /src --name source alpine /bin/true
-          docker cp . source:/src
+          docker create -v /src/tupelo --name source alpine /bin/true
+          docker cp . source:/src/tupelo
 
       # TODO: Figure out node.js caching here
 
