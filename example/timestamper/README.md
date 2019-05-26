@@ -15,7 +15,7 @@ necessary before running this sample program.
 NOTE: restarting the local RPC server will wipe out all data, therefore existing registered chains will no longer work. Either remove the `.timestamp-identifiers` state file to get a clean slate, or simply register a new timestamp chain tree.
 
 #### Usage
-Once the RPC is running you can run three basic timestamping commands with
+Once the RPC server is running you can run three basic timestamping commands with
 stamper.js. After you register, you can save notes over time and display them in
 the order in which they're received along with the UTC timestamp creation time.
 
