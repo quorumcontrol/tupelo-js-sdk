@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
   "dependencies": {
-    "tupelo-messages": "0.3.1",
-    "@grpc/grpc-js": "~0.4",
-    "cbor": "^4.1.5"
+    "@grpc/grpc-js": "^0.4.1",
+    "cbor": "^4.1.5",
+    "tupelo-messages": "0.0.1-rc6"
   },
   "devDependencies": {
     "esdoc": "^1.1.0",
