@@ -1,7 +1,7 @@
 const helpers = require("./helpers");
 const assert = require("assert");
 const Tagged = require("cbor/lib/tagged");
-const itRequires = helpers.itRequires
+const itRequires = helpers.itRequires;
 
 describe("setting and retrieving data", function() {
   this.timeout(30000);
@@ -38,7 +38,7 @@ describe("setting and retrieving data", function() {
       assert.notEqual(tip, null);
       resp = await wallet.resolveAt(chainId, `/tree/data/${key}`, tip);
       assert.deepStrictEqual(resp.data, [val,]);
-      
+
       const newKey = `${key}New`;
       resp = await wallet.setData(chainId, walletKey, newKey, val);
       resp = await wallet.resolveAt(chainId, `/tree/data/${newKey}`, tip);
