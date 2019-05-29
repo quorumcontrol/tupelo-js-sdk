@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/QuorumControl/tupelo.js.git"
+    "url": "https://github.com/QuorumControl/tupelo-js-sdk.git"
   },
   "author": "Quorum Control",
   "license": "ISC",
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/QuorumControl/tupelo.js#readme",
   "dependencies": {
+    "tupelo-messages": "0.3.1",
     "@grpc/grpc-js": "~0.4",
-    "@grpc/proto-loader": "~0.5.0",
     "cbor": "^4.1.5"
   },
   "devDependencies": {

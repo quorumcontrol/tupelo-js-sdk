@@ -12,9 +12,21 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "tupelo-client~establishtokenpayload",
+    "function/index.html#static-function-establishTokenPayload",
+    "<span>establishTokenPayload</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
     "tupelo-client~establishtokentransaction",
     "function/index.html#static-function-establishTokenTransaction",
     "<span>establishTokenTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
+    "tupelo-client~minttokenpayload",
+    "function/index.html#static-function-mintTokenPayload",
+    "<span>mintTokenPayload</span> <span class=\"search-result-import-path\">tupelo-client</span>",
     "function"
   ],
   [
@@ -24,15 +36,27 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "tupelo-client~setdatapayload",
+    "function/index.html#static-function-setDataPayload",
+    "<span>setDataPayload</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
     "tupelo-client~setdatatransaction",
     "function/index.html#static-function-setDataTransaction",
     "<span>setDataTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
     "function"
   ],
   [
-    "tupelo-client~setownertransaction",
-    "function/index.html#static-function-setOwnerTransaction",
-    "<span>setOwnerTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "tupelo-client~setownershippayload",
+    "function/index.html#static-function-setOwnershipPayload",
+    "<span>setOwnershipPayload</span> <span class=\"search-result-import-path\">tupelo-client</span>",
+    "function"
+  ],
+  [
+    "tupelo-client~setownershiptransaction",
+    "function/index.html#static-function-setOwnershipTransaction",
+    "<span>setOwnershipTransaction</span> <span class=\"search-result-import-path\">tupelo-client</span>",
     "function"
   ],
   [
@@ -322,36 +346,6 @@ window.esdocSearchIndex = [
     "file/lib/tupelo.js.html",
     "lib/tupelo.js",
     "file"
-  ],
-  [
-    "lib/tupelo.js~establishtokentransaction",
-    "typedef/index.html#static-typedef-EstablishTokenTransaction",
-    "lib/tupelo.js~EstablishTokenTransaction",
-    "typedef"
-  ],
-  [
-    "lib/tupelo.js~minttokentransaction",
-    "typedef/index.html#static-typedef-MintTokenTransaction",
-    "lib/tupelo.js~MintTokenTransaction",
-    "typedef"
-  ],
-  [
-    "lib/tupelo.js~setdatatransaction",
-    "typedef/index.html#static-typedef-SetDataTransaction",
-    "lib/tupelo.js~SetDataTransaction",
-    "typedef"
-  ],
-  [
-    "lib/tupelo.js~setownertransaction",
-    "typedef/index.html#static-typedef-SetOwnerTransaction",
-    "lib/tupelo.js~SetOwnerTransaction",
-    "typedef"
-  ],
-  [
-    "lib/tupelo.js~tokenmonetarypolicy",
-    "typedef/index.html#static-typedef-TokenMonetaryPolicy",
-    "lib/tupelo.js~TokenMonetaryPolicy",
-    "typedef"
   ],
   [
     "lib/tupelo.js~tupeloclient#constructor",

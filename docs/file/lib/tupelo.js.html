@@ -31,15 +31,14 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/tupelo.js~TupeloClient.html">TupeloClient</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-establishTokenPayload">establishTokenPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-establishTokenTransaction">establishTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mintTokenPayload">mintTokenPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mintTokenTransaction">mintTokenTransaction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setDataPayload">setDataPayload</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setDataTransaction">setDataTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setOwnerTransaction">setOwnerTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenTransaction">EstablishTokenTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MintTokenTransaction">MintTokenTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetDataTransaction">SetDataTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SetOwnerTransaction">SetOwnerTransaction</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TokenMonetaryPolicy">TokenMonetaryPolicy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setOwnershipPayload">setOwnershipPayload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setOwnershipTransaction">setOwnershipTransaction</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-CreateChainResponse">CreateChainResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EstablishTokenResponse">EstablishTokenResponse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExportChainTreeResponse">ExportChainTreeResponse</a></span></span></li>
@@ -67,19 +66,13 @@
 <div class="content" data-ice="content"><h1 data-ice="title">lib/tupelo.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">var cbor = require(&quot;cbor&quot;);
 
-var grpc = require(&quot;@grpc/grpc-js&quot;);
-var protoLoader = require(&quot;@grpc/proto-loader&quot;);
+var tupelo = require(&quot;tupelo-messages&quot;);
+var transactions = tupelo.transactions;
+var services = tupelo.services;
+var rpcclient = tupelo.rpcclient;
+var grpc = tupelo.grpc;
 
-var TUPELO_PROTO_FILE = __dirname + &quot;/proto/tupelo_rpc.proto&quot;;
-
-var protoOpts = {
-  enums: String,
-  defaults: true,
-};
-var tupeloPackageDefinition = protoLoader.loadSync(TUPELO_PROTO_FILE, protoOpts);
-var tupeloPackage = grpc
-    .loadPackageDefinition(tupeloPackageDefinition)
-    .walletrpc;
+const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;;
 
 const promiseAroundRpcCallback = (toExec) =&gt; {
   return new Promise((resolve, reject) =&gt; {
@@ -94,7 +87,141 @@ const promiseAroundRpcCallback = (toExec) =&gt; {
   });
 };
 
-const CHAINTREE_DATA_PATH = &quot;/tree/data&quot;;
+const walletCredentials = (credObj) =&gt; {
+  var creds = new services.Credentials();
+  creds.setWalletName(credObj.walletName);
+  creds.setPassPhrase(credObj.passPhrase);
+
+  return creds;
+};
+
+const setOwnershipPayload = (newOwnerKeys) =&gt; {
+  var payload = new transactions.SetOwnershipPayload();
+  payload.setAuthenticationList(newOwnerKeys);
+
+  return payload;
+};
+
+const setOwnershipTransaction = (newOwnerKeys) =&gt; {
+  var payload = setOwnershipPayload(newOwnerKeys);
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.SETOWNERSHIP);
+  txn.setSetOwnershipPayload(payload);
+
+  return txn;
+};
+
+const setDataPayload = (path, value) =&gt; {
+  var cborData = cbor.Encoder.encode(value);
+
+  var payload = new transactions.SetDataPayload();
+  payload.setPath(path);
+  payload.setValue(cborData);
+
+  return payload;
+};
+
+const setDataTransaction = (path, value) =&gt; {
+  var payload = setDataPayload(path, value);
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.SETDATA);
+  txn.setSetDataPayload(payload);
+
+  return txn;
+};
+
+const establishTokenPayload = (name, maximum) =&gt; {
+  var policy = new transactions.TokenMonetaryPolicy();
+  policy.setMaximum(maximum);
+
+  var payload = new transactions.EstablishTokenPayload();
+  payload.setName(name);
+  payload.setMonetaryPolicy(policy);
+
+  return payload;
+};
+
+const establishTokenTransaction = (name, maximum) =&gt; {
+  var payload = establishTokenPayload(name, maximum);
+
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.ESTABLISHTOKEN);
+  txn.setEstablishTokenPayload(payload);
+
+  return txn;
+};
+
+const mintTokenPayload = (name, amount) =&gt; {
+  var payload = new transactions.MintTokenPayload();
+  payload.setName(name);
+  payload.setAmount(amount);
+
+  return payload;
+};
+
+const mintTokenTransaction = (name, amount) =&gt; {
+  var payload = mintTokenPayload(name, amount);
+
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.MINTTOKEN);
+  txn.setMintTokenPayload(payload);
+
+  return txn;
+};
+
+const sendTokenPayload = (sendId, name, amount, destinationChainId) =&gt; {
+  var payload = new transactions.SendTokenPayload();
+  payload.setId(sendId);
+  payload.setName(name);
+  payload.setAmount(amount);
+  payload.setDestination(destinationChainId);
+
+  return payload;
+};
+
+const sendTokenTransaction = (sendId, name, amount, destinationChainId) =&gt; {
+  var payload = sendTokenPayload(sendId, name, amount, destinationChainId);
+
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.SENDTOKEN);
+  txn.setSendTokenPayload(payload);
+
+  return txn;
+};
+
+const receiveTokenPayload = (sendId, tip, signature, leaves) =&gt; {
+  var payload = new transactions.ReceiveTokenPayload();
+  payload.setSendTokenTransactionId(sendId);
+  payload.setTip(tip);
+  payload.setSignature(signature);
+  payload.setLeaves(leaves);
+
+  return payload;
+};
+
+const receiveTokenTransaction = (sendId, tip, signature, leaves) =&gt; {
+  var payload = receiveTokenPayload(sendId, tip, signature, leaves);
+
+  var txn = new transactions.Transaction();
+  txn.setType(transactions.TransactionType.RECEIVETOKEN);
+  txn.setReceiveTokenPayload(payload);
+
+  return txn;
+};
+
+/**
+ * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.
+ *
+ * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
+ * @param {Object} walletCreds - Credentials for the connecting wallet
+ * @param {string} walletCreds.walletName - Wallet name
+ * @param {string} walletCreds.passPhrase - Wallet passphrase
+ *
+ * @return {TupeloClient} Tupelo client connection.
+ */
+const connect = (walletServer, walletCreds) =&gt; {
+  return new TupeloClient(walletServer, walletCreds);
+};
 
 /**
  * Represents a connection to a specific Tupelo wallet managed by a remote
@@ -114,7 +241,7 @@ class TupeloClient {
      *
      * @type {WalletCredentials}
      */
-    this.walletCreds = walletCreds;
+    this.walletCreds = walletCredentials(walletCreds);
     /**
      * @typedef {Object} WalletCredentials
      * @property {string} walletName - Wallet name
@@ -127,8 +254,8 @@ class TupeloClient {
      *
      * @type {WalletRPCService}
      */
-    this.rpc = new tupeloPackage
-      .WalletRPCService(walletServer, grpc.credentials.createInsecure());
+    this.rpc = new rpcclient
+      .WalletRPCServiceClient(walletServer, grpc.credentials.createInsecure());
   }
 
   /**
@@ -138,7 +265,10 @@ class TupeloClient {
    */
   register() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.register({ creds: this.walletCreds }, clbk);
+      var req = new services.RegisterWalletRequest();
+      req.setCreds(this.walletCreds);
+
+      this.rpc.register(req, clbk);
     });
   }
   /**
@@ -153,7 +283,10 @@ class TupeloClient {
    */
   generateKey() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.generateKey({ creds: this.walletCreds }, clbk);
+      var req = new services.GenerateKeyRequest();
+      req.setCreds(this.walletCreds);
+
+      this.rpc.generateKey(req, clbk);
     });
   }
   /**
@@ -169,7 +302,10 @@ class TupeloClient {
    */
   listKeys() {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.listKeys({ creds: this.walletCreds }, clbk);
+      var req = new services.ListKeysRequest();
+      req.setCreds(this.walletCreds);
+
+      this.rpc.listKeys(req, clbk);
     });
   }
   /**
@@ -187,11 +323,12 @@ class TupeloClient {
    */
   createChainTree(keyAddr, storageAdapter) {
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.createChainTree({
-        creds: this.walletCreds,
-        keyAddr: keyAddr,
-        storageAdapter: storageAdapter
-      }, clbk);
+      var req = new services.GenerateChainResponse();
+      req.setCreds(this.walletCreds);
+      req.setKeyAddr(keyAddr);
+      req.setStorageAdapter(storageAdapter);
+
+      this.rpc.createChainTree(req, clbk);
     });
   }
   /**
@@ -207,11 +344,12 @@ class TupeloClient {
    * @return {Promise&lt;ExportChainTreeResponse, RpcError&gt;}
    */
   exportChainTree(chainId) {
+    var req = new services.ExportChainRequest();
+    req.setCreds(this.walletCreds);
+    req.setChainId(chainId);
+
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.exportChainTree({
-        creds: this.walletCreds,
-        chainId: chainId
-      }, clbk);
+      this.rpc.exportChainTree(req, clbk);
     });
   }
   /**
@@ -230,12 +368,12 @@ class TupeloClient {
    * StorageAdapterConfig
    */
   importChainTree(chainTree, storageAdapter) {
+    var req = new services.ImportChainRequest();
+    req.setCreds(this.walletCreds);
+    req.setChainTree(chainTree);
+
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.importChainTree({
-        creds: this.walletCreds,
-        chainTree: chainTree,
-        storageAdapter: storageAdapter
-      }, clbk);
+      this.rpc.importChainTree(req, clbk);
     });
   }
 
@@ -245,8 +383,11 @@ class TupeloClient {
    * @return {Promise&lt;ListChainIdsResponse, RpcError&gt;}
    */
   listChainIds() {
+    var req = new services.ListChainIdsRequest();
+    req.setCreds(this.walletCreds);
+
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.listChainIds({ creds: this.walletCreds }, clbk);
+      this.rpc.listChainIds(req, clbk);
     });
   }
   /**
@@ -264,8 +405,12 @@ class TupeloClient {
    * @return {Promise&lt;GetTipResponse, RpcError&gt;}
    */
   getTip(chainId) {
+    var req = new services.GetTipRequest();
+    req.setCreds(this.walletCreds);
+    req.setChainId(chainId);
+
     return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.getTip({ creds: this.walletCreds, chainId: chainId }, clbk);
+      this.rpc.getTip(req, clbk);
     });
   }
   /**
@@ -273,6 +418,30 @@ class TupeloClient {
    * @property {string} tip - The chain tree tip as known by the Tupelo signers
    */
 
+
+  /**
+   * Apply a sequence of transactions to a chain tree
+   *
+   * @param {string} chainId - The ID of the chain tree to store the data on.
+   * @param {string} keyAddr - Address of the key that owns the chain tree.
+   * @param {Object[]} transactions - List of transactions to apply
+   *
+   * @return {Promise&lt;PlayTransactionsResponse, RpcError&gt;}
+   */
+  playTransactions(chainId, keyAddr, transactions) {
+    var req = new services.PlayTransactionsRequest();
+    req.setCreds(this.walletCreds);
+    req.setChainId(chainId);
+    req.setTransactions(this.transactions);
+
+    return promiseAroundRpcCallback((clbk) =&gt; {
+      this.rpc.playTransactions(req, clbk);
+    });
+  }
+  /**
+   * @typedef {Object} PlayTransactionsResponse
+   * @property {string} tip - The chain tree tip as known by the Tupelo signers after the transactions are applied
+   */
 
   /**
    * Store data on a chain tree with a transaction validated by the network&apos;s
@@ -286,16 +455,9 @@ class TupeloClient {
    * @return {Promise&lt;SetDataResponse, RpcError&gt;}
    */
   setData(chainId, keyAddr, path, value) {
-    return promiseAroundRpcCallback((clbk) =&gt; {
-      var cborData = cbor.Encoder.encode(value);
-      this.rpc.setData({
-        creds: this.walletCreds,
-        chainId: chainId,
-        keyAddr: keyAddr,
-        path: path,
-        value: cborData,
-      }, clbk);
-    });
+    var transaction = setDataTransaction(path, value);
+
+    return this.playTransactions(chainId, keyAddr, [transaction]);
   }
   /**
    * @typedef {Object} SetDataResponse
@@ -306,7 +468,7 @@ class TupeloClient {
    * Resolve data from the root of the chain tree.
    *
    * The data will be resolved in the tree according to the path until we reach the end
-   * of the path or a leaf node. If we reach a leaf node before the end of the path, 
+   * of the path or a leaf node. If we reach a leaf node before the end of the path,
    * the data at the leaf node is returned and the remaining unresolved part of the path is
    * set as the response&apos;s `remainingPath` property.
    * @param {string} chainId - The ID of the chain tree to retrieve the data from.
@@ -333,11 +495,12 @@ class TupeloClient {
         }
       };
 
-      this.rpc.resolve({
-        creds: this.walletCreds,
-        chainId: chainId,
-        path: path,
-      }, clbk);
+      var req = new services.ResolveRequest();
+      req.setCreds(this.walletCreds);
+      req.setChainId(chainId);
+      req.setPath(path);
+
+      this.rpc.resolve(req, clbk);
     });
   }
   /**
@@ -350,7 +513,7 @@ class TupeloClient {
    * Resolve data from the user portion (&quot;/tree/data&quot;) of the chain tree.
    *
    * The data will be resolved in the tree according to the path until we reach the end
-   * of the path or a leaf node. If we reach a leaf node before the end of the path, 
+   * of the path or a leaf node. If we reach a leaf node before the end of the path,
    * the data at the leaf node is returned and the remaining unresolved part of the path is
    * set as the response&apos;s `remainingPath` property.
    * @param {string} chainId - The ID of the chain tree to retrieve the data from.
@@ -368,7 +531,7 @@ class TupeloClient {
 
     return this.resolve(chainId, resolvePath);
   }
-  
+
   /**
    * Resolve data from a tip of a chain tree given a certain path.
    *
@@ -380,12 +543,13 @@ class TupeloClient {
    */
   async resolveAt(chainId, path, tip) {
     const response = await new Promise((resolve, reject) =&gt; {
-      this.rpc.resolveAt({
-        creds: this.walletCreds,
-        tip,
-        chainId,
-        path,
-      }, (err, response) =&gt; {
+      var req = new services.ResolveAtRequest();
+      req.setCreds(this.walletCreds);
+      req.setChainId(this.chainId);
+      req.setPath(this.path);
+      req.setTip(this.tip);
+
+      this.rpc.resolveAt(req, (err, response) =&gt; {
         if (err == null) {
           resolve(response);
         } else {
@@ -410,14 +574,9 @@ class TupeloClient {
    * @return {Promise&lt;SetOwnerResponse, RpcError&gt;}
    */
   setOwner(chainId, keyAddr, newOwnerKeys) {
-    return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.setOwner({
-        creds: this.walletCreds,
-        chainId: chainId,
-        keyAddr: keyAddr,
-        newOwnerKeys: newOwnerKeys,
-      }, clbk);
-    });
+    var transaction = setOwnershipTransaction(newOwnerKeys);
+
+    return this.playTransactions(chainId, keyAddr, [transaction]);
   }
   /**
    * @typedef {Object} SetOwnerResponse
@@ -435,15 +594,9 @@ class TupeloClient {
    * @return {Promise&lt;EstablishTokenResponse, RpcError&gt;}
    */
   establishToken(chainId, keyAddr, tokenName, maximum) {
-    return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.establishToken({
-        creds: this.walletCreds,
-        chainId: chainId,
-        keyAddr: keyAddr,
-        tokenName: tokenName,
-        maximum: maximum,
-      }, clbk);
-    });
+    var transaction = establishTokenTransaction(tokenName, maximum);
+
+    return this.playTransactions(chainId, keyAddr, [transaction]);
   }
   /**
    * @typedef {Object} EstablishTokenResponse
@@ -462,21 +615,15 @@ class TupeloClient {
    * @return {Promise&lt;MintTokenResponse, RpcError&gt;}
    */
   mintToken(chainId, keyAddr, tokenName, amount) {
-    return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.mintToken({
-        creds: this.walletCreds,
-        chainId: chainId,
-        keyAddr: keyAddr,
-        tokenName: tokenName,
-        amount: amount,
-      }, clbk);
-    });
+    var transaction = mintTokenTransaction(tokenName, amount);
+
+    return this.playTransactions(chainId, keyAddr, [transaction]);
   }
   /**
    * @typedef {Object} MintTokenResponse
    * @property {string} tip - The chain tree tip after the transaction.
    */
-   
+
   /**
    * Send an amount of minted tokens to another chain tree.
    *
@@ -518,30 +665,6 @@ class TupeloClient {
    }
 
   /**
-   * Apply a sequence of transactions to a chain tree
-   *
-   * @param {string} chainId - The ID of the chain tree to store the data on.
-   * @param {string} keyAddr - Address of the key that owns the chain tree.
-   * @param {Object[]} transactions - List of transactions to apply
-   *
-   * @return {Promise&lt;PlayTransactionsResponse, RpcError&gt;}
-   */
-  playTransactions(chainId, keyAddr, transactions) {
-    return promiseAroundRpcCallback((clbk) =&gt; {
-      this.rpc.playTransactions({
-        creds: this.walletCreds,
-        chainId: chainId,
-        keyAddr: keyAddr,
-        transactions: transactions,
-      }, clbk);
-    });
-  }
-  /**
-   * @typedef {Object} PlayTransactionsResponse
-   * @property {string} tip - The chain tree tip as known by the Tupelo signers after the transactions are applied
-   */
-
-  /**
    * @typedef {Object} StorageAdapterConfigForBadger
    * @property {string} path - Path for badger db
    */
@@ -581,123 +704,14 @@ class TupeloClient {
    */
 }
 
-/**
- * Build an establish token transaction object to use in a play transactions
- * request
- *
- * @param {string} tokenName - Name of the new token
- * @param {number} maximum - Maximum number of tokens of this type that can exist
- *
- * @return {EstablishTokenTransaction}
- */
-const establishTokenTransaction = (tokenName, maximum) =&gt; {
-  return {
-    type: &quot;ESTABLISHTOKEN&quot;,
-    establishTokenPayload: {
-      name: tokenName,
-      monetaryPolicy: {
-        maximum: maximum,
-      }
-    }
-  };
-};
-/**
- * @typedef {Object} EstablishTokenTransaction
- * @property {string} name - Name of the new token
- * @property {TokenMonetaryPolicy} monetaryPolicy - The tokens monetary policy
- */
-
-/**
- * @typedef {Object} TokenMonetaryPolicy
- * @property {number} maximum - Maximum total tokens allowed
- */
-
-/**
- * Build a mint token transaction object to use in a play transactions request
- *
- * @param {string} tokenName - Name of the token type
- * @param {number} amount - Number of tokens to mint.
- *
- * @return MintTokenTransaction
- */
-const mintTokenTransaction = (tokenName, amount) =&gt; {
-  return {
-    type: &quot;MINTTOKEN&quot;,
-    mintTokenPayload: {
-      name: tokenName,
-      amount: amount,
-    }
-  };
-};
-/**
- * @typedef {Object} MintTokenTransaction
- * @property {string} name - Name of the token to mint
- * @property {TokenMonetaryPolicy} amount - The number of tokens to mint
- */
-
-/**
- * Build a set data transaction object to use in a play transactions request
- *
- * @param {string} path - &apos;/&apos; delimited path into the chain tree to store the data
- * @param {string|number|boolean|Array|Object} value - The data to store.
- *
- * @return SetDataTransaction
- */
-const setDataTransaction = (path, value) =&gt; {
-  var cborData = cbor.Encoder.encode(value);
-  return {
-    type: &quot;SETDATA&quot;,
-    setDataPayload: {
-      path: path,
-      value: cborData,
-    }
-  };
-};
-/**
- * @typedef {Object} SetDataTransaction
- * @property {string} path - ChainTree data path to set
- * @property {bytes} value - Cbor encoded data to set
- */
-
-/**
- * Build a set ownership transaction object to use in a play transactions
- * request
- *
- * @param {string[]} newOwnerKeys - List of key addresses for the new owners
- *
- * @return SetOwnerTransaction
- */
-const setOwnerTransaction = (newOwnerKeys) =&gt; {
-  return {
-    type: &quot;SETOWNERSHIP&quot;,
-    setOwnershipPayload: {
-      authentication: newOwnerKeys,
-    }
-  };
-};
-/**
- * @typedef {Object} SetOwnerTransaction
- * @property {string[]} authentication - The key addresses of the new owners
- */
-
-/**
- * Connect to a Tupelo wallet managed by a remote Tupelo RPC server.
- *
- * @param {string} walletServer - &quot;host:port&quot; string of the RPC wallet server
- * @param {Object} walletCreds - Credentials for the connecting wallet
- * @param {string} walletCreds.walletName - Wallet name
- * @param {string} walletCreds.passPhrase - Wallet passphrase
- *
- * @return {TupeloClient} Tupelo client connection.
- */
-function connect(walletServer, walletCreds) {
-  return new TupeloClient(walletServer, walletCreds);
-}
-
-exports.establishTokenTransaction = establishTokenTransaction;
-exports.mintTokenTransaction = mintTokenTransaction;
+exports.setOwnershipPayload = setOwnershipPayload;
+exports.setOwnershipTransaction = setOwnershipTransaction;
+exports.setDataPayload = setDataPayload;
 exports.setDataTransaction = setDataTransaction;
-exports.setOwnerTransaction = setOwnerTransaction;
+exports.establishTokenPayload = establishTokenPayload;
+exports.establishTokenTransaction = establishTokenTransaction;
+exports.mintTokenPayload = mintTokenPayload;
+exports.mintTokenTransaction = mintTokenTransaction;
 exports.connect = connect;
 exports.TupeloClient = TupeloClient;
 </code></pre>
