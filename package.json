@@ -1,6 +1,6 @@
 {
   "name": "tupelo-client",
-  "version": "0.2.3",
+  "version": "0.4.0",
   "description": "Tupelo JavaScript client",
   "main": "lib/tupelo.js",
   "scripts": {
