@@ -3,7 +3,7 @@
 set -e
 
 if [[ -z "${SOURCE_MOUNT}" ]]; then
-  SOURCE_MOUNT="-v ${PWD}:/src"
+  SOURCE_MOUNT="-v ${PWD}:/src/tupelo"
 fi
 
 # allow pull to fail for offline use
