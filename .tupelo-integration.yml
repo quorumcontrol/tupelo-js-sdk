@@ -1,5 +1,5 @@
 tupeloImages:
-  # - quorumcontrol/tupelo:latest rpc-server -l 3
+  - quorumcontrol/tupelo:latest rpc-server -l 3
   - quorumcontrol/tupelo:master rpc-server -l 3
 
 tester:
