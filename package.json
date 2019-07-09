@@ -4,6 +4,7 @@
   "description": "Tupelo JavaScript client",
   "main": "lib/tupelo.js",
   "scripts": {
+    "build": "tsc",
     "test": "scripts/integration-tests",
     "docs": "esdoc"
   },
@@ -27,6 +28,7 @@
     "esdoc-node": "^1.0.3",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.16",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "typescript": "^3.5.3"
   }
 }
