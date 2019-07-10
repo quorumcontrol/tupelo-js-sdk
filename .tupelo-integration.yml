@@ -4,4 +4,4 @@ tupeloImages:
 
 tester:
   build: .
-  command: ["npx", "mocha", "--exit"]
+  command: ["npx", "mocha", "--recursive", "--exit"]
