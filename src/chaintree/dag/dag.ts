@@ -1,15 +1,15 @@
 import { CID } from 'cids';
 
-interface DAGService {
+interface DagStore {
   get(cid: CID): Promise<Object>
   resolve(cid: CID, path: string): Iterable<Promise<{remainderPath: string, value: any}>>
 }
 
 export class Dag {
   tip: CID
-  store: DAGService
+  store: DagStore
 
-  constructor(tip: CID, store: DAGService) {
+  constructor(tip: CID, store: DagStore) {
     this.tip = tip;
     this.store = store;
   }
