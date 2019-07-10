@@ -21,6 +21,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^0.4.3",
     "cbor": "^4.1.5",
+    "cids": "^0.7.1",
     "tupelo-messages": "0.0.1-rc6"
   },
   "devDependencies": {
@@ -28,6 +29,9 @@
     "esdoc-node": "^1.0.3",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.16",
+    "ipld": "^0.24.1",
+    "ipfs-block-service": "~0.15.2",
+    "ipfs-repo": "~0.26.5",
     "mocha": "^6.1.4",
     "typescript": "^3.5.3"
   }
