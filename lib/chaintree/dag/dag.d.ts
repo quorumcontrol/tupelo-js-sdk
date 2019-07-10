@@ -13,10 +13,16 @@ export declare class Dag {
     get(cid: CID): Promise<Object>;
     resolve(path: Array<string>): Promise<{
         remainderPath: string[];
+        value: null;
+    } | {
+        remainderPath: never[];
         value: any;
     }>;
     resolveAt(tip: CID, path: Array<string>): Promise<{
         remainderPath: string[];
+        value: null;
+    } | {
+        remainderPath: never[];
         value: any;
     }>;
 }

@@ -8,6 +8,7 @@ const IpfsRepo = require('ipfs-repo');
 const IpfsBlockService = require('ipfs-block-service');
 const MemoryDatastore = require('interface-datastore').MemoryDatastore;
 
+
 const testIpld = () => {
   return new Promise((resolve, reject) => {
     const repo = new IpfsRepo('test', {
@@ -71,27 +72,24 @@ describe("basic dag operations", function() {
         }
       }, {
         test: ["child", "other"],
-        error: new Error("Object has no property 'other'"),
+        expect: {
+          remainderPath: ["other"],
+          value: null
+        }
       }, {
         test: ["child", "foo", "notAKey"],
-        error: new Error("Object has no property 'notAKey'"),
+        expect: {
+          remainderPath: ["foo", "notAKey"],
+          value: null
+        }
       }
     ]
 
     for (let c of cases) {
-      let resolved
-      let err
-      try {
-        resolved = await testDag.resolve(c.test)
-      } catch(e) {
-        err = e
-      }
-
-      assert.equal(String(err), String(c.error))
-      assert.deepStrictEqual(resolved, c.expect)
+      let resolved = await testDag.resolve(c.test)
+      assert.deepStrictEqual(resolved, c.expect) 
     }
   });
-
 
   it("can resolveAt paths", async ()=> {
     const ipld = await testIpld()
@@ -117,21 +115,16 @@ describe("basic dag operations", function() {
         }
       }, {
         test: ["foo", "bing"],
-        error: new Error("Object has no property 'bing'"),
+        expect: {
+          remainderPath: ["foo", "bing"],
+          value: null
+        }
       }
     ]
 
     for (let c of cases) {
-      let resolved
-      let err
-      try {
-        resolved = await testDag.resolveAt(childCid, c.test)
-      } catch(e) {
-        err = e
-      }
-
-      assert.equal(String(err), String(c.error))
-      assert.deepStrictEqual(resolved, c.expect)
+      let resolved = await testDag.resolveAt(childCid, c.test)
+      assert.deepStrictEqual(resolved, c.expect) 
     }
   });
 
