@@ -1,1 +1,4 @@
 node_modules
+
+# ignore typescript generated files
+lib/chaintree/
