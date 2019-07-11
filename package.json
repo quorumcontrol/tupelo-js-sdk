@@ -24,6 +24,8 @@
     "@grpc/grpc-js": "^0.4.3",
     "cbor": "^4.1.5",
     "cids": "^0.7.1",
+    "ipfs-block": "^0.8.1",
+    "ipld-dag-cbor": "^0.15.0",
     "tupelo-messages": "0.0.1-rc6"
   },
   "devDependencies": {
