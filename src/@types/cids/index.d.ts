@@ -5,8 +5,8 @@ declare module 'cids' {
 		multihash: Buffer
 	}
 
-	export class CID {
-		constructor(version: number, codec: string, multihash: Buffer)
+	export default class CID {
+		constructor(version: string|number|Buffer|CID, codec?: string, multihash?: Buffer, multibaseName?: string)
 		static isCID(other: any): boolean
 		static validateCID(other: any): void
 		codec: string

@@ -1,8 +1,45 @@
-import { CID } from 'cids';
+import CID from 'cids';
+
+const tupeloMessages: any = require('tupelo-messages');
+const ipldDagCbor: any = require('ipld-dag-cbor');
+const Block: any = require('ipfs-block');
 
 interface DagStore {
   get(cid: CID): Promise<Object>
   resolve(cid: CID, path: string): Iterable<Promise<{remainderPath: string, value: any}>>
+}
+
+interface DagStoreWithBlockStore extends DagStore {
+  bs:any
+}
+
+export async function DagFromBase64(b64SerializedChainTree: string, store: DagStoreWithBlockStore) {
+  const buf = Buffer.from(b64SerializedChainTree, 'base64');
+  const chainTree = tupeloMessages.services.SerializableChainTree.deserializeBinary(buf);
+  const tip = new CID(chainTree.getTip());
+
+  const promises = [];
+
+  for (let nodeBytes of chainTree.getDagList_asU8()) {
+    const nodeBuff = Buffer.from(nodeBytes);
+    const nodeCid = await ipldDagCbor.util.cid(nodeBuff);
+    nodeCid.multibaseName = 'base58btc';
+    const block = new Block(nodeBuff, nodeCid);
+
+    promises.push(new Promise((resolve, reject) => {
+      store.bs.put(block, (err: Error) => {
+        if (err == null) {
+          resolve();
+        } else {
+          reject(err);
+        }
+      })
+    }));
+  }
+
+  await Promise.all(promises)
+
+  return new Dag(tip, store)
 }
 
 export class Dag {
