@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p .",
     "test": "mocha --exit -r ts-node/register src/**/*.spec.ts",
-    "build:wasm": "cd ./tupelo-go-client/wasm && GOOS=js GOARCH=wasm go build -o ../../main.wasm"
+    "build:wasm": "cd ./tupelo-go-sdk/wasm && GOOS=js GOARCH=wasm go build -o ../../main.wasm"
   },
   "author": "",
   "license": "rights reserved.",
