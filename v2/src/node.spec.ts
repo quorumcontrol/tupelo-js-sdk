@@ -17,18 +17,6 @@ describe('p2p', ()=> {
         });
         return p
     }).timeout(5000)
-
-    it('does a pubsub round trip', async () => {
-        var node = await p2p.createNode();
-        expect(node).to.exist;
-    
-        const tw = await TupeloWasm.get()
-    
-        node.start(async ()=> {
-           var resp = await tw.testpubsub(node.pubsub);
-           expect(resp).to.equal('hi');
-        });
-    })
 })
 
 

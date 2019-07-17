@@ -5,6 +5,7 @@ import { TupeloWasm } from '../tupelo';
 
 export default class ChainTree extends Dag {
     key: EcdsaKey
+    store: IBlockService
 
     static newEmptyTree = async (store: IBlockService, key: EcdsaKey)=> {
         const tw = await TupeloWasm.get()
@@ -15,5 +16,6 @@ export default class ChainTree extends Dag {
     constructor(key: EcdsaKey, tip: CID, store: IBlockService) {
         super(tip, store)
         this.key = key
+        this.store = store
     }
-}``
+}

@@ -48,15 +48,15 @@ export interface IResolveResponse {
 
 export class Dag {
   tip: CID
-  store: IDagStore
+  dagStore: IDagStore
 
   constructor(tip: CID, store: IBlockService) {
     this.tip = tip;
-    this.store = new Ipld({blockService: store});
+    this.dagStore = new Ipld({blockService: store});
   }
 
   async get(cid: CID) {
-    return this.store.get(cid)
+    return this.dagStore.get(cid)
   }
 
   async resolve(path: Array<string>):Promise<IResolveResponse> {
@@ -65,7 +65,7 @@ export class Dag {
 
   async resolveAt(tip: CID, path: Array<string>):Promise<IResolveResponse> {
     const str_path  = path.join("/")
-    const resolved = this.store.resolve(tip, str_path)
+    const resolved = this.dagStore.resolve(tip, str_path)
     let lastVal
     try {
       lastVal = await resolved.last()

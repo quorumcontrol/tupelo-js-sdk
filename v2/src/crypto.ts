@@ -2,7 +2,7 @@ import {TupeloWasm} from './tupelo'
 
 
 export class EcdsaKey {
-    privateKey: Uint8Array | undefined
+    privateKey?: Uint8Array
     publicKey: Uint8Array
 
     static generate = async ()=> {

@@ -4,7 +4,9 @@ import CID from 'cids';
 
 import * as go from "./js/go"
 import { Transaction } from 'tupelo-messages'
-import {IBlockService} from './chaintree/dag/dag'
+import {IBlockService, IBlock} from './chaintree/dag/dag'
+import ChainTree from './chaintree/chaintree';
+import { CurrentState, Signature } from 'tupelo-messages/signatures/signatures_pb';
 
 class FakePublisher {
     public publish(topic: string, data: Uint8Array, cb: Function) {
@@ -18,26 +20,29 @@ export interface IPubSub {
     subscribe(topic: string, onMsg: Function, cb: Function): null
 }
 
+interface IPlayTransactionOptions {
+    publisher: IPubSub,
+    blockService: IBlockService, 
+    privateKey: Uint8Array,
+    tip: CID, 
+    transactions: Uint8Array[],
+}
+
 class UnderlyingWasm {
     _populated: boolean;
 
     constructor() {
         this._populated = false;
     }
-    testpubsub(publisher: IPubSub): Promise<String> {
-        return new Promise<String>((res, rej) => { }); // replaced by wasm
-    }
+
     generateKey(): Promise<Uint8Array[]> {
         return new Promise<Uint8Array[]>((res, rej) => { }) // replaced by wasm
     }
-    testclient(publisher: IPubSub, keys: Uint8Array, transactions: Uint8Array[]): Promise<Uint8Array> {
-        return new Promise<Uint8Array>((res, rej) => { }) // replaced by wasm
-    }
-    teststore(store: IBlockService, cid: String): Promise<String> {
-        return new Promise<String>((res,rej) => {}) // replaced by wasm
-    }
     newEmptyTree(store: IBlockService, publicKey: Uint8Array): Promise<CID> {
         return new Promise<CID>((res,rej) => {}) // replaced by wasm
+    }
+    playTransactions(opts: IPlayTransactionOptions): Promise<Uint8Array> {
+        return new Promise<Uint8Array>((res, rej) => { }) // replaced by wasm
     }
 }
 
@@ -59,21 +64,38 @@ export namespace TupeloWasm {
 
 export namespace Tupelo {
 
-    export async function playTransactions(publisher: IPubSub, key: Uint8Array, transactions: Transaction[]): Promise<Uint8Array> {
+    export async function playTransactions(publisher: IPubSub, tree: ChainTree, transactions: Transaction[]): Promise<CurrentState> {
         const tw = await TupeloWasm.get()
-        console.log("serializing the bits")
-        let bits: Uint8Array[] = new Array<Uint8Array>()
+        console.log("serializing the transactions")
+        let transBits: Uint8Array[] = new Array<Uint8Array>()
         for (var t of transactions) {
             const serialized = t.serializeBinary()
-            bits = bits.concat(serialized)
+            transBits = transBits.concat(serialized)
         }
-        console.log("testclient called")
-        return tw.testclient(publisher, key, bits)
-    }
+        
+        const store = tree.store
 
-    export async function teststore(store: IBlockService, cid: String): Promise<String> {
-        const tw = await TupeloWasm.get()
-        return tw.teststore(store, cid)
+        const privateKey: Uint8Array = tree.key.privateKey ? tree.key.privateKey : new Uint8Array()
+        if (privateKey.length == 0) {
+            throw new Error("can only play transactions on a tree with a private key attached")
+        }
+
+        const resp = await tw.playTransactions({
+            publisher: publisher,
+            blockService: store,
+            privateKey: privateKey,
+            tip: tree.tip,
+            transactions: transBits,
+        })
+
+        const currState = CurrentState.deserializeBinary(resp)
+        const sig = currState.getSignature()
+        if (!sig) {
+            throw new Error("empty signature received from CurrState")
+        }
+
+        tree.tip = new CID(Buffer.from(sig!.getNewTip_asU8()))
+        return currState
     }
 }
 
