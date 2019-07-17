@@ -1,6 +1,6 @@
 import * as libp2p from './js/p2p';
 
-interface INodeCreator {
+interface IP2PNode {
     pubsub:any;
     start(cb:Function):null;
     stop():null;
@@ -10,7 +10,7 @@ interface INodeCreator {
 }
 
 export namespace p2p {
-    export async function createNode():Promise<INodeCreator> {
+    export async function createNode():Promise<IP2PNode> {
         return libp2p.CreateNode()
     }
 }

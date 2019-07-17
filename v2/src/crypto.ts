@@ -1,4 +1,4 @@
-import {TupeloWasm} from './tupelo'
+import {Tupelo} from './tupelo'
 
 
 export class EcdsaKey {
@@ -6,8 +6,7 @@ export class EcdsaKey {
     publicKey: Uint8Array
 
     static generate = async ()=> {
-        const tw = await TupeloWasm.get()
-        const pair = await tw.generateKey()
+        const pair = await Tupelo.generateKey()
         return new EcdsaKey(pair[1], pair[0])
     }
 

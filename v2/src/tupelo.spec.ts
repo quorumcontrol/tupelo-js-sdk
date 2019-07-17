@@ -4,28 +4,16 @@ import 'mocha';
 import './extendedglobal';
 import { p2p } from './node';
 
-import { TupeloWasm, Tupelo } from './tupelo';
+import { Tupelo } from './tupelo';
 import { Transaction, SetDataPayload } from '/Users/tobowers/code/messages/build/js/transactions/transactions_pb'
-const dagCBOR = require('ipld-dag-cbor');
-
-
-// import * as Ipld from 'ipld'
-// import * as IpfsRepo from 'ipfs-repo'
-// import * as IpfsBlockService from 'ipfs-block-service'
-// import { MemoryDatastore } from 'interface-datastore'
-// import * as multihashing from 'multihashing-async'
-// import * as Block from 'ipfs-block'
-
-import CID from 'cids';
 import { EcdsaKey } from './crypto';
 import ChainTree from './chaintree/chaintree';
 import { CurrentState } from 'tupelo-messages/signatures/signatures_pb';
 
+const dagCBOR = require('ipld-dag-cbor');
 const IpfsRepo:any = require('ipfs-repo');
 const IpfsBlockService:any = require('ipfs-block-service');
 const MemoryDatastore:any = require('interface-datastore').MemoryDatastore;
-const Block:any = require('ipfs-block');
-const multihashing:any = require('multihashing-async');
 
 const testIpld = async () => {
     console.log('creating repo')

@@ -6,14 +6,10 @@ import * as go from "./js/go"
 import { Transaction } from 'tupelo-messages'
 import {IBlockService, IBlock} from './chaintree/dag/dag'
 import ChainTree from './chaintree/chaintree';
-import { CurrentState, Signature } from 'tupelo-messages/signatures/signatures_pb';
+import { CurrentState } from 'tupelo-messages/signatures/signatures_pb';
+import { generateKeyPair } from 'crypto';
+import { EcdsaKey } from './crypto';
 
-class FakePublisher {
-    public publish(topic: string, data: Uint8Array, cb: Function) {
-        console.log("publishing ", data, " on ", topic, "cb ", cb)
-        cb(null)
-    }
-}
 
 export interface IPubSub {
     publish(topic: string, data: Uint8Array, cb: Function): null
@@ -46,7 +42,7 @@ class UnderlyingWasm {
     }
 }
 
-export namespace TupeloWasm {
+namespace TupeloWasm {
     const _tupelowasm = new UnderlyingWasm();
 
     export async function get() {
@@ -62,7 +58,22 @@ export namespace TupeloWasm {
     }
 }
 
+// Tupelo is the more "raw" namespace, it is generally expected (with the possible exception of playTransactions)
+// that you would use higher level wrapper classes around this namespace
 export namespace Tupelo {
+
+    // generateKey returns a two element array of the bytes for [privateKey, publicKey]
+    export async function generateKey(): Promise<Uint8Array[]> {
+        const tw = await TupeloWasm.get()
+        return tw.generateKey()
+    }
+
+    // newEmptyTree creates a new ChainTree with the ID populateed in the IBlockService and
+    // returns the CID to the tip
+    export async function newEmptyTree(store: IBlockService, publicKey: Uint8Array): Promise<CID> {
+        const tw = await TupeloWasm.get()
+        return tw.newEmptyTree(store, publicKey)
+    }
 
     export async function playTransactions(publisher: IPubSub, tree: ChainTree, transactions: Transaction[]): Promise<CurrentState> {
         const tw = await TupeloWasm.get()

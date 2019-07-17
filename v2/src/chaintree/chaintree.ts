@@ -1,15 +1,14 @@
 import { Dag, IBlockService } from './dag/dag'
 import CID from 'cids'
 import { EcdsaKey } from '../crypto'
-import { TupeloWasm } from '../tupelo';
+import { Tupelo } from '../tupelo';
 
 export default class ChainTree extends Dag {
     key: EcdsaKey
     store: IBlockService
 
     static newEmptyTree = async (store: IBlockService, key: EcdsaKey)=> {
-        const tw = await TupeloWasm.get()
-        const tip = await tw.newEmptyTree(store, key.publicKey)
+        const tip = await Tupelo.newEmptyTree(store, key.publicKey)
         return new ChainTree(key, tip, store)
     }
 

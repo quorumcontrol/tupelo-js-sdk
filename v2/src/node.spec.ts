@@ -2,7 +2,6 @@ import { expect } from 'chai';
 import 'mocha';
 
 import { p2p } from './node';
-import { TupeloWasm } from './tupelo';
 
 describe('p2p', ()=> {
     it('creates a node', async ()=> {
