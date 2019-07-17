@@ -61,11 +61,6 @@ describe('Tupelo', () => {
   })
 })
 
-  // it('generate keys', async () => {
-  //   const key = await Tupelo.generateKey()
-  //   expect(key).to.have.length(32)
-  // })
-
   // it('runs end-to-end', async () => {
   //   let resolve:Function,reject:Function
   //   const p = new Promise((res,rej)=> { resolve = res, reject = rej})

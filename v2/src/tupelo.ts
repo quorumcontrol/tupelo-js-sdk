@@ -4,6 +4,7 @@ import CID from 'cids';
 
 import * as go from "./js/go"
 import { Transaction } from 'tupelo-messages'
+import {IBlockService} from './chaintree/dag/dag'
 
 class FakePublisher {
     public publish(topic: string, data: Uint8Array, cb: Function) {
@@ -11,20 +12,6 @@ class FakePublisher {
         cb(null)
     }
 }
-
-interface IBlock {
-    data: Buffer
-}
-
-interface IDagStore {
-    get(cid: CID): Promise<Object>
-    put(block: IBlock): Promise<CID>
-    resolve(cid: CID, path: string): Iterable<Promise<{ remainderPath: string, value: any }>>
-}
-
-// interface IDagStoreWithBlockStore extends IDagStore {
-//     bs: any
-// }
 
 export interface IPubSub {
     publish(topic: string, data: Uint8Array, cb: Function): null
@@ -40,14 +27,17 @@ class UnderlyingWasm {
     testpubsub(publisher: IPubSub): Promise<String> {
         return new Promise<String>((res, rej) => { }); // replaced by wasm
     }
-    generateKey(): Promise<Uint8Array> {
-        return new Promise<Uint8Array>((res, rej) => { }) // replaced by wasm
+    generateKey(): Promise<Uint8Array[]> {
+        return new Promise<Uint8Array[]>((res, rej) => { }) // replaced by wasm
     }
     testclient(publisher: IPubSub, keys: Uint8Array, transactions: Uint8Array[]): Promise<Uint8Array> {
         return new Promise<Uint8Array>((res, rej) => { }) // replaced by wasm
     }
-    teststore(store: IDagStore, cid: String): Promise<String> {
+    teststore(store: IBlockService, cid: String): Promise<String> {
         return new Promise<String>((res,rej) => {}) // replaced by wasm
+    }
+    newEmptyTree(store: IBlockService, publicKey: Uint8Array): Promise<CID> {
+        return new Promise<CID>((res,rej) => {}) // replaced by wasm
     }
 }
 
@@ -69,11 +59,6 @@ export namespace TupeloWasm {
 
 export namespace Tupelo {
 
-    export async function generateKey(): Promise<Uint8Array> {
-        const tw = await TupeloWasm.get()
-        return tw.generateKey()
-    }
-
     export async function playTransactions(publisher: IPubSub, key: Uint8Array, transactions: Transaction[]): Promise<Uint8Array> {
         const tw = await TupeloWasm.get()
         console.log("serializing the bits")
@@ -86,7 +71,7 @@ export namespace Tupelo {
         return tw.testclient(publisher, key, bits)
     }
 
-    export async function teststore(store: IDagStore, cid: String): Promise<String> {
+    export async function teststore(store: IBlockService, cid: String): Promise<String> {
         const tw = await TupeloWasm.get()
         return tw.teststore(store, cid)
     }
