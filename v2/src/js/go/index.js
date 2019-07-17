@@ -471,7 +471,3 @@ const runner = {
 }
 
 module.exports = runner;
-
-// runner.run("/Users/tobowers/code/tupelo-go-sdk/wasm/main.wasm").then((result) => {
-//     console.log(result);
-// });

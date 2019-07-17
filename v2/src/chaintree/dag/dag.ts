@@ -11,6 +11,8 @@ export interface IBlock {
 }
 
 // copy/pasta from https://ipfs.github.io/js-ipfs-block-service
+// it has the following methods, I've only added the methods necessary
+// for this SDK into the interface
 // setExchange
 // unsetExchange
 // hasExchange

@@ -1,16 +1,12 @@
 import { expect } from 'chai';
 import 'mocha';
 
-
-// import CID from 'cids';
 import { EcdsaKey } from '../crypto'
 import ChainTree from './chaintree'
 
 const IpfsRepo:any = require('ipfs-repo');
 const IpfsBlockService:any = require('ipfs-block-service');
 const MemoryDatastore:any = require('interface-datastore').MemoryDatastore;
-// const Block:any = require('ipfs-block');
-// const multihashing:any = require('multihashing-async');
 
 const testIpld = async () => {
     console.log('creating repo')
