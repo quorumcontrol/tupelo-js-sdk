@@ -2,9 +2,10 @@
   "name": "tupelo-wasm",
   "version": "0.0.1",
   "description": "a test interaction of tupelo wasm",
-  "main": "app.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc && cp -r src/js lib/",
     "test": "mocha --exit -r ts-node/register src/*.spec.ts",
     "build:wasm": "cd ./tupelo-go-sdk/wasm && GOOS=js GOARCH=wasm go build -o ../../main.wasm"
   },
@@ -37,17 +38,18 @@
     "peer-info": "^0.15.1",
     "pull-mplex": "^0.1.2",
     "pull-ws": "^3.3.2",
-    "tsc": "^1.20150623.0",
     "tupelo-messages": "file:/Users/tobowers/code/messages/build/js",
-    "typescript": "^3.5.3",
     "util": "^0.12.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
+    "@types/google-protobuf": "^3.7.1",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.2",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
-    "ts-node": "^8.3.0"
+    "ts-node": "^8.3.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.5.3"
   }
 }

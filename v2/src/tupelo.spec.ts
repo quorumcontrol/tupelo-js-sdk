@@ -5,7 +5,7 @@ import './extendedglobal';
 import { p2p } from './node';
 
 import { Tupelo } from './tupelo';
-import { Transaction, SetDataPayload } from '/Users/tobowers/code/messages/build/js/transactions/transactions_pb'
+import { Transaction, SetDataPayload } from 'tupelo-messages/transactions/transactions_pb'
 import { EcdsaKey } from './crypto';
 import ChainTree from './chaintree/chaintree';
 import { CurrentState } from 'tupelo-messages/signatures/signatures_pb';

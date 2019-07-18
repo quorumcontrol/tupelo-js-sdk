@@ -2,13 +2,11 @@ declare const Go: any;
 
 import CID from 'cids';
 
-import * as go from "./js/go"
+const go = require('./js/go')
 import { Transaction } from 'tupelo-messages'
 import {IBlockService, IBlock} from './chaintree/dag/dag'
 import ChainTree from './chaintree/chaintree';
 import { CurrentState } from 'tupelo-messages/signatures/signatures_pb';
-import { generateKeyPair } from 'crypto';
-import { EcdsaKey } from './crypto';
 
 
 export interface IPubSub {

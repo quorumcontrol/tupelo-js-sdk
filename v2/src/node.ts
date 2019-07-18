@@ -1,4 +1,4 @@
-import * as libp2p from './js/p2p';
+const libp2p = require('./js/p2p')
 
 interface IP2PNode {
     pubsub:any;
