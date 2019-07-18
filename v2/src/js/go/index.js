@@ -475,8 +475,8 @@ const runner = {
     ready: async (path) => {
         return global.Go.readyPromise;
     },
-    populate: (obj) => {
-        return global.populateLibrary(obj);
+    populate: (obj, reqs) => {
+        return global.populateLibrary(obj, reqs);
     }
 }
 

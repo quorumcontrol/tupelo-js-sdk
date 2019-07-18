@@ -50,7 +50,10 @@ namespace TupeloWasm {
 
         go.run("./main.wasm");
         await go.ready();
-        go.populate(_tupelowasm);
+        go.populate(_tupelowasm, {
+            "cids": CID,
+            "ipfs-block": require('ipfs-block'),
+        });
         _tupelowasm._populated = true;
         return _tupelowasm;
     }
