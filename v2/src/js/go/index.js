@@ -16,8 +16,9 @@
     var encoder,decoder;
 
     // Map web browser API and Node.js API to a single common API (preferring web standards over Node.js API).
-    const isNodeJS = true; //global.process && global.process.title === "node";
+    const isNodeJS = global.process && global.process.title.indexOf("node") !== -1;
     if (isNodeJS) {
+        console.log('nodejs running');
         global.require = require;
         global.fs = require("fs");
 
@@ -39,6 +40,7 @@
         encoder = new util.TextEncoder;
         decoder = new util.TextDecoder;
     } else {
+        console.log('browser running');
         let outputBuf = "";
         global.fs = {
             constants: { O_WRONLY: -1, O_RDWR: -1, O_CREAT: -1, O_TRUNC: -1, O_APPEND: -1, O_EXCL: -1 }, // unused
@@ -447,19 +449,27 @@
 
 const runner = {
     run: async (path) => {
+        const isNodeJS = global.process && global.process.title.indexOf("node") !== -1;
+
         const go = new Go();
         go.env = Object.assign({ TMPDIR: require("os").tmpdir() }, process.env);
         // go.exit = process.exit;
-        const result = await WebAssembly.instantiate(fs.readFileSync(path), go.importObject)
+        let result
+
+        if (isNodeJS) {
+            result = await WebAssembly.instantiate(fs.readFileSync(path), go.importObject)
         
-        process.on("exit", (code) => { // Node.js exits if no event handler is pending
-            Go.exit();
-            if (code === 0 && !go.exited) {
-                // deadlock, make Go print error and stack traces
-                go._pendingEvent = { id: 0 };
-                go._resume();
-            }
-        });
+            process.on("exit", (code) => { // Node.js exits if no event handler is pending
+                Go.exit();
+                if (code === 0 && !go.exited) {
+                    // deadlock, make Go print error and stack traces
+                    go._pendingEvent = { id: 0 };
+                    go._resume();
+                }
+            });
+        } else {
+            result = await WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+        }
         return go.run(result.instance);
     },
     ready: async (path) => {
