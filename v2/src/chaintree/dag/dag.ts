@@ -1,8 +1,5 @@
 import CID from 'cids';
 
-const tupeloMessages: any = require('tupelo-messages');
-const ipldDagCbor: any = require('ipld-dag-cbor');
-const Block: any = require('ipfs-block');
 const Ipld: any = require('ipld');
 
 export interface IBlock {
