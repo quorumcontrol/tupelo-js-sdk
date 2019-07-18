@@ -3,7 +3,7 @@ import CID from 'cids'
 import { EcdsaKey } from '../crypto'
 import { Tupelo } from '../tupelo';
 
-export default class ChainTree extends Dag {
+export class ChainTree extends Dag {
     key: EcdsaKey
     store: IBlockService
 
@@ -18,3 +18,5 @@ export default class ChainTree extends Dag {
         this.store = store
     }
 }
+
+export default ChainTree
